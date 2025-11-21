@@ -1,0 +1,19 @@
+{
+    "name": "@repo/validation",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "tsc --watch",
+        "build": "tsc"
+    },
+    "main": "dist/index.js",
+    "types": "src/index.ts",
+    "devDependencies": {
+        "@repo/typescript-config": "workspace:*",
+        "@types/node": "^24.10.1",
+        "typescript": "^5.9.3"
+    },
+    "dependencies": {
+        "zod": "^4.1.12"
+    }
+}
