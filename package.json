@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "temp-email",
   "private": true,
   "scripts": {
     "build": "turbo run build",
