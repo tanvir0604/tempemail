@@ -24,12 +24,15 @@ model TempEmail {
 }
 
 model EmailContent {
-  id        String   @id @default(uuid())
-  content   String   @db.Text
-  status    Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  id         String   @id @default(uuid())
+  content    Json
+  messageId  String   @unique
+  references String?
+  uid        Int
+  status     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updateAt   DateTime @updatedAt
 
-  tempEmail   TempEmail @relation(fields: [tempEmailId], references: [id])
-  tempEmailId String
+  tempEmail    TempEmail @relation(fields: [tempEmailRef], references: [email])
+  tempEmailRef String
 }

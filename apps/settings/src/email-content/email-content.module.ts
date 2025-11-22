@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { EmailContentService } from './email-content.service';
 import { EmailContentController } from './email-content.controller';
+import { PrismaModule } from '@app/prisma';
 
 @Module({
+  imports: [PrismaModule],
   providers: [EmailContentService],
-  controllers: [EmailContentController]
+  controllers: [EmailContentController],
 })
 export class EmailContentModule {}

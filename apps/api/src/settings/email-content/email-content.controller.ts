@@ -58,7 +58,7 @@ export class EmailContentController {
 
   @Post()
   async create(@Body() data: CreateEmailContentDto) {
-    if (!data.tempEmailId) {
+    if (!data.tempEmailRef) {
       throw new BadRequestException('parentId is required');
     }
     const res = await this.emailContentService.create(data);

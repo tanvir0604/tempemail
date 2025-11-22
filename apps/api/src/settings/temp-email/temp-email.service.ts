@@ -19,7 +19,13 @@ export class TempEmailService {
     );
   }
 
-  async getDetails(id: string) {
+  async getDetails(data: { where: {} }) {
+    return await lastValueFrom(
+      this.settingsClient.send('tempEmail.findOne', data),
+    );
+  }
+
+  async getDetailsById(id: string) {
     return await lastValueFrom(
       this.settingsClient.send('tempEmail.findById', id),
     );

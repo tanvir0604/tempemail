@@ -45,7 +45,7 @@ export class TempEmailController {
 
   @Get('/:id')
   async getDetails(@Param('id') id: string): Promise<SimpleResponseType> {
-    const res = await this.tempEmailService.getDetails(id);
+    const res = await this.tempEmailService.getDetailsById(id);
     if (!res) {
       throw new BadRequestException();
     }

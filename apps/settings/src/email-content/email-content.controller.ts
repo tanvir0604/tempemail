@@ -32,22 +32,41 @@ export class EmailContentController {
 
   @MessagePattern('emailContent.create')
   async create(data: CreateEmailContentDto) {
-    return await this.emailContentService.create({
-      tempEmailId: data.tempEmailId,
-      content: data.content,
-    });
+    return await this.emailContentService.upsert(
+      { messageId: data.messageId },
+      {},
+      {
+        content: data.content,
+        messageId: data.messageId,
+        references: data.references,
+        tempEmail: { connect: { email: data.tempEmailRef } },
+        uid: data.uid,
+      },
+    );
   }
 
   @MessagePattern('emailContent.update')
   async update(data: UpdateEmailContentDto) {
     return await this.emailContentService.update(
       { id: data.id },
-      { tempEmailId: data.tempEmailId, content: data.content },
+      {
+        tempEmailRef: data.tempEmailRef ?? undefined,
+        content: data.content ?? undefined,
+        messageId: data.messageId ?? undefined,
+        references: data.references ?? undefined,
+      },
     );
   }
 
   @MessagePattern('emailContent.delete')
   async delete(id: string) {
     return await this.emailContentService.delete({ id });
+  }
+
+  @MessagePattern('emailContent.lastUID')
+  async lastUID() {
+    return await this.emailContentService.aggregate({
+      _max: { uid: true },
+    });
   }
 }
