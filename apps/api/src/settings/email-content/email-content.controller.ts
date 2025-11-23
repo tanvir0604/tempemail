@@ -27,6 +27,11 @@ export class EmailContentController {
     @Query() data: GetEmailContentListDto,
   ): Promise<SimpleResponseType> {
     let where = {};
+    if (data.tempEmailRef) {
+      where = {
+        tempEmailRef: data.tempEmailRef,
+      };
+    }
     const params: FindAllDto = {
       where: where,
       take: data.pageSize,

@@ -26,6 +26,10 @@ model TempEmail {
 model EmailContent {
   id         String   @id @default(uuid())
   content    Json
+  from       String?
+  to         String?
+  text       String?
+  html       String?
   messageId  String   @unique
   references String?
   uid        Int

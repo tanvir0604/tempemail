@@ -186,6 +186,9 @@ export class AppService {
                     }
 
                     this.logger.log('to text', to?.text, uid);
+                    if (uid < startUid) {
+                      return;
+                    }
 
                     const insertData: CreateEmailContentDto = {
                       content: {
@@ -197,6 +200,11 @@ export class AppService {
                         messageId: parsed.messageId ?? '',
                         references: references ?? '',
                       },
+                      from: parsed.from?.value[0]?.address ?? '',
+                      to: to?.value[0]?.address ?? '',
+                      subject: parsed.subject ?? '',
+                      text: parsed.text ?? '',
+                      html: parsed.html ? parsed.html : '',
                       messageId: parsed.messageId ?? '',
                       references: references ?? '',
                       tempEmailRef: to?.value[0]?.address,

@@ -2,7 +2,12 @@ import EmailContainer from "@/components/EmailContainer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Suspense } from "react";
 
-export default async function HomePage() {
+export default async function TempEmailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 p-4 md:p-8">
       <div className="max-w-7xl mx-auto space-y-6">
@@ -24,7 +29,7 @@ export default async function HomePage() {
             </div>
           }
         >
-          <EmailContainer />
+          <EmailContainer id={id} />
         </Suspense>
       </div>
     </div>
