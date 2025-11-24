@@ -8,6 +8,7 @@ export type GetEmailContentListDto = z.infer<typeof GetEmailContentListSchema>;
 export const CreateEmailContentSchema = z.object({
   tempEmailRef: z.email(),
   content: z.json(),
+  fromName: z.string().optional(),
   from: z.string(),
   to: z.string(),
   subject: z.string(),
@@ -24,6 +25,7 @@ export const UpdateEmailContentSchema = z.object({
   id: z.string().optional(),
   tempEmailRef: z.email().optional(),
   content: z.json().optional(),
+  fromName: z.string().optional(),
   from: z.string(),
   to: z.string(),
   subject: z.string(),

@@ -1,5 +1,6 @@
 export type EmailContentType = {
   id: string;
+  fromName: string;
   from: string;
   to: string;
   subject: string;

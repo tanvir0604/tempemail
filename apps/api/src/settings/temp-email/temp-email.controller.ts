@@ -70,7 +70,23 @@ export class TempEmailController {
   }
 
   @Put('/:id')
-  async update(@Param('id') id: string, data: UpdateTempEmailDto) {
+  async update(@Param('id') id: string, @Body() data: UpdateTempEmailDto) {
+    if (data.expiredMinutes) {
+      const details = await this.tempEmailService.getDetailsById(id);
+      if (!details) {
+        throw new BadRequestException();
+      }
+      if (
+        details.createdAt &&
+        new Date(details.createdAt).getTime() + 24 * 60 * 60 * 1000 < Date.now()
+      ) {
+        return {
+          statusCode: HttpStatus.FORBIDDEN,
+          message: 'Time can not be extended',
+        };
+      }
+    }
+
     const res = await this.tempEmailService.update({ ...data, id });
     if (!res) {
       throw new BadRequestException();

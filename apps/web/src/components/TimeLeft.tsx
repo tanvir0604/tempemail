@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { formatTime } from "@/lib/utils";
+import { formatTime, getColor } from "@/lib/utils";
 
 export default function TimeLeft({ expiredAt }: { expiredAt: Date }) {
   const [timeLeft, setTimeLeft] = useState<number>(0);
@@ -12,5 +12,5 @@ export default function TimeLeft({ expiredAt }: { expiredAt: Date }) {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-  return <>{formatTime(timeLeft)}</>;
+  return <span className={getColor(timeLeft)}>{formatTime(timeLeft)}</span>;
 }

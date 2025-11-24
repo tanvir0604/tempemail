@@ -19,17 +19,19 @@ model TempEmail {
   expiredAt     DateTime
   status        Boolean        @default(true)
   createdAt     DateTime       @default(now())
-  updateAt      DateTime       @updatedAt
+  updatedAt     DateTime       @updatedAt
   emailContents EmailContent[]
 }
 
 model EmailContent {
   id         String   @id @default(uuid())
   content    Json
+  fromName   String?
   from       String?
   to         String?
+  subject    String?
   text       String?
-  html       String?
+  html       String?  @db.Text
   messageId  String   @unique
   references String?
   uid        Int

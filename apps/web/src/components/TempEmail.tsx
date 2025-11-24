@@ -24,6 +24,7 @@ import { Separator } from "./ui/separator";
 import { TempEmailType } from "@repo/validation";
 import TimeLeft from "./TimeLeft";
 import QRCode from "./QRCode";
+import ExtendTime from "./ExtendTime";
 
 export default function TempEmail({
   emailData,
@@ -32,6 +33,11 @@ export default function TempEmail({
   emailData: TempEmailType | undefined;
   generateNewEmail: () => void;
 }) {
+  const generateNewEmailAction = () => {
+    localStorage.removeItem("temp_email");
+    generateNewEmail();
+  };
+
   console.log(emailData);
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [expiredAt, setExpiredAt] = useState<Date>(new Date());
@@ -127,11 +133,14 @@ export default function TempEmail({
               <Share2 className="w-4 h-4 mr-2" />
               Share
             </Button> */}
+
+            <ExtendTime emailData={emailData} disabled={!email} />
+
             <Button
               variant="outline"
               size="sm"
               disabled={!email}
-              onClick={generateNewEmail}
+              onClick={generateNewEmailAction}
               className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
             >
               <RefreshCw className="w-4 h-4 mr-2" />

@@ -12,7 +12,12 @@ export class EmailContentController {
   constructor(private readonly emailContentService: EmailContentService) {}
   @MessagePattern('emailContent.findAll')
   findAll(@Payload() { where, take, skip }: FindAllDto) {
-    return this.emailContentService.findAll({ where, take, skip });
+    return this.emailContentService.findAll({
+      where,
+      take,
+      skip,
+      orderBy: { createdAt: 'desc' },
+    });
   }
 
   @MessagePattern('emailContent.findOne')
@@ -37,6 +42,12 @@ export class EmailContentController {
       {},
       {
         content: data.content,
+        to: data.to,
+        from: data.from,
+        fromName: data.fromName,
+        subject: data.subject,
+        text: data.text,
+        html: data.html,
         messageId: data.messageId,
         references: data.references,
         tempEmail: { connect: { email: data.tempEmailRef } },

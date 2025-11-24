@@ -115,3 +115,19 @@ export async function getEmailContent(email: string) {
   }
   return response;
 }
+
+export async function extendTime(id: string) {
+  const response: SimpleResponseType = await httpRequest({
+    method: "PUT",
+    url: "/temp-email/" + id,
+    data: { expiredMinutes: 30 },
+  });
+
+  if (!response) {
+    return {
+      statusCode: 400,
+      message: "Bad Request",
+    };
+  }
+  return response;
+}

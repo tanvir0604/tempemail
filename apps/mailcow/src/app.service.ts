@@ -192,6 +192,7 @@ export class AppService {
 
                     const insertData: CreateEmailContentDto = {
                       content: {
+                        fromName: parsed.from?.value[0]?.name ?? '',
                         from: parsed.from?.value[0]?.address ?? '',
                         to: to?.value[0]?.address ?? '',
                         subject: parsed.subject ?? '',
@@ -200,6 +201,7 @@ export class AppService {
                         messageId: parsed.messageId ?? '',
                         references: references ?? '',
                       },
+                      fromName: parsed.from?.value[0]?.name ?? '',
                       from: parsed.from?.value[0]?.address ?? '',
                       to: to?.value[0]?.address ?? '',
                       subject: parsed.subject ?? '',
@@ -210,6 +212,7 @@ export class AppService {
                       tempEmailRef: to?.value[0]?.address,
                       uid: uid,
                     };
+                    // this.logger.log('Inserting message', insertData, parsed);
                     const saved = await lastValueFrom(
                       this.settingsClient.send(
                         'emailContent.create',

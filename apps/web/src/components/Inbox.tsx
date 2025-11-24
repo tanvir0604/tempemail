@@ -30,7 +30,13 @@ export default function Inbox({
 
   useEffect(() => {
     if (emailData) {
+      if (emailData.expiredAt && emailData.expiredAt < new Date()) return;
       getEmailContentAction(emailData.email);
+      const interval = setInterval(() => {
+        getEmailContentAction(emailData.email);
+      }, 10000);
+
+      return () => clearInterval(interval);
     }
   }, [emailData]);
 
@@ -48,7 +54,16 @@ export default function Inbox({
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <InboxEmails inboxData={inboxData} />
+        {emailData &&
+        emailData.expiredAt &&
+        emailData.expiredAt < new Date() ? (
+          <span className="text-red-500">
+            Email address has been expired. Please extend time or create new
+            email!!
+          </span>
+        ) : (
+          <InboxEmails inboxData={inboxData} />
+        )}
       </CardContent>
     </Card>
   );

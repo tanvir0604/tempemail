@@ -1,0 +1,87 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronDown, Mail, Star } from "lucide-react";
+import { EmailContentType } from "@repo/validation";
+
+export default function InboxItem({ email }: { email: EmailContentType }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className="border-zinc-800 bg-zinc-900 rounded-lg border cursor-pointer transition-colors">
+      <div
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="p-4 hover:bg-zinc-950 cursor-pointer transition-colors"
+      >
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0 mt-1">
+            <Mail className="w-5 h-5 text-blue-400" />
+          </div>
+
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between gap-2 mb-1">
+              <h3 className={`font-semibold text-sm text-white`}>
+                {email.fromName} {"<" + email.from + ">"}
+              </h3>
+              <span className="text-xs text-zinc-500 flex-shrink-0">
+                {new Date(email.createdAt).toLocaleDateString()}
+                &nbsp;
+                {new Date(email.createdAt).toLocaleTimeString()}
+              </span>
+            </div>
+
+            <p className={`text-sm mb-1 text-zinc-200`}>{email.subject}</p>
+
+            {!isExpanded ? (
+              <p className="text-xs text-zinc-500 truncate">
+                {email.text.slice(0, 100)}
+              </p>
+            ) : (
+              <div
+                className="text-sm text-zinc-300 whitespace-pre-wrap"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    email.html && email.html !== "" ? email.html : email.text,
+                }}
+              ></div>
+            )}
+          </div>
+
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {/* <button
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              className="hover:text-yellow-400 text-zinc-600 transition-colors"
+            >
+              <Star className="w-4 h-4" />
+            </button> */}
+            <ChevronDown
+              className={`w-4 h-4 text-zinc-500 transition-transform ${
+                isExpanded ? "rotate-180" : ""
+              }`}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* {isExpanded && (
+        <div className="px-4 pb-4 pt-4 bg-zinc-900/50">
+          <div
+            className="text-sm text-zinc-300 whitespace-pre-wrap"
+            dangerouslySetInnerHTML={{ __html: email.html }}
+          ></div>
+
+          <div className="mt-4 pt-4 border-t border-zinc-800 flex gap-2">
+            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors">
+              Reply
+            </button>
+            <button className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm rounded transition-colors">
+              Forward
+            </button>
+          </div>
+        </div>
+      )} */}
+    </div>
+  );
+}
