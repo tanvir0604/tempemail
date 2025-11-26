@@ -4,6 +4,7 @@ import { MessagePattern, Payload } from '@nestjs/microservices';
 import {
   CreateEmailContentDto,
   FindAllDto,
+  sanitize,
   UpdateEmailContentDto,
 } from '@repo/validation';
 
@@ -37,6 +38,9 @@ export class EmailContentController {
 
   @MessagePattern('emailContent.create')
   async create(data: CreateEmailContentDto) {
+    data.subject = sanitize(data.subject ?? '');
+    data.text = sanitize(data.text ?? '');
+    data.html = sanitize(data.html ?? '');
     return await this.emailContentService.upsert(
       { messageId: data.messageId },
       {},
@@ -58,6 +62,9 @@ export class EmailContentController {
 
   @MessagePattern('emailContent.update')
   async update(data: UpdateEmailContentDto) {
+    data.subject = sanitize(data.subject ?? '');
+    data.text = sanitize(data.text ?? '');
+    data.html = sanitize(data.html ?? '');
     return await this.emailContentService.update(
       { id: data.id },
       {

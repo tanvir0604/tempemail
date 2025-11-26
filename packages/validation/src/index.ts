@@ -6,3 +6,4 @@ export * from "./schemas/temp-email.schemas";
 export * from "./schemas/email-content.schema";
 export * from "./schemas/email.schema";
 export * from "./data/names";
+export * from "./libs/utils";

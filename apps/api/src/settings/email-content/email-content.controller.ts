@@ -15,6 +15,7 @@ import {
   CreateEmailContentDto,
   FindAllDto,
   GetEmailContentListDto,
+  sanitize,
   SimpleResponseType,
   UpdateEmailContentDto,
 } from '@repo/validation';
@@ -66,6 +67,9 @@ export class EmailContentController {
     if (!data.tempEmailRef) {
       throw new BadRequestException('parentId is required');
     }
+    data.subject = sanitize(data.subject ?? '');
+    data.text = sanitize(data.text ?? '');
+    data.html = sanitize(data.html ?? '');
     const res = await this.emailContentService.create(data);
     if (!res) {
       throw new BadRequestException();
@@ -79,6 +83,9 @@ export class EmailContentController {
 
   @Put('/:id')
   async update(@Param('id') id: string, data: UpdateEmailContentDto) {
+    data.subject = sanitize(data.subject ?? '');
+    data.text = sanitize(data.text ?? '');
+    data.html = sanitize(data.html ?? '');
     const res = await this.emailContentService.update({ ...data, id });
     if (!res) {
       throw new BadRequestException();

@@ -7,7 +7,7 @@ import Imap = require('imap');
 import { simpleParser, ParsedMail } from 'mailparser';
 import { ClientProxy } from '@nestjs/microservices';
 
-import { CreateEmailContentDto } from '@repo/validation';
+import { CreateEmailContentDto, sanitize } from '@repo/validation';
 
 @Injectable()
 export class AppService {
@@ -190,23 +190,27 @@ export class AppService {
                       return;
                     }
 
+                    const subject = sanitize(parsed.subject ?? '');
+                    const text = sanitize(parsed.text ?? '');
+                    const html = sanitize(parsed.html ? parsed.html : '');
+
                     const insertData: CreateEmailContentDto = {
                       content: {
                         fromName: parsed.from?.value[0]?.name ?? '',
                         from: parsed.from?.value[0]?.address ?? '',
                         to: to?.value[0]?.address ?? '',
-                        subject: parsed.subject ?? '',
-                        text: parsed.text ?? '',
-                        html: parsed.html ?? '',
+                        subject: subject,
+                        text: text,
+                        html: html,
                         messageId: parsed.messageId ?? '',
                         references: references ?? '',
                       },
                       fromName: parsed.from?.value[0]?.name ?? '',
                       from: parsed.from?.value[0]?.address ?? '',
                       to: to?.value[0]?.address ?? '',
-                      subject: parsed.subject ?? '',
-                      text: parsed.text ?? '',
-                      html: parsed.html ? parsed.html : '',
+                      subject: subject,
+                      text: text,
+                      html: html,
                       messageId: parsed.messageId ?? '',
                       references: references ?? '',
                       tempEmailRef: to?.value[0]?.address,
