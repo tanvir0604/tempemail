@@ -36,10 +36,10 @@ export class AppService {
     );
 
     for (const domain of domainInfo) {
-      console.log('domain', domain);
+      // console.log('domain', domain);
       if (domain.domainUsers && domain.domainUsers.length > 0) {
         for (const domainUser of domain.domainUsers) {
-          console.log('domainUser', domainUser);
+          // console.log('domainUser', domainUser);
           this.initializeImap({
             host: domain.imapHost,
             port: domain.imapPort,

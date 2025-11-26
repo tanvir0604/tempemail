@@ -51,7 +51,7 @@ export class MailcowService {
     const response = await firstValueFrom(
       this.mailCowClient.send('mailcow.createNewAlias', email),
     );
-    console.log('response', response);
+    // console.log('response', response);
     return response;
   }
 
