@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  Body,
   Controller,
   Get,
   HttpStatus,
@@ -7,13 +8,14 @@ import {
 } from '@nestjs/common';
 import { MailcowService } from './mailcow.service';
 import { TempEmailService } from 'src/settings/temp-email/temp-email.service';
-import { SimpleResponseType } from '@repo/validation';
+import { CreateMailCowAliasDto, SimpleResponseType } from '@repo/validation';
 
 @Controller('mailcow')
 export class MailcowController {
   constructor(
     private readonly mailcowService: MailcowService,
     private readonly tempEmailService: TempEmailService,
+    private readonly domainService: DomainService,
   ) {}
 
   @Get('/sync')
@@ -22,11 +24,18 @@ export class MailcowController {
   }
 
   @Post()
-  async createNewAlias(): Promise<SimpleResponseType> {
-    const data: any = await this.mailcowService.createNewAlias();
+  async createNewAlias(
+    @Body() data: CreateMailCowAliasDto,
+  ): Promise<SimpleResponseType> {
+    // select domain
+    if (data.domain == null) {
+      const domain = await this.tempEmailService.findOne();
+    }
+
+    const mailCowResponse: any = await this.mailcowService.createNewAlias(data);
     // store email in db
     const response = await this.tempEmailService.create({
-      email: data.address,
+      email: mailCowResponse.address,
       expiredMinutes: 30,
     });
 

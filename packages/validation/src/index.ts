@@ -5,5 +5,8 @@ export * from "./schemas/common.schemas";
 export * from "./schemas/temp-email.schemas";
 export * from "./schemas/email-content.schema";
 export * from "./schemas/email.schema";
+export * from "./schemas/blog.schema";
+export * from "./schemas/domain.schema";
+export * from "./schemas/domain-user.schema";
 export * from "./data/names";
 export * from "./libs/utils";

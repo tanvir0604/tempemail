@@ -58,3 +58,20 @@ export const sanitize = (html: string) => {
         },
     });
 };
+
+export function generateUniqueSlug(
+    title: string,
+    unique: boolean = false
+): string {
+    const baseSlug = title
+        .toLowerCase()
+        .trim()
+        .replace(/[\s_]+/g, "-")
+        .replace(/[^\w\-]+/g, "")
+        .replace(/\-\-+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
+    if (!unique) return baseSlug;
+    const uniqueSuffix = Date.now().toString(36);
+    return `${baseSlug}-${uniqueSuffix}`;
+}

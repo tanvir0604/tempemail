@@ -5,12 +5,14 @@ import { MailcowModule } from './mailcow/mailcow.module';
 import { SettingsService } from './settings/settings.service';
 import { SettingsModule } from './settings/settings.module';
 import { ConfigModule } from '@nestjs/config';
+import { BlogModule } from './blog/blog.module';
 
 @Module({
   imports: [
     MailcowModule,
     SettingsModule,
     ConfigModule.forRoot({ isGlobal: true }),
+    BlogModule,
   ],
   controllers: [AppController],
   providers: [AppService, SettingsService],

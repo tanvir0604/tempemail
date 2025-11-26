@@ -5,6 +5,10 @@ import { TempEmailService } from './temp-email/temp-email.service';
 import { EmailContentController } from './email-content/email-content.controller';
 import { EmailContentService } from './email-content/email-content.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { DomainController } from './domain/domain.controller';
+import { DomainService } from './domain/domain.service';
+import { DomainUserService } from './domain-user/domain-user.service';
+import { DomainUserController } from './domain-user/domain-user.controller';
 
 @Module({
   imports: [
@@ -26,8 +30,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     SettingsController,
     TempEmailController,
     EmailContentController,
+    DomainController,
+    DomainUserController,
   ],
-  providers: [TempEmailService, EmailContentService],
+  providers: [TempEmailService, EmailContentService, DomainService, DomainUserService],
   exports: [TempEmailService],
 })
 export class SettingsModule {}

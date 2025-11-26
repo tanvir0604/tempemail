@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ClientProxy } from '@nestjs/microservices';
-import { firstNames, lastNames } from '@repo/validation';
+import { CreateMailCowAliasDto, firstNames, lastNames } from '@repo/validation';
 import { firstValueFrom } from 'rxjs';
 import { TempEmailService } from 'src/settings/temp-email/temp-email.service';
 
@@ -35,13 +35,13 @@ export class MailcowService {
     }
     return this.generateUniqueEmailUsername();
   }
-  async createNewAlias() {
-    const email = await this.generateUniqueEmailUsername();
+  async createNewAlias(data: CreateMailCowAliasDto) {
+    const userName = await this.generateUniqueEmailUsername(data.alias);
 
-    const data = await firstValueFrom(
-      this.mailCowClient.send('mailcow.createNewAlias', email),
+    const response = await firstValueFrom(
+      this.mailCowClient.send('mailcow.createNewAlias', userName),
     );
-    return data;
+    return response;
   }
 
   async sync() {

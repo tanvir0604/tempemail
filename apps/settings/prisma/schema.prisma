@@ -42,3 +42,32 @@ model EmailContent {
   tempEmail    TempEmail @relation(fields: [tempEmailRef], references: [email])
   tempEmailRef String
 }
+
+model Domain {
+  id     String @id @default(uuid())
+  domain String @unique
+  apiUrl String
+  apiKey String
+
+  imapHost String
+  imapPort String
+
+  status      Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updateAt    DateTime     @updatedAt
+  domainUsers DomainUser[]
+}
+
+model DomainUser {
+  id           String   @id @default(uuid())
+  apiUserName  String
+  apiPassword  String
+  imapUserName String
+  imapPassword String
+  status       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updateAt     DateTime @updatedAt
+
+  domain   Domain @relation(fields: [domainId], references: [id])
+  domainId String
+}
