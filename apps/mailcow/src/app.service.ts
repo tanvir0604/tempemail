@@ -6,6 +6,8 @@ import Imap = require('imap');
 import { simpleParser } from 'mailparser';
 import { ClientProxy } from '@nestjs/microservices';
 
+import { type CreateImapConnectionDto } from '@repo/validation';
+
 import {
   CreateEmailContentDto,
   CreateMailCowNewAliasDto,
@@ -25,11 +27,34 @@ export class AppService {
 
   onModuleInit() {
     this.logger.log('-------------------Initializing IMAP-------------------');
-    this.initializeImap();
+    this.initializeImapForAll();
   }
+
+  async initializeImapForAll() {
+    const domainInfo = await lastValueFrom(
+      this.settingsClient.send('domain.findAll', { status: true }),
+    );
+
+    for (const domain of domainInfo) {
+      console.log('domain', domain);
+      if (domain.domainUsers && domain.domainUsers.length > 0) {
+        for (const domainUser of domain.domainUsers) {
+          console.log('domainUser', domainUser);
+          this.initializeImap({
+            host: domain.imapHost,
+            port: domain.imapPort,
+            username: domainUser.imapUserName,
+            password: domainUser.imapPassword,
+          });
+        }
+      }
+    }
+  }
+
   async createNewAlias(domainData: CreateMailCowNewAliasDto) {
-    const MAILCOW_DOMAIN = domainData.domain;
+    // console.log('domainData', domainData);
     const MAILCOW_USERNAME = domainData.username;
+    const USER_EMAIL = domainData.email;
     const MAILCOW_API_URL = domainData.apiUrl;
     const MAILCOW_API_KEY = domainData.apiKey;
 
@@ -39,17 +64,14 @@ export class AppService {
     if (!MAILCOW_USERNAME) {
       throw new Error('MAILCOW_USERNAME is not set');
     }
-    if (!MAILCOW_DOMAIN) {
-      throw new Error('MAILCOW_DOMAIN is not set');
-    }
     if (!MAILCOW_API_KEY) {
       throw new Error('MAILCOW_API_KEY is not set');
     }
 
     const data = {
       active: '1',
-      address: domainData.email + '@' + MAILCOW_DOMAIN,
-      goto: MAILCOW_USERNAME + '@' + MAILCOW_DOMAIN,
+      address: USER_EMAIL,
+      goto: MAILCOW_USERNAME,
     };
 
     const res = await firstValueFrom(
@@ -65,15 +87,18 @@ export class AppService {
       throw new Error(res.data.error.message);
     }
 
-    return data;
+    return USER_EMAIL;
   }
 
-  initializeImap(keepAlive: boolean = false) {
-    const IMAP_HOST = this.configService.get<string>('IMAP_HOST');
-    const IMAP_PORT = this.configService.get<number>('IMAP_PORT');
-    const IMAP_USERNAME = this.configService.get<string>('IMAP_USERNAME');
-    const IMAP_PASSWORD = this.configService.get<string>('IMAP_PASSWORD');
-    const IMAP_TLS = this.configService.get<boolean>('IMAP_TLS');
+  initializeImap(
+    credentials: CreateImapConnectionDto,
+    keepAlive: boolean = false,
+  ) {
+    const IMAP_HOST = credentials.host;
+    const IMAP_PORT = credentials.port;
+    const IMAP_USERNAME = credentials.username;
+    const IMAP_PASSWORD = credentials.password;
+    const IMAP_TLS = true;
 
     if (!IMAP_HOST) {
       throw new Error('IMAP_HOST is not set');

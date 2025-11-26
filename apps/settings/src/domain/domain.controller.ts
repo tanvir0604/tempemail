@@ -8,14 +8,19 @@ export class DomainController {
   constructor(private readonly domainService: DomainService) {}
   @MessagePattern('domain.findAll')
   findAll(@Payload() { where, take, skip }: FindAllDto) {
-    return this.domainService.findAll({ where, take, skip });
+    return this.domainService.findAll({
+      where,
+      take,
+      skip,
+      include: { domainUsers: true },
+    });
   }
 
   @MessagePattern('domain.findOne')
   findOne(@Payload() { where }: { where: {} }) {
     return this.domainService.findOne({
       where,
-      include: { emailContents: true },
+      include: { domainUsers: true },
     });
   }
 
@@ -23,7 +28,7 @@ export class DomainController {
   async findById(@Payload() id: string) {
     return await this.domainService.findOne({
       where: { id },
-      include: { emailContents: true },
+      include: { domainUsers: true },
     });
   }
 

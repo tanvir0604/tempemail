@@ -73,7 +73,7 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
 export async function generateTempEmail() {
   const response: SimpleResponseType = await httpRequest({
     method: "POST",
-    url: "/mailcow",
+    url: "/create-alias",
     data: {},
   });
   if (!response) {

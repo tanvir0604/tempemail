@@ -50,7 +50,9 @@ export class AppController {
 
     const mailCowResponse = await this.mailcowService.createNewAlias(data);
 
-    console.log('mailCowResponse', mailCowResponse);
+    if (!mailCowResponse) {
+      throw new BadRequestException();
+    }
 
     const response = await this.tempEmailService.create({
       email: mailCowResponse,

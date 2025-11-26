@@ -17,6 +17,7 @@ export class TempEmailController {
 
   @MessagePattern('tempEmail.findOne')
   findOne(@Payload() { where }: { where: {} }) {
+    console.log('findOne', where);
     return this.tempEmailService.findOne({
       where,
       include: { emailContents: true },
