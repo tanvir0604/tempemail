@@ -15,7 +15,6 @@ export class MailcowController {
   constructor(
     private readonly mailcowService: MailcowService,
     private readonly tempEmailService: TempEmailService,
-    private readonly domainService: DomainService,
   ) {}
 
   @Get('/sync')
@@ -28,9 +27,6 @@ export class MailcowController {
     @Body() data: CreateMailCowAliasDto,
   ): Promise<SimpleResponseType> {
     // select domain
-    if (data.domain == null) {
-      const domain = await this.tempEmailService.findOne();
-    }
 
     const mailCowResponse: any = await this.mailcowService.createNewAlias(data);
     // store email in db

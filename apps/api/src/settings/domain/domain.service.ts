@@ -15,6 +15,12 @@ export class DomainService {
     );
   }
 
+  async findOne(params: { where: {} }) {
+    return await lastValueFrom(
+      this.settingsClient.send('domain.findOne', params),
+    );
+  }
+
   async getDetails(id: string) {
     return await lastValueFrom(this.settingsClient.send('domain.findById', id));
   }

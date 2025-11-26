@@ -6,6 +6,7 @@ import { SettingsService } from './settings/settings.service';
 import { SettingsModule } from './settings/settings.module';
 import { ConfigModule } from '@nestjs/config';
 import { BlogModule } from './blog/blog.module';
+import { MailcowService } from './mailcow/mailcow.service';
 
 @Module({
   imports: [
@@ -15,6 +16,6 @@ import { BlogModule } from './blog/blog.module';
     BlogModule,
   ],
   controllers: [AppController],
-  providers: [AppService, SettingsService],
+  providers: [AppService],
 })
 export class AppModule {}

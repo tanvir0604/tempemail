@@ -37,6 +37,8 @@ export class TempEmailController {
     if (data.expiredMinutes) {
       expiredMinutes = data.expiredMinutes;
     }
+
+    console.log('expiredMinutes', expiredMinutes, data);
     return await this.tempEmailService.upsert(
       {
         email: data.email,

@@ -23,5 +23,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   ],
   controllers: [MailcowController],
   providers: [MailcowService],
+  exports: [MailcowService],
 })
 export class MailcowModule {}

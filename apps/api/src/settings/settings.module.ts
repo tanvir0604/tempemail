@@ -33,7 +33,12 @@ import { DomainUserController } from './domain-user/domain-user.controller';
     DomainController,
     DomainUserController,
   ],
-  providers: [TempEmailService, EmailContentService, DomainService, DomainUserService],
-  exports: [TempEmailService],
+  providers: [
+    TempEmailService,
+    EmailContentService,
+    DomainService,
+    DomainUserService,
+  ],
+  exports: [TempEmailService, DomainService],
 })
 export class SettingsModule {}

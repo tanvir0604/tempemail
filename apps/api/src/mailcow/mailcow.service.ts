@@ -24,8 +24,17 @@ export class MailcowService {
     return `${f}${l}${n}`.toLowerCase();
   }
 
-  async generateUniqueEmailUsername() {
-    const email = this.generateEmailUsername();
+  async generateUniqueEmailUsername(data?: CreateMailCowAliasDto) {
+    if (!data || !data.domain) {
+      throw new Error('domain is required');
+    }
+
+    if (!data.alias) {
+      data.alias = this.generateEmailUsername();
+    }
+
+    const email = data.alias + '@' + data.domain;
+
     // check uniqueness
     const res = await this.tempEmailService.getDetails({
       where: { email: email },
@@ -33,13 +42,16 @@ export class MailcowService {
     if (!res) {
       return email;
     }
+    data.alias = this.generateEmailUsername();
     return this.generateUniqueEmailUsername();
   }
   async createNewAlias(data: CreateMailCowAliasDto) {
-    const userName = await this.generateUniqueEmailUsername(data.alias);
+    const email = await this.generateUniqueEmailUsername(data);
+
+    return email;
 
     const response = await firstValueFrom(
-      this.mailCowClient.send('mailcow.createNewAlias', userName),
+      this.mailCowClient.send('mailcow.createNewAlias', email),
     );
     return response;
   }

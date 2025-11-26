@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { DomainUserService } from './domain-user.service';
-import { DomainController } from 'src/domain/domain.controller';
+import { DomainUserController } from './domain-user.controller';
 import { PrismaModule } from '@app/prisma';
 
 @Module({
   imports: [PrismaModule],
-  controllers: [DomainController],
+  controllers: [DomainUserController],
   providers: [DomainUserService],
 })
 export class DomainUserModule {}
