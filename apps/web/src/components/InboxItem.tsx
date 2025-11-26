@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, Mail } from "lucide-react";
 import { EmailContentType, sanitize } from "@repo/validation";
+import { cn } from "@/lib/utils";
 
 export default function InboxItem({ email }: { email: EmailContentType }) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -11,10 +12,13 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
         <div className="border-zinc-800 bg-zinc-900 rounded-lg border cursor-pointer transition-colors">
             <div
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="p-4 hover:bg-zinc-950 cursor-pointer transition-colors"
+                className={cn(
+                    "p-4 cursor-pointer transition-colors hover:bg-zinc-950",
+                    isExpanded && "bg-zinc-950"
+                )}
             >
                 <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-1">
+                    <div className="shrink-0 mt-1">
                         <Mail className="w-5 h-5 text-blue-400" />
                     </div>
 
@@ -23,7 +27,7 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                             <h3 className={`font-semibold text-sm text-white`}>
                                 {email.fromName} {"<" + email.from + ">"}
                             </h3>
-                            <span className="text-xs text-zinc-500 flex-shrink-0">
+                            <span className="text-xs text-zinc-500 shrink-0">
                                 {new Date(email.createdAt).toLocaleDateString()}
                                 &nbsp;
                                 {new Date(email.createdAt).toLocaleTimeString()}
@@ -40,18 +44,24 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                             </p>
                         ) : (
                             <div
-                                className="text-sm text-zinc-300 whitespace-pre-wrap"
+                                className="text-sm text-zinc-300! whitespace-pre-wrap"
+                                style={{
+                                    all: "initial",
+                                }}
                                 dangerouslySetInnerHTML={{
                                     __html:
                                         email.html && email.html !== ""
-                                            ? sanitize(email.html)
+                                            ? sanitize(email.html).replace(
+                                                  /color\s*:\s*black/gi,
+                                                  "color: gray"
+                                              )
                                             : sanitize(email.text),
                                 }}
                             ></div>
                         )}
                     </div>
 
-                    <div className="flex items-center gap-2 flex-shrink-0">
+                    <div className="flex items-center gap-2 shrink-0">
                         {/* <button
               onClick={(e) => {
                 e.stopPropagation();

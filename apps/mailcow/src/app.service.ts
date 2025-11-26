@@ -2,9 +2,8 @@ import { HttpService } from '@nestjs/axios';
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { firstValueFrom, lastValueFrom } from 'rxjs';
-// import Imap from 'imap';
 import Imap = require('imap');
-import { simpleParser, ParsedMail } from 'mailparser';
+import { simpleParser } from 'mailparser';
 import { ClientProxy } from '@nestjs/microservices';
 
 import { CreateEmailContentDto, sanitize } from '@repo/validation';
@@ -12,12 +11,18 @@ import { CreateEmailContentDto, sanitize } from '@repo/validation';
 @Injectable()
 export class AppService {
   private imap: Imap;
+  private processing: boolean = false;
   private readonly logger = new Logger(AppService.name);
   constructor(
     private readonly httpService: HttpService,
     private configService: ConfigService,
     @Inject('SETTINGS_SERVICE') readonly settingsClient: ClientProxy,
   ) {}
+
+  onModuleInit() {
+    this.logger.log('-------------------Initializing IMAP-------------------');
+    this.initializeImap();
+  }
   async createNewAlias(email: string) {
     const MAILCOW_DOMAIN = this.configService.get<string>('MAILCOW_DOMAIN');
     const MAILCOW_USERNAME = this.configService.get<string>('MAILCOW_USERNAME');
@@ -98,189 +103,113 @@ export class AppService {
 
     this.imap = new Imap(config);
 
-    return this.imap;
+    this.imap.once('ready', async () => {
+      this.logger.log('IMAP ready, opening INBOX');
+      this.imap.openBox('INBOX', false, (err, box) => {
+        if (err) throw err;
+        this.logger.log(
+          `Mailbox opened, total messages: ${box.messages.total}`,
+        );
+
+        // Listen for new messages
+        this.imap.on('mail', async (numNewMsgs) => {
+          this.logger.log(`${numNewMsgs} new message(s) arrived`);
+          if (!this.processing) {
+            this.processing = true;
+            await this.fetchNewMessages();
+            this.processing = false;
+          }
+        });
+      });
+    });
+
+    this.imap.once('error', (err) => {
+      this.logger.error(`IMAP error: ${err.message}`);
+      setTimeout(() => this.imap.connect(), 5000); // reconnect on error
+    });
+
+    this.imap.once('end', () => {
+      this.logger.log('IMAP connection ended, reconnecting...');
+      setTimeout(() => this.imap.connect(), 5000);
+    });
+
+    this.imap.connect();
   }
 
-  async readInbox(
-    folder: string = 'INBOX',
-    searchCriteria: any[] = ['ALL'],
-  ): Promise<{ total: number; new: number; duplicates: number }> {
+  private async fetchNewMessages() {
     const tracker = await lastValueFrom(
       this.settingsClient.send('emailContent.lastUID', {}),
     );
+    const startUid = tracker?._max?.uid + 1 || 1;
 
-    const startUid = tracker ? tracker?._max?.uid + 1 : 1;
+    this.imap.search([['UID', `${startUid}:*`]], (err, results) => {
+      if (err || !results || results.length === 0) return;
 
-    console.log(tracker, startUid);
+      const fetch = this.imap.fetch(results, { bodies: '', struct: true });
+      const messagePromises: Promise<void>[] = [];
 
-    return new Promise((resolve, reject) => {
-      this.initializeImap();
+      fetch.on('message', (msg, seqno) => {
+        const p = new Promise<void>((resolveMessage) => {
+          let uid: number;
+          msg.once('attributes', (attrs) => {
+            uid = attrs.uid;
+          });
 
-      let stats = { total: 0, new: 0, duplicates: 0 };
+          msg.on('body', (stream) => {
+            simpleParser(stream as any)
+              .then(async (parsed) => {
+                const references = Array.isArray(parsed.references)
+                  ? parsed.references[0]
+                  : parsed.references;
 
-      this.imap.once('ready', () => {
-        this.logger.log('IMAP connection ready');
+                const to = Array.isArray(parsed.to) ? parsed.to[0] : parsed.to;
+                if (
+                  !to?.value?.[0]?.address ||
+                  !parsed.from?.value?.[0]?.address
+                )
+                  return;
 
-        this.imap.openBox(folder, false, (err, box) => {
-          if (err) {
-            reject(err);
-            return;
-          }
+                const subject = sanitize(parsed.subject ?? '');
+                const text = sanitize(parsed.text ?? '');
+                const html = sanitize(parsed.html ? parsed.html : '');
 
-          this.logger.log(
-            `Opened folder: ${folder}, Total messages: ${box.messages.total}`,
-          );
-
-          searchCriteria = [['UID', `${startUid}:*`]];
-
-          this.imap.search(searchCriteria, (err, results) => {
-            if (err) {
-              reject(err);
-              return;
-            }
-
-            if (!results || results.length === 0) {
-              this.logger.log('No messages found');
-              this.imap.end();
-              resolve(stats);
-              return;
-            }
-
-            stats.total = results.length;
-            this.logger.log(`Found ${results.length} messages`);
-
-            const fetch = this.imap.fetch(results, {
-              bodies: '',
-              struct: true,
-            });
-
-            fetch.on('message', (msg, seqno) => {
-              let uid: number;
-
-              msg.once('attributes', (attrs) => {
-                uid = attrs.uid;
-              });
-
-              msg.on('body', (stream, info) => {
-                simpleParser(stream as any)
-                  .then(async (parsed) => {
-                    const to = Array.isArray(parsed.to)
-                      ? parsed.to[0]
-                      : parsed.to;
-                    const references = Array.isArray(parsed.references)
-                      ? parsed.references[0]
-                      : parsed.references;
-
-                    if (
-                      !to ||
-                      !to.value ||
-                      !to.value[0] ||
-                      !to.value[0].address ||
-                      !parsed.from ||
-                      !parsed.from.value ||
-                      !parsed.from.value[0] ||
-                      !parsed.from.value[0].address ||
-                      !parsed.messageId
-                    ) {
-                      return;
-                    }
-
-                    this.logger.log('to text', to?.text, uid);
-                    if (uid < startUid) {
-                      return;
-                    }
-
-                    const subject = sanitize(parsed.subject ?? '');
-                    const text = sanitize(parsed.text ?? '');
-                    const html = sanitize(parsed.html ? parsed.html : '');
-
-                    const insertData: CreateEmailContentDto = {
-                      content: {
-                        fromName: parsed.from?.value[0]?.name ?? '',
-                        from: parsed.from?.value[0]?.address ?? '',
-                        to: to?.value[0]?.address ?? '',
-                        subject: subject,
-                        text: text,
-                        html: html,
-                        messageId: parsed.messageId ?? '',
-                        references: references ?? '',
-                      },
-                      fromName: parsed.from?.value[0]?.name ?? '',
-                      from: parsed.from?.value[0]?.address ?? '',
-                      to: to?.value[0]?.address ?? '',
-                      subject: subject,
-                      text: text,
-                      html: html,
-                      messageId: parsed.messageId ?? '',
-                      references: references ?? '',
-                      tempEmailRef: to?.value[0]?.address,
-                      uid: uid,
-                    };
-                    // this.logger.log('Inserting message', insertData, parsed);
-                    const saved = await lastValueFrom(
-                      this.settingsClient.send(
-                        'emailContent.create',
-                        insertData,
-                      ),
-                    );
-                    if (saved) {
-                      stats.new++;
-                    } else {
-                      stats.duplicates++;
-                    }
-
-                    // if (uid) {
-                    //   this.imap.addFlags(uid, ['\\Seen'], (err) => {
-                    //     if (err) {
-                    //       this.logger.error(
-                    //         `Failed to mark UID ${uid} as seen: ${err.message}`,
-                    //       );
-                    //     } else {
-                    //       this.logger.debug(`Marked UID ${uid} as seen`);
-                    //     }
-                    //   });
-                    // }
-                  })
-                  .catch((err) => {
-                    this.logger.error(
-                      `Error parsing message ${seqno}: ${err.message}`,
-                    );
-                  });
-              });
-            });
-
-            fetch.once('error', (err) => {
-              this.logger.error(`Fetch error: ${err.message}`);
-              reject(err);
-            });
-
-            fetch.once('end', () => {
-              this.logger.log('Finished fetching messages');
-              this.imap.end();
-            });
+                const insertData: CreateEmailContentDto = {
+                  content: {
+                    fromName: parsed.from?.value[0]?.name ?? '',
+                    from: parsed.from?.value[0]?.address ?? '',
+                    to: to?.value[0]?.address ?? '',
+                    subject: subject,
+                    text: text,
+                    html: html,
+                    messageId: parsed.messageId ?? '',
+                    references: references ?? '',
+                  },
+                  fromName: parsed.from?.value[0]?.name ?? '',
+                  from: parsed.from?.value[0]?.address ?? '',
+                  to: to?.value[0]?.address ?? '',
+                  subject: subject,
+                  text: text,
+                  html: html,
+                  messageId: parsed.messageId ?? '',
+                  references: references ?? '',
+                  tempEmailRef: to?.value[0]?.address,
+                  uid: uid,
+                };
+                // this.logger.log('Inserting message', insertData, parsed);
+                await lastValueFrom(
+                  this.settingsClient.send('emailContent.create', insertData),
+                );
+              })
+              .finally(() => resolveMessage());
           });
         });
+        messagePromises.push(p);
       });
 
-      this.imap.once('error', (err) => {
-        this.logger.error(`IMAP error: ${err.message}`);
-        reject(err);
+      fetch.once('end', async () => {
+        await Promise.all(messagePromises);
+        this.logger.log('Finished processing new messages');
       });
-
-      this.imap.once('end', () => {
-        this.logger.log('IMAP connection ended');
-        resolve(stats);
-      });
-
-      this.imap.connect();
     });
-  }
-
-  async readUnseenEmails(): Promise<{
-    total: number;
-    new: number;
-    duplicates: number;
-  }> {
-    return this.readInbox('INBOX', ['UNSEEN']);
   }
 }

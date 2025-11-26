@@ -13,7 +13,6 @@ export class AppController {
 
   @EventPattern('mailcow.sync')
   sync() {
-    // return this.appService.readInbox();
-    return this.appService.readUnseenEmails();
+    return this.appService.initializeImap(true);
   }
 }
