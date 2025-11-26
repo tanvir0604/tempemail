@@ -6,7 +6,11 @@ import Imap = require('imap');
 import { simpleParser } from 'mailparser';
 import { ClientProxy } from '@nestjs/microservices';
 
-import { CreateEmailContentDto, sanitize } from '@repo/validation';
+import {
+  CreateEmailContentDto,
+  CreateMailCowNewAliasDto,
+  sanitize,
+} from '@repo/validation';
 
 @Injectable()
 export class AppService {
@@ -23,11 +27,11 @@ export class AppService {
     this.logger.log('-------------------Initializing IMAP-------------------');
     this.initializeImap();
   }
-  async createNewAlias(email: string) {
-    const MAILCOW_DOMAIN = this.configService.get<string>('MAILCOW_DOMAIN');
-    const MAILCOW_USERNAME = this.configService.get<string>('MAILCOW_USERNAME');
-    const MAILCOW_API_URL = this.configService.get<string>('MAILCOW_API_URL');
-    const MAILCOW_API_KEY = this.configService.get<string>('MAILCOW_API_KEY');
+  async createNewAlias(domainData: CreateMailCowNewAliasDto) {
+    const MAILCOW_DOMAIN = domainData.domain;
+    const MAILCOW_USERNAME = domainData.username;
+    const MAILCOW_API_URL = domainData.apiUrl;
+    const MAILCOW_API_KEY = domainData.apiKey;
 
     if (!MAILCOW_API_URL) {
       throw new Error('MAILCOW_API_URL is not set');
@@ -44,7 +48,7 @@ export class AppService {
 
     const data = {
       active: '1',
-      address: email + '@' + MAILCOW_DOMAIN,
+      address: domainData.email + '@' + MAILCOW_DOMAIN,
       goto: MAILCOW_USERNAME + '@' + MAILCOW_DOMAIN,
     };
 
@@ -211,5 +215,11 @@ export class AppService {
         this.logger.log('Finished processing new messages');
       });
     });
+  }
+
+  async getDomainInfo(domain: string) {
+    return await lastValueFrom(
+      this.settingsClient.send('domain.findOne', { domain: domain }),
+    );
   }
 }

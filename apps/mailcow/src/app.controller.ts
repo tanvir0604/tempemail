@@ -7,8 +7,18 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @MessagePattern('mailcow.createNewAlias')
-  createNewAlias(@Payload() email: string) {
-    return this.appService.createNewAlias(email);
+  async createNewAlias(@Payload() email: string) {
+    const domainInfo = await this.appService.getDomainInfo(email.split('@')[1]);
+    if (!domainInfo) {
+      return;
+    }
+    return this.appService.createNewAlias({
+      domain: domainInfo.domain,
+      username: domainInfo.username,
+      email: email,
+      apiUrl: domainInfo.apiUrl,
+      apiKey: domainInfo.apiKey,
+    });
   }
 
   @EventPattern('mailcow.sync')

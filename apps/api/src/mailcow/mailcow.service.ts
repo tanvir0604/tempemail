@@ -48,8 +48,6 @@ export class MailcowService {
   async createNewAlias(data: CreateMailCowAliasDto) {
     const email = await this.generateUniqueEmailUsername(data);
 
-    return email;
-
     const response = await firstValueFrom(
       this.mailCowClient.send('mailcow.createNewAlias', email),
     );
