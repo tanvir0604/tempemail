@@ -123,7 +123,10 @@ export default function TempEmail({
               <Copy className="w-4 h-4 mr-2" />
               Copy
             </Button>
-            <QRCode url={"/" + emailData?.id} disabled={!email} />
+            <QRCode
+              url={process.env.BASE_URL + "/" + emailData?.id}
+              disabled={!email}
+            />
             {/* <Button
               variant="outline"
               size="sm"
