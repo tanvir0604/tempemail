@@ -124,7 +124,7 @@ export default function TempEmail({
               Copy
             </Button>
             <QRCode
-              url={process.env.BASE_URL + "/" + emailData?.id}
+              url={process.env.NEXT_PUBLIC_BASE_URL + "/" + emailData?.id}
               disabled={!email}
             />
             {/* <Button
