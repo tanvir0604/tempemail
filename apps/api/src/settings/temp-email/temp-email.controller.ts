@@ -5,6 +5,7 @@ import {
   Delete,
   Get,
   HttpStatus,
+  NotFoundException,
   Param,
   Post,
   Put,
@@ -95,6 +96,21 @@ export class TempEmailController {
       statusCode: HttpStatus.OK,
       message: 'success',
       data: res,
+    };
+  }
+
+  @Get('/check-email/:email')
+  async checkEmail(@Param('email') email: string) {
+    const details = await this.tempEmailService.getDetails({
+      where: { email },
+    });
+    if (!details) {
+      throw new NotFoundException();
+    }
+    return {
+      statusCode: HttpStatus.OK,
+      message: 'success',
+      data: details,
     };
   }
 
