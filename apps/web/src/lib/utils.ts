@@ -25,6 +25,11 @@ export function getColor(timeLeft: number) {
 export const notifyWithSound = (title: string, body: string) => {
   if (typeof window === "undefined") return;
 
+  if (!("Notification" in window)) {
+    console.warn("Browser doesn't support notifications.");
+    return;
+  }
+
   // console.log("Notification permission:", Notification.permission);
   // Request permission if not granted
   if (Notification.permission !== "granted") {
