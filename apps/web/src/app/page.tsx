@@ -1,4 +1,5 @@
 import EmailContainer from "@/components/EmailContainer";
+import GenerateTempEmailButton from "@/components/GenerateTemporaryEmailButton";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Check, Clock, Eye, Globe, QrCode, Shield, Zap } from "lucide-react";
 import { Suspense } from "react";
@@ -379,9 +380,7 @@ export default async function HomePage() {
                         clean and their identities private. Create your free
                         temporary email address now.
                     </p>
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                        Generate Temporary Email
-                    </button>
+                    <GenerateTempEmailButton />
                 </div>
             </section>
 
