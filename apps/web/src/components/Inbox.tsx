@@ -2,69 +2,77 @@
 
 import { Mail } from "lucide-react";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
 } from "./ui/card";
 import InboxEmails from "./InboxEmails";
 import { EmailContentType, TempEmailType } from "@repo/validation";
 import { useEffect, useState } from "react";
 import { getEmailContent } from "@/lib/actions";
+import { notifyWithSound } from "@/lib/utils";
 
 export default function Inbox({
-  emailData,
+    emailData,
 }: {
-  emailData: TempEmailType | undefined;
+    emailData: TempEmailType | undefined;
 }) {
-  const [inboxData, setInboxData] = useState<EmailContentType[]>([]);
-  const getEmailContentAction = async (email: string) => {
-    const response = await getEmailContent(email);
-    console.log("response", response);
-    if (response && response.statusCode == 200) {
-      setInboxData(response.data);
-      return response.data;
-    }
-  };
+    const [inboxData, setInboxData] = useState<EmailContentType[]>([]);
+    const getEmailContentAction = async (email: string) => {
+        const response = await getEmailContent(email);
+        console.log("New email arrived at your inbox! 1111");
+        if (response && response.statusCode == 200) {
+            if (inboxData.length != response.data.length) {
+                console.log("New email arrived at your inbox!");
+                notifyWithSound(
+                    "Temp Email",
+                    "New email arrived at your inbox!"
+                );
+            }
+            setInboxData(response.data);
+            return response.data;
+        }
+    };
 
-  useEffect(() => {
-    if (emailData) {
-      if (emailData.expiredAt && emailData.expiredAt < new Date()) return;
-      getEmailContentAction(emailData.email);
-      const interval = setInterval(() => {
-        getEmailContentAction(emailData.email);
-      }, 10000);
+    useEffect(() => {
+        if (emailData) {
+            if (emailData.expiredAt && emailData.expiredAt < new Date()) return;
+            getEmailContentAction(emailData.email);
+            const interval = setInterval(() => {
+                getEmailContentAction(emailData.email);
+            }, 10000);
 
-      return () => clearInterval(interval);
-    }
-  }, [emailData]);
+            return () => clearInterval(interval);
+        }
+    }, [emailData]);
 
-  return (
-    <Card className="bg-zinc-900 border-zinc-800">
-      <CardHeader>
-        <CardTitle className="flex items-center justify-between text-zinc-50">
-          <span className="flex items-center gap-2">
-            <Mail className="w-5 h-5" />
-            Inbox
-          </span>
-        </CardTitle>
-        <CardDescription className="text-zinc-400">
-          Emails sent to your temporary address appear here
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        {emailData &&
-        emailData.expiredAt &&
-        emailData.expiredAt < new Date() ? (
-          <span className="text-red-500">
-            Email address has been expired. Please extend time or create new
-            email!!
-          </span>
-        ) : (
-          <InboxEmails inboxData={inboxData} />
-        )}
-      </CardContent>
-    </Card>
-  );
+    return (
+        <Card className="bg-zinc-900 border-zinc-800">
+            <CardHeader>
+                <CardTitle className="flex items-center justify-between text-zinc-50">
+                    <span className="flex items-center gap-2">
+                        <Mail className="w-5 h-5" />
+                        Inbox
+                    </span>
+                </CardTitle>
+                <CardDescription className="text-zinc-400">
+                    Emails sent to your temporary address appear here
+                </CardDescription>
+            </CardHeader>
+            <CardContent>
+                {emailData &&
+                emailData.expiredAt &&
+                emailData.expiredAt < new Date() ? (
+                    <span className="text-red-500">
+                        Email address has been expired. Please extend time or
+                        create new email!!
+                    </span>
+                ) : (
+                    <InboxEmails inboxData={inboxData} />
+                )}
+            </CardContent>
+        </Card>
+    );
 }
