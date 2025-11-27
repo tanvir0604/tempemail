@@ -22,9 +22,9 @@ export default function GenerateTempEmailButton() {
     return (
         <button
             onClick={scrollTop}
-            className={`bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors`}
+            className={`bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer`}
         >
-            <ChevronUp size={20} /> Generate Temporary Email
+            Generate Temporary Email
         </button>
     );
 }
