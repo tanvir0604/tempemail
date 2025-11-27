@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.temp-email.dev
+
+# Sitemaps
+Sitemap: https://www.temp-email.dev/sitemap.xml
