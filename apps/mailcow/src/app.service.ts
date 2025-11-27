@@ -6,7 +6,10 @@ import Imap = require('imap');
 import { simpleParser } from 'mailparser';
 import { ClientProxy } from '@nestjs/microservices';
 
-import { type CreateImapConnectionDto } from '@repo/validation';
+import {
+  DeleteMailCowAliasDto,
+  type CreateImapConnectionDto,
+} from '@repo/validation';
 
 import {
   CreateEmailContentDto,
@@ -87,7 +90,48 @@ export class AppService {
       throw new Error(res.data.error.message);
     }
 
-    return USER_EMAIL;
+    if (res.data[0] && res.data[0].msg[0] == 'alias_added') {
+      return {
+        email: res.data[0].msg[1],
+        emailId: res.data[0].msg[2],
+      };
+    }
+
+    return null;
+  }
+
+  async deleteAlias(domainData: DeleteMailCowAliasDto) {
+    const MAILCOW_API_URL = domainData.apiUrl;
+    const MAILCOW_API_KEY = domainData.apiKey;
+
+    if (!MAILCOW_API_URL) {
+      throw new Error('MAILCOW_API_URL is not set');
+    }
+    if (!MAILCOW_API_KEY) {
+      throw new Error('MAILCOW_API_KEY is not set');
+    }
+
+    const res = await firstValueFrom(
+      this.httpService.post(MAILCOW_API_URL + '/delete/alias', domainData.ids, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': MAILCOW_API_KEY,
+        },
+      }),
+    );
+
+    if (res.data.error) {
+      throw new Error(res.data.error.message);
+    }
+
+    if (res.data[0] && res.data[0].msg[0] == 'alias_removed') {
+      return {
+        email: res.data[0].msg[1],
+        emailId: res.data[0].msg[2],
+      };
+    }
+
+    return null;
   }
 
   initializeImap(

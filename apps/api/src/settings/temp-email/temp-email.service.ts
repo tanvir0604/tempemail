@@ -48,4 +48,10 @@ export class TempEmailService {
       this.settingsClient.send('tempEmail.delete', id),
     );
   }
+
+  async deleteMany(data: { where: {} }) {
+    return await lastValueFrom(
+      this.settingsClient.send('tempEmail.deleteMany', data),
+    );
+  }
 }

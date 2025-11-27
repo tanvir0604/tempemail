@@ -1,7 +1,12 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ClientProxy } from '@nestjs/microservices';
-import { CreateMailCowAliasDto, firstNames, lastNames } from '@repo/validation';
+import {
+  CreateMailCowAliasDto,
+  ExpiredAliasesGroupType,
+  firstNames,
+  lastNames,
+} from '@repo/validation';
 import { firstValueFrom } from 'rxjs';
 import { TempEmailService } from 'src/settings/temp-email/temp-email.service';
 
@@ -47,11 +52,16 @@ export class MailcowService {
   }
   async createNewAlias(data: CreateMailCowAliasDto) {
     const email = await this.generateUniqueEmailUsername(data);
-
     const response = await firstValueFrom(
       this.mailCowClient.send('mailcow.createNewAlias', email),
     );
-    // console.log('response', response);
+    return response;
+  }
+
+  async deleteAlias(data: ExpiredAliasesGroupType) {
+    const response = await firstValueFrom(
+      this.mailCowClient.send('mailcow.deleteAlias', data),
+    );
     return response;
   }
 

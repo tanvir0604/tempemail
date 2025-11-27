@@ -46,6 +46,7 @@ export class TempEmailController {
       },
       {
         email: data.email,
+        emailId: data.emailId,
         expiredAt: new Date(Date.now() + expiredMinutes * 60 * 1000),
       },
     );
@@ -57,6 +58,7 @@ export class TempEmailController {
       { id: data.id },
       {
         email: data.email,
+        emailId: data.emailId,
         expiredAt: data.expiredMinutes
           ? new Date(Date.now() + data.expiredMinutes * 60 * 1000)
           : undefined,
@@ -67,5 +69,10 @@ export class TempEmailController {
   @MessagePattern('tempEmail.delete')
   async delete(id: string) {
     return await this.tempEmailService.delete({ id });
+  }
+
+  @MessagePattern('tempEmail.deleteMany')
+  async deleteMany({ where }: { where: {} }) {
+    return await this.tempEmailService.delete(where);
   }
 }

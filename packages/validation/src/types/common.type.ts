@@ -15,3 +15,8 @@ export type ErrorType = {
     statusCode: number;
     message: string;
 };
+
+export type ExpiredAliasesGroupType = {
+    domain: string;
+    ids: string[];
+};

@@ -1,6 +1,7 @@
-import { Controller } from '@nestjs/common';
+import { BadRequestException, Controller } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MessagePattern, Payload } from '@nestjs/microservices';
+import { ExpiredAliasesGroupType } from '@repo/validation';
 
 @Controller()
 export class AppController {
@@ -10,15 +11,27 @@ export class AppController {
   async createNewAlias(@Payload() email: string) {
     const domainInfo = await this.appService.getDomainInfo(email.split('@')[1]);
     if (!domainInfo || domainInfo.domainUsers.length === 0) {
-      return;
+      return null;
     }
     const randomIndex = Math.floor(
       Math.random() * domainInfo.domainUsers.length,
     );
-    // console.log('randomIndex', randomIndex, domainInfo);
     return await this.appService.createNewAlias({
       username: domainInfo?.domainUsers[randomIndex]?.apiUserName,
       email: email,
+      apiUrl: domainInfo.apiUrl,
+      apiKey: domainInfo.apiKey,
+    });
+  }
+
+  @MessagePattern('mailcow.deleteAlias')
+  async deleteAlias(@Payload() data: ExpiredAliasesGroupType) {
+    const domainInfo = await this.appService.getDomainInfo(data.domain);
+    if (!domainInfo || domainInfo.domainUsers.length === 0) {
+      return null;
+    }
+    return await this.appService.deleteAlias({
+      ids: data.ids,
       apiUrl: domainInfo.apiUrl,
       apiKey: domainInfo.apiKey,
     });

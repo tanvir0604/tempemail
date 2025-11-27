@@ -28,21 +28,10 @@ export class MailcowController {
   ): Promise<SimpleResponseType> {
     // select domain
 
-    const mailCowResponse: any = await this.mailcowService.createNewAlias(data);
-    // store email in db
-    const response = await this.tempEmailService.create({
-      email: mailCowResponse.address,
-      expiredMinutes: 30,
-    });
-
-    if (!response) {
-      throw new BadRequestException();
-    }
-
     return {
       statusCode: HttpStatus.OK,
       message: 'success',
-      data: response,
+      data: null,
     };
   }
 }

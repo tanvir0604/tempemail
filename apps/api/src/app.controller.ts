@@ -4,6 +4,7 @@ import {
   Controller,
   Get,
   HttpStatus,
+  NotFoundException,
   Post,
   UsePipes,
 } from '@nestjs/common';
@@ -11,6 +12,8 @@ import { AppService } from './app.service';
 import {
   CreateMailCowAliasDto,
   CreateMailCowAliasSchema,
+  CreateTempEmailDto,
+  ExpiredAliasesGroupType,
 } from '@repo/validation';
 import { DomainService } from './settings/domain/domain.service';
 import { MailcowService } from './mailcow/mailcow.service';
@@ -48,16 +51,22 @@ export class AppController {
       data.domain = response[index].domain;
     }
 
-    const mailCowResponse = await this.mailcowService.createNewAlias(data);
+    const mailCowResponse: CreateTempEmailDto =
+      await this.mailcowService.createNewAlias(data);
+
+    console.log('mailCowResponse', mailCowResponse);
 
     if (!mailCowResponse) {
       throw new BadRequestException();
     }
 
     const response = await this.tempEmailService.create({
-      email: mailCowResponse,
+      email: mailCowResponse.email,
+      emailId: mailCowResponse.emailId,
       expiredMinutes: 30,
     });
+
+    console.log('response', response);
 
     if (!response) {
       throw new BadRequestException();
@@ -67,6 +76,57 @@ export class AppController {
       statusCode: HttpStatus.OK,
       message: 'success',
       data: response,
+    };
+  }
+
+  @Get('/delete-alias')
+  async deleteAlias() {
+    // get expired alias
+    const hoursAgo = Date.now() - 24 * 60 * 60 * 1000; // 24 hours
+    const expiredAliases = await this.tempEmailService.getList({
+      where: {
+        expiredAt: {
+          lte: new Date(hoursAgo),
+        },
+      },
+      take: 100,
+      skip: 0,
+    });
+
+    if (!expiredAliases) {
+      throw new NotFoundException();
+    }
+
+    const ids: string[] = [];
+
+    const result: ExpiredAliasesGroupType[] = Object.entries(
+      expiredAliases.reduce((acc: any, item: any) => {
+        const domain = item.email.split('@')[1];
+        (acc[domain] ??= []).push(item.emailId);
+        return acc;
+      }, {}),
+    ).map(([domain, ids]) => ({ domain, ids })) as ExpiredAliasesGroupType[];
+
+    let total = 0;
+
+    for (const item of result) {
+      const response = await this.mailcowService.deleteAlias(item);
+      if (!response) continue;
+
+      const response2 = await this.tempEmailService.deleteMany({
+        where: { emailId: { in: item.ids } },
+      });
+      if (!response2) continue;
+
+      total += response2.count ?? 0;
+
+      console.log('response2', response2);
+    }
+
+    return {
+      statusCode: HttpStatus.OK,
+      message: total + ' aliases deleted',
+      data: {},
     };
   }
 }
