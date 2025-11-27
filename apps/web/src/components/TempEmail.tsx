@@ -38,7 +38,6 @@ export default function TempEmail({
     generateNewEmail();
   };
 
-  console.log(emailData);
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [expiredAt, setExpiredAt] = useState<Date>(new Date());
   const [copied, setCopied] = useState(false);

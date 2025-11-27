@@ -16,7 +16,7 @@ export default function InboxEmails({
     Array.isArray(inboxData) ? inboxData : []
   );
 
-  console.log("inboxData", inboxData);
+  // console.log("inboxData", inboxData);
 
   useEffect(() => {
     setInbox(Array.isArray(inboxData) ? inboxData : []);
