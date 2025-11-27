@@ -54,7 +54,7 @@ export class AppController {
     const mailCowResponse: CreateTempEmailDto =
       await this.mailcowService.createNewAlias(data);
 
-    console.log('mailCowResponse', mailCowResponse);
+    // console.log('mailCowResponse', mailCowResponse);
 
     if (!mailCowResponse) {
       throw new BadRequestException();
@@ -66,7 +66,7 @@ export class AppController {
       expiredMinutes: 30,
     });
 
-    console.log('response', response);
+    // console.log('response', response);
 
     if (!response) {
       throw new BadRequestException();
@@ -120,7 +120,7 @@ export class AppController {
 
       total += response2.count ?? 0;
 
-      console.log('response2', response2);
+      // console.log('response2', response2);
     }
 
     return {
