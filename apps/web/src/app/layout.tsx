@@ -5,6 +5,8 @@ import { ThemeProvider } from "next-themes";
 import { Toaster } from "@/components/ui/sonner";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import NotificationPermission from "@/components/NotoficationPermission";
+import Footer from "@/components/_templates/Footer";
+import Logo from "@/components/_templates/Logo";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -17,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Free Temporary Email - Disposable Email Address | TempMail",
+    title: "TempEmail - Free Temporary Email | Disposable Email Address",
     description:
         "Get a free temporary email address instantly. Receive emails anonymously without registration. Features QR code sync, time extension, and safe email viewing with content warnings.",
     keywords: [
@@ -37,12 +39,12 @@ export const metadata: Metadata = {
         "instant email",
         "temporary inbox",
     ],
-    authors: [{ name: "Your Name/Company" }],
+    authors: [{ name: "tempemail" }],
     openGraph: {
         type: "website",
         locale: "en_US",
         url: "https://www.temp-email.dev",
-        title: "Free Temporary Email - Disposable Email Address",
+        title: "TempEmail - Free Temporary Email | Disposable Email Address",
         description:
             "Create instant temporary email addresses. Receive emails safely with QR code sync, time extension, and content safety warnings. No registration required.",
         siteName: "TempMail",
@@ -117,7 +119,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased h-full min-h-screen flex flex-col`}
             >
                 <ThemeProvider
                     attribute="class"
@@ -125,7 +127,14 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    {children}
+                    <header className="py-6">
+                        <Logo />
+                    </header>
+                    <main className="grow bg-zinc-950 text-zinc-100 p-4 md:p-8">
+                        {children}
+                    </main>
+
+                    <Footer />
                     <Toaster />
                 </ThemeProvider>
                 <GoogleAnalytics gaId="G-C408WG5T3N" />
