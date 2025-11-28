@@ -147,3 +147,19 @@ export async function checkEmail(email: string) {
 
     return response;
 }
+
+export async function getFile(filename: string) {
+    const response: SimpleResponseType = await httpRequest({
+        method: "GET",
+        url: "/settings/file/" + filename,
+    });
+
+    if (!response || response.statusCode !== 200) {
+        return {
+            statusCode: 400,
+            message: "Bad Request",
+        };
+    }
+
+    return response;
+}

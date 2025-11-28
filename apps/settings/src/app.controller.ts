@@ -17,7 +17,6 @@ export class AppController {
     const sanitizedFilename = filename.replace(/\.\./g, '');
     const filePath = join(this.filesPath, sanitizedFilename);
 
-    // Check if file exists
     if (!existsSync(filePath)) {
       return false;
     }
@@ -28,7 +27,7 @@ export class AppController {
       return {
         success: true,
         filename: filename,
-        data: fileBuffer.toString(),
+        data: fileBuffer.toString('base64'),
         size: fileBuffer.length,
       };
     } catch (error) {

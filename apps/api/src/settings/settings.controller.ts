@@ -1,10 +1,4 @@
-import {
-  BadGatewayException,
-  Controller,
-  Get,
-  NotFoundException,
-  Param,
-} from '@nestjs/common';
+import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
 import { SettingsService } from './settings.service';
 import { SimpleResponseType } from '@repo/validation';
 

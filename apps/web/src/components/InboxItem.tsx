@@ -11,6 +11,67 @@ import {
 } from "lucide-react";
 import { EmailContentType, sanitize } from "@repo/validation";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import {
+    FileImage,
+    FileSpreadsheet,
+    FileVideo,
+    FileAudio,
+    FileArchive,
+    File,
+} from "lucide-react";
+import Image from "next/image";
+
+const getFileIcon = (filename: string) => {
+    const ext = filename.split(".").pop()?.toLowerCase();
+
+    switch (ext) {
+        case "jpg":
+        case "jpeg":
+        case "png":
+        case "gif":
+        case "webp":
+        case "svg":
+        case "bmp":
+            return FileImage;
+        case "pdf":
+        case "doc":
+        case "docx":
+        case "txt":
+        case "rtf":
+            return FileText;
+        case "xls":
+        case "xlsx":
+        case "csv":
+            return FileSpreadsheet;
+        case "mp4":
+        case "avi":
+        case "mov":
+        case "wmv":
+        case "mkv":
+            return FileVideo;
+        case "mp3":
+        case "wav":
+        case "ogg":
+        case "m4a":
+            return FileAudio;
+        case "zip":
+        case "rar":
+        case "7z":
+        case "tar":
+        case "gz":
+            return FileArchive;
+        default:
+            return File;
+    }
+};
+
+const isImage = (filename: string) => {
+    const ext = filename.split(".").pop()?.toLowerCase();
+    return ["jpg", "jpeg", "png", "gif", "webp", "svg", "bmp"].includes(
+        ext || ""
+    );
+};
 
 export default function InboxItem({ email }: { email: EmailContentType }) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -45,23 +106,22 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                         {"<" + email.from + ">"}
                                     </h3>
 
-                                    <span className="flex gap-4 text-xs text-zinc-500 shrink-0">
-                                        {email.attachments &&
-                                            email.attachments.length > 0 && (
-                                                <span className="flex gap-1 items-center text-xs text-green-700 shrink-0">
-                                                    {email.attachments.length}{" "}
-                                                    <PaperclipIcon className="w-4 h-4" />
-                                                </span>
-                                            )}
-                                        <span>
-                                            {new Date(
-                                                email.createdAt
-                                            ).toLocaleDateString()}
-                                            &nbsp;
-                                            {new Date(
-                                                email.createdAt
-                                            ).toLocaleTimeString()}
-                                        </span>
+                                    {email.attachments &&
+                                        email.attachments.length > 0 && (
+                                            <span className="flex gap-1 items-center text-xs text-zinc-400 shrink-0">
+                                                {email.attachments.length}{" "}
+                                                <PaperclipIcon className="w-4 h-4" />
+                                            </span>
+                                        )}
+
+                                    <span className="text-xs text-zinc-500 shrink-0">
+                                        {new Date(
+                                            email.createdAt
+                                        ).toLocaleDateString()}
+                                        &nbsp;
+                                        {new Date(
+                                            email.createdAt
+                                        ).toLocaleTimeString()}
                                     </span>
                                 </div>
 
@@ -112,31 +172,71 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                                     (
                                                         attachment: any,
                                                         idx: number
-                                                    ) => (
-                                                        <div
-                                                            key={idx}
-                                                            className="flex items-center gap-2 px-3 py-2 bg-zinc-900 rounded-md border border-zinc-800"
-                                                        >
-                                                            <FileText className="w-4 h-4 text-zinc-500" />
-                                                            <span className="text-xs text-zinc-300">
-                                                                {
+                                                    ) => {
+                                                        const FileIcon =
+                                                            getFileIcon(
+                                                                attachment.filename
+                                                            );
+                                                        const showImagePreview =
+                                                            isImage(
+                                                                attachment.filename
+                                                            );
+
+                                                        return (
+                                                            <Link
+                                                                href={
+                                                                    "/api/file/" +
                                                                     attachment.filename
                                                                 }
-                                                            </span>
-                                                            {attachment.size && (
-                                                                <span className="text-xs text-zinc-500">
-                                                                    (
-                                                                    {(
-                                                                        attachment.size /
-                                                                        1024
-                                                                    ).toFixed(
-                                                                        1
-                                                                    )}{" "}
-                                                                    KB)
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                    )
+                                                                title={
+                                                                    attachment.filename
+                                                                }
+                                                                target="_blank"
+                                                                key={idx}
+                                                                className="flex items-center gap-3 px-3 py-2 bg-zinc-900 rounded-md border border-zinc-800 hover:bg-zinc-800 transition-colors"
+                                                            >
+                                                                {/* Image Preview or Icon */}
+                                                                {showImagePreview ? (
+                                                                    <div className="relative w-10 h-10 rounded overflow-hidden shrink-0">
+                                                                        <Image
+                                                                            src={
+                                                                                "/api/file/" +
+                                                                                attachment.filename
+                                                                            }
+                                                                            alt={
+                                                                                attachment.filename
+                                                                            }
+                                                                            fill
+                                                                            className="object-cover"
+                                                                            sizes="40px"
+                                                                        />
+                                                                    </div>
+                                                                ) : (
+                                                                    <FileIcon className="w-5 h-5 text-zinc-500 shrink-0" />
+                                                                )}
+
+                                                                {/* File Info */}
+                                                                <div className="flex flex-col min-w-0 flex-1">
+                                                                    <span className="text-xs text-zinc-300 truncate">
+                                                                        {attachment.filename.slice(
+                                                                            -20
+                                                                        )}
+                                                                    </span>
+                                                                    {attachment.size && (
+                                                                        <span className="text-xs text-zinc-500">
+                                                                            {(
+                                                                                attachment.size /
+                                                                                1024
+                                                                            ).toFixed(
+                                                                                1
+                                                                            )}{" "}
+                                                                            KB
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+                                                            </Link>
+                                                        );
+                                                    }
                                                 )}
                                             </div>
                                         </div>

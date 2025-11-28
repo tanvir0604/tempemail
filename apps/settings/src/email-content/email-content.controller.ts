@@ -82,6 +82,8 @@ export class EmailContentController {
         return {
           filename: item.filename,
           path: `./uploads/${item.filename}`,
+          contentType: item.contentType,
+          size: item.size,
         };
       });
     }
