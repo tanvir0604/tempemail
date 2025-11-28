@@ -312,6 +312,8 @@ export class AppService {
       ? parsed.references[0]
       : parsed.references;
 
+    // this.logger.log(parsed.attachments);
+
     const insertData: CreateEmailContentDto = {
       content: {
         fromName: parsed.from?.value[0]?.name ?? '',
@@ -333,7 +335,8 @@ export class AppService {
       references: references ?? '',
       tempEmailRef: to?.value[0]?.address,
       uid: data.uid ?? 0,
+      attachments: parsed.attachments,
     };
-    this.settingsClient.emit('emailContent.create', insertData);
+    this.settingsClient.emit('emailContent.createEvent', insertData);
   }
 }

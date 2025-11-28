@@ -1,12 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Mail } from "lucide-react";
+import {
+    ChevronDown,
+    FileIcon,
+    FileText,
+    Mail,
+    Paperclip,
+    PaperclipIcon,
+} from "lucide-react";
 import { EmailContentType, sanitize } from "@repo/validation";
 import { cn } from "@/lib/utils";
 
 export default function InboxItem({ email }: { email: EmailContentType }) {
     const [isExpanded, setIsExpanded] = useState(false);
+
+    console.log("email", email);
 
     return (
         <div className="border-zinc-800 bg-zinc-900 rounded-lg border cursor-pointer transition-colors">
@@ -35,14 +44,24 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                         {email.fromName}{" "}
                                         {"<" + email.from + ">"}
                                     </h3>
-                                    <span className="text-xs text-zinc-500 shrink-0">
-                                        {new Date(
-                                            email.createdAt
-                                        ).toLocaleDateString()}
-                                        &nbsp;
-                                        {new Date(
-                                            email.createdAt
-                                        ).toLocaleTimeString()}
+
+                                    <span className="flex gap-4 text-xs text-zinc-500 shrink-0">
+                                        {email.attachments &&
+                                            email.attachments.length > 0 && (
+                                                <span className="flex gap-1 items-center text-xs text-green-700 shrink-0">
+                                                    {email.attachments.length}{" "}
+                                                    <PaperclipIcon className="w-4 h-4" />
+                                                </span>
+                                            )}
+                                        <span>
+                                            {new Date(
+                                                email.createdAt
+                                            ).toLocaleDateString()}
+                                            &nbsp;
+                                            {new Date(
+                                                email.createdAt
+                                            ).toLocaleTimeString()}
+                                        </span>
                                     </span>
                                 </div>
 
@@ -57,21 +76,72 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                 {sanitize(email.text).slice(0, 100)}
                             </p>
                         ) : (
-                            <div
-                                className="text-sm text-zinc-300! whitespace-pre-wrap"
-                                style={{
-                                    all: "unset",
-                                }}
-                                dangerouslySetInnerHTML={{
-                                    __html:
-                                        email.html && email.html !== ""
-                                            ? sanitize(email.html).replace(
-                                                  /color\s*:\s*black/gi,
-                                                  "color: gray"
-                                              )
-                                            : sanitize(email.text),
-                                }}
-                            ></div>
+                            <>
+                                <div
+                                    className="text-sm text-zinc-300! whitespace-pre-wrap"
+                                    style={{
+                                        all: "unset",
+                                    }}
+                                    dangerouslySetInnerHTML={{
+                                        __html:
+                                            email.html && email.html !== ""
+                                                ? sanitize(email.html).replace(
+                                                      /color\s*:\s*black/gi,
+                                                      "color: gray"
+                                                  )
+                                                : sanitize(email.text),
+                                    }}
+                                ></div>
+
+                                {email.attachments &&
+                                    email.attachments.length > 0 && (
+                                        <div className="mt-4 pt-3 border-t border-zinc-800">
+                                            <div className="flex items-center gap-2 text-xs text-zinc-400 mb-2">
+                                                <Paperclip className="w-4 h-4" />
+                                                <span>
+                                                    {email.attachments.length}{" "}
+                                                    attachment
+                                                    {email.attachments.length >
+                                                    1
+                                                        ? "s"
+                                                        : ""}
+                                                </span>
+                                            </div>
+                                            <div className="flex flex-wrap gap-2">
+                                                {email.attachments.map(
+                                                    (
+                                                        attachment: any,
+                                                        idx: number
+                                                    ) => (
+                                                        <div
+                                                            key={idx}
+                                                            className="flex items-center gap-2 px-3 py-2 bg-zinc-900 rounded-md border border-zinc-800"
+                                                        >
+                                                            <FileText className="w-4 h-4 text-zinc-500" />
+                                                            <span className="text-xs text-zinc-300">
+                                                                {
+                                                                    attachment.filename
+                                                                }
+                                                            </span>
+                                                            {attachment.size && (
+                                                                <span className="text-xs text-zinc-500">
+                                                                    (
+                                                                    {(
+                                                                        attachment.size /
+                                                                        1024
+                                                                    ).toFixed(
+                                                                        1
+                                                                    )}{" "}
+                                                                    KB)
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                    )
+                                                )}
+                                            </div>
+                                        </div>
+                                    )}
+                            </>
                         )}
                     </div>
 

@@ -9,6 +9,7 @@ import { DomainController } from './domain/domain.controller';
 import { DomainService } from './domain/domain.service';
 import { DomainUserService } from './domain-user/domain-user.service';
 import { DomainUserController } from './domain-user/domain-user.controller';
+import { SettingsService } from './settings.service';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { DomainUserController } from './domain-user/domain-user.controller';
     EmailContentService,
     DomainService,
     DomainUserService,
+    SettingsService,
   ],
   exports: [TempEmailService, DomainService],
 })

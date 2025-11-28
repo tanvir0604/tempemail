@@ -10,4 +10,5 @@ export type EmailContentType = {
     references: string;
     uid: number;
     createdAt: Date;
+    attachments: any;
 };
