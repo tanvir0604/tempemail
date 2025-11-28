@@ -266,7 +266,7 @@ export class AppService {
                   messageId: parsed.messageId ?? '',
                   references: references ?? '',
                   tempEmailRef: to?.value[0]?.address,
-                  uid: uid,
+                  uid: uid ?? 0,
                 };
                 // this.logger.log('Inserting message', insertData, parsed);
                 await lastValueFrom(
