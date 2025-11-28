@@ -3,6 +3,18 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true
+  },
+  "projects": {
+    "imap-flow": {
+      "type": "library",
+      "root": "libs/imap-flow",
+      "entryFile": "index",
+      "sourceRoot": "libs/imap-flow/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/imap-flow/tsconfig.lib.json"
+      }
+    }
   }
 }

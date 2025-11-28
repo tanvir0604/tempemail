@@ -1,6 +1,6 @@
 import { BadRequestException, Controller } from '@nestjs/common';
 import { AppService } from './app.service';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+import { EventPattern, MessagePattern, Payload } from '@nestjs/microservices';
 import { ExpiredAliasesGroupType } from '@repo/validation';
 
 @Controller()
@@ -35,5 +35,10 @@ export class AppController {
       apiUrl: domainInfo.apiUrl,
       apiKey: domainInfo.apiKey,
     });
+  }
+
+  @EventPattern('mailcow.processEmailContent')
+  async processEmailContent(@Payload() data: { source: string; uid: number }) {
+    await this.appService.processEmailContent(data);
   }
 }

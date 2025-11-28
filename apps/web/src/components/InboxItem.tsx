@@ -60,7 +60,7 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                             <div
                                 className="text-sm text-zinc-300! whitespace-pre-wrap"
                                 style={{
-                                    all: "initial",
+                                    all: "unset",
                                 }}
                                 dangerouslySetInnerHTML={{
                                     __html:

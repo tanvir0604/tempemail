@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { EmailContentService } from './email-content.service';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+import { EventPattern, MessagePattern, Payload } from '@nestjs/microservices';
 import {
   CreateEmailContentDto,
   FindAllDto,
@@ -42,6 +42,30 @@ export class EmailContentController {
     data.text = sanitize(data.text ?? '');
     data.html = sanitize(data.html ?? '');
     return await this.emailContentService.upsert(
+      { messageId: data.messageId },
+      {},
+      {
+        content: data.content,
+        to: data.to,
+        from: data.from,
+        fromName: data.fromName,
+        subject: data.subject,
+        text: data.text,
+        html: data.html,
+        messageId: data.messageId,
+        references: data.references,
+        tempEmail: { connect: { email: data.tempEmailRef } },
+        uid: data.uid ?? 0,
+      },
+    );
+  }
+
+  @EventPattern('emailContent.create')
+  async createEvent(data: CreateEmailContentDto) {
+    data.subject = sanitize(data.subject ?? '');
+    data.text = sanitize(data.text ?? '');
+    data.html = sanitize(data.html ?? '');
+    this.emailContentService.upsert(
       { messageId: data.messageId },
       {},
       {

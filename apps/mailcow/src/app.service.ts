@@ -1,6 +1,5 @@
 import { HttpService } from '@nestjs/axios';
 import { Inject, Injectable, Logger } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { firstValueFrom, lastValueFrom } from 'rxjs';
 import Imap = require('imap');
 import { simpleParser } from 'mailparser';
@@ -16,6 +15,7 @@ import {
   CreateMailCowNewAliasDto,
   sanitize,
 } from '@repo/validation';
+import { ImapFlowService } from '@app/imap-flow';
 
 @Injectable()
 export class AppService {
@@ -24,7 +24,7 @@ export class AppService {
   private readonly logger = new Logger(AppService.name);
   constructor(
     private readonly httpService: HttpService,
-    private configService: ConfigService,
+    private readonly imapFlowService: ImapFlowService,
     @Inject('SETTINGS_SERVICE') readonly settingsClient: ClientProxy,
   ) {}
 
@@ -42,8 +42,14 @@ export class AppService {
       // console.log('domain', domain);
       if (domain.domainUsers && domain.domainUsers.length > 0) {
         for (const domainUser of domain.domainUsers) {
-          // console.log('domainUser', domainUser);
-          this.initializeImap({
+          // this.initializeImap({
+          //   host: domain.imapHost,
+          //   port: domain.imapPort,
+          //   username: domainUser.imapUserName,
+          //   password: domainUser.imapPassword,
+          // });
+
+          this.imapFlowService.createClient({
             host: domain.imapHost,
             port: domain.imapPort,
             username: domainUser.imapUserName,
@@ -290,5 +296,44 @@ export class AppService {
     return await lastValueFrom(
       this.settingsClient.send('domain.findOne', { domain: domain }),
     );
+  }
+
+  async processEmailContent(data: { source: string; uid: number }) {
+    const parsed = await simpleParser(data.source);
+
+    const to = Array.isArray(parsed.to) ? parsed.to[0] : parsed.to;
+    if (!to?.value?.[0]?.address || !parsed.from?.value?.[0]?.address) return;
+
+    const subject = sanitize(parsed.subject ?? '');
+    const text = sanitize(parsed.text ?? '');
+    const html = sanitize(parsed.html ? parsed.html : '');
+
+    const references = Array.isArray(parsed.references)
+      ? parsed.references[0]
+      : parsed.references;
+
+    const insertData: CreateEmailContentDto = {
+      content: {
+        fromName: parsed.from?.value[0]?.name ?? '',
+        from: parsed.from?.value[0]?.address ?? '',
+        to: to?.value[0]?.address ?? '',
+        subject: subject,
+        text: text,
+        html: html,
+        messageId: parsed.messageId ?? '',
+        references: references ?? '',
+      },
+      fromName: parsed.from?.value[0]?.name ?? '',
+      from: parsed.from?.value[0]?.address ?? '',
+      to: to?.value[0]?.address ?? '',
+      subject: subject,
+      text: text,
+      html: html,
+      messageId: parsed.messageId ?? '',
+      references: references ?? '',
+      tempEmailRef: to?.value[0]?.address,
+      uid: data.uid ?? 0,
+    };
+    this.settingsClient.emit('emailContent.create', insertData);
   }
 }
