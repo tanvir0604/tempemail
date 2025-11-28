@@ -17,8 +17,6 @@ export default async function handler(
         return;
     }
 
-    console.log(file.data.data);
-
     const fileBuffer = Buffer.from(file.data.data, "base64");
 
     const mimeTypes: Record<string, string> = {
