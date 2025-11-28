@@ -18,7 +18,7 @@ import {
 } from "./ui/card";
 
 import { Input } from "./ui/input";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { TempEmailType } from "@repo/validation";
@@ -33,9 +33,10 @@ export default function TempEmail({
     emailData: TempEmailType | undefined;
     generateNewEmail: () => void;
 }) {
+    const [pending, startTransition] = useTransition();
     const generateNewEmailAction = () => {
         localStorage.removeItem("temp_email");
-        generateNewEmail();
+        startTransition(() => generateNewEmail());
     };
 
     const [email, setEmail] = useState<string | undefined>(undefined);
@@ -146,11 +147,15 @@ export default function TempEmail({
                         <Button
                             variant="outline"
                             size="sm"
-                            disabled={!email}
+                            disabled={!email || pending}
                             onClick={generateNewEmailAction}
                             className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
                         >
-                            <RefreshCw className="w-4 h-4 mr-2" />
+                            {pending ? (
+                                <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />
+                            ) : (
+                                <RefreshCw className="w-4 h-4 mr-2" />
+                            )}
                             New Email
                         </Button>
                     </div>
