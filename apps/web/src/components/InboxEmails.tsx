@@ -5,6 +5,7 @@ import { Loader2 } from "lucide-react";
 import { Skeleton } from "./ui/skeleton";
 import { EmailContentType } from "@repo/validation";
 import InboxItem from "./InboxItem";
+import { Input } from "./ui/input";
 
 export default function InboxEmails({
     inboxData,
@@ -44,6 +45,10 @@ export default function InboxEmails({
                         >
                             {inbox.length} email(s) in your inbox
                         </Badge>
+                        {/* <Input
+                            placeholder="search.."
+                            className="max-w-[200px]"
+                        /> */}
                         <Loader2 className="h-6 w-6 animate-spin text-gray-500" />
                     </div>
 
