@@ -55,7 +55,7 @@ export class EmailContentController {
         messageId: data.messageId,
         references: data.references,
         tempEmail: { connect: { email: data.tempEmailRef } },
-        uid: data.uid,
+        uid: data.uid ?? 0,
       },
     );
   }
