@@ -18,6 +18,7 @@ import { toast } from 'sonner';
 import { useTransition } from 'react';
 import { extendTime } from '@/lib/actions';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function ExtendTime({
     emailData,
@@ -27,6 +28,8 @@ export default function ExtendTime({
     disabled: boolean;
 }) {
     const [pending, startTransition] = useTransition();
+    const t = useTranslations('HomePage');
+    const c = useTranslations('Common');
     const extendTimeAction = () => {
         if (!emailData) return;
         startTransition(async () => {
@@ -59,30 +62,29 @@ export default function ExtendTime({
                     {pending ? (
                         <span className="flex gap-2">
                             <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />{' '}
-                            Extending...
+                            {t('extending')}...
                         </span>
                     ) : (
-                        <span>Extend Time</span>
+                        <span>{t('extend_time')}</span>
                     )}
                 </Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Extend Time?</AlertDialogTitle>
+                    <AlertDialogTitle>{t('extend_time')}?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You are about to extend the time for this email for
-                        another 30 minutes.
+                        {t('extend_time_alert_text')}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel className="cursor-pointer">
-                        Cancel
+                        {c('cancel')}
                     </AlertDialogCancel>
                     <AlertDialogAction
                         onClick={extendTimeAction}
                         className="cursor-pointer"
                     >
-                        Continue
+                        {c('continue')}
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>

@@ -5,10 +5,12 @@ import { TempEmailType } from '@repo/validation';
 import { checkEmail, generateTempEmail, getTempEmail } from '@/lib/actions';
 import TempEmail from './TempEmail';
 import Inbox from './Inbox';
+import { usePersistentUniqueId } from '@/hooks/PersistentUniqueId';
 
 export default function EmailContainer({ id }: { id?: string }) {
     const [emailData, setEmailData] = useState<TempEmailType>();
     const [generatingEmail, setGeneratingEmail] = useState(false);
+    const userID = usePersistentUniqueId();
 
     const generateTempEmailAction = async () => {
         setGeneratingEmail(true);
@@ -38,6 +40,7 @@ export default function EmailContainer({ id }: { id?: string }) {
                     setEmailData({
                         ...getEmailData,
                         expiredAt: new Date(getEmailData.expiredAt),
+                        waitTille: new Date(getEmailData.waitTill),
                     });
                     setGeneratingEmail(false);
                     return;
@@ -46,6 +49,7 @@ export default function EmailContainer({ id }: { id?: string }) {
                 setEmailData({
                     ...getEmailData,
                     expiredAt: new Date(getEmailData.expiredAt),
+                    waitTille: new Date(getEmailData.waitTill),
                 });
                 setGeneratingEmail(false);
                 return;
@@ -53,11 +57,13 @@ export default function EmailContainer({ id }: { id?: string }) {
         }
 
         console.log('generating temp email');
-        const response = await generateTempEmail();
+        const response = await generateTempEmail(userID ?? undefined);
         if (response && response.statusCode == 200) {
+            console.log('response', response);
             setEmailData({
                 ...response.data,
                 expiredAt: new Date(response.data.expiredAt),
+                waitTille: new Date(response.data.waitTill),
             });
             localStorage.setItem('temp_email', JSON.stringify(response.data));
             setGeneratingEmail(false);
@@ -72,6 +78,7 @@ export default function EmailContainer({ id }: { id?: string }) {
             setEmailData({
                 ...response.data,
                 expiredAt: new Date(response.data.expiredAt),
+                waitTille: new Date(response.data.waitTill),
             });
             return response.data;
         }

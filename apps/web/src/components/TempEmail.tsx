@@ -9,6 +9,12 @@ import {
     CardTitle,
 } from './ui/card';
 
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
+} from '@/components/ui/tooltip';
+
 import { Input } from './ui/input';
 import { useEffect, useState, useTransition } from 'react';
 import { Button } from './ui/button';
@@ -18,6 +24,7 @@ import TimeLeft from './TimeLeft';
 import QRCode from './QRCode';
 import ExtendTime from './ExtendTime';
 import DeleteEmailButton from './DeleteEmailButton';
+import { useTranslations } from 'next-intl';
 
 export default function TempEmail({
     emailData,
@@ -28,6 +35,7 @@ export default function TempEmail({
     generateNewEmail: () => void;
     generatingEmail?: boolean;
 }) {
+    const t = useTranslations('HomePage');
     const [pending, startTransition] = useTransition();
     const generateNewEmailAction = () => {
         localStorage.removeItem('temp_email');
@@ -54,15 +62,19 @@ export default function TempEmail({
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
+
+    console.log('emailData', emailData);
+
     return (
         <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-zinc-50">
                     <Mail className="w-5 h-5" />
-                    Your Temporary Email Address
+                    {t('your_temp_email')}
                 </CardTitle>
                 <CardDescription className="text-zinc-400">
-                    This email will expire in <TimeLeft expiredAt={expiredAt} />
+                    {t('this_email_will_expire')}{' '}
+                    <TimeLeft expiredAt={expiredAt} />
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -90,7 +102,7 @@ export default function TempEmail({
                         >
                             {copied ? (
                                 <span className="text-green-500 text-xs font-medium">
-                                    Copied!
+                                    {t('copied')}!
                                 </span>
                             ) : (
                                 <Copy className="w-4 h-4" />
@@ -129,7 +141,7 @@ export default function TempEmail({
                             className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
                         >
                             <Copy className="w-4 h-4 mr-2" />
-                            Copy
+                            {t('copy')}
                         </Button>
                         <QRCode
                             url={
@@ -159,20 +171,39 @@ export default function TempEmail({
                             disabled={!email || generatingEmail || pending}
                         />
 
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            disabled={!email || generatingEmail || pending}
-                            onClick={generateNewEmailAction}
-                            className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
-                        >
-                            {pending || generatingEmail ? (
-                                <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />
-                            ) : (
-                                <RefreshCw className="w-4 h-4 mr-2" />
-                            )}
-                            New Email
-                        </Button>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    title={t('new_email')}
+                                    disabled={
+                                        !email ||
+                                        generatingEmail ||
+                                        pending ||
+                                        (emailData?.waitTille &&
+                                            emailData?.waitTille > new Date())
+                                    }
+                                    onClick={generateNewEmailAction}
+                                    className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
+                                >
+                                    {pending || generatingEmail ? (
+                                        <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />
+                                    ) : (
+                                        <RefreshCw className="w-4 h-4 mr-2" />
+                                    )}
+                                    {emailData?.waitTille &&
+                                    emailData?.waitTille > new Date() ? (
+                                        <TimeLeft
+                                            expiredAt={emailData?.waitTille}
+                                        />
+                                    ) : (
+                                        <>{t('new_email')}</>
+                                    )}
+                                </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>{t('new_email')}</TooltipContent>
+                        </Tooltip>
 
                         <DeleteEmailButton
                             emailData={emailData ?? undefined}

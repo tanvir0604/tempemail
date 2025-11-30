@@ -1,12 +1,16 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+import '@/app/globals.css';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from '@/components/ui/sonner';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import NotificationPermission from '@/components/NotoficationPermission';
 import Footer from '@/components/_templates/Footer';
 import Logo from '@/components/_templates/Logo';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { routing } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
+import { getMessages } from 'next-intl/server';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -111,36 +115,47 @@ export const jsonLd = {
     permissions: 'No registration required',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
+    params,
 }: Readonly<{
     children: React.ReactNode;
+    params: Promise<{ locale: string }>;
 }>) {
+    const { locale } = await params;
+    if (!hasLocale(routing.locales, locale)) {
+        notFound();
+    }
+    const messages = await getMessages({
+        locale: locale,
+    });
     return (
         <html lang="en" suppressHydrationWarning>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased h-full min-h-screen flex flex-col`}
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    <header className="py-6">
-                        <Logo />
-                    </header>
-                    <main className="grow bg-zinc-950 text-zinc-100 p-4 md:p-8">
-                        {children}
-                    </main>
+                <NextIntlClientProvider messages={messages} locale={locale}>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="system"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        <header className="py-6">
+                            <Logo />
+                        </header>
+                        <main className="grow bg-zinc-950 text-zinc-100 p-4 md:p-8">
+                            {children}
+                        </main>
 
-                    <Footer />
-                    <Toaster />
-                </ThemeProvider>
-                {process.env.NODE_ENV == 'production' && (
-                    <GoogleAnalytics gaId="G-C408WG5T3N" />
-                )}
-                <NotificationPermission />
+                        <Footer />
+                        <Toaster />
+                    </ThemeProvider>
+                    {process.env.NODE_ENV == 'production' && (
+                        <GoogleAnalytics gaId="G-C408WG5T3N" />
+                    )}
+                    <NotificationPermission />
+                </NextIntlClientProvider>
             </body>
         </html>
     );

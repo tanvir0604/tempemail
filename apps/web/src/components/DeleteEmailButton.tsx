@@ -17,6 +17,7 @@ import { useTransition } from 'react';
 import { deleteEmail } from '@/lib/actions';
 import { toast } from 'sonner';
 import { TempEmailType } from '@repo/validation';
+import { useTranslations } from 'next-intl';
 
 export default function DeleteEmailButton({
     emailData,
@@ -26,6 +27,8 @@ export default function DeleteEmailButton({
     disabled?: boolean;
 }) {
     const [pending, startTransition] = useTransition();
+    const t = useTranslations('HomePage');
+    const c = useTranslations('Common');
 
     const deleteEmailAction = () => {
         startTransition(async () => {
@@ -53,10 +56,10 @@ export default function DeleteEmailButton({
                     {pending ? (
                         <span className="flex gap-2">
                             <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />{' '}
-                            Deleting...
+                            {t('deleting')}...
                         </span>
                     ) : (
-                        <span>Delete Email</span>
+                        <span>{t('delete_email')}</span>
                     )}
                 </Button>
             </AlertDialogTrigger>
@@ -64,20 +67,19 @@ export default function DeleteEmailButton({
                 <AlertDialogHeader>
                     <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You are about to delete this email. This action cannot
-                        be undone. All data will be permanently deleted.
+                        {t('delete_email_alert_text')}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel className="cursor-pointer">
-                        Cancel
+                        {c('cancel')}
                     </AlertDialogCancel>
                     <AlertDialogAction
                         disabled={pending || disabled}
                         onClick={deleteEmailAction}
                         className="cursor-pointer"
                     >
-                        Continue
+                        {c('continue')}
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>

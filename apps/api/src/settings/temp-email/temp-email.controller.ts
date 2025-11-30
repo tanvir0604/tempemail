@@ -59,6 +59,7 @@ export class TempEmailController {
 
   @Post()
   async create(@Body() data: CreateTempEmailDto) {
+    console.log('data', data);
     const res = await this.tempEmailService.create(data);
     if (!res) {
       throw new BadRequestException();

@@ -13,6 +13,8 @@ interface RequestOptions<T = unknown> {
     params?: Record<string, unknown>;
     headers?: Record<string, string>;
     auth?: boolean;
+    clientIp?: string;
+    userAgent?: string;
 }
 
 export async function revalidate(path: string) {
@@ -70,11 +72,11 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
     }
 }
 
-export async function generateTempEmail() {
+export async function generateTempEmail(userId?: string) {
     const response: SimpleResponseType = await httpRequest({
         method: 'POST',
         url: '/create-alias',
-        data: {},
+        data: { userId },
     });
     if (!response) {
         return {

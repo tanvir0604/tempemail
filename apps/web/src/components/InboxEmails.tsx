@@ -6,12 +6,14 @@ import { Skeleton } from './ui/skeleton';
 import { EmailContentType } from '@repo/validation';
 import InboxItem from './InboxItem';
 import { Input } from './ui/input';
+import { useTranslations } from 'next-intl';
 
 export default function InboxEmails({
     inboxData,
 }: {
     inboxData: EmailContentType[];
 }) {
+    const t = useTranslations('HomePage');
     const [inbox, setInbox] = useState<EmailContentType[]>(
         Array.isArray(inboxData) ? inboxData : [],
     );
@@ -27,7 +29,7 @@ export default function InboxEmails({
                         variant="secondary"
                         className="bg-zinc-800 text-zinc-300"
                     >
-                        Checking inbox for new emails ....
+                        {t('checking_inbox_text')} ....
                     </Badge>
                     <Skeleton className="h-[100px] w-full" />
                     <Skeleton className="h-[100px] w-full" />
@@ -40,7 +42,7 @@ export default function InboxEmails({
                             variant="secondary"
                             className="bg-zinc-800 text-zinc-300"
                         >
-                            {inbox.length} email(s) in your inbox
+                            {inbox.length} {t('emails_in_inbox')}
                         </Badge>
                         {/* <Input
                             placeholder="search.."

@@ -32,6 +32,36 @@ export class AppController {
   @Post('/create-alias')
   @UsePipes(new ZodValidationPipe(CreateMailCowAliasSchema))
   async createAlias(@Body() data: CreateMailCowAliasDto) {
+    let waitTill = new Date();
+    if (data && data.userId) {
+      const response = await this.tempEmailService.getList({
+        where: {
+          userId: data.userId,
+          createdAt: { gt: new Date(Date.now() - 24 * 60 * 60 * 1000) },
+        },
+        orderBy: { createdAt: 'desc' },
+        take: 5,
+        skip: 0,
+      });
+      if (!response) {
+        throw new BadRequestException();
+      }
+
+      if (response.length > 10) {
+        waitTill = new Date(
+          new Date(response[response.length - 1].createdAt).getTime() +
+            24 * 60 * 60 * 1000,
+        );
+      }
+
+      if (response.length > 0) {
+        waitTill = new Date(
+          new Date(response[response.length - 1].createdAt).getTime() +
+            (response.length / 10) * 60 * 60 * 1000,
+        );
+      }
+    }
+
     if (data && data.domain) {
       const response = await this.domainService.findOne({
         where: { domain: data.domain },
@@ -64,6 +94,7 @@ export class AppController {
       email: mailCowResponse.email,
       emailId: mailCowResponse.emailId,
       expiredMinutes: 30,
+      userId: data.userId,
     });
 
     // console.log('response', response);
@@ -71,6 +102,8 @@ export class AppController {
     if (!response) {
       throw new BadRequestException();
     }
+
+    response.waitTill = waitTill;
 
     return {
       statusCode: HttpStatus.OK,

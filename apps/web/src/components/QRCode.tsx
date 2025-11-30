@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { QRCodeCanvas } from 'qrcode.react';
 import { Button } from './ui/button';
 import { QrCode } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function QRCode({
     url,
@@ -13,6 +14,7 @@ export default function QRCode({
     disabled?: boolean;
 }) {
     const [hover, setHover] = useState(false);
+    const t = useTranslations('HomePage');
 
     return (
         <div className="relative inline-block">
@@ -24,7 +26,7 @@ export default function QRCode({
                 className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
             >
                 <QrCode className="w-4 h-4 mr-2" />
-                QR Code
+                {t('qr_code')}
             </Button>
 
             {hover && (

@@ -1,5 +1,5 @@
-import z from "zod";
-import { GetListSchema } from "./common.schemas";
+import z from 'zod';
+import { GetListSchema } from './common.schemas';
 
 export const GetTempEmailListSchema = GetListSchema;
 
@@ -9,6 +9,7 @@ export const CreateTempEmailSchema = z.object({
     email: z.email(),
     emailId: z.string(),
     expiredMinutes: z.number().optional(),
+    userId: z.string().optional(),
 });
 
 export type CreateTempEmailDto = z.infer<typeof CreateTempEmailSchema>;

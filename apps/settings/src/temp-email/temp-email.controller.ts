@@ -11,8 +11,8 @@ import {
 export class TempEmailController {
   constructor(private readonly tempEmailService: TempEmailService) {}
   @MessagePattern('tempEmail.findAll')
-  findAll(@Payload() { where, take, skip }: FindAllDto) {
-    return this.tempEmailService.findAll({ where, take, skip });
+  findAll(@Payload() { where, take, skip, orderBy }: FindAllDto) {
+    return this.tempEmailService.findAll({ where, take, skip, orderBy });
   }
 
   @MessagePattern('tempEmail.findOne')
@@ -46,6 +46,7 @@ export class TempEmailController {
         email: data.email,
         emailId: data.emailId,
         expiredAt: new Date(Date.now() + expiredMinutes * 60 * 1000),
+        userId: data.userId,
       },
     );
   }
