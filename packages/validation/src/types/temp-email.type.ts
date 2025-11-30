@@ -1,5 +1,6 @@
 export type TempEmailType = {
-  id: string;
-  email: string;
-  expiredAt: Date;
+    id: string;
+    emailId: string;
+    email: string;
+    expiredAt: Date;
 };

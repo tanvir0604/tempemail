@@ -1,30 +1,23 @@
-"use client";
+'use client';
 
-import {
-    Clock,
-    Copy,
-    Loader2Icon,
-    Mail,
-    QrCode,
-    RefreshCw,
-    Share2,
-} from "lucide-react";
+import { Clock, Copy, Loader2Icon, Mail, RefreshCw } from 'lucide-react';
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from "./ui/card";
+} from './ui/card';
 
-import { Input } from "./ui/input";
-import { useEffect, useState, useTransition } from "react";
-import { Button } from "./ui/button";
-import { Separator } from "./ui/separator";
-import { TempEmailType } from "@repo/validation";
-import TimeLeft from "./TimeLeft";
-import QRCode from "./QRCode";
-import ExtendTime from "./ExtendTime";
+import { Input } from './ui/input';
+import { useEffect, useState, useTransition } from 'react';
+import { Button } from './ui/button';
+import { Separator } from './ui/separator';
+import { TempEmailType } from '@repo/validation';
+import TimeLeft from './TimeLeft';
+import QRCode from './QRCode';
+import ExtendTime from './ExtendTime';
+import DeleteEmailButton from './DeleteEmailButton';
 
 export default function TempEmail({
     emailData,
@@ -35,7 +28,7 @@ export default function TempEmail({
 }) {
     const [pending, startTransition] = useTransition();
     const generateNewEmailAction = () => {
-        localStorage.removeItem("temp_email");
+        localStorage.removeItem('temp_email');
         startTransition(() => generateNewEmail());
     };
 
@@ -47,13 +40,15 @@ export default function TempEmail({
         if (emailData) {
             setEmail(emailData.email);
             setExpiredAt(
-                emailData.expiredAt ? new Date(emailData.expiredAt) : new Date()
+                emailData.expiredAt
+                    ? new Date(emailData.expiredAt)
+                    : new Date(),
             );
         }
     }, [emailData]);
 
     const copyEmail = () => {
-        navigator.clipboard.writeText(email ?? "");
+        navigator.clipboard.writeText(email ?? '');
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -72,7 +67,7 @@ export default function TempEmail({
                 {/* Email Display */}
                 <div className="flex items-center gap-2 p-4 bg-zinc-950 border border-zinc-800 rounded-lg">
                     <Input
-                        value={email ?? "Generating email..."}
+                        value={email ?? 'Generating email...'}
                         readOnly
                         className="flex-1 bg-transparent border-none text-lg font-mono text-zinc-100 focus-visible:ring-0 focus-visible:ring-offset-0"
                     />
@@ -127,7 +122,7 @@ export default function TempEmail({
                         <QRCode
                             url={
                                 process.env.NEXT_PUBLIC_BASE_URL +
-                                "/" +
+                                '/' +
                                 emailData?.id
                             }
                             disabled={!email || expiredAt < new Date()}
@@ -158,6 +153,8 @@ export default function TempEmail({
                             )}
                             New Email
                         </Button>
+
+                        <DeleteEmailButton emailData={emailData ?? undefined} />
                     </div>
                 </div>
             </CardContent>

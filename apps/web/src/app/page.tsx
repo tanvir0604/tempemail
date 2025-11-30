@@ -18,7 +18,7 @@ export default async function HomePage() {
         </p>
       </section>
 
-      <section className="py-16 space-y-6">
+      <section className="py-8 md:py-16 space-y-6">
         <Suspense
           fallback={
             <div>
@@ -34,7 +34,7 @@ export default async function HomePage() {
         </Suspense>
       </section>
 
-      <section className="py-16 px-4 bg-zinc-900/50">
+      <section className="py-8 md:py-16 md:px-4 md:bg-zinc-900 blockquote">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center">
             What is a Temporary Email Address?
@@ -60,7 +60,7 @@ export default async function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4">
+      <section className="py-8 md:py-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Why Choose TempEmail?
@@ -141,14 +141,14 @@ export default async function HomePage() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-16 px-4 bg-zinc-900/50">
+      <section className="py-8 md:py-16 md:px-4 md:bg-zinc-900">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">
             When to Use a Temporary Email?
           </h2>
 
           <div className="space-y-4">
-            <div className="flex gap-4 bg-zinc-900 p-5 rounded-lg border border-zinc-800">
+            <div className="flex gap-4 bg-zinc-950/20 p-5 rounded-lg border border-zinc-800">
               <Check className="w-6 h-6 text-blue-500 shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg mb-2">
@@ -161,7 +161,7 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="flex gap-4 bg-zinc-900 p-5 rounded-lg border border-zinc-800">
+            <div className="flex gap-4 bg-zinc-950/20 p-5 rounded-lg border border-zinc-800">
               <Check className="w-6 h-6 text-blue-500 shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg mb-2">
@@ -174,7 +174,7 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="flex gap-4 bg-zinc-900 p-5 rounded-lg border border-zinc-800">
+            <div className="flex gap-4 bg-zinc-950/20 p-5 rounded-lg border border-zinc-800">
               <Check className="w-6 h-6 text-blue-500 shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg mb-2">
@@ -187,7 +187,7 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="flex gap-4 bg-zinc-900 p-5 rounded-lg border border-zinc-800">
+            <div className="flex gap-4 bg-zinc-950/20 p-5 rounded-lg border border-zinc-800">
               <Check className="w-6 h-6 text-blue-500 shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg mb-2">Avoiding Spam</h3>
@@ -198,7 +198,7 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="flex gap-4 bg-zinc-900 p-5 rounded-lg border border-zinc-800">
+            <div className="flex gap-4 bg-zinc-950/20 p-5 rounded-lg border border-zinc-800">
               <Check className="w-6 h-6 text-blue-500 shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg mb-2">
@@ -215,8 +215,8 @@ export default async function HomePage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-8 md:py-16 md:px-4">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">
             How Does TempEmail Work?
           </h2>
@@ -259,14 +259,14 @@ export default async function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4 bg-zinc-900/50">
+      <section className="py-8 md:py-16 md:px-4 md:bg-zinc-900">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">
             Frequently Asked Questions
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+            <div className="bg-zinc-950/20 p-6 rounded-xl border border-zinc-800">
               <h3 className="text-lg font-semibold mb-3">
                 Is TempEmail really free?
               </h3>
@@ -277,7 +277,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+            <div className="bg-zinc-950/20 p-6 rounded-xl border border-zinc-800">
               <h3 className="text-lg font-semibold mb-3">
                 How long does a temporary email last?
               </h3>
@@ -288,7 +288,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+            <div className="bg-zinc-950/20 p-6 rounded-xl border border-zinc-800">
               <h3 className="text-lg font-semibold mb-3">
                 Can I send emails from my temporary address?
               </h3>
@@ -298,7 +298,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+            <div className="bg-zinc-950/20 p-6 rounded-xl border border-zinc-800">
               <h3 className="text-lg font-semibold mb-3">
                 Is it safe to use temporary email for important registrations?
               </h3>
@@ -309,7 +309,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+            <div className="bg-zinc-950/20 p-6 rounded-xl border border-zinc-800">
               <h3 className="text-lg font-semibold mb-3">
                 Do you store my emails?
               </h3>
@@ -324,7 +324,7 @@ export default async function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 text-center">
+      <section className="py-8 md:py-20 md:px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <h2 className="text-4xl font-bold">
             Start Protecting Your Privacy Today
@@ -339,9 +339,9 @@ export default async function HomePage() {
       </section>
 
       {/* Trust Signals */}
-      <section className="py-12 px-4 border-t border-zinc-800">
+      <section className="py-6 md:py-12 px-4 border-t border-zinc-800">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-blue-500 mb-2">100%</div>
               <div className="text-zinc-400">Free Forever</div>

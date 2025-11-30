@@ -83,24 +83,27 @@ export class AppService {
       goto: MAILCOW_USERNAME,
     };
 
-    const res = await firstValueFrom(
-      this.httpService.post(MAILCOW_API_URL + '/add/alias', data, {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-API-Key': MAILCOW_API_KEY,
+    try {
+      const response = this.httpService.post(
+        MAILCOW_API_URL + '/add/alias',
+        data,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': MAILCOW_API_KEY,
+          },
         },
-      }),
-    );
+      );
 
-    if (res.data.error) {
-      throw new Error(res.data.error.message);
-    }
-
-    if (res.data[0] && res.data[0].msg[0] == 'alias_added') {
-      return {
-        email: res.data[0].msg[1],
-        emailId: res.data[0].msg[2],
-      };
+      const res = await firstValueFrom(response);
+      if (res.data[0] && res.data[0].msg[0] == 'alias_added') {
+        return {
+          email: res.data[0].msg[1],
+          emailId: res.data[0].msg[2],
+        };
+      }
+    } catch (error) {
+      return null;
     }
 
     return null;
@@ -110,31 +113,45 @@ export class AppService {
     const MAILCOW_API_URL = domainData.apiUrl;
     const MAILCOW_API_KEY = domainData.apiKey;
 
+    // console.log('domainData', domainData);
+
     if (!MAILCOW_API_URL) {
-      throw new Error('MAILCOW_API_URL is not set');
+      this.logger.error('MAILCOW_API_URL is not set');
+      return null;
     }
     if (!MAILCOW_API_KEY) {
-      throw new Error('MAILCOW_API_KEY is not set');
+      this.logger.error('MAILCOW_API_KEY is not set');
+      return null;
     }
 
-    const res = await firstValueFrom(
-      this.httpService.post(MAILCOW_API_URL + '/delete/alias', domainData.ids, {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-API-Key': MAILCOW_API_KEY,
-        },
-      }),
-    );
+    try {
+      const res = await firstValueFrom(
+        this.httpService.post(
+          MAILCOW_API_URL + '/delete/alias',
+          domainData.ids,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'X-API-Key': MAILCOW_API_KEY,
+            },
+          },
+        ),
+      );
 
-    if (res.data.error) {
-      throw new Error(res.data.error.message);
-    }
+      if (res.data.error) {
+        this.logger.error(res.data.error.message);
+        return null;
+      }
 
-    if (res.data[0] && res.data[0].msg[0] == 'alias_removed') {
-      return {
-        email: res.data[0].msg[1],
-        emailId: res.data[0].msg[2],
-      };
+      if (res.data[0] && res.data[0].msg[0] == 'alias_removed') {
+        return {
+          email: res.data[0].msg[1],
+          emailId: res.data[0].msg[2],
+        };
+      }
+    } catch (error) {
+      this.logger.error(error.message);
+      return null;
     }
 
     return null;

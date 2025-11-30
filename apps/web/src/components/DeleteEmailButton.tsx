@@ -1,6 +1,6 @@
 'use client';
 
-import { TempEmailType } from '@repo/validation';
+import { Loader2Icon, Trash2Icon } from 'lucide-react';
 import {
     AlertDialog,
     AlertDialogAction,
@@ -11,67 +11,59 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
-import { Loader2Icon, TimerResetIcon } from 'lucide-react';
-import { toast } from 'sonner';
+} from './ui/alert-dialog';
+import { Button } from './ui/button';
 import { useTransition } from 'react';
-import { extendTime } from '@/lib/actions';
-import { useRouter } from 'next/navigation';
+import { deleteEmail } from '@/lib/actions';
+import { toast } from 'sonner';
+import { TempEmailType } from '@repo/validation';
 
-export default function ExtendTime({
+export default function DeleteEmailButton({
     emailData,
-    disabled,
 }: {
     emailData: TempEmailType | undefined;
-    disabled: boolean;
 }) {
     const [pending, startTransition] = useTransition();
-    const extendTimeAction = () => {
-        if (!emailData) return;
+
+    const deleteEmailAction = () => {
         startTransition(async () => {
-            const response = await extendTime(emailData.id);
+            if (!emailData) return;
+            const response = await deleteEmail(emailData);
             if (response && response.statusCode == 200) {
-                console.log('response', response);
                 localStorage.removeItem('temp_email');
-                localStorage.setItem(
-                    'temp_email',
-                    JSON.stringify(response.data[0]),
-                );
-                toast.success('Time Extended');
-                setTimeout(() => window.location.reload(), 0);
-            } else {
-                toast.error(response.message);
+                toast.success('Email Deleted');
+                window.location.reload();
+                return;
             }
+            toast.error(response.message);
         });
     };
-
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
                 <Button
                     variant="outline"
                     size="sm"
-                    disabled={disabled || pending}
+                    disabled={pending}
                     className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
                 >
-                    <TimerResetIcon className="w-4 h-4 mr-2" />
+                    <Trash2Icon className="w-4 h-4 mr-2" />
                     {pending ? (
                         <span className="flex gap-2">
                             <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />{' '}
-                            Extending...
+                            Deleting...
                         </span>
                     ) : (
-                        <span>Extend Time</span>
+                        <span>Delete Email</span>
                     )}
                 </Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Extend Time?</AlertDialogTitle>
+                    <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You are about to extend the time for this email for
-                        another 30 minutes.
+                        You are about to delete this email. This action cannot
+                        be undone. All data will be permanently deleted.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -79,7 +71,7 @@ export default function ExtendTime({
                         Cancel
                     </AlertDialogCancel>
                     <AlertDialogAction
-                        onClick={extendTimeAction}
+                        onClick={deleteEmailAction}
                         className="cursor-pointer"
                     >
                         Continue

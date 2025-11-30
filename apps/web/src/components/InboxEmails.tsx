@@ -1,11 +1,11 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Badge } from "./ui/badge";
-import { Loader2 } from "lucide-react";
-import { Skeleton } from "./ui/skeleton";
-import { EmailContentType } from "@repo/validation";
-import InboxItem from "./InboxItem";
-import { Input } from "./ui/input";
+'use client';
+import { useEffect, useState } from 'react';
+import { Badge } from './ui/badge';
+import { Loader2 } from 'lucide-react';
+import { Skeleton } from './ui/skeleton';
+import { EmailContentType } from '@repo/validation';
+import InboxItem from './InboxItem';
+import { Input } from './ui/input';
 
 export default function InboxEmails({
     inboxData,
@@ -14,7 +14,7 @@ export default function InboxEmails({
 }) {
     const [selectedEmail, setSelectedEmail] = useState<any>(null);
     const [inbox, setInbox] = useState<EmailContentType[]>(
-        Array.isArray(inboxData) ? inboxData : []
+        Array.isArray(inboxData) ? inboxData : [],
     );
 
     // console.log("inboxData", inboxData);
@@ -52,7 +52,7 @@ export default function InboxEmails({
                         <Loader2 className="h-6 w-6 animate-spin text-gray-500" />
                     </div>
 
-                    <div className="max-h-[600px] space-y-2 overflow-y-scroll">
+                    <div className="space-y-2">
                         {inbox.map((email: EmailContentType) => (
                             <InboxItem key={email.id} email={email} />
                         ))}

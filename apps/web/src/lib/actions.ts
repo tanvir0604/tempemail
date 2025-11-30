@@ -1,10 +1,10 @@
-"use server";
+'use server';
 
-import { revalidatePath } from "next/cache";
-import axios, { AxiosRequestConfig, HttpStatusCode, Method } from "axios";
-import qs from "qs";
-import { SimpleResponseType } from "@repo/validation";
-const API_URL = process.env.API_BASE_URL ?? "http://localhost:3001";
+import { revalidatePath } from 'next/cache';
+import axios, { AxiosRequestConfig, HttpStatusCode, Method } from 'axios';
+import qs from 'qs';
+import { SimpleResponseType, TempEmailType } from '@repo/validation';
+const API_URL = process.env.API_BASE_URL ?? 'http://localhost:3001';
 
 interface RequestOptions<T = unknown> {
     method: Method;
@@ -22,7 +22,7 @@ export async function revalidate(path: string) {
 export default async function get(
     url: string,
     params: Record<string, unknown> = {},
-    headers: Record<string, string> = {}
+    headers: Record<string, string> = {},
 ) {
     try {
         const response = await axios.get(API_URL + url, { params, headers });
@@ -36,7 +36,7 @@ export default async function get(
 export async function post(
     url: string,
     body: unknown,
-    headers: Record<string, string>
+    headers: Record<string, string>,
 ) {
     try {
         const response = await axios.post(API_URL + url, body, { headers });
@@ -48,7 +48,7 @@ export async function post(
 }
 
 export async function httpRequest<TResponse = unknown, TBody = unknown>(
-    options: RequestOptions<TBody>
+    options: RequestOptions<TBody>,
 ): Promise<TResponse> {
     const { method, url, data, params, headers, auth = true } = options;
     const finalHeaders = headers ?? {};
@@ -59,7 +59,7 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
         params,
         headers: finalHeaders,
         paramsSerializer: (params) =>
-            qs.stringify(params, { arrayFormat: "repeat" }),
+            qs.stringify(params, { arrayFormat: 'repeat' }),
     };
     try {
         const response = await axios.request<TResponse>(config);
@@ -72,14 +72,14 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
 
 export async function generateTempEmail() {
     const response: SimpleResponseType = await httpRequest({
-        method: "POST",
-        url: "/create-alias",
+        method: 'POST',
+        url: '/create-alias',
         data: {},
     });
     if (!response) {
         return {
             statusCode: 400,
-            message: "Bad Request",
+            message: 'Bad Request',
         };
     }
     return response;
@@ -87,14 +87,14 @@ export async function generateTempEmail() {
 
 export async function getTempEmail(id: string) {
     const response: SimpleResponseType = await httpRequest({
-        method: "GET",
-        url: "/temp-email/" + id,
+        method: 'GET',
+        url: '/temp-email/' + id,
         data: {},
     });
     if (!response) {
         return {
             statusCode: 400,
-            message: "Bad Request",
+            message: 'Bad Request',
         };
     }
     return response;
@@ -102,15 +102,15 @@ export async function getTempEmail(id: string) {
 
 export async function getEmailContent(email: string) {
     const response: SimpleResponseType = await httpRequest({
-        method: "GET",
-        url: "/email-content",
+        method: 'GET',
+        url: '/email-content',
         params: { tempEmailRef: email },
     });
 
     if (!response) {
         return {
             statusCode: 400,
-            message: "Bad Request",
+            message: 'Bad Request',
         };
     }
     return response;
@@ -118,15 +118,15 @@ export async function getEmailContent(email: string) {
 
 export async function extendTime(id: string) {
     const response: SimpleResponseType = await httpRequest({
-        method: "PUT",
-        url: "/temp-email/" + id,
+        method: 'PUT',
+        url: '/temp-email/' + id,
         data: { expiredMinutes: 30 },
     });
 
     if (!response) {
         return {
             statusCode: 400,
-            message: "Bad Request",
+            message: 'Bad Request',
         };
     }
     return response;
@@ -134,30 +134,62 @@ export async function extendTime(id: string) {
 
 export async function checkEmail(email: string) {
     const response: SimpleResponseType = await httpRequest({
-        method: "PUT",
-        url: "/temp-email/check-email/" + email,
+        method: 'PUT',
+        url: '/temp-email/check-email/' + email,
     });
 
     if (!response || response.statusCode !== 200) {
         return {
             statusCode: 400,
-            message: "Bad Request",
+            message: 'Bad Request',
         };
     }
 
     return response;
 }
 
-export async function getFile(filename: string) {
+export async function deleteEmail(emailData: TempEmailType) {
     const response: SimpleResponseType = await httpRequest({
-        method: "GET",
-        url: "/settings/file/" + filename,
+        method: 'DELETE',
+        url: '/temp-email/' + emailData.id,
     });
 
     if (!response || response.statusCode !== 200) {
         return {
             statusCode: 400,
-            message: "Bad Request",
+            message: 'Bad Request',
+        };
+    }
+
+    httpRequest({
+        method: 'DELETE',
+        url: '/mailcow/delete',
+        data: {
+            email: emailData.email.split('@')[0],
+            ids: [Number(emailData.emailId)],
+        },
+    });
+
+    // if (!response2 || response2.statusCode !== 200) {
+    //     return {
+    //         statusCode: 400,
+    //         message: 'Bad Request',
+    //     };
+    // }
+
+    return response;
+}
+
+export async function getFile(filename: string) {
+    const response: SimpleResponseType = await httpRequest({
+        method: 'GET',
+        url: '/settings/file/' + filename,
+    });
+
+    if (!response || response.statusCode !== 200) {
+        return {
+            statusCode: 400,
+            message: 'Bad Request',
         };
     }
 

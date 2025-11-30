@@ -17,7 +17,6 @@ export class TempEmailController {
 
   @MessagePattern('tempEmail.findOne')
   findOne(@Payload() { where }: { where: {} }) {
-    console.log('findOne', where);
     return this.tempEmailService.findOne({
       where,
       include: { emailContents: true },
@@ -39,7 +38,6 @@ export class TempEmailController {
       expiredMinutes = data.expiredMinutes;
     }
 
-    console.log('expiredMinutes', expiredMinutes, data);
     return await this.tempEmailService.upsert(
       {
         email: data.email,

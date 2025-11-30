@@ -103,7 +103,7 @@ export class EmailContentController {
         references: data.references,
         tempEmail: { connect: { email: data.tempEmailRef } },
         uid: data.uid ?? 0,
-        attachments: attachments,
+        attachments: attachments.length > 0 ? attachments : undefined,
       },
     );
   }

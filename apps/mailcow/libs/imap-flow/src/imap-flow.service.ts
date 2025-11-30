@@ -42,15 +42,19 @@ export class ImapFlowService {
       setTimeout(() => this.createClient(account), 5000);
     });
 
-    await this.connectWithRetry(client);
-    await client.mailboxOpen('INBOX');
-
-    this.logger.log(`IMAP connected for: ${account.username}`);
-
     client.on('exists', async () => {
       this.logger.log(`New email for: ${account.username}`);
       await this.fetchLatestEmail(client, account.username);
     });
+
+    const respose = await this.connectWithRetry(client);
+
+    if (!respose) {
+      return;
+    }
+    await client.mailboxOpen('INBOX');
+
+    this.logger.log(`IMAP connected for: ${account.username}`);
   }
 
   async connectWithRetry(client: ImapFlow, retries = 3, delayMs = 5000) {
@@ -58,16 +62,23 @@ export class ImapFlowService {
       try {
         await client.connect();
         this.logger.log('IMAP connected!');
-        return;
+        return true;
       } catch (err) {
         this.logger.error(
           `IMAP connection failed (${i + 1}/${retries}):`,
           err.message,
         );
-        await new Promise((res) => setTimeout(res, delayMs));
+        // await new Promise((res) => setTimeout(res, delayMs));
+
+        if (i < retries - 1) {
+          const delay = delayMs * Math.pow(2, i);
+          this.logger.log(`Retrying in ${delay}ms...`);
+          await new Promise((res) => setTimeout(res, delay));
+        }
       }
     }
-    throw new Error('IMAP connection failed after retries');
+    this.logger.error('IMAP connection failed after retries');
+    return false;
   }
 
   /**
@@ -78,12 +89,14 @@ export class ImapFlowService {
     try {
       const mailbox = client.mailbox;
       if (!mailbox) {
-        throw new Error('No mailbox is currently selected.');
+        this.logger.error('No mailbox is currently selected.');
+        return null;
       }
       const seq = mailbox.exists;
 
       if (!seq) {
-        throw new Error('No sequence found.');
+        this.logger.error('No sequence found.');
+        return null;
       }
 
       const msg = await client.fetchOne(seq, {
@@ -93,7 +106,8 @@ export class ImapFlowService {
       });
 
       if (!msg) {
-        throw new Error('No mail found.');
+        this.logger.error('No mail found.');
+        return null;
       }
 
       this.logger.log(`Sending Email for ${user} for processing...`);
