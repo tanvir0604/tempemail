@@ -22,9 +22,11 @@ import DeleteEmailButton from './DeleteEmailButton';
 export default function TempEmail({
     emailData,
     generateNewEmail,
+    generatingEmail = false,
 }: {
     emailData: TempEmailType | undefined;
     generateNewEmail: () => void;
+    generatingEmail?: boolean;
 }) {
     const [pending, startTransition] = useTransition();
     const generateNewEmailAction = () => {
@@ -78,7 +80,12 @@ export default function TempEmail({
                             size="icon"
                             name="copy_to_clipboard"
                             onClick={copyEmail}
-                            disabled={!email || expiredAt < new Date()}
+                            disabled={
+                                !email ||
+                                generatingEmail ||
+                                pending ||
+                                expiredAt < new Date()
+                            }
                             className="text-zinc-400 hover:text-zinc-100 no-underline hover:no-underline cursor-pointer"
                         >
                             {copied ? (
@@ -113,7 +120,12 @@ export default function TempEmail({
                             variant="outline"
                             size="sm"
                             onClick={copyEmail}
-                            disabled={!email || expiredAt < new Date()}
+                            disabled={
+                                !email ||
+                                generatingEmail ||
+                                pending ||
+                                expiredAt < new Date()
+                            }
                             className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
                         >
                             <Copy className="w-4 h-4 mr-2" />
@@ -125,28 +137,36 @@ export default function TempEmail({
                                 '/' +
                                 emailData?.id
                             }
-                            disabled={!email || expiredAt < new Date()}
+                            disabled={
+                                !email ||
+                                generatingEmail ||
+                                pending ||
+                                expiredAt < new Date()
+                            }
                         />
                         {/* <Button
               variant="outline"
               size="sm"
-              disabled={!email}
+              disabled={!email || generatingEmail}
               className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
             >
               <Share2 className="w-4 h-4 mr-2" />
               Share
             </Button> */}
 
-                        <ExtendTime emailData={emailData} disabled={!email} />
+                        <ExtendTime
+                            emailData={emailData}
+                            disabled={!email || generatingEmail || pending}
+                        />
 
                         <Button
                             variant="outline"
                             size="sm"
-                            disabled={!email || pending}
+                            disabled={!email || generatingEmail || pending}
                             onClick={generateNewEmailAction}
                             className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
                         >
-                            {pending ? (
+                            {pending || generatingEmail ? (
                                 <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />
                             ) : (
                                 <RefreshCw className="w-4 h-4 mr-2" />
@@ -154,7 +174,10 @@ export default function TempEmail({
                             New Email
                         </Button>
 
-                        <DeleteEmailButton emailData={emailData ?? undefined} />
+                        <DeleteEmailButton
+                            emailData={emailData ?? undefined}
+                            disabled={!email || generatingEmail || pending}
+                        />
                     </div>
                 </div>
             </CardContent>

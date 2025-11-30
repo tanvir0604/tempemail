@@ -12,12 +12,9 @@ export default function InboxEmails({
 }: {
     inboxData: EmailContentType[];
 }) {
-    const [selectedEmail, setSelectedEmail] = useState<any>(null);
     const [inbox, setInbox] = useState<EmailContentType[]>(
         Array.isArray(inboxData) ? inboxData : [],
     );
-
-    // console.log("inboxData", inboxData);
 
     useEffect(() => {
         setInbox(Array.isArray(inboxData) ? inboxData : []);

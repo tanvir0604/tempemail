@@ -137,7 +137,9 @@ export default function RootLayout({
                     <Footer />
                     <Toaster />
                 </ThemeProvider>
-                <GoogleAnalytics gaId="G-C408WG5T3N" />
+                {process.env.NODE_ENV == 'production' && (
+                    <GoogleAnalytics gaId="G-C408WG5T3N" />
+                )}
                 <NotificationPermission />
             </body>
         </html>

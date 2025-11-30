@@ -20,8 +20,10 @@ import { TempEmailType } from '@repo/validation';
 
 export default function DeleteEmailButton({
     emailData,
+    disabled = false,
 }: {
     emailData: TempEmailType | undefined;
+    disabled?: boolean;
 }) {
     const [pending, startTransition] = useTransition();
 
@@ -44,7 +46,7 @@ export default function DeleteEmailButton({
                 <Button
                     variant="outline"
                     size="sm"
-                    disabled={pending}
+                    disabled={pending || disabled}
                     className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
                 >
                     <Trash2Icon className="w-4 h-4 mr-2" />
@@ -71,6 +73,7 @@ export default function DeleteEmailButton({
                         Cancel
                     </AlertDialogCancel>
                     <AlertDialogAction
+                        disabled={pending || disabled}
                         onClick={deleteEmailAction}
                         className="cursor-pointer"
                     >
