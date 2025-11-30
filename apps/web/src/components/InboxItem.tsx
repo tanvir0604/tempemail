@@ -150,15 +150,10 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                     dangerouslySetInnerHTML={{
                                         __html:
                                             email.html && email.html !== ''
-                                                ? sanitize(email.html)
-                                                      .replace(
-                                                          /color\s*:\s*black/gi,
-                                                          'color: gray',
-                                                      )
-                                                      .replace(
-                                                          /unsafe-src=/g,
-                                                          'src=',
-                                                      )
+                                                ? sanitize(email.html).replace(
+                                                      /unsafe-src=/g,
+                                                      'src=',
+                                                  )
                                                 : sanitize(email.text),
                                     }}
                                 ></div>
