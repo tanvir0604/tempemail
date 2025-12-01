@@ -146,7 +146,7 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                         ) : (
                             <>
                                 <div
-                                    className="text-sm text-zinc-300! whitespace-pre-wrap bg-zinc-50 md:p-4 rounded-none md:mt-6"
+                                    className="text-sm text-zinc-900 bg-zinc-50 md:p-4 rounded-none md:mt-6"
                                     dangerouslySetInnerHTML={{
                                         __html:
                                             email.html && email.html !== ''
