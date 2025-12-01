@@ -1,0 +1,307 @@
+{
+    "Common": {
+        "cancel": "Annuler",
+        "continue": "Continuer",
+        "please_wait": "Veuillez patienter"
+    },
+    "HomePage": {
+        "title": "Adresse e-mail temporaire gratuite",
+        "sub_title": "Obtenez une adresse e-mail jetable instantanée. Protégez votre vie privée et évitez le spam avec notre service d'e-mail temporaire gratuit. Aucune inscription requise.",
+        "your_temp_email": "Votre adresse e-mail temporaire",
+        "this_email_will_expire": "Cet e-mail expirera dans",
+        "copied": "Copié",
+        "copy": "Copier",
+        "qr_code": "QR Code",
+        "extend_time": "Prolonger le temps",
+        "extending": "Prolongation",
+        "new_email": "Nouvel e-mail",
+        "delete_email": "Supprimer l’e-mail",
+        "deleting": "Suppression",
+        "inbox": "Boîte de réception",
+        "email_sent_to_your_inbox_text": "Les e-mails envoyés à votre adresse temporaire apparaîtront ici",
+        "email_address_expired": "L’adresse e-mail a expiré. Veuillez prolonger le temps ou créer un nouvel e-mail !",
+        "checking_inbox_text": "Vérification de nouveaux e-mails",
+        "extend_time_alert_text": "Vous êtes sur le point de prolonger la durée de cet e-mail de 30 minutes supplémentaires.",
+        "delete_email_alert_text": "Vous êtes sur le point de supprimer cet e-mail. Cette action est irréversible. Toutes les données seront définitivement supprimées.",
+        "email_in_inbox": "e-mail(s) dans votre boîte de réception",
+        "new_email_arrived": "Un nouvel e-mail est arrivé dans votre boîte de réception",
+        "temporary_email": {
+            "title": "Qu’est-ce qu’une adresse e-mail temporaire ?",
+            "description1": "Une adresse e-mail temporaire (également appelée e-mail jetable ou burner email) est un service qui vous permet de recevoir des e-mails à une adresse temporaire qui s’autodétruit après un certain délai. TempEmail fournit des adresses instantanées et anonymes qui protègent votre véritable boîte de réception du spam, des publicités et des e-mails malveillants.",
+            "description2": "Notre service d’e-mail jetable est parfait pour les inscriptions en ligne, le téléchargement de fichiers, l’accès à des essais gratuits ou toute situation où vous avez besoin d’une adresse e-mail sans vouloir utiliser la vôtre. Avec TempEmail, vous pouvez créer des adresses temporaires illimitées sans aucune inscription."
+        },
+        "why_choose": {
+            "title": "Pourquoi choisir TempEmail ?",
+            "features": {
+                "instant": {
+                    "title": "Génération instantanée",
+                    "description": "Créez une adresse e-mail temporaire instantanément. Pas d'inscription, pas de mot de passe, aucune information personnelle requise."
+                },
+                "privacy": {
+                    "title": "Confidentialité totale",
+                    "description": "Protégez votre véritable adresse contre le spam et les messages non souhaités. Nous ne collectons aucune donnée personnelle et ne suivons pas vos activités."
+                },
+                "time": {
+                    "title": "Prolongation du temps",
+                    "description": "Besoin de plus de temps ? Prolongez la durée de vie de votre adresse temporaire en un clic."
+                },
+                "qr": {
+                    "title": "Synchronisation par QR Code",
+                    "description": "Accédez facilement à votre e-mail temporaire sur plusieurs appareils grâce au QR code."
+                },
+                "safe": {
+                    "title": "Lecture sécurisée",
+                    "description": "Des avertissements avancés vous protègent contre l’hameçonnage, les liens malveillants et le contenu inapproprié."
+                },
+                "free": {
+                    "title": "100% Gratuit",
+                    "description": "Notre service est entièrement gratuit, sans frais cachés ni limitations."
+                }
+            }
+        },
+        "when_to_use": {
+            "title": "Quand utiliser un e-mail temporaire ?",
+            "items": {
+                "online": {
+                    "title": "Inscriptions en ligne",
+                    "description": "Inscrivez-vous sur des sites ou services sans exposer votre véritable adresse."
+                },
+                "trials": {
+                    "title": "Essais gratuits & téléchargements",
+                    "description": "Accédez à des outils, ressources ou essais gratuits sans utiliser votre e-mail personnel."
+                },
+                "testing": {
+                    "title": "Tests & développement",
+                    "description": "Les développeurs peuvent tester facilement des fonctionnalités d’e-mail."
+                },
+                "spam": {
+                    "title": "Éviter le spam",
+                    "description": "Gardez votre boîte principale propre en utilisant des e-mails temporaires pour les vérifications uniques."
+                },
+                "privacy": {
+                    "title": "Protection de la vie privée",
+                    "description": "Protégez votre identité lors de discussions en ligne ou d’accès à des contenus non fiables."
+                }
+            }
+        },
+        "how_it_works": {
+            "title": "Comment fonctionne TempEmail ?",
+            "steps": {
+                "1": {
+                    "title": "Générer",
+                    "description": "Cliquez pour générer instantanément une adresse e-mail temporaire."
+                },
+                "2": {
+                    "title": "L’utiliser",
+                    "description": "Copiez votre adresse temporaire et utilisez-la où vous voulez."
+                },
+                "3": {
+                    "title": "Suppression automatique",
+                    "description": "Vos e-mails et votre adresse sont automatiquement supprimés après expiration."
+                }
+            }
+        },
+        "faq": {
+            "title": "Questions fréquentes",
+            "items": {
+                "free": {
+                    "question": "TempEmail est-il vraiment gratuit ?",
+                    "answer": "Oui ! TempEmail est entièrement gratuit, sans frais cachés ni limitations."
+                },
+                "duration": {
+                    "question": "Combien de temps dure un e-mail temporaire ?",
+                    "answer": "Par défaut, les adresses sont actives pendant une durée limitée. Vous pouvez prolonger cette durée à tout moment."
+                },
+                "send": {
+                    "question": "Puis-je envoyer des e-mails ?",
+                    "answer": "TempEmail est conçu uniquement pour recevoir des e-mails afin de garantir anonymat et sécurité."
+                },
+                "important": {
+                    "question": "Est-il sûr de l’utiliser pour des comptes importants ?",
+                    "answer": "Nous recommandons d’utiliser votre e-mail permanent pour les comptes essentiels."
+                },
+                "store": {
+                    "question": "Stockez-vous mes e-mails ?",
+                    "answer": "Nous stockons temporairement les e-mails pendant la durée active. Tout est supprimé après expiration."
+                }
+            }
+        },
+        "cta": {
+            "title": "Commencez à protéger votre vie privée dès aujourd’hui",
+            "description": "Rejoignez des millions d’utilisateurs qui font confiance à TempEmail pour protéger leur identité."
+        },
+        "stats": {
+            "free": "Gratuit pour toujours",
+            "registration": "Aucune inscription requise",
+            "unlimited": "Adresses illimitées",
+            "available": "Toujours disponible"
+        },
+        "generate_temp_email": "Générer une adresse temporaire"
+    },
+
+    "AboutPage": {
+        "title": "À propos de TempEmail",
+        "subtitle": "Protéger votre vie privée, un e-mail temporaire à la fois",
+        "our_mission": {
+            "heading": "Notre mission",
+            "text": "TempEmail a été créé avec une vision simple : permettre à chacun de protéger son adresse principale contre le spam et les menaces potentielles."
+        },
+        "what_we_do": {
+            "heading": "Ce que nous faisons",
+            "text": "Nous fournissons des adresses e-mail jetables instantanées que vous pouvez utiliser pour vous inscrire ou accéder à des services sans révéler votre véritable adresse."
+        },
+        "key_features": {
+            "heading": "Caractéristiques principales",
+            "features": {
+                "instant_generation": {
+                    "title": "Génération instantanée",
+                    "text": "Obtenez une adresse temporaire immédiatement, sans inscription."
+                },
+                "content_safety": {
+                    "title": "Sécurité du contenu",
+                    "text": "Des avertissements avancés vous protègent contre les contenus dangereux."
+                },
+                "qr_code_sync": {
+                    "title": "Synchronisation via QR Code",
+                    "text": "Accédez à votre e-mail sur n’importe quel appareil."
+                },
+                "privacy_first": {
+                    "title": "Priorité à la confidentialité",
+                    "text": "Nous ne stockons ni ne partageons vos données."
+                }
+            }
+        },
+        "our_commitment": {
+            "heading": "Notre engagement",
+            "text": "Nous nous engageons à offrir un service gratuit, fiable, et respectueux de votre vie privée."
+        }
+    },
+
+    "TermsPage": {
+        "title": "Conditions d’utilisation",
+        "last_updated": "Dernière mise à jour",
+        "sections": {
+            "acceptance": {
+                "heading": "1. Acceptation des conditions",
+                "text": "En utilisant TempEmail, vous acceptez nos conditions d'utilisation."
+            },
+            "service_description": {
+                "heading": "2. Description du service",
+                "text": "TempEmail fournit des adresses e-mail temporaires uniquement pour la réception d’e-mails."
+            },
+            "acceptable_use": {
+                "heading": "3. Utilisation acceptable",
+                "text": "Vous acceptez d’utiliser TempEmail uniquement à des fins légales.",
+                "items": {
+                    "illegal_activities": "Activités illégales ou fraude",
+                    "harassment": "Harcèlement ou abus",
+                    "spam_malware": "Distribution de spam ou malware",
+                    "intellectual_property": "Violation de droits d'auteur",
+                    "unauthorized_access": "Accès non autorisé",
+                    "commercial_use": "Utilisation commerciale non autorisée"
+                }
+            },
+            "privacy_data": {
+                "heading": "4. Confidentialité et données",
+                "text": "Les adresses et e-mails temporaires sont supprimés automatiquement à expiration."
+            },
+            "no_warranty": {
+                "heading": "5. Aucune garantie",
+                "text": "Le service est fourni « tel quel », sans garantie."
+            },
+            "limitation_liability": {
+                "heading": "6. Limitation de responsabilité",
+                "text": "TempEmail n’est pas responsable des dommages indirects."
+            },
+            "changes_terms": {
+                "heading": "7. Modifications",
+                "text": "Nous pouvons mettre à jour ces conditions à tout moment."
+            },
+            "contact": {
+                "heading": "8. Contact",
+                "text": "Contactez-nous via nos canaux de support."
+            }
+        }
+    },
+
+    "PrivacyPage": {
+        "title": "Politique de confidentialité",
+        "last_updated": "Dernière mise à jour",
+        "sections": {
+            "introduction": {
+                "heading": "1. Introduction",
+                "text": "Nous prenons votre vie privée très au sérieux."
+            },
+            "dont_collect": {
+                "heading": "2. Informations que nous ne collectons pas",
+                "text": "Nous ne collectons pas d’informations personnelles.",
+                "items": {
+                    "name_email": "Nom, e-mail ou contact",
+                    "credentials": "Identifiants de connexion",
+                    "payment_info": "Informations de paiement",
+                    "persistent_ids": "Identifiants persistants",
+                    "browsing_history": "Historique de navigation"
+                }
+            },
+            "temp_process": {
+                "heading": "3. Informations que nous traitons temporairement",
+                "text": "Nous traitons uniquement les données nécessaires pour fournir le service.",
+                "items": {
+                    "generated_emails": "Adresses temporaires générées",
+                    "received_emails": "E-mails reçus",
+                    "technical_data": "Données techniques",
+                    "analytics": "Statistiques anonymes"
+                },
+                "note": "Toutes ces données sont supprimées après expiration."
+            },
+            "data_retention": {
+                "heading": "4. Conservation des données",
+                "text": "Les données sont supprimées définitivement à expiration."
+            },
+            "cookies_tracking": {
+                "heading": "5. Cookies et suivi",
+                "text": "Nous utilisons uniquement les cookies essentiels."
+            },
+            "third_party": {
+                "heading": "6. Services tiers",
+                "text": "Aucun partage de données à des fins publicitaires."
+            },
+            "security": {
+                "heading": "7. Sécurité",
+                "text": "Nous appliquons des mesures de sécurité standard."
+            },
+            "content_warnings": {
+                "heading": "8. Avertissements de contenu",
+                "text": "Le système analyse automatiquement les contenus potentiellement dangereux."
+            },
+            "your_rights": {
+                "heading": "9. Vos droits",
+                "text": "Vous pouvez supprimer votre e-mail temporaire à tout moment."
+            },
+            "child_privacy": {
+                "heading": "10. Confidentialité des enfants",
+                "text": "Nous ne ciblons pas les moins de 13 ans."
+            },
+            "international_users": {
+                "heading": "11. Utilisateurs internationaux",
+                "text": "En utilisant le service, vous acceptez le traitement des données selon notre juridiction."
+            },
+            "changes_policy": {
+                "heading": "12. Modifications de la politique",
+                "text": "Nous pouvons mettre à jour cette politique."
+            },
+            "contact_us": {
+                "heading": "13. Contactez-nous",
+                "text": "Contactez-nous via notre support pour toute question."
+            }
+        }
+    },
+
+    "Footer": {
+        "all_rights_reserved": "Tous droits réservés.",
+        "home": "Accueil",
+        "about": "À propos",
+        "terms": "Conditions",
+        "privacy": "Confidentialité"
+    }
+}

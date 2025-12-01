@@ -1,0 +1,307 @@
+{
+    "Common": {
+        "cancel": "Batal",
+        "continue": "Lanjutkan",
+        "please_wait": "Harap tunggu"
+    },
+    "HomePage": {
+        "title": "Alamat Email Sementara Gratis",
+        "sub_title": "Dapatkan alamat email sementara secara instan. Lindungi privasi Anda dan hindari spam dengan layanan email sementara gratis kami. Tidak perlu registrasi.",
+        "your_temp_email": "Alamat Email Sementara Anda",
+        "this_email_will_expire": "Email ini akan kedaluwarsa dalam",
+        "copied": "Disalin",
+        "copy": "Salin",
+        "qr_code": "Kode QR",
+        "extend_time": "Perpanjang Waktu",
+        "extending": "Memperpanjang",
+        "new_email": "Email Baru",
+        "delete_email": "Hapus Email",
+        "deleting": "Menghapus",
+        "inbox": "Kotak Masuk",
+        "email_sent_to_your_inbox_text": "Email yang dikirim ke alamat sementara Anda akan muncul di sini",
+        "email_address_expired": "Alamat email telah kedaluwarsa. Silakan perpanjang waktu atau buat email baru!!",
+        "checking_inbox_text": "Memeriksa kotak masuk untuk email baru",
+        "extend_time_alert_text": "Anda akan memperpanjang waktu untuk email ini selama 30 menit lagi.",
+        "delete_email_alert_text": "Anda akan menghapus email ini. Tindakan ini tidak dapat dibatalkan. Semua data akan dihapus permanen.",
+        "email_in_inbox": "email di kotak masuk Anda",
+        "new_email_arrived": "Email baru telah tiba di kotak masuk Anda",
+        "temporary_email": {
+            "title": "Apa itu Alamat Email Sementara?",
+            "description1": "Alamat email sementara (juga dikenal sebagai disposable email, throwaway email, atau burner email) adalah layanan yang memungkinkan Anda menerima email di alamat sementara yang akan terhapus sendiri setelah periode tertentu. TempEmail menyediakan alamat email sementara secara instan dan anonim untuk melindungi kotak masuk asli Anda dari spam, iklan, dan email berbahaya.",
+            "description2": "Layanan email sementara kami sempurna untuk pendaftaran online, mengunduh file, mengakses uji coba gratis, atau situasi apa pun di mana Anda membutuhkan email namun tidak ingin menggunakan email pribadi Anda. Dengan TempEmail, Anda dapat membuat email sementara tanpa batas secara instan tanpa registrasi."
+        },
+        "why_choose": {
+            "title": "Mengapa Memilih TempEmail?",
+            "features": {
+                "instant": {
+                    "title": "Pembuatan Instan",
+                    "description": "Buat alamat email sementara secara instan. Tanpa pendaftaran, tanpa kata sandi, tanpa informasi pribadi. Mulai menerima email dalam hitungan detik."
+                },
+                "privacy": {
+                    "title": "Privasi Sepenuhnya",
+                    "description": "Lindungi email asli Anda dari spam dan pesan yang tidak diinginkan. Kami tidak mengumpulkan data pribadi atau melacak aktivitas Anda. Privasi Anda adalah prioritas kami."
+                },
+                "time": {
+                    "title": "Perpanjangan Waktu",
+                    "description": "Butuh waktu tambahan? Perpanjang masa aktif email sementara Anda dengan satu klik. Biarkan tetap aktif selama yang Anda butuhkan."
+                },
+                "qr": {
+                    "title": "Sinkronisasi Kode QR",
+                    "description": "Akses email sementara Anda di berbagai perangkat menggunakan fitur kode QR kami. Sinkron secara instan antara desktop dan mobile."
+                },
+                "safe": {
+                    "title": "Tampilan Email Aman",
+                    "description": "Peringatan konten tingkat lanjut melindungi Anda dari phishing, tautan berbahaya, dan konten tidak pantas sebelum Anda membuka email."
+                },
+                "free": {
+                    "title": "100% Gratis",
+                    "description": "Layanan email sementara kami sepenuhnya gratis tanpa biaya tersembunyi, paket premium, atau batasan. Semua orang berhak mendapatkan privasi email."
+                }
+            }
+        },
+        "when_to_use": {
+            "title": "Kapan Menggunakan Email Sementara?",
+            "items": {
+                "online": {
+                    "title": "Pendaftaran Online",
+                    "description": "Daftar ke situs web, forum, atau layanan tanpa mengungkapkan email asli Anda yang bisa terkena spam."
+                },
+                "trials": {
+                    "title": "Uji Coba Gratis & Unduhan",
+                    "description": "Akses uji coba gratis, unduhan konten, atau sumber daya tanpa menggunakan email pribadi."
+                },
+                "testing": {
+                    "title": "Pengujian & Pengembangan",
+                    "description": "Pengembang dapat menguji fungsi email tanpa membuat banyak akun email asli."
+                },
+                "spam": {
+                    "title": "Menghindari Spam",
+                    "description": "Jaga kebersihan kotak masuk utama Anda dengan menggunakan email sementara untuk verifikasi satu kali."
+                },
+                "privacy": {
+                    "title": "Perlindungan Privasi",
+                    "description": "Lindungi identitas Anda saat berdiskusi online atau mengakses konten dari sumber yang tidak tepercaya."
+                }
+            }
+        },
+        "how_it_works": {
+            "title": "Bagaimana Cara Kerja TempEmail?",
+            "steps": {
+                "1": {
+                    "title": "Buat",
+                    "description": "Klik untuk langsung membuat alamat email sementara acak. Tidak memerlukan akun."
+                },
+                "2": {
+                    "title": "Gunakan",
+                    "description": "Salin email sementara Anda dan gunakan di mana pun diperlukan. Semua email akan muncul otomatis di kotak masuk Anda."
+                },
+                "3": {
+                    "title": "Hapus Otomatis",
+                    "description": "Email sementara Anda dan semua pesan akan dihapus otomatis setelah kedaluwarsa. Tetap anonim dan bersih."
+                }
+            }
+        },
+        "faq": {
+            "title": "Pertanyaan yang Sering Diajukan",
+            "items": {
+                "free": {
+                    "question": "Apakah TempEmail benar-benar gratis?",
+                    "answer": "Ya! TempEmail 100% gratis tanpa biaya tersembunyi, fitur premium, atau batasan. Kami percaya semua orang berhak atas perlindungan privasi email."
+                },
+                "duration": {
+                    "question": "Berapa lama email sementara bertahan?",
+                    "answer": "Secara default, email sementara aktif untuk jangka waktu tertentu. Anda dapat memperpanjang masa aktifnya dengan fitur perpanjangan waktu."
+                },
+                "send": {
+                    "question": "Bisakah saya mengirim email dari alamat sementara?",
+                    "answer": "TempEmail dirancang hanya untuk menerima email. Ini membantu menjaga anonimitas dan mencegah penyalahgunaan layanan."
+                },
+                "important": {
+                    "question": "Apakah aman menggunakan email sementara untuk pendaftaran penting?",
+                    "answer": "Email sementara cocok untuk layanan yang tidak akan Anda gunakan jangka panjang. Untuk akun penting yang memerlukan pemulihan kata sandi, gunakan email permanen Anda."
+                },
+                "store": {
+                    "question": "Apakah kalian menyimpan email saya?",
+                    "answer": "Kami hanya menyimpan email secara sementara selama masa aktif. Setelah email kedaluwarsa atau dihapus, semua data akan dihapus permanen dari server kami."
+                }
+            }
+        },
+        "cta": {
+            "title": "Mulai Lindungi Privasi Anda Hari Ini",
+            "description": "Bergabunglah dengan jutaan orang yang mempercayai TempEmail untuk menjaga kotak masuk mereka tetap bersih dan identitas mereka tetap aman. Buat email sementara gratis Anda sekarang."
+        },
+        "stats": {
+            "free": "Gratis Selamanya",
+            "registration": "Tidak Perlu Registrasi",
+            "unlimited": "Alamat Tanpa Batas",
+            "available": "Selalu Tersedia"
+        },
+        "generate_temp_email": "Buat Email Sementara"
+    },
+
+    "AboutPage": {
+        "title": "Tentang TempEmail",
+        "subtitle": "Melindungi privasi Anda, satu email sementara pada satu waktu",
+        "our_mission": {
+            "heading": "Misi Kami",
+            "text": "TempEmail dibuat dengan visi sederhana namun kuat: memberi semua orang kemampuan untuk melindungi alamat email utama mereka dari spam, pemasaran yang tidak diinginkan, dan potensi ancaman keamanan."
+        },
+        "what_we_do": {
+            "heading": "Apa yang Kami Lakukan",
+            "text": "Kami menyediakan alamat email sekali pakai yang dapat Anda gunakan saat mendaftar layanan, mengunduh konten, atau berinteraksi dengan situs web tanpa mengungkapkan email asli Anda."
+        },
+        "key_features": {
+            "heading": "Fitur Utama",
+            "features": {
+                "instant_generation": {
+                    "title": "Pembuatan Instan",
+                    "text": "Dapatkan alamat email sementara secara langsung tanpa proses pendaftaran atau informasi pribadi."
+                },
+                "content_safety": {
+                    "title": "Keamanan Konten",
+                    "text": "Peringatan otomatis untuk konten berbahaya menjaga Anda tetap aman saat melihat kotak masuk sementara."
+                },
+                "qr_code_sync": {
+                    "title": "Sinkronisasi Kode QR",
+                    "text": "Sinkronkan email sementara Anda dengan mudah di berbagai perangkat."
+                },
+                "privacy_first": {
+                    "title": "Privasi Utama",
+                    "text": "Kami tidak melacak, menyimpan, atau membagikan data Anda. Privasi Anda adalah prioritas kami."
+                }
+            }
+        },
+        "our_commitment": {
+            "heading": "Komitmen Kami",
+            "text": "Kami berkomitmen untuk menjaga layanan yang gratis, andal, dan ramah pengguna yang menghormati privasi Anda."
+        }
+    },
+
+    "TermsPage": {
+        "title": "Syarat Layanan",
+        "last_updated": "Terakhir diperbarui",
+        "sections": {
+            "acceptance": {
+                "heading": "1. Penerimaan Syarat",
+                "text": "Dengan mengakses dan menggunakan layanan TempEmail, Anda menyetujui syarat-syarat dalam perjanjian ini."
+            },
+            "service_description": {
+                "heading": "2. Deskripsi Layanan",
+                "text": "TempEmail menyediakan alamat email sementara untuk menerima email. Alamat email dapat kedaluwarsa setelah jangka waktu tertentu."
+            },
+            "acceptable_use": {
+                "heading": "3. Penggunaan yang Dapat Diterima",
+                "text": "Anda setuju menggunakan TempEmail hanya untuk tujuan yang sah.",
+                "items": {
+                    "illegal_activities": "Melakukan aktivitas ilegal atau penipuan",
+                    "harassment": "Mengganggu, melecehkan, atau membahayakan orang lain",
+                    "spam_malware": "Menyebarkan spam, malware, atau virus",
+                    "intellectual_property": "Melanggar hak kekayaan intelektual",
+                    "unauthorized_access": "Mencoba mengakses sistem kami secara tidak sah",
+                    "commercial_use": "Menggunakan layanan untuk tujuan komersial tanpa izin"
+                }
+            },
+            "privacy_data": {
+                "heading": "4. Privasi dan Data",
+                "text": "Email sementara dan isi pesan dihapus otomatis setelah kedaluwarsa."
+            },
+            "no_warranty": {
+                "heading": "5. Tanpa Garansi",
+                "text": "TempEmail disediakan \"sebagaimana adanya\" tanpa jaminan apa pun."
+            },
+            "limitation_liability": {
+                "heading": "6. Batasan Tanggung Jawab",
+                "text": "TempEmail tidak bertanggung jawab atas kerugian tidak langsung, insidental, atau konsekuensial."
+            },
+            "changes_terms": {
+                "heading": "7. Perubahan Syarat",
+                "text": "Kami dapat mengubah syarat ini kapan saja. Penggunaan lanjutan berarti Anda menerima perubahan tersebut."
+            },
+            "contact": {
+                "heading": "8. Kontak",
+                "text": "Jika Anda memiliki pertanyaan mengenai Syarat Layanan, hubungi kami melalui dukungan."
+            }
+        }
+    },
+
+    "PrivacyPage": {
+        "title": "Kebijakan Privasi",
+        "last_updated": "Terakhir diperbarui",
+        "sections": {
+            "introduction": {
+                "heading": "1. Pengantar",
+                "text": "Di TempEmail, kami sangat menjaga privasi Anda. Kebijakan ini menjelaskan bagaimana kami menangani informasi."
+            },
+            "dont_collect": {
+                "heading": "2. Informasi yang Tidak Kami Kumpulkan",
+                "text": "Kami tidak mengumpulkan informasi pribadi apa pun.",
+                "items": {
+                    "name_email": "Nama, email, atau informasi kontak Anda",
+                    "credentials": "Kredensial akun",
+                    "payment_info": "Informasi pembayaran",
+                    "persistent_ids": "Pengidentifikasi permanen",
+                    "browsing_history": "Riwayat penelusuran Anda di luar layanan"
+                }
+            },
+            "temp_process": {
+                "heading": "3. Informasi yang Kami Proses Sementara",
+                "text": "Kami hanya memproses data yang diperlukan.",
+                "items": {
+                    "generated_emails": "Alamat email sementara yang dihasilkan",
+                    "received_emails": "Email yang diterima",
+                    "technical_data": "Data teknis untuk pengiriman email",
+                    "analytics": "Statistik anonim"
+                },
+                "note": "Semua data dihapus setelah email kedaluwarsa."
+            },
+            "data_retention": {
+                "heading": "4. Retensi Data",
+                "text": "Data hanya disimpan selama masa aktif email sementara."
+            },
+            "cookies_tracking": {
+                "heading": "5. Cookie dan Pelacakan",
+                "text": "Kami menggunakan cookie minimal untuk fungsi layanan."
+            },
+            "third_party": {
+                "heading": "6. Layanan Pihak Ketiga",
+                "text": "Kami tidak membagikan data Anda kepada pihak ketiga untuk pemasaran."
+            },
+            "security": {
+                "heading": "7. Keamanan",
+                "text": "Kami menerapkan langkah keamanan standar industri."
+            },
+            "content_warnings": {
+                "heading": "8. Peringatan Konten",
+                "text": "Analisis otomatis mendeteksi konten berbahaya tanpa tinjauan manusia."
+            },
+            "your_rights": {
+                "heading": "9. Hak Anda",
+                "text": "Anda dapat menghapus email sementara kapan saja."
+            },
+            "child_privacy": {
+                "heading": "10. Privasi Anak",
+                "text": "Layanan kami tidak ditujukan untuk anak di bawah 13 tahun."
+            },
+            "international_users": {
+                "heading": "11. Pengguna Internasional",
+                "text": "Dengan menggunakan layanan, Anda menyetujui pemrosesan data sesuai lokasi server kami."
+            },
+            "changes_policy": {
+                "heading": "12. Perubahan Kebijakan",
+                "text": "Kebijakan ini dapat diperbarui sewaktu-waktu."
+            },
+            "contact_us": {
+                "heading": "13. Hubungi Kami",
+                "text": "Jika Anda memiliki pertanyaan, hubungi kami melalui dukungan."
+            }
+        }
+    },
+
+    "Footer": {
+        "all_rights_reserved": "Hak cipta dilindungi.",
+        "home": "Beranda",
+        "about": "Tentang",
+        "terms": "Syarat",
+        "privacy": "Privasi"
+    }
+}

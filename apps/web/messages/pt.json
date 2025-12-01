@@ -1,0 +1,306 @@
+{
+    "Common": {
+        "cancel": "Cancelar",
+        "continue": "Continuar",
+        "please_wait": "Por favor, aguarde"
+    },
+    "HomePage": {
+        "title": "Endereço de E-mail Temporário Grátis",
+        "sub_title": "Obtenha um endereço de e-mail descartável instantâneo. Proteja sua privacidade e evite spam com nosso serviço gratuito de e-mail temporário. Não é necessário registro.",
+        "your_temp_email": "Seu Endereço de E-mail Temporário",
+        "this_email_will_expire": "Este e-mail irá expirar em",
+        "copied": "Copiado",
+        "copy": "Copiar",
+        "qr_code": "Código QR",
+        "extend_time": "Estender Tempo",
+        "extending": "Estendendo",
+        "new_email": "Novo E-mail",
+        "delete_email": "Excluir E-mail",
+        "deleting": "Excluindo",
+        "inbox": "Caixa de Entrada",
+        "email_sent_to_your_inbox_text": "Os e-mails enviados para o seu endereço temporário aparecem aqui",
+        "email_address_expired": "O endereço de e-mail expirou. Por favor, estenda o tempo ou crie um novo e-mail!",
+        "checking_inbox_text": "Verificando a caixa de entrada por novos e-mails",
+        "extend_time_alert_text": "Você está prestes a estender o tempo deste e-mail por mais 30 minutos.",
+        "delete_email_alert_text": "Você está prestes a excluir este e-mail. Esta ação não pode ser desfeita. Todos os dados serão apagados permanentemente.",
+        "email_in_inbox": "e-mail(s) na sua caixa de entrada",
+        "new_email_arrived": "Novo e-mail chegou à sua caixa de entrada",
+        "temporary_email": {
+            "title": "O que é um Endereço de E-mail Temporário?",
+            "description1": "Um endereço de e-mail temporário (também conhecido como e-mail descartável, e-mail temporário ou e-mail burner) é um serviço que permite receber e-mails em um endereço temporário que se autodestrói após um período determinado. O TempEmail fornece endereços de e-mail temporários instantâneos e anônimos que protegem sua caixa de entrada real contra spam, e-mails promocionais e mensagens maliciosas.",
+            "description2": "Nosso serviço de e-mail descartável é perfeito para registros online, downloads, acesso a testes gratuitos ou qualquer situação em que você precise de um e-mail, mas não queira usar o seu pessoal. Com o TempEmail, você pode criar endereços temporários ilimitados instantaneamente, sem qualquer registro."
+        },
+        "why_choose": {
+            "title": "Por que Escolher o TempEmail?",
+            "features": {
+                "instant": {
+                    "title": "Geração Instantânea",
+                    "description": "Crie um endereço de e-mail temporário instantaneamente. Sem cadastro, sem senhas, sem informações pessoais necessárias. Comece a receber e-mails em segundos."
+                },
+                "privacy": {
+                    "title": "Privacidade Total",
+                    "description": "Proteja seu e-mail real contra spam e mensagens indesejadas. Não coletamos dados pessoais nem rastreamos suas atividades. Sua privacidade é nossa prioridade."
+                },
+                "time": {
+                    "title": "Extensão de Tempo",
+                    "description": "Precisa de mais tempo? Estenda a validade do seu endereço temporário com um único clique. Mantenha-o ativo pelo tempo que precisar."
+                },
+                "qr": {
+                    "title": "Sincronização via QR Code",
+                    "description": "Acesse seu e-mail temporário em vários dispositivos usando nosso recurso de código QR. Sincronize instantaneamente entre desktop e celular."
+                },
+                "safe": {
+                    "title": "Visualização Segura",
+                    "description": "Avisos avançados de conteúdo protegem você de tentativas de phishing, links maliciosos e conteúdo inadequado antes de abrir os e-mails."
+                },
+                "free": {
+                    "title": "100% Grátis",
+                    "description": "Nosso serviço de e-mail temporário é totalmente gratuito, sem taxas ocultas, planos premium ou limitações. Todos merecem privacidade no e-mail."
+                }
+            }
+        },
+        "when_to_use": {
+            "title": "Quando Usar um E-mail Temporário?",
+            "items": {
+                "online": {
+                    "title": "Registros Online",
+                    "description": "Cadastre-se em sites, fóruns ou serviços sem expor seu e-mail real ao spam."
+                },
+                "trials": {
+                    "title": "Testes Grátis & Downloads",
+                    "description": "Acesse testes gratuitos, baixe arquivos ou obtenha recursos sem usar seu e-mail pessoal."
+                },
+                "testing": {
+                    "title": "Testes & Desenvolvimento",
+                    "description": "Desenvolvedores podem testar funcionalidades de e-mail sem criar várias contas reais."
+                },
+                "spam": {
+                    "title": "Evitar Spam",
+                    "description": "Mantenha sua caixa principal limpa usando e-mails temporários para verificações e confirmações únicas."
+                },
+                "privacy": {
+                    "title": "Proteção de Privacidade",
+                    "description": "Proteja sua identidade ao participar de discussões online ou acessar conteúdo de fontes não confiáveis."
+                }
+            }
+        },
+        "how_it_works": {
+            "title": "Como o TempEmail Funciona?",
+            "steps": {
+                "1": {
+                    "title": "Gerar",
+                    "description": "Clique para gerar instantaneamente um endereço de e-mail temporário. Não é necessário criar conta."
+                },
+                "2": {
+                    "title": "Usar",
+                    "description": "Copie seu e-mail temporário e use onde precisar. Todos os e-mails aparecerão automaticamente na sua caixa de entrada."
+                },
+                "3": {
+                    "title": "Autoexclusão",
+                    "description": "Seu e-mail temporário e todas as mensagens são automaticamente excluídos após a expiração. Fique anônimo e seguro."
+                }
+            }
+        },
+        "faq": {
+            "title": "Perguntas Frequentes",
+            "items": {
+                "free": {
+                    "question": "O TempEmail é realmente gratuito?",
+                    "answer": "Sim! O TempEmail é 100% gratuito, sem custos ocultos, recursos premium ou limitações. Acreditamos que todos merecem proteção de privacidade."
+                },
+                "duration": {
+                    "question": "Quanto tempo dura um e-mail temporário?",
+                    "answer": "Por padrão, os endereços temporários permanecem ativos por um período definido. Você pode estender a duração usando o recurso de extensão de tempo."
+                },
+                "send": {
+                    "question": "Posso enviar e-mails com meu endereço temporário?",
+                    "answer": "O TempEmail é projetado apenas para receber e-mails. Isso ajuda a manter o anonimato e evita abusos do serviço."
+                },
+                "important": {
+                    "question": "É seguro usar e-mail temporário para registros importantes?",
+                    "answer": "E-mails temporários são perfeitos para serviços que você não pretende usar a longo prazo. Para contas importantes, recomendamos usar seu e-mail permanente."
+                },
+                "store": {
+                    "question": "Vocês guardam meus e-mails?",
+                    "answer": "Armazenamos e-mails apenas temporariamente durante a sessão ativa. Após expirar ou excluir o endereço, todos os dados são removidos permanentemente."
+                }
+            }
+        },
+        "cta": {
+            "title": "Comece a Proteger Sua Privacidade Hoje",
+            "description": "Junte-se a milhões que confiam no TempEmail para manter suas caixas de entrada limpas e suas identidades privadas. Crie agora seu e-mail temporário gratuito."
+        },
+        "stats": {
+            "free": "Grátis Para Sempre",
+            "registration": "Sem Registro",
+            "unlimited": "Endereços Ilimitados",
+            "available": "Sempre Disponível"
+        },
+        "generate_temp_email": "Gerar E-mail Temporário"
+    },
+
+    "AboutPage": {
+        "title": "Sobre o TempEmail",
+        "subtitle": "Protegendo sua privacidade, um e-mail temporário por vez",
+        "our_mission": {
+            "heading": "Nossa Missão",
+            "text": "O TempEmail foi criado com uma visão simples e poderosa: dar a todos a capacidade de proteger seu e-mail principal contra spam, marketing indesejado e ameaças de segurança. No mundo digital de hoje, seu e-mail é muitas vezes a chave da sua identidade online, e acreditamos que você deve ter controle total sobre quem tem acesso a ele."
+        },
+        "what_we_do": {
+            "heading": "O Que Fazemos",
+            "text": "Fornecemos endereços de e-mail descartáveis instantâneos que você pode usar sempre que precisar se registrar em um serviço, baixar conteúdo ou interagir com sites sem expor seu e-mail real. Nosso serviço é totalmente gratuito, não exige registro e respeita sua privacidade acima de tudo."
+        },
+        "key_features": {
+            "heading": "Principais Recursos",
+            "features": {
+                "instant_generation": {
+                    "title": "Geração Instantânea",
+                    "text": "Obtenha um endereço de e-mail temporário imediatamente, sem processo de cadastro ou informações pessoais."
+                },
+                "content_safety": {
+                    "title": "Segurança de Conteúdo",
+                    "text": "Alertas avançados para conteúdo potencialmente prejudicial mantêm você seguro ao navegar na sua caixa de entrada temporária."
+                },
+                "qr_code_sync": {
+                    "title": "Sincronização por QR Code",
+                    "text": "Sincronize facilmente seu e-mail temporário entre dispositivos usando o recurso de código QR."
+                },
+                "privacy_first": {
+                    "title": "Privacidade em Primeiro Lugar",
+                    "text": "Não rastreamos, armazenamos ou compartilhamos seus dados. Sua privacidade é nossa maior prioridade."
+                }
+            }
+        },
+        "our_commitment": {
+            "heading": "Nosso Compromisso",
+            "text": "Estamos comprometidos em manter um serviço gratuito, confiável e fácil de usar que respeita sua privacidade. O TempEmail permanecerá sempre acessível a todos, sem taxas ocultas ou planos premium que limitem funcionalidades básicas. Sua confiança é nosso ativo mais valioso e trabalhamos diariamente para mantê-la."
+        }
+    },
+
+    "TermsPage": {
+        "title": "Termos de Serviço",
+        "last_updated": "Última atualização",
+        "sections": {
+            "acceptance": {
+                "heading": "1. Aceitação dos Termos",
+                "text": "Ao acessar e usar os serviços do TempEmail, você aceita e concorda com os termos deste acordo. Se você não concordar, não utilize nosso serviço."
+            },
+            "service_description": {
+                "heading": "2. Descrição do Serviço",
+                "text": "O TempEmail fornece endereços de e-mail temporários e descartáveis para receber mensagens. Esses endereços podem expirar após certo período. Reservamo-nos o direito de modificar, suspender ou descontinuar qualquer parte do serviço a qualquer momento."
+            },
+            "acceptable_use": {
+                "heading": "3. Uso Aceitável",
+                "text": "Você concorda em usar o TempEmail apenas para fins legais. Você não pode usar nosso serviço para:",
+                "items": {
+                    "illegal_activities": "Praticar atividades ilegais ou fraude",
+                    "harassment": "Assediar, abusar ou prejudicar outras pessoas",
+                    "spam_malware": "Distribuir spam, malware ou vírus",
+                    "intellectual_property": "Violar direitos de propriedade intelectual",
+                    "unauthorized_access": "Tentar obter acesso não autorizado aos nossos sistemas",
+                    "commercial_use": "Usar o serviço para fins comerciais sem autorização"
+                }
+            },
+            "privacy_data": {
+                "heading": "4. Privacidade e Dados",
+                "text": "Endereços temporários e e-mails recebidos são automaticamente excluídos após a expiração. Não armazenamos permanentemente conteúdo de e-mails nem associamos endereços temporários a identidades de usuários. Consulte nossa Política de Privacidade para mais detalhes."
+            },
+            "no_warranty": {
+                "heading": "5. Sem Garantia",
+                "text": "O TempEmail é fornecido \"como está\", sem garantias de qualquer tipo. Não garantimos que o serviço será ininterrupto, seguro ou livre de erros. O uso é por sua conta e risco."
+            },
+            "limitation_liability": {
+                "heading": "6. Limitação de Responsabilidade",
+                "text": "O TempEmail não será responsável por danos indiretos, incidentais, especiais, consequenciais ou punitivos decorrentes do uso ou incapacidade de uso do serviço, incluindo perda de dados, lucros ou interrupções."
+            },
+            "changes_terms": {
+                "heading": "7. Alterações nos Termos",
+                "text": "Reservamo-nos o direito de modificar estes termos a qualquer momento. O uso contínuo após as alterações constitui aceitação dos novos termos. Recomendamos revisar periodicamente."
+            },
+            "contact": {
+                "heading": "8. Contato",
+                "text": "Se você tiver dúvidas sobre estes Termos de Serviço, entre em contato pelos nossos canais de suporte."
+            }
+        }
+    },
+
+    "PrivacyPage": {
+        "title": "Política de Privacidade",
+        "last_updated": "Última atualização",
+        "sections": {
+            "introduction": {
+                "heading": "1. Introdução",
+                "text": "No TempEmail, levamos sua privacidade a sério. Esta Política de Privacidade explica como tratamos informações quando você usa nosso serviço de e-mail temporário. Nosso princípio central é simples: coletamos o mínimo de dados possível e priorizamos seu anonimato."
+            },
+            "dont_collect": {
+                "heading": "2. Informações que Não Coletamos",
+                "text": "Estamos comprometidos em não coletar informações pessoais. Especificamente, não coletamos:",
+                "items": {
+                    "name_email": "Seu nome, e-mail ou informações de contato",
+                    "credentials": "Credenciais de conta (não exigimos contas)",
+                    "payment_info": "Informações de pagamento (o serviço é gratuito)",
+                    "persistent_ids": "Identificadores persistentes que rastreiam você entre sessões",
+                    "browsing_history": "Seu histórico de navegação fora do nosso serviço"
+                }
+            },
+            "temp_process": {
+                "heading": "3. Informações que Processamos Temporariamente",
+                "text": "Para fornecer nosso serviço, processamos temporariamente:",
+                "items": {
+                    "generated_emails": "Endereços de e-mail temporários gerados",
+                    "received_emails": "E-mails recebidos nesses endereços",
+                    "technical_data": "Dados técnicos necessários para entrega (remetente, horário, assunto)",
+                    "analytics": "Estatísticas básicas para manter a performance"
+                },
+                "note": "Todos esses dados são automaticamente excluídos quando seu e-mail temporário expira ou é excluído manualmente."
+            },
+            "data_retention": {
+                "heading": "4. Retenção de Dados",
+                "text": "Endereços e conteúdos são armazenados apenas durante a sessão ou período estendido. Após a expiração, tudo é deletado permanentemente. Não mantemos backups de e-mails expirados."
+            },
+            "cookies_tracking": {
+                "heading": "5. Cookies e Rastreamento",
+                "text": "Usamos apenas cookies essenciais para o funcionamento do serviço. Não utilizamos cookies de rastreamento ou publicidade. Você pode usar o serviço sem aceitar cookies, porém algumas funções podem ser limitadas."
+            },
+            "third_party": {
+                "heading": "6. Serviços de Terceiros",
+                "text": "Não compartilhamos seus dados com terceiros para publicidade. Podemos usar serviços essenciais de infraestrutura, que são obrigados a proteger seus dados."
+            },
+            "security": {
+                "heading": "7. Segurança",
+                "text": "Utilizamos medidas padrão da indústria como HTTPS, servidores seguros e auditorias regulares. Entretanto, nenhum método é 100% seguro."
+            },
+            "content_warnings": {
+                "heading": "8. Avisos de Conteúdo",
+                "text": "Nosso recurso de segurança analisa automaticamente e-mails para conteúdo potencialmente perigoso. Não há revisão humana."
+            },
+            "your_rights": {
+                "heading": "9. Seus Direitos",
+                "text": "Você pode excluir seu e-mail temporário e dados associados a qualquer momento encerrando a sessão. Como não coletamos dados pessoais, não há informações pessoais para solicitar, modificar ou excluir."
+            },
+            "child_privacy": {
+                "heading": "10. Privacidade Infantil",
+                "text": "Nosso serviço não é direcionado a crianças menores de 13 anos. Não coletamos informações de crianças."
+            },
+            "international_users": {
+                "heading": "11. Usuários Internacionais",
+                "text": "O TempEmail é acessível globalmente. Ao usar o serviço, você concorda com o processamento de dados no país onde nossos servidores estão localizados."
+            },
+            "changes_policy": {
+                "heading": "12. Alterações na Política",
+                "text": "Podemos atualizar esta Política ocasionalmente. Mudanças importantes serão notificadas no serviço. O uso contínuo constitui aceitação da política atualizada."
+            },
+            "contact_us": {
+                "heading": "13. Contate-nos",
+                "text": "Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato pelos nossos canais de suporte."
+            }
+        }
+    },
+    "Footer": {
+        "all_rights_reserved": "Todos os direitos reservados.",
+        "home": "Início",
+        "about": "Sobre",
+        "terms": "Termos",
+        "privacy": "Privacidade"
+    }
+}

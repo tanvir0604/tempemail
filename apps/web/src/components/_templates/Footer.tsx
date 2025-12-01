@@ -1,6 +1,7 @@
 import { Mail } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 export default async function Footer() {
     const f = await getTranslations('Footer');
@@ -14,7 +15,7 @@ export default async function Footer() {
                             © 2025 TempEmail. {f('all_rights_reserved')}
                         </span>
                     </div>
-                    <div className="flex gap-6 text-sm">
+                    <div className="flex gap-6 text-sm items-center">
                         <Link
                             href="/"
                             className="text-zinc-400 hover:text-zinc-100 transition-colors"
@@ -39,6 +40,7 @@ export default async function Footer() {
                         >
                             {f('privacy')}
                         </Link>
+                        <LanguageSwitcher />
                     </div>
                 </div>
             </div>

@@ -1,0 +1,306 @@
+{
+    "Common": {
+        "cancel": "İptal",
+        "continue": "Devam Et",
+        "please_wait": "Lütfen bekleyin"
+    },
+    "HomePage": {
+        "title": "Ücretsiz Geçici E-posta Adresi",
+        "sub_title": "Hemen geçici bir e-posta adresi alın. Gizliliğinizi koruyun ve spam’den kaçının. Kayıt gerekmez.",
+        "your_temp_email": "Geçici E-posta Adresiniz",
+        "this_email_will_expire": "Bu e-posta süresi dolacak",
+        "copied": "Kopyalandı",
+        "copy": "Kopyala",
+        "qr_code": "QR Kodu",
+        "extend_time": "Süre Uzat",
+        "extending": "Uzatılıyor",
+        "new_email": "Yeni E-posta",
+        "delete_email": "E-postayı Sil",
+        "deleting": "Siliniyor",
+        "inbox": "Gelen Kutusu",
+        "email_sent_to_your_inbox_text": "Geçici adresinize gönderilen e-postalar burada görünür",
+        "email_address_expired": "E-posta adresinizin süresi doldu. Lütfen süreyi uzatın veya yeni e-posta oluşturun!",
+        "checking_inbox_text": "Yeni e-postalar için gelen kutusu kontrol ediliyor",
+        "extend_time_alert_text": "Bu e-postanın süresini 30 dakika daha uzatmak üzeresiniz.",
+        "delete_email_alert_text": "Bu e-postayı silmek üzeresiniz. Bu işlem geri alınamaz. Tüm veriler kalıcı olarak silinecek.",
+        "email_in_inbox": "gelen kutunuzda e-posta",
+        "new_email_arrived": "Gelen kutunuza yeni bir e-posta ulaştı",
+        "temporary_email": {
+            "title": "Geçici E-posta Adresi Nedir?",
+            "description1": "Geçici e-posta adresi (tek kullanımlık e-posta, geçici e-posta veya burner e-posta olarak da bilinir), belirli bir süre sonra kendini otomatik olarak imha eden geçici bir adreste e-posta almanızı sağlayan bir hizmettir. TempEmail, gerçek gelen kutunuzu spam, reklam e-postaları ve kötü amaçlı e-postalardan korur.",
+            "description2": "Tek kullanımlık e-posta hizmetimiz çevrimiçi kayıtlar, dosya indirme, ücretsiz denemeler veya kişisel adresinizi kullanmak istemediğiniz durumlar için idealdir. TempEmail ile kayıt olmadan sınırsız sayıda geçici e-posta adresi oluşturabilirsiniz."
+        },
+        "why_choose": {
+            "title": "Neden TempEmail?",
+            "features": {
+                "instant": {
+                    "title": "Anında Oluşturma",
+                    "description": "Hemen geçici bir e-posta adresi oluşturun. Kayıt yok, şifre yok, kişisel bilgi yok. Saniyeler içinde e-posta almaya başlayın."
+                },
+                "privacy": {
+                    "title": "Tam Gizlilik",
+                    "description": "Gerçek e-posta adresinizi spam ve istenmeyen mesajlardan koruyun. Kişisel veri toplamıyoruz veya etkinliğinizi izlemiyoruz."
+                },
+                "time": {
+                    "title": "Süre Uzatma",
+                    "description": "Daha fazla zamana mı ihtiyacınız var? Tek tıkla e-posta adresinizin kullanım süresini uzatabilirsiniz."
+                },
+                "qr": {
+                    "title": "QR Kod Senkronizasyonu",
+                    "description": "QR kod özelliğini kullanarak geçici e-postanızı cihazlar arasında kolayca senkronize edin."
+                },
+                "safe": {
+                    "title": "Güvenli E-posta Görüntüleme",
+                    "description": "Gelişmiş içerik uyarıları, e-postaları açmadan önce kimlik avı, kötü amaçlı bağlantılar ve uygunsuz içerik konusunda sizi korur."
+                },
+                "free": {
+                    "title": "Tamamen Ücretsiz",
+                    "description": "Hizmetimiz tamamen ücretsizdir. Gizli ücret, premium plan veya sınırlama yoktur."
+                }
+            }
+        },
+        "when_to_use": {
+            "title": "Geçici E-posta Ne Zaman Kullanılır?",
+            "items": {
+                "online": {
+                    "title": "Çevrimiçi Kayıtlar",
+                    "description": "Gerçek e-posta adresinizi açığa çıkarmadan sitelere, forumlara veya hizmetlere kaydolun."
+                },
+                "trials": {
+                    "title": "Ücretsiz Denemeler ve İndirmeler",
+                    "description": "Kişisel adresinizi kullanmadan içerik indirin veya deneme sürümlerine erişin."
+                },
+                "testing": {
+                    "title": "Test ve Geliştirme",
+                    "description": "Geliştiriciler birden fazla gerçek hesap oluşturmadan e-posta işlevlerini test edebilir."
+                },
+                "spam": {
+                    "title": "Spam'den Kaçınma",
+                    "description": "Bir kereye mahsus doğrulamalar için geçici e-posta kullanarak ana gelen kutunuzu temiz tutun."
+                },
+                "privacy": {
+                    "title": "Gizlilik Koruması",
+                    "description": "Gerçek kimliğinizi gizleyerek tartışmalara katılın veya güvenilmeyen içeriklere erişin."
+                }
+            }
+        },
+        "how_it_works": {
+            "title": "TempEmail Nasıl Çalışır?",
+            "steps": {
+                "1": {
+                    "title": "Oluştur",
+                    "description": "Tek tıkla rastgele bir geçici e-posta adresi oluşturun."
+                },
+                "2": {
+                    "title": "Kullanın",
+                    "description": "Geçici e-postanızı kopyalayın ve istediğiniz yerde kullanın. Tüm e-postalar otomatik olarak gelen kutunuza düşer."
+                },
+                "3": {
+                    "title": "Otomatik Silme",
+                    "description": "Geçici e-posta ve tüm içerikleri süre bitiminde otomatik olarak silinir."
+                }
+            }
+        },
+        "faq": {
+            "title": "Sıkça Sorulan Sorular",
+            "items": {
+                "free": {
+                    "question": "TempEmail gerçekten ücretsiz mi?",
+                    "answer": "Evet! TempEmail tamamen ücretsizdir ve herhangi bir gizli ücret veya premium özellik yoktur."
+                },
+                "duration": {
+                    "question": "Geçici e-posta ne kadar aktif kalır?",
+                    "answer": "Varsayılan olarak belirli bir süre aktiftir. Süre uzatma özelliğiyle ihtiyaç duyduğunuz kadar uzatabilirsiniz."
+                },
+                "send": {
+                    "question": "Geçici adresimden e-posta gönderebilir miyim?",
+                    "answer": "TempEmail yalnızca e-posta almak için tasarlanmıştır. Bu, anonimliği korumaya ve kötüye kullanımı önlemeye yardımcı olur."
+                },
+                "important": {
+                    "question": "Önemli kayıtlar için geçici e-posta kullanmak güvenli mi?",
+                    "answer": "Uzun süreli kullanmayacağınız hizmetler için mükemmeldir. Şifre kurtarma gereken önemli hesaplar için kalıcı adresinizi kullanmanızı öneririz."
+                },
+                "store": {
+                    "question": "E-postalarımı saklıyor musunuz?",
+                    "answer": "E-postalar yalnızca geçici olarak saklanır. Adresinizin süresi dolduğunda tüm veriler kalıcı olarak silinir."
+                }
+            }
+        },
+        "cta": {
+            "title": "Bugün Gizliliğinizi Korumaya Başlayın",
+            "description": "TempEmail’e güvenen milyonlara katılın. Hemen ücretsiz geçici e-posta oluşturun."
+        },
+        "stats": {
+            "free": "Sonsuza Kadar Ücretsiz",
+            "registration": "Kayıt Gerekmez",
+            "unlimited": "Sınırsız Adres",
+            "available": "Her Zaman Kullanılabilir"
+        },
+        "generate_temp_email": "Geçici E-posta Oluştur"
+    },
+
+    "AboutPage": {
+        "title": "TempEmail Hakkında",
+        "subtitle": "Gizliliğinizi, bir geçici e-posta ile koruyoruz",
+        "our_mission": {
+            "heading": "Misyonumuz",
+            "text": "TempEmail, insanların birincil e-posta adreslerini spam, gereksiz pazarlama ve güvenlik tehditlerinden korumasına yardımcı olmak amacıyla oluşturuldu. Dijital çağda e-posta adresiniz kimliğinizin kapısıdır ve kimin erişebileceğine siz karar vermelisiniz."
+        },
+        "what_we_do": {
+            "heading": "Ne Yapıyoruz",
+            "text": "Gerçek adresinizi açıklamadan hizmetlere kaydolabilmeniz veya içerik indirebilmeniz için anında, tek kullanımlık e-posta adresleri sağlıyoruz. Hizmetimiz tamamen ücretsizdir, kayıt gerektirmez ve gizliliğinize öncelik verir."
+        },
+        "key_features": {
+            "heading": "Temel Özellikler",
+            "features": {
+                "instant_generation": {
+                    "title": "Anında Oluşturma",
+                    "text": "Kayıt veya kişisel bilgi gerektirmeden hemen geçici bir e-posta alın."
+                },
+                "content_safety": {
+                    "title": "İçerik Güvenliği",
+                    "text": "Zararlı içerikler için gelişmiş uyarılar sizi güvende tutar."
+                },
+                "qr_code_sync": {
+                    "title": "QR Kod Senkronizasyonu",
+                    "text": "QR kodu tarayarak e-postanızı birden fazla cihazda yönetin."
+                },
+                "privacy_first": {
+                    "title": "Gizlilik Öncelikli",
+                    "text": "Verilerinizi izlemiyoruz, saklamıyoruz veya paylaşmıyoruz."
+                }
+            }
+        },
+        "our_commitment": {
+            "heading": "Taahhüdümüz",
+            "text": "Her zaman ücretsiz, güvenilir ve gizliliğe saygılı bir hizmet sunmaya kararlıyız. TempEmail hiçbir zaman temel özellikleri sınırlayan ücretli paketlere sahip olmayacaktır."
+        }
+    },
+
+    "TermsPage": {
+        "title": "Hizmet Şartları",
+        "last_updated": "Son güncelleme",
+        "sections": {
+            "acceptance": {
+                "heading": "1. Şartların Kabulü",
+                "text": "TempEmail hizmetlerini kullanarak bu şartları kabul etmiş olursunuz. Kabul etmiyorsanız lütfen hizmeti kullanmayın."
+            },
+            "service_description": {
+                "heading": "2. Hizmet Açıklaması",
+                "text": "TempEmail geçici, tek kullanımlık e-posta hizmeti sunar. Bu adresler belirli bir süre sonra süresi dolabilir. Hizmetin herhangi bir bölümünü değiştirme veya durdurma hakkımız saklıdır."
+            },
+            "acceptable_use": {
+                "heading": "3. Kabul Edilebilir Kullanım",
+                "text": "TempEmail’i yalnızca yasal amaçlarla kullanmayı kabul edersiniz. Aşağıdakiler yasaktır:",
+                "items": {
+                    "illegal_activities": "Yasadışı faaliyetlerde bulunmak",
+                    "harassment": "Başkalarını taciz etmek, zarar vermek",
+                    "spam_malware": "Spam, kötü amaçlı yazılım veya virüs dağıtmak",
+                    "intellectual_property": "Telif hakkı ihlal etmek",
+                    "unauthorized_access": "Yetkisiz erişim sağlamaya çalışmak",
+                    "commercial_use": "İzinsiz ticari kullanım"
+                }
+            },
+            "privacy_data": {
+                "heading": "4. Gizlilik ve Veri",
+                "text": "Geçici e-postalar süresi dolduğunda otomatik olarak silinir. Kalıcı veri tutmayız."
+            },
+            "no_warranty": {
+                "heading": "5. Garanti Yok",
+                "text": "TempEmail 'olduğu gibi' sağlanır. Kesintisiz veya hatasız çalışma garantisi verilmez."
+            },
+            "limitation_liability": {
+                "heading": "6. Sorumluluk Sınırlaması",
+                "text": "TempEmail, hizmetin kullanımı veya kullanılamaması sonucunda oluşan dolaylı veya doğrudan zararlardan sorumlu değildir."
+            },
+            "changes_terms": {
+                "heading": "7. Şartlarda Değişiklikler",
+                "text": "Şartları istediğimiz zaman güncelleyebiliriz. Kullanıma devam etmeniz yeni şartları kabul ettiğiniz anlamına gelir."
+            },
+            "contact": {
+                "heading": "8. İletişim",
+                "text": "Hizmet Şartları ile ilgili sorularınız için destek kanallarımızdan bize ulaşabilirsiniz."
+            }
+        }
+    },
+
+    "PrivacyPage": {
+        "title": "Gizlilik Politikası",
+        "last_updated": "Son güncelleme",
+        "sections": {
+            "introduction": {
+                "heading": "1. Giriş",
+                "text": "TempEmail olarak gizliliğinize önem veriyoruz. Bu politika, hizmetimizi kullanırken verilerin nasıl işlendiğini açıklar."
+            },
+            "dont_collect": {
+                "heading": "2. Toplamadığımız Bilgiler",
+                "text": "Kişisel bilgi toplamıyoruz. Özellikle toplamadığımız bilgiler:",
+                "items": {
+                    "name_email": "Adınız, e-posta adresiniz veya iletişim bilgileriniz",
+                    "credentials": "Hesap bilgileri (kayıt gerekmez)",
+                    "payment_info": "Ödeme bilgileri (hizmet ücretsizdir)",
+                    "persistent_ids": "Kalıcı takip tanımlayıcıları",
+                    "browsing_history": "Hizmet dışındaki tarama geçmişiniz"
+                }
+            },
+            "temp_process": {
+                "heading": "3. Geçici Olarak İşlenen Bilgiler",
+                "text": "Hizmeti sunmak için geçici olarak işlediğimiz bilgiler:",
+                "items": {
+                    "generated_emails": "Oluşturulan geçici e-posta adresleri",
+                    "received_emails": "Bu adreslere gelen e-postalar",
+                    "technical_data": "Gönderen, zaman damgası, konu gibi teknik bilgiler",
+                    "analytics": "Anonim kullanım istatistikleri"
+                },
+                "note": "Tüm veriler süre dolduğunda otomatik olarak silinir."
+            },
+            "data_retention": {
+                "heading": "4. Veri Saklama",
+                "text": "Tüm geçici veriler yalnızca oturum süresince saklanır ve süre bitiminde kalıcı olarak silinir."
+            },
+            "cookies_tracking": {
+                "heading": "5. Çerezler ve Takip",
+                "text": "Yalnızca işlevsel çerezler kullanıyoruz. Reklam ve üçüncü taraf takip çerezleri kullanmıyoruz."
+            },
+            "third_party": {
+                "heading": "6. Üçüncü Taraf Hizmetleri",
+                "text": "Verileriniz pazarlama amacıyla paylaşılmaz. Kullanılan altyapı hizmetleri veri güvenliğini korumakla yükümlüdür."
+            },
+            "security": {
+                "heading": "7. Güvenlik",
+                "text": "Veriler HTTPS ile korunur ve sunucu güvenliği sağlanır. Ancak hiçbir yöntem %100 güvenli değildir."
+            },
+            "content_warnings": {
+                "heading": "8. İçerik Uyarıları",
+                "text": "Zararlı içerik tespiti otomatik yapılır; insan incelemesi yoktur."
+            },
+            "your_rights": {
+                "heading": "9. Haklarınız",
+                "text": "Geçici e-postayı istediğiniz zaman silerek tüm verileri kaldırabilirsiniz."
+            },
+            "child_privacy": {
+                "heading": "10. Çocukların Gizliliği",
+                "text": "Hizmet 13 yaş altındaki çocuklara yönelik değildir."
+            },
+            "international_users": {
+                "heading": "11. Uluslararası Kullanıcılar",
+                "text": "Hizmeti kullanarak verilerinizin sunucu konumuna göre işlenmesini kabul edersiniz."
+            },
+            "changes_policy": {
+                "heading": "12. Politikada Değişiklikler",
+                "text": "Gizlilik politikası zaman zaman güncellenebilir."
+            },
+            "contact_us": {
+                "heading": "13. Bize Ulaşın",
+                "text": "Gizlilikle ilgili sorularınızı destek ekibimize iletebilirsiniz."
+            }
+        }
+    },
+    "Footer": {
+        "all_rights_reserved": "Tüm hakları saklıdır.",
+        "home": "Ana Sayfa",
+        "about": "Hakkında",
+        "terms": "Şartlar",
+        "privacy": "Gizlilik"
+    }
+}

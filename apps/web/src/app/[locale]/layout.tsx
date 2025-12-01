@@ -130,7 +130,11 @@ export default async function RootLayout({
         locale: locale,
     });
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html
+            lang="en"
+            suppressHydrationWarning
+            dir={locale === 'ar' ? 'rtl' : 'ltr'}
+        >
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased h-full min-h-screen flex flex-col`}
             >

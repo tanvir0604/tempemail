@@ -44,6 +44,9 @@ export default function TempEmail({
 
     const [email, setEmail] = useState<string | undefined>(undefined);
     const [expiredAt, setExpiredAt] = useState<Date>(new Date());
+    const [waitTill, setWaitTill] = useState<Date>(
+        new Date(emailData?.waitTille ?? new Date()),
+    );
     const [copied, setCopied] = useState(false);
 
     useEffect(() => {
@@ -181,8 +184,7 @@ export default function TempEmail({
                                         !email ||
                                         generatingEmail ||
                                         pending ||
-                                        (emailData?.waitTille &&
-                                            emailData?.waitTille > new Date())
+                                        waitTill > new Date()
                                     }
                                     onClick={generateNewEmailAction}
                                     className="bg-zinc-950 border-zinc-800 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 cursor-pointer"
@@ -192,10 +194,12 @@ export default function TempEmail({
                                     ) : (
                                         <RefreshCw className="w-4 h-4 mr-2" />
                                     )}
-                                    {emailData?.waitTille &&
-                                    emailData?.waitTille > new Date() ? (
+                                    {waitTill > new Date() ? (
                                         <TimeLeft
-                                            expiredAt={emailData?.waitTille}
+                                            expiredAt={waitTill}
+                                            onComplete={() => {
+                                                setWaitTill(new Date());
+                                            }}
                                         />
                                     ) : (
                                         <>{t('new_email')}</>
