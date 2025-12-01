@@ -10,7 +10,12 @@ import {
     Users,
 } from 'lucide-react';
 import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+
+import { locales } from '@repo/validation';
+export function generateStaticParams() {
+    return locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
     title: 'About Us - TempEmail | Free Temporary Email Service',

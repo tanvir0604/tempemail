@@ -89,7 +89,6 @@ export const metadata: Metadata = {
     },
 };
 
-// Additional JSON-LD structured data (add this to your layout or page component)
 export const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -114,6 +113,12 @@ export const jsonLd = {
     browserRequirements: 'Requires JavaScript. Works on modern browsers.',
     permissions: 'No registration required',
 };
+
+import { locales } from '@repo/validation';
+
+export function generateStaticParams() {
+    return locales.map((locale) => ({ locale }));
+}
 
 export default async function RootLayout({
     children,
