@@ -32,6 +32,10 @@ export class AppController {
   @Post('/create-alias')
   @UsePipes(new ZodValidationPipe(CreateMailCowAliasSchema))
   async createAlias(@Body() data: CreateMailCowAliasDto) {
+    if (!data.userId) {
+      throw new BadRequestException("Please don't use incognito mood!!");
+    }
+
     let waitTill = new Date();
     if (data && data.userId) {
       const response = await this.tempEmailService.getList({
