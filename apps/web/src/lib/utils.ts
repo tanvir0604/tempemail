@@ -58,3 +58,19 @@ export const notifyWithSound = (title: string, body: string) => {
         // audio.play().catch((err) => console.log("Audio play error:", err));
     }
 };
+
+export async function isIncognito() {
+    return new Promise((resolve) => {
+        const fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+        if (!fs) {
+            resolve(false);
+            return;
+        }
+        fs(
+            window.TEMPORARY,
+            100,
+            () => resolve(false),
+            () => resolve(true),
+        );
+    });
+}

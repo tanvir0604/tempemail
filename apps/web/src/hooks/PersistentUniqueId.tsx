@@ -3,12 +3,14 @@ import { nanoid } from 'nanoid';
 
 export const usePersistentUniqueId = () => {
     const [uniqueId] = useState<string | null>(() => {
-        // This function only runs once on mount
         try {
-            let id = localStorage.getItem('__temp_email_user');
+            const storage = safeLocalStorage();
+            if (!storage) return null;
+
+            let id = storage.getItem('__temp_email_user');
             if (!id) {
                 id = nanoid();
-                localStorage.setItem('__temp_email_user', id);
+                storage.setItem('__temp_email_user', id);
             }
             return id;
         } catch (error) {
@@ -19,3 +21,15 @@ export const usePersistentUniqueId = () => {
 
     return uniqueId;
 };
+
+function safeLocalStorage() {
+    try {
+        if (typeof window === 'undefined') return null;
+        const test = '__storage_test__';
+        window.localStorage.setItem(test, test);
+        window.localStorage.removeItem(test);
+        return window.localStorage;
+    } catch {
+        return null;
+    }
+}

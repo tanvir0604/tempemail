@@ -7,6 +7,7 @@ import TempEmail from './TempEmail';
 import Inbox from './Inbox';
 import { usePersistentUniqueId } from '@/hooks/PersistentUniqueId';
 import { toast } from 'sonner';
+import { isIncognito } from '@/lib/utils';
 
 export default function EmailContainer({ id }: { id?: string }) {
     const [emailData, setEmailData] = useState<TempEmailType>();
@@ -14,6 +15,11 @@ export default function EmailContainer({ id }: { id?: string }) {
     const userID = usePersistentUniqueId();
 
     const generateTempEmailAction = async () => {
+        if (await isIncognito()) {
+            toast.error("Please don't use incognito mood!!");
+            return;
+        }
+
         if (!userID) {
             toast.error("Please don't use incognito mood!!");
             return;
