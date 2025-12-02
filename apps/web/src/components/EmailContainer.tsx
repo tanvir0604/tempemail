@@ -6,6 +6,7 @@ import { checkEmail, generateTempEmail, getTempEmail } from '@/lib/actions';
 import TempEmail from './TempEmail';
 import Inbox from './Inbox';
 import { usePersistentUniqueId } from '@/hooks/PersistentUniqueId';
+import { toast } from 'sonner';
 
 export default function EmailContainer({ id }: { id?: string }) {
     const [emailData, setEmailData] = useState<TempEmailType>();
@@ -13,6 +14,10 @@ export default function EmailContainer({ id }: { id?: string }) {
     const userID = usePersistentUniqueId();
 
     const generateTempEmailAction = async () => {
+        if (!userID) {
+            toast.error("Please don't use incognito mood!!");
+            return;
+        }
         setGeneratingEmail(true);
         const getEmail = localStorage.getItem('temp_email');
         if (getEmail) {
