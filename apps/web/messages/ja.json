@@ -157,7 +157,11 @@
             "unlimited": "無制限アドレス",
             "available": "24/7 利用可能"
         },
-        "generate_temp_email": "一時メールを作成"
+        "generate_temp_email": "一時メールを作成",
+        "contact": {
+            "title": "お問い合わせ",
+            "description": "ご質問やご意見がありますか？ぜひお気軽にご連絡ください！"
+        }
     },
 
     "AboutPage": {

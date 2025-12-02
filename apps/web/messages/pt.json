@@ -157,7 +157,11 @@
             "unlimited": "Endereços Ilimitados",
             "available": "Sempre Disponível"
         },
-        "generate_temp_email": "Gerar E-mail Temporário"
+        "generate_temp_email": "Gerar E-mail Temporário",
+        "contact": {
+            "title": "Fale Conosco",
+            "description": "Tem perguntas ou feedback? Adoraríamos ouvir você!"
+        }
     },
 
     "AboutPage": {

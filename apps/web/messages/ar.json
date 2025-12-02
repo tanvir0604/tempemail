@@ -157,7 +157,11 @@
             "unlimited": "عناوين غير محدودة",
             "available": "متاح دائمًا"
         },
-        "generate_temp_email": "إنشاء بريد مؤقت"
+        "generate_temp_email": "إنشاء بريد مؤقت",
+        "contact": {
+            "title": "اتصل بنا",
+            "description": "هل لديك أسئلة أو ملاحظات؟ يسعدنا التواصل معك!"
+        }
     },
 
     "AboutPage": {

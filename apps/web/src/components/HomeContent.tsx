@@ -8,7 +8,7 @@ export default async function HomeContent() {
         <>
             <section className="py-8 md:py-16 md:px-4 md:bg-zinc-900 blockquote">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-6 text-center">
+                    <h2 className="text-4xl font-bold mb-6 text-center">
                         {t('temporary_email.title')}
                     </h2>
                     <div className="prose prose-invert max-w-none">
@@ -24,7 +24,7 @@ export default async function HomeContent() {
 
             <section className="py-8 md:py-16">
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-12 text-center">
+                    <h2 className="text-4xl font-bold mb-12 text-center">
                         {t('why_choose.title')}
                     </h2>
 
@@ -106,7 +106,7 @@ export default async function HomeContent() {
 
             <section className="py-8 md:py-16 md:px-4 md:bg-zinc-900">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-8 text-center">
+                    <h2 className="text-4xl font-bold mb-8 text-center">
                         {t('when_to_use.title')}
                     </h2>
 
@@ -176,7 +176,7 @@ export default async function HomeContent() {
 
             <section className="py-8 md:py-16 md:px-4">
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-12 text-center">
+                    <h2 className="text-4xl font-bold mb-12 text-center">
                         {t('how_it_works.title')}
                     </h2>
 
@@ -228,7 +228,7 @@ export default async function HomeContent() {
 
             <section className="py-8 md:py-16 md:px-4 md:bg-zinc-900">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-8 text-center">
+                    <h2 className="text-4xl font-bold mb-8 text-center">
                         {t('faq.title')}
                     </h2>
 
@@ -295,7 +295,7 @@ export default async function HomeContent() {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         <div>
-                            <div className="text-3xl font-bold text-blue-500 mb-2">
+                            <div className="text-4xl font-bold text-blue-500 mb-2">
                                 100%
                             </div>
                             <div className="text-zinc-400">
@@ -303,7 +303,7 @@ export default async function HomeContent() {
                             </div>
                         </div>
                         <div>
-                            <div className="text-3xl font-bold text-blue-500 mb-2">
+                            <div className="text-4xl font-bold text-blue-500 mb-2">
                                 0
                             </div>
                             <div className="text-zinc-400">
@@ -311,7 +311,7 @@ export default async function HomeContent() {
                             </div>
                         </div>
                         <div>
-                            <div className="text-3xl font-bold text-blue-500 mb-2">
+                            <div className="text-4xl font-bold text-blue-500 mb-2">
                                 ∞
                             </div>
                             <div className="text-zinc-400">
@@ -319,7 +319,7 @@ export default async function HomeContent() {
                             </div>
                         </div>
                         <div>
-                            <div className="text-3xl font-bold text-blue-500 mb-2">
+                            <div className="text-4xl font-bold text-blue-500 mb-2">
                                 24/7
                             </div>
                             <div className="text-zinc-400">
@@ -327,6 +327,36 @@ export default async function HomeContent() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="py-8 md:py-16 px-4 border-t border-zinc-800">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold mb-8">
+                        {t('contact.title')}
+                    </h2>
+                    <p className="text-zinc-400 mb-6">
+                        {t('contact.description')}
+                    </p>
+                    <a
+                        href="mailto:contact@temp-email.dev"
+                        className="inline-flex items-center gap-2 text-lg text-blue-500 hover:text-blue-400 transition-colors"
+                    >
+                        <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                            />
+                        </svg>
+                        contact@temp-email.dev
+                    </a>
                 </div>
             </section>
         </>

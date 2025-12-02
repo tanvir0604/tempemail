@@ -157,7 +157,11 @@
             "unlimited": "Direcciones Ilimitadas",
             "available": "Siempre Disponible"
         },
-        "generate_temp_email": "Generar Correo Temporal"
+        "generate_temp_email": "Generar Correo Temporal",
+        "contact": {
+            "title": "Contáctanos",
+            "description": "¿Tienes preguntas o comentarios? ¡Nos encantaría saber de ti!"
+        }
     },
 
     "AboutPage": {

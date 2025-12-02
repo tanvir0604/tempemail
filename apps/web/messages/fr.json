@@ -157,7 +157,11 @@
             "unlimited": "Adresses illimitées",
             "available": "Toujours disponible"
         },
-        "generate_temp_email": "Générer une adresse temporaire"
+        "generate_temp_email": "Générer une adresse temporaire",
+        "contact": {
+            "title": "Contactez-nous",
+            "description": "Des questions ou des remarques ? Nous serions ravis de vous répondre !"
+        }
     },
 
     "AboutPage": {

@@ -157,7 +157,11 @@
             "unlimited": "무제한 주소",
             "available": "항상 사용 가능"
         },
-        "generate_temp_email": "임시 이메일 생성"
+        "generate_temp_email": "임시 이메일 생성",
+        "contact": {
+            "title": "문의하기",
+            "description": "질문이나 의견이 있으신가요? 여러분의 메시지를 기다리고 있습니다!"
+        }
     },
 
     "AboutPage": {

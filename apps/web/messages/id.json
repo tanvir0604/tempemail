@@ -157,7 +157,11 @@
             "unlimited": "Alamat Tanpa Batas",
             "available": "Selalu Tersedia"
         },
-        "generate_temp_email": "Buat Email Sementara"
+        "generate_temp_email": "Buat Email Sementara",
+        "contact": {
+            "title": "Hubungi Kami",
+            "description": "Punya pertanyaan atau masukan? Kami senang mendengarnya!"
+        }
     },
 
     "AboutPage": {

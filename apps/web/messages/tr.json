@@ -157,7 +157,11 @@
             "unlimited": "Sınırsız Adres",
             "available": "Her Zaman Kullanılabilir"
         },
-        "generate_temp_email": "Geçici E-posta Oluştur"
+        "generate_temp_email": "Geçici E-posta Oluştur",
+        "contact": {
+            "title": "Bize Ulaşın",
+            "description": "Sorularınız veya geri bildiriminiz mi var? Sizden haber almayı çok isteriz!"
+        }
     },
 
     "AboutPage": {

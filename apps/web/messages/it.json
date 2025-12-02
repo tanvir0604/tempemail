@@ -157,7 +157,11 @@
             "unlimited": "Indirizzi Illimitati",
             "available": "Sempre Disponibile"
         },
-        "generate_temp_email": "Genera Email Temporanea"
+        "generate_temp_email": "Genera Email Temporanea",
+        "contact": {
+            "title": "Contattaci",
+            "description": "Hai domande o suggerimenti? Ci farebbe piacere sentirti!"
+        }
     },
 
     "AboutPage": {

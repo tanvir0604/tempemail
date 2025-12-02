@@ -157,7 +157,11 @@
             "unlimited": "Неограниченные адреса",
             "available": "Всегда доступно"
         },
-        "generate_temp_email": "Создать временный email"
+        "generate_temp_email": "Создать временный email",
+        "contact": {
+            "title": "Свяжитесь с нами",
+            "description": "Есть вопросы или отзывы? Мы будем рады вам помочь!"
+        }
     },
 
     "AboutPage": {
