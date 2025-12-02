@@ -142,7 +142,7 @@ export default async function RootLayout({
     const jsonLd = await generateJsonLd(locale);
     return (
         <html
-            lang="en"
+            lang={locale}
             suppressHydrationWarning
             dir={locale === 'ar' ? 'rtl' : 'ltr'}
         >
