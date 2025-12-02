@@ -164,15 +164,7 @@
         "Metadata": {
             "title": "Sobre Nós - TempEmail | Serviço de Email Temporário Gratuito",
             "description": "Saiba mais sobre a missão do TempEmail de proteger sua privacidade com emails temporários gratuitos. Geração instantânea, sem registro e totalmente anônima.",
-            "keywords": [
-                "sobre tempemail",
-                "serviço de email temporário",
-                "sobre email descartável",
-                "serviço de privacidade de email",
-                "serviço de email anônimo",
-                "email temporário grátis",
-                "proteção de email"
-            ],
+            "keywords": "sobre tempemail, serviço de email temporário, sobre email descartável, serviço de privacidade de email, serviço de email anônimo, email temporário grátis, proteção de email",
             "ogTitle": "Sobre TempEmail - Protegendo Sua Privacidade",
             "ogDescription": "Descubra como o TempEmail oferece endereços de email temporários, instantâneos e seguros para proteger sua privacidade online.",
             "twitterTitle": "Sobre TempEmail - Serviço de Email Temporário Gratuito",
@@ -220,14 +212,7 @@
         "Metadata": {
             "title": "Termos de Serviço – TempEmail | Email Temporário",
             "description": "Leia os Termos de Serviço do TempEmail. Entenda as políticas de uso aceitável, limitações do serviço e termos legais para usar nosso serviço gratuito de e‑mail temporário.",
-            "keywords": [
-                "termos tempemail",
-                "termos de serviço",
-                "email temporário",
-                "email descartável legal",
-                "acordo de serviço de email",
-                "tempEmail legal"
-            ],
+            "keywords": "termos tempemail, termos de serviço, email temporário, email descartável legal, acordo de serviço de email, tempEmail legal",
             "ogTitle": "Termos de Serviço – TempEmail",
             "ogDescription": "Termos legais para usar o serviço gratuito de e‑mail temporário do TempEmail.",
             "locale": "pt_BR",
@@ -284,16 +269,7 @@
         "Metadata": {
             "title": "Política de Privacidade - TempEmail | Proteção e Privacidade dos Seus Dados",
             "description": "A Política de Privacidade do TempEmail explica como protegemos seus dados. Não coletamos informações pessoais e excluímos automaticamente os emails temporários. Total transparência.",
-            "keywords": [
-                "privacidade tempemail",
-                "política de privacidade",
-                "privacidade email temporário",
-                "proteção de dados",
-                "privacidade de email",
-                "política de email anônimo",
-                "sem coleta de dados",
-                "segurança de email"
-            ],
+            "keywords": "privacidade tempemail, política de privacidade, privacidade email temporário, proteção de dados, privacidade de email, política de email anônimo, sem coleta de dados, segurança de email",
             "ogTitle": "Política de Privacidade - TempEmail",
             "ogDescription": "Saiba como o TempEmail protege sua privacidade. Não coletamos dados pessoais e excluímos automaticamente todos os emails temporários. Sua privacidade é nossa prioridade.",
             "twitterTitle": "Política de Privacidade - TempEmail",

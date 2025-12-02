@@ -164,15 +164,7 @@
         "Metadata": {
             "title": "Sobre Nosotros - TempEmail | Servicio de Correo Temporal Gratuito",
             "description": "Conoce la misión de TempEmail para proteger tu privacidad con direcciones de correo temporales gratuitas. Generación instantánea, sin registro y completamente anónimas.",
-            "keywords": [
-                "sobre tempemail",
-                "servicio de correo temporal",
-                "acerca de correo desechable",
-                "servicio de privacidad de correo",
-                "servicio de correo anónimo",
-                "correo temporal gratis",
-                "protección de correo"
-            ],
+            "keywords": "sobre tempemail, servicio de correo temporal, acerca de correo desechable, servicio de privacidad de correo, servicio de correo anónimo, correo temporal gratis, protección de correo",
             "ogTitle": "Sobre TempEmail - Protegiendo Tu Privacidad",
             "ogDescription": "Descubre cómo TempEmail proporciona direcciones de correo temporales seguras e instantáneas para proteger tu privacidad en línea. Sin registro.",
             "twitterTitle": "Sobre TempEmail - Servicio de Correo Temporal Gratuito",
@@ -220,14 +212,7 @@
         "Metadata": {
             "title": "Términos de Servicio – TempEmail | Correo Temporal",
             "description": "Lee los Términos de Servicio de TempEmail. Conoce las políticas de uso aceptable, limitaciones del servicio y condiciones legales para usar nuestro servicio de correo temporal gratuito.",
-            "keywords": [
-                "términos tempemail",
-                "términos de servicio",
-                "correo temporal",
-                "términos correo desechable",
-                "acuerdo legal correo",
-                "condiciones tempEmail"
-            ],
+            "keywords": "términos tempemail, términos de servicio, correo temporal, términos correo desechable, acuerdo legal correo, condiciones tempEmail",
             "ogTitle": "Términos de Servicio – TempEmail",
             "ogDescription": "Condiciones legales para usar el servicio gratuito de correo temporal de TempEmail.",
             "locale": "es_ES",
@@ -284,16 +269,7 @@
         "Metadata": {
             "title": "Política de Privacidad - TempEmail | Protección y Privacidad de tus Datos",
             "description": "La Política de Privacidad de TempEmail explica cómo protegemos tus datos. No recopilamos información personal y eliminamos automáticamente los correos temporales. Total transparencia.",
-            "keywords": [
-                "privacidad tempemail",
-                "política de privacidad",
-                "privacidad correo temporal",
-                "protección de datos",
-                "privacidad de email",
-                "política de correo anónimo",
-                "sin recolección de datos",
-                "seguridad de correo"
-            ],
+            "keywords": "privacidad tempemail, política de privacidad, privacidad correo temporal, protección de datos, privacidad de email, política de correo anónimo, sin recolección de datos, seguridad de correo",
             "ogTitle": "Política de Privacidad - TempEmail",
             "ogDescription": "Aprende cómo TempEmail protege tu privacidad. No recopilamos datos personales y eliminamos automáticamente todos los correos temporales. Tu privacidad es nuestra prioridad.",
             "twitterTitle": "Política de Privacidad - TempEmail",
