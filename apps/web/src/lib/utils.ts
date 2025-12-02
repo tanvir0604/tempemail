@@ -74,3 +74,13 @@ export async function isIncognito() {
         );
     });
 }
+
+export function limitWords(htmlString: string, maxWords: number): string {
+    const plainText = htmlString.replace(/<[^>]*>/g, '');
+
+    const words = plainText.trim().split(/\s+/);
+
+    const final = words.slice(0, maxWords).join(' ');
+
+    return words.length > maxWords ? final + '...' : final;
+}

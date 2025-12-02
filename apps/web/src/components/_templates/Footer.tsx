@@ -3,7 +3,11 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import LanguageSwitcher from '../LanguageSwitcher';
 
-export default async function Footer() {
+export default async function Footer({
+    showLanguageSwitcher = true,
+}: {
+    showLanguageSwitcher?: boolean;
+}) {
     const f = await getTranslations('Footer');
     return (
         <footer className="border-t border-zinc-800 md:mt-20 py-8 px-4 md:px-8">
@@ -40,7 +44,7 @@ export default async function Footer() {
                         >
                             {f('privacy')}
                         </Link>
-                        <LanguageSwitcher />
+                        {showLanguageSwitcher && <LanguageSwitcher />}
                     </div>
                 </div>
             </div>

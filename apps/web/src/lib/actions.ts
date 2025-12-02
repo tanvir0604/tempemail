@@ -3,7 +3,11 @@
 import { revalidatePath } from 'next/cache';
 import axios, { AxiosRequestConfig, HttpStatusCode, Method } from 'axios';
 import qs from 'qs';
-import { SimpleResponseType, TempEmailType } from '@repo/validation';
+import {
+    GetListDto,
+    SimpleResponseType,
+    TempEmailType,
+} from '@repo/validation';
 const API_URL = process.env.API_BASE_URL ?? 'http://localhost:3001';
 
 interface RequestOptions<T = unknown> {
@@ -196,4 +200,35 @@ export async function getFile(filename: string) {
     }
 
     return response;
+}
+
+export async function getBlogList(
+    params: GetListDto,
+): Promise<SimpleResponseType> {
+    const response: SimpleResponseType = await httpRequest({
+        method: 'GET',
+        url: '/blog',
+        params: {
+            page: params.pageNumber ?? 1,
+            perPage: params.pageSize ?? 20,
+        },
+    });
+
+    if (!response || response.statusCode !== 200) {
+        return {
+            statusCode: 400,
+            message: 'Bad Request',
+        };
+    }
+
+    return response;
+}
+
+export async function getBlogDetails(
+    slug: string,
+): Promise<SimpleResponseType> {
+    return {
+        statusCode: 200,
+        message: 'Blog post found successfully',
+    };
 }

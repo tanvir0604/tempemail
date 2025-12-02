@@ -20,3 +20,17 @@ export type ExpiredAliasesGroupType = {
     domain: string;
     ids: string[];
 };
+
+export type BlogDetailsType = {
+    id: number;
+    title: string;
+    image: string;
+    slug: string;
+    content: string;
+    status: boolean;
+    readingTime: number;
+    tag: string;
+    publishedAt: Date;
+    createdAt: Date;
+    updatedAt: Date;
+};
