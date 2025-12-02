@@ -85,6 +85,7 @@ export default function TempEmail({
                 <div className="flex items-center gap-2 p-4 bg-zinc-950 border border-zinc-800 rounded-lg">
                     <Input
                         value={email ?? 'Generating email...'}
+                        aria-label="Temporary email address"
                         readOnly
                         className="flex-1 bg-transparent border-none text-lg font-mono text-zinc-100 focus-visible:ring-0 focus-visible:ring-offset-0"
                     />
@@ -94,6 +95,7 @@ export default function TempEmail({
                             variant="link"
                             size="icon"
                             name="copy_to_clipboard"
+                            aria-label="Copy to clipboard"
                             onClick={copyEmail}
                             disabled={
                                 !email ||

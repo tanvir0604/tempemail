@@ -11,32 +11,32 @@ export default async function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="flex items-center gap-2">
                         <Mail className="w-5 h-5 text-blue-500" />
-                        <span className="text-zinc-400">
+                        <span className="text-zinc-300">
                             © 2025 TempEmail. {f('all_rights_reserved')}
                         </span>
                     </div>
                     <div className="flex gap-6 text-sm items-center">
                         <Link
                             href="/"
-                            className="text-zinc-400 hover:text-zinc-100 transition-colors"
+                            className="text-zinc-300 hover:text-zinc-100 transition-colors"
                         >
                             {f('home')}
                         </Link>
                         <Link
                             href="/about"
-                            className="text-zinc-400 hover:text-zinc-100 transition-colors"
+                            className="text-zinc-300 hover:text-zinc-100 transition-colors"
                         >
                             {f('about')}
                         </Link>
                         <Link
                             href="/terms"
-                            className="text-zinc-400 hover:text-zinc-100 transition-colors"
+                            className="text-zinc-300 hover:text-zinc-100 transition-colors"
                         >
                             {f('terms')}
                         </Link>
                         <Link
                             href="/privacy"
-                            className="text-zinc-400 hover:text-zinc-100 transition-colors"
+                            className="text-zinc-300 hover:text-zinc-100 transition-colors"
                         >
                             {f('privacy')}
                         </Link>

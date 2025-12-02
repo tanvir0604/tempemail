@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "TempEmail - Email Sementara Gratis | Alamat Email Sekali Pakai",
+        "description": "Dapatkan alamat email sementara gratis secara instan. Terima email secara anonim tanpa registrasi. Fitur sinkronisasi kode QR, perpanjangan waktu, dan tampilan email aman dengan peringatan konten.",
+        "keywords": "email sementara,email sekali pakai,temp mail,email palsu,email anonim,email sementara gratis,alamat email sementara,generator email sementara,privasi email,perlindungan spam,email tanpa registrasi,email instan,kotak masuk sementara",
+        "og": {
+            "title": "TempEmail - Email Sementara Gratis | Alamat Email Sekali Pakai",
+            "description": "Buat alamat email sementara instan. Terima email dengan aman dengan sinkronisasi QR, perpanjangan waktu, dan peringatan keamanan konten. Tidak perlu registrasi.",
+            "imageAlt": "Layanan Email Sementara"
+        },
+        "twitter": {
+            "title": "Email Sementara Gratis - Alamat Email Sekali Pakai",
+            "description": "Dapatkan alamat email sementara instan dengan sinkronisasi QR dan tampilan aman. Tidak perlu registrasi."
+        },
+        "jsonLd": {
+            "name": "TempEmail - Layanan Email Sementara",
+            "description": "Layanan email sementara gratis dengan alamat email sekali pakai instan, sinkronisasi kode QR, dan fitur keamanan konten",
+            "features": "Alamat email sementara instan|Kode QR untuk akses multi-perangkat|Perpanjang waktu kedaluwarsa email|Buat alamat email baru secara instan|Tampilan email terformat|Peringatan keamanan konten untuk konten berbahaya/dewasa",
+            "browserRequirements": "Memerlukan JavaScript. Berfungsi di browser modern.",
+            "permissions": "Tidak memerlukan registrasi"
+        }
+    },
     "Common": {
         "cancel": "Batal",
         "continue": "Lanjutkan",

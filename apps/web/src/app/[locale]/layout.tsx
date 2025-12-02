@@ -10,7 +10,8 @@ import Logo from '@/components/_templates/Logo';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
+import { locales } from '@repo/validation';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -22,99 +23,103 @@ const geistMono = Geist_Mono({
     subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-    title: 'TempEmail - Free Temporary Email | Disposable Email Address',
-    description:
-        'Get a free temporary email address instantly. Receive emails anonymously without registration. Features QR code sync, time extension, and safe email viewing with content warnings.',
-    keywords: [
-        'temporary email',
-        'disposable email',
-        'temp mail',
-        'fake email',
-        'throwaway email',
-        'anonymous email',
-        'burner email',
-        'temporary email address',
-        'disposable email address',
-        'temp email generator',
-        'email privacy',
-        'spam protection',
-        'email without registration',
-        'instant email',
-        'temporary inbox',
-    ],
-    authors: [{ name: 'tempemail' }],
-    openGraph: {
-        type: 'website',
-        locale: 'en_US',
-        url: 'https://www.temp-email.dev',
-        title: 'TempEmail - Free Temporary Email | Disposable Email Address',
-        description:
-            'Create instant temporary email addresses. Receive emails safely with QR code sync, time extension, and content safety warnings. No registration required.',
-        siteName: 'TempEmail',
-        // images: [
-        //   {
-        //     url: "https://www.temp-email.dev/og-image.jpg",
-        //     width: 1200,
-        //     height: 630,
-        //     alt: "Temporary Email Service",
-        //   },
-        // ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Free Temporary Email - Disposable Email Address',
-        description:
-            'Get instant temporary email addresses with QR sync and safe viewing. No registration needed.',
-        // images: ["https://www.temp-email.dev/twitter-image.jpg"],
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
+const baseUrl = 'https://www.temp-email.dev';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+    // Generate language alternates
+    const languages: Record<string, string> = {};
+    locales.forEach((loc) => {
+        languages[loc] = `${baseUrl}/${loc}`;
+    });
+
+    const canonical = `${baseUrl}/${locale}`;
+
+    return {
+        title: t('title'),
+        description: t('description'),
+        keywords: t('keywords')
+            .split(',')
+            .map((k) => k.trim()),
+        alternates: {
+            canonical,
+            languages: {
+                ...languages,
+                'x-default': `${baseUrl}/en`,
+            },
+        },
+        authors: [{ name: 'tempemail' }],
+        openGraph: {
+            type: 'website',
+            locale: locale === 'en' ? 'en_US' : locale.replace('-', '_'),
+            alternateLocale: locales
+                .filter((loc) => loc !== locale)
+                .map((loc) => (loc === 'en' ? 'en_US' : loc.replace('-', '_'))),
+            url: `${baseUrl}/${locale}`,
+            title: t('og.title'),
+            description: t('og.description'),
+            siteName: 'TempEmail',
+            // images: [
+            //   {
+            //     url: `${baseUrl}/og-image.jpg`,
+            //     width: 1200,
+            //     height: 630,
+            //     alt: t('og.imageAlt'),
+            //   },
+            // ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: t('twitter.title'),
+            description: t('twitter.description'),
+            // images: [`${baseUrl}/twitter-image.jpg`],
+        },
+        robots: {
             index: true,
             follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
         },
-    },
-    alternates: {
-        canonical: 'https://www.temp-email.dev',
-    },
-    verification: {
-        // google: "your-google-verification-code",
-        // yandex: "your-yandex-verification-code",
-        // bing: "your-bing-verification-code"
-    },
-};
+        verification: {
+            // google: "your-google-verification-code",
+            // yandex: "your-yandex-verification-code",
+            // bing: "your-bing-verification-code"
+        },
+    };
+}
 
-export const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'TempEmail - Temporary Email Service',
-    description:
-        'Free temporary email service with instant disposable email addresses, QR code sync, and content safety features',
-    url: 'https://www.temp-email.dev',
-    applicationCategory: 'UtilityApplication',
-    offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-    },
-    featureList: [
-        'Instant temporary email addresses',
-        'QR code for multi-device access',
-        'Extend email expiration time',
-        'Create new email addresses instantly',
-        'Formatted email display',
-        'Content safety warnings for harmful/adult content',
-    ],
-    browserRequirements: 'Requires JavaScript. Works on modern browsers.',
-    permissions: 'No registration required',
-};
+export async function generateJsonLd(locale: string) {
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-import { locales } from '@repo/validation';
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: t('jsonLd.name'),
+        description: t('jsonLd.description'),
+        url: `${baseUrl}/${locale}`,
+        applicationCategory: 'UtilityApplication',
+        inLanguage: locale,
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+        },
+        featureList: t('jsonLd.features').split('|'),
+        browserRequirements: t('jsonLd.browserRequirements'),
+        permissions: t('jsonLd.permissions'),
+    };
+}
 
 export function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
@@ -134,12 +139,19 @@ export default async function RootLayout({
     const messages = await getMessages({
         locale: locale,
     });
+    const jsonLd = await generateJsonLd(locale);
     return (
         <html
             lang="en"
             suppressHydrationWarning
             dir={locale === 'ar' ? 'rtl' : 'ltr'}
         >
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased h-full min-h-screen flex flex-col`}
             >

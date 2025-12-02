@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "TempEmail - Ücretsiz Geçici E-posta | Tek Kullanımlık E-posta Adresi",
+        "description": "Anında ücretsiz geçici e-posta adresi alın. Kayıt olmadan anonim olarak e-posta alın. QR kod senkronizasyonu, süre uzatma ve içerik uyarılarıyla güvenli e-posta görüntüleme özellikleri.",
+        "keywords": "geçici e-posta,tek kullanımlık e-posta,temp mail,sahte e-posta,anonim e-posta,geçici e-posta adresi,geçici e-posta oluşturucu,e-posta gizliliği,spam koruması,kayıtsız e-posta,anlık e-posta,geçici gelen kutusu",
+        "og": {
+            "title": "TempEmail - Ücretsiz Geçici E-posta | Tek Kullanımlık E-posta Adresi",
+            "description": "Anında geçici e-posta adresleri oluşturun. QR senkronizasyonu, süre uzatma ve içerik güvenlik uyarılarıyla güvenli bir şekilde e-posta alın. Kayıt gerekmez.",
+            "imageAlt": "Geçici E-posta Hizmeti"
+        },
+        "twitter": {
+            "title": "Ücretsiz Geçici E-posta - Tek Kullanımlık E-posta Adresi",
+            "description": "QR senkronizasyonu ve güvenli görüntüleme ile anında geçici e-posta adresleri alın. Kayıt gerekmez."
+        },
+        "jsonLd": {
+            "name": "TempEmail - Geçici E-posta Hizmeti",
+            "description": "Anında tek kullanımlık e-posta adresleri, QR kod senkronizasyonu ve içerik güvenlik özellikleriyle ücretsiz geçici e-posta hizmeti",
+            "features": "Anında geçici e-posta adresleri|Çoklu cihaz erişimi için QR kod|E-posta son kullanma süresini uzatın|Anında yeni e-posta adresleri oluşturun|Biçimlendirilmiş e-posta görüntüleme|Zararlı/yetişkin içerik için içerik güvenlik uyarıları",
+            "browserRequirements": "JavaScript gerektirir. Modern tarayıcılarda çalışır.",
+            "permissions": "Kayıt gerekmez"
+        }
+    },
     "Common": {
         "cancel": "İptal",
         "continue": "Devam Et",

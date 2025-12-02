@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "TempEmail – Kostenlose Temporäre E-Mail | Wegwerf-E-Mail-Adresse",
+        "description": "Erhalte sofort eine kostenlose temporäre E-Mail-Adresse. Empfange E-Mails anonym und ohne Registrierung. Funktionen wie QR-Code-Synchronisierung, Laufzeitverlängerung und sichere E-Mail-Anzeige mit Inhaltswarnungen.",
+        "keywords": "temporäre e-mail,wegwerf-e-mail,temp mail,fake e-mail,einweg-e-mail,anonyme e-mail,burner e-mail,temporäre e-mail adresse,wegwerf e-mail adresse,temp mail generator,e-mail datenschutz,spam schutz,e-mail ohne registrierung,sofortige e-mail,temporärer posteingang",
+        "og": {
+            "title": "TempEmail – Kostenlose Temporäre E-Mail | Wegwerf-E-Mail-Adresse",
+            "description": "Erstelle sofort temporäre E-Mail-Adressen. Empfange E-Mails sicher mit QR-Code-Synchronisierung, Laufzeitverlängerung und Inhaltswarnungen. Keine Registrierung erforderlich.",
+            "imageAlt": "Dienst für temporäre E-Mail-Adressen"
+        },
+        "twitter": {
+            "title": "Kostenlose Temporäre E-Mail – Wegwerfadresse",
+            "description": "Erhalte sofort temporäre E-Mail-Adressen mit QR-Synchronisierung und sicherer Anzeige. Keine Registrierung nötig."
+        },
+        "jsonLd": {
+            "name": "TempEmail – Dienst für temporäre E-Mail",
+            "description": "Kostenloser Dienst für temporäre E-Mails mit sofortigen Wegwerf-Adressen, QR-Code-Synchronisierung und Sicherheitswarnungen für Inhalte.",
+            "features": "Sofortige temporäre E-Mail-Adressen|QR-Code für Multi-Geräte-Zugriff|Verlängerung der E-Mail-Ablaufzeit|Neue E-Mail-Adressen sofort erstellen|Formatierte E-Mail-Anzeige|Sicherheitswarnungen für schädliche/anstößige Inhalte",
+            "browserRequirements": "Benötigt JavaScript. Funktioniert in modernen Browsern.",
+            "permissions": "Keine Registrierung erforderlich"
+        }
+    },
     "Common": {
         "cancel": "Abbrechen",
         "continue": "Weiter",

@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "TempEmail - Email Temporário Grátis | Endereço de Email Descartável",
+        "description": "Obtenha um endereço de email temporário grátis instantaneamente. Receba emails anonimamente sem registro. Recursos incluem sincronização por QR code, extensão de tempo e visualização segura com avisos de conteúdo.",
+        "keywords": "email temporário,email descartável,temp mail,email falso,email anônimo,email temporário grátis,endereço de email temporário,gerador de email temporário,privacidade de email,proteção contra spam,email sem registro,email instantâneo,caixa de entrada temporária",
+        "og": {
+            "title": "TempEmail - Email Temporário Grátis | Endereço de Email Descartável",
+            "description": "Crie endereços de email temporários instantaneamente. Receba emails com segurança com sincronização QR, extensão de tempo e avisos de segurança de conteúdo. Não requer registro.",
+            "imageAlt": "Serviço de Email Temporário"
+        },
+        "twitter": {
+            "title": "Email Temporário Grátis - Endereço de Email Descartável",
+            "description": "Obtenha endereços de email temporários instantâneos com sincronização QR e visualização segura. Não é necessário registro."
+        },
+        "jsonLd": {
+            "name": "TempEmail - Serviço de Email Temporário",
+            "description": "Serviço gratuito de email temporário com endereços de email descartáveis instantâneos, sincronização QR e recursos de segurança de conteúdo",
+            "features": "Endereços de email temporários instantâneos|Código QR para acesso multi-dispositivo|Estender tempo de expiração do email|Criar novos endereços de email instantaneamente|Exibição de email formatada|Avisos de segurança de conteúdo para conteúdo prejudicial/adulto",
+            "browserRequirements": "Requer JavaScript. Funciona em navegadores modernos.",
+            "permissions": "Não requer registro"
+        }
+    },
     "Common": {
         "cancel": "Cancelar",
         "continue": "Continuar",

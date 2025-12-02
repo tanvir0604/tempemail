@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "TempEmail - Email Temporanea Gratis | Indirizzo Email Usa e Getta",
+        "description": "Ottieni un indirizzo email temporaneo gratuito all'istante. Ricevi email in modo anonimo senza registrazione. Funzionalità di sincronizzazione codice QR, estensione del tempo e visualizzazione sicura con avvisi sui contenuti.",
+        "keywords": "email temporanea,email usa e getta,temp mail,email falsa,email anonima,indirizzo email temporaneo,generatore email temporanea,privacy email,protezione spam,email senza registrazione,email istantanea,casella temporanea",
+        "og": {
+            "title": "TempEmail - Email Temporanea Gratis | Indirizzo Email Usa e Getta",
+            "description": "Crea indirizzi email temporanei istantanei. Ricevi email in sicurezza con sincronizzazione QR, estensione del tempo e avvisi di sicurezza sui contenuti. Nessuna registrazione richiesta.",
+            "imageAlt": "Servizio Email Temporanea"
+        },
+        "twitter": {
+            "title": "Email Temporanea Gratis - Indirizzo Email Usa e Getta",
+            "description": "Ottieni indirizzi email temporanei istantanei con sincronizzazione QR e visualizzazione sicura. Nessuna registrazione necessaria."
+        },
+        "jsonLd": {
+            "name": "TempEmail - Servizio Email Temporanea",
+            "description": "Servizio email temporanea gratuito con indirizzi email usa e getta istantanei, sincronizzazione codice QR e funzionalità di sicurezza dei contenuti",
+            "features": "Indirizzi email temporanei istantanei|Codice QR per accesso multi-dispositivo|Estendere il tempo di scadenza dell'email|Creare nuovi indirizzi email all'istante|Visualizzazione email formattata|Avvisi di sicurezza dei contenuti per contenuti dannosi/per adulti",
+            "browserRequirements": "Richiede JavaScript. Funziona su browser moderni.",
+            "permissions": "Nessuna registrazione richiesta"
+        }
+    },
     "Common": {
         "cancel": "Annulla",
         "continue": "Continua",

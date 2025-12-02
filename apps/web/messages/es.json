@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "TempEmail - Correo Temporal Gratis | Dirección de Correo Desechable",
+        "description": "Obtén una dirección de correo temporal gratis al instante. Recibe correos de forma anónima sin registro. Incluye sincronización con código QR, extensión de tiempo y visualización segura con advertencias de contenido.",
+        "keywords": "correo temporal,correo desechable,correo temp,correo falso,correo anónimo,correo temporal gratis,dirección de correo temporal,generador de correo temporal,privacidad de correo,protección contra spam,correo sin registro,correo instantáneo,bandeja temporal",
+        "og": {
+            "title": "TempEmail - Correo Temporal Gratis | Dirección de Correo Desechable",
+            "description": "Crea direcciones de correo temporal al instante. Recibe correos de forma segura con sincronización QR, extensión de tiempo y advertencias de seguridad. Sin registro requerido.",
+            "imageAlt": "Servicio de Correo Temporal"
+        },
+        "twitter": {
+            "title": "Correo Temporal Gratis - Dirección de Correo Desechable",
+            "description": "Obtén direcciones de correo temporal instantáneas con sincronización QR y visualización segura. Sin registro necesario."
+        },
+        "jsonLd": {
+            "name": "TempEmail - Servicio de Correo Temporal",
+            "description": "Servicio de correo temporal gratuito con direcciones de correo desechables instantáneas, sincronización QR y funciones de seguridad de contenido",
+            "features": "Direcciones de correo temporal instantáneas|Código QR para acceso multidispositivo|Extender tiempo de expiración del correo|Crear nuevas direcciones de correo al instante|Visualización de correo formateada|Advertencias de seguridad para contenido dañino/adulto",
+            "browserRequirements": "Requiere JavaScript. Funciona en navegadores modernos.",
+            "permissions": "No se requiere registro"
+        }
+    },
     "Common": {
         "cancel": "Cancelar",
         "continue": "Continuar",

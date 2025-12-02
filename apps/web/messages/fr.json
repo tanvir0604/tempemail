@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "TempEmail - Email Temporaire Gratuit | Adresse Email Jetable",
+        "description": "Obtenez une adresse email temporaire gratuite instantanément. Recevez des emails de manière anonyme sans inscription. Fonctionnalités de synchronisation par code QR, extension de temps et affichage sécurisé avec avertissements de contenu.",
+        "keywords": "email temporaire,email jetable,temp mail,faux email,email anonyme,email temporaire gratuit,adresse email temporaire,générateur email temporaire,confidentialité email,protection spam,email sans inscription,email instantané,boîte de réception temporaire",
+        "og": {
+            "title": "TempEmail - Email Temporaire Gratuit | Adresse Email Jetable",
+            "description": "Créez des adresses email temporaires instantanément. Recevez des emails en toute sécurité avec synchronisation QR, extension de temps et avertissements de sécurité du contenu. Aucune inscription requise.",
+            "imageAlt": "Service d'Email Temporaire"
+        },
+        "twitter": {
+            "title": "Email Temporaire Gratuit - Adresse Email Jetable",
+            "description": "Obtenez des adresses email temporaires instantanées avec synchronisation QR et affichage sécurisé. Aucune inscription nécessaire."
+        },
+        "jsonLd": {
+            "name": "TempEmail - Service d'Email Temporaire",
+            "description": "Service d'email temporaire gratuit avec adresses email jetables instantanées, synchronisation code QR et fonctionnalités de sécurité du contenu",
+            "features": "Adresses email temporaires instantanées|Code QR pour accès multi-appareils|Prolonger le temps d'expiration de l'email|Créer de nouvelles adresses email instantanément|Affichage d'email formaté|Avertissements de sécurité du contenu pour contenu nuisible/adulte",
+            "browserRequirements": "Nécessite JavaScript. Fonctionne sur les navigateurs modernes.",
+            "permissions": "Aucune inscription requise"
+        }
+    },
     "Common": {
         "cancel": "Annuler",
         "continue": "Continuer",
