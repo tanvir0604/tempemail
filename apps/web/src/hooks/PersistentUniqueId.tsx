@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { nanoid } from 'nanoid';
 
 export const usePersistentUniqueId = () => {
-    const [uniqueId] = useState<string>(() => {
+    const [uniqueId] = useState<string | null>(() => {
         // This function only runs once on mount
         try {
             let id = localStorage.getItem('__temp_email_user');
