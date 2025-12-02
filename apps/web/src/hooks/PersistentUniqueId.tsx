@@ -1,21 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { nanoid } from 'nanoid';
 
 export const usePersistentUniqueId = () => {
-    const [uniqueId, setUniqueId] = useState<string | null>(null);
-
-    useEffect(() => {
+    const [uniqueId] = useState<string>(() => {
+        // This function only runs once on mount
         try {
             let id = localStorage.getItem('__temp_email_user');
             if (!id) {
                 id = nanoid();
                 localStorage.setItem('__temp_email_user', id);
             }
-            setUniqueId(id);
+            return id;
         } catch (error) {
-            console.log(error);
+            console.error(error);
+            return nanoid(); // Fallback if localStorage fails
         }
-    }, []);
+    });
 
     return uniqueId;
 };
