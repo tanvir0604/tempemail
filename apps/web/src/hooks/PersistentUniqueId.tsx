@@ -13,7 +13,7 @@ export const usePersistentUniqueId = () => {
             return id;
         } catch (error) {
             console.error(error);
-            return nanoid(); // Fallback if localStorage fails
+            return null;
         }
     });
 
