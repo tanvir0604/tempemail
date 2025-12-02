@@ -161,6 +161,24 @@
     },
 
     "AboutPage": {
+        "Metadata": {
+            "title": "회사 소개 - TempEmail | 무료 임시 이메일 서비스",
+            "description": "TempEmail의 사명은 무료 임시 이메일 주소로 당신의 프라이버시를 보호하는 것입니다. 즉시 생성, 회원가입 없음, 완전 익명.",
+            "keywords": [
+                "tempemail 소개",
+                "임시 이메일 서비스",
+                "일회용 이메일 소개",
+                "이메일 프라이버시 서비스",
+                "익명 이메일 서비스",
+                "무료 임시 메일",
+                "이메일 보호"
+            ],
+            "ogTitle": "TempEmail 소개 - 당신의 프라이버시 보호",
+            "ogDescription": "TempEmail이 온라인 프라이버시 보호를 위해 안전하고 즉시 사용 가능한 임시 이메일 주소를 제공하는 방법을 알아보세요.",
+            "twitterTitle": "TempEmail 소개 - 무료 임시 이메일 서비스",
+            "twitterDescription": "TempEmail이 회원가입 없이 즉시 임시 이메일을 제공하여 프라이버시를 보호하는 방법을 확인하세요.",
+            "locale": "ko_KR"
+        },
         "title": "TempEmail 소개",
         "subtitle": "당신의 개인 정보를 지키는 가장 쉬운 방법",
         "our_mission": {
@@ -246,6 +264,25 @@
     },
 
     "PrivacyPage": {
+        "Metadata": {
+            "title": "개인정보 처리방침 - TempEmail | 데이터 보호 및 개인정보",
+            "description": "TempEmail의 개인정보 처리방침은 사용자의 데이터를 어떻게 보호하는지 설명합니다. 우리는 개인 정보를 수집하지 않으며 임시 이메일은 자동으로 삭제됩니다. 완전한 투명성.",
+            "keywords": [
+                "tempemail 개인정보",
+                "개인정보 처리방침",
+                "임시 이메일 개인정보",
+                "데이터 보호",
+                "이메일 개인정보",
+                "익명 이메일 정책",
+                "데이터 수집 없음",
+                "이메일 보안"
+            ],
+            "ogTitle": "개인정보 처리방침 - TempEmail",
+            "ogDescription": "TempEmail이 개인정보를 어떻게 보호하는지 알아보세요. 개인 데이터를 수집하지 않으며 모든 임시 이메일은 자동으로 삭제됩니다. 개인정보 보호가 최우선입니다.",
+            "twitterTitle": "개인정보 처리방침 - TempEmail",
+            "twitterDescription": "TempEmail의 개인정보 보호 약속: 데이터 수집 없음, 자동 삭제, 완전한 익명성.",
+            "locale": "ko_KR"
+        },
         "title": "개인정보처리방침",
         "last_updated": "최종 업데이트",
         "sections": {

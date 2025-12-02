@@ -161,6 +161,24 @@
     },
 
     "AboutPage": {
+        "Metadata": {
+            "title": "私たちについて - TempEmail | 無料の一時的メールサービス",
+            "description": "TempEmail の使命をご紹介します。無料で匿名の一時的メールアドレスを提供し、あなたのプライバシーを守ります。登録不要、即時生成。",
+            "keywords": [
+                "tempemail について",
+                "一時的メールサービス",
+                "使い捨てメールについて",
+                "メールプライバシーサービス",
+                "匿名メールサービス",
+                "無料テンポラリーメール",
+                "メール保護"
+            ],
+            "ogTitle": "TempEmail について - プライバシー保護",
+            "ogDescription": "TempEmail がオンラインプライバシーを守るため、安全で即時の一時的メールアドレスを提供する仕組みをご紹介します。",
+            "twitterTitle": "TempEmail について - 無料一時的メールサービス",
+            "twitterDescription": "TempEmail が登録不要で即時の一時的メールを提供し、プライバシーを守る方法をご紹介します。",
+            "locale": "ja_JP"
+        },
         "title": "TempEmailについて",
         "subtitle": "一時的なメールであなたのプライバシーを守ります",
         "our_mission": {
@@ -246,6 +264,25 @@
     },
 
     "PrivacyPage": {
+        "Metadata": {
+            "title": "プライバシーポリシー - TempEmail | データ保護とプライバシー",
+            "description": "TempEmailのプライバシーポリシーは、どのようにあなたのデータを保護するかを説明します。個人情報は収集せず、すべての一時メールを自動削除します。完全な透明性。",
+            "keywords": [
+                "tempemail プライバシー",
+                "プライバシーポリシー",
+                "一時メール プライバシー",
+                "データ保護",
+                "メールのプライバシー",
+                "匿名メールポリシー",
+                "データ収集なし",
+                "メールセキュリティ"
+            ],
+            "ogTitle": "プライバシーポリシー - TempEmail",
+            "ogDescription": "TempEmailがどのようにプライバシーを守るかを学びましょう。個人データは収集せず、すべての一時メールを自動削除します。プライバシーは私たちの最優先です。",
+            "twitterTitle": "プライバシーポリシー - TempEmail",
+            "twitterDescription": "TempEmailのプライバシーへの取り組み：データ収集なし、自動削除、完全匿名。",
+            "locale": "ja_JP"
+        },
         "title": "プライバシーポリシー",
         "last_updated": "最終更新日",
         "sections": {

@@ -161,6 +161,24 @@
     },
 
     "AboutPage": {
+        "Metadata": {
+            "title": "About Us - TempEmail | Free Temporary Email Service",
+            "description": "Learn about TempEmail's mission to protect your privacy with free temporary email addresses. Instant generation, no registration, and complete anonymity.",
+            "keywords": [
+                "about tempemail",
+                "temporary email service",
+                "disposable email about",
+                "email privacy service",
+                "anonymous email service",
+                "free temp mail",
+                "email protection"
+            ],
+            "ogTitle": "About TempEmail - Protecting Your Privacy",
+            "ogDescription": "Discover how TempEmail provides instant, secure temporary email addresses to protect your online privacy. No registration required.",
+            "twitterTitle": "About TempEmail - Free Temporary Email Service",
+            "twitterDescription": "Learn how TempEmail protects your privacy with instant temporary email addresses. No registration, completely free.",
+            "locale": "en_US"
+        },
         "title": "About TempEmail",
         "subtitle": "Protecting your privacy, one temporary email at a time",
         "our_mission": {
@@ -246,6 +264,25 @@
     },
 
     "PrivacyPage": {
+        "Metadata": {
+            "title": "Privacy Policy - TempEmail | Your Data Protection & Privacy",
+            "description": "TempEmail's Privacy Policy explains how we protect your data. We don't collect personal information and automatically delete temporary emails. Complete transparency.",
+            "keywords": [
+                "tempemail privacy",
+                "privacy policy",
+                "temporary email privacy",
+                "data protection",
+                "email privacy",
+                "anonymous email policy",
+                "no data collection",
+                "email security"
+            ],
+            "ogTitle": "Privacy Policy - TempEmail",
+            "ogDescription": "Learn how TempEmail protects your privacy. We don't collect personal data and automatically delete all temporary emails. Your privacy is our priority.",
+            "twitterTitle": "Privacy Policy - TempEmail",
+            "twitterDescription": "TempEmail's commitment to your privacy: no data collection, automatic deletion, complete anonymity.",
+            "locale": "en_US"
+        },
         "title": "Privacy Policy",
         "last_updated": "Last updated",
         "sections": {

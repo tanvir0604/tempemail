@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
     subsets: ['latin'],
 });
 
-const baseUrl = 'https://www.temp-email.dev';
+const baseUrl = process.env.BASE_URL ?? 'https://www.temp-email.dev';
 
 export async function generateMetadata({
     params,

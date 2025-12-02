@@ -161,6 +161,24 @@
     },
 
     "AboutPage": {
+        "Metadata": {
+            "title": "Tentang Kami - TempEmail | Layanan Email Sementara Gratis",
+            "description": "Pelajari misi TempEmail untuk melindungi privasi Anda dengan alamat email sementara gratis. Pembuatan instan, tanpa pendaftaran, dan sepenuhnya anonim.",
+            "keywords": [
+                "tentang tempemail",
+                "layanan email sementara",
+                "tentang email sekali pakai",
+                "layanan privasi email",
+                "layanan email anonim",
+                "email sementara gratis",
+                "perlindungan email"
+            ],
+            "ogTitle": "Tentang TempEmail - Melindungi Privasi Anda",
+            "ogDescription": "Temukan bagaimana TempEmail menyediakan email sementara yang aman dan instan untuk melindungi privasi online Anda.",
+            "twitterTitle": "Tentang TempEmail - Layanan Email Sementara Gratis",
+            "twitterDescription": "Pelajari bagaimana TempEmail melindungi privasi Anda dengan email sementara instan tanpa pendaftaran.",
+            "locale": "id_ID"
+        },
         "title": "Tentang TempEmail",
         "subtitle": "Melindungi privasi Anda, satu email sementara pada satu waktu",
         "our_mission": {
@@ -246,6 +264,25 @@
     },
 
     "PrivacyPage": {
+        "Metadata": {
+            "title": "Kebijakan Privasi - TempEmail | Perlindungan & Privasi Data Anda",
+            "description": "Kebijakan Privasi TempEmail menjelaskan bagaimana kami melindungi data Anda. Kami tidak mengumpulkan informasi pribadi dan secara otomatis menghapus email sementara. Transparansi penuh.",
+            "keywords": [
+                "privasi tempemail",
+                "kebijakan privasi",
+                "privasi email sementara",
+                "perlindungan data",
+                "privasi email",
+                "kebijakan email anonim",
+                "tanpa pengumpulan data",
+                "keamanan email"
+            ],
+            "ogTitle": "Kebijakan Privasi - TempEmail",
+            "ogDescription": "Pelajari bagaimana TempEmail melindungi privasi Anda. Kami tidak mengumpulkan data pribadi dan secara otomatis menghapus semua email sementara. Privasi Anda adalah prioritas kami.",
+            "twitterTitle": "Kebijakan Privasi - TempEmail",
+            "twitterDescription": "Komitmen TempEmail terhadap privasi Anda: tanpa pengumpulan data, penghapusan otomatis, anonimitas penuh.",
+            "locale": "id_ID"
+        },
         "title": "Kebijakan Privasi",
         "last_updated": "Terakhir diperbarui",
         "sections": {

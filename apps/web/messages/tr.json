@@ -161,6 +161,24 @@
     },
 
     "AboutPage": {
+        "Metadata": {
+            "title": "Hakkımızda - TempEmail | Ücretsiz Geçici E-posta Hizmeti",
+            "description": "TempEmail'in ücretsiz geçici e-posta adresleriyle gizliliğinizi koruma misyonunu keşfedin. Anında oluşturma, kayıt gerekmez, tamamen anonim.",
+            "keywords": [
+                "tempemail hakkında",
+                "geçici e-posta hizmeti",
+                "tek kullanımlık e-posta hakkında",
+                "e-posta gizlilik hizmeti",
+                "anonim e-posta hizmeti",
+                "ücretsiz temp mail",
+                "e-posta koruması"
+            ],
+            "ogTitle": "TempEmail Hakkında - Gizliliğinizi Koruyoruz",
+            "ogDescription": "TempEmail'in çevrimiçi gizliliğinizi korumak için güvenli ve anında geçici e-posta adresleri sunduğunu keşfedin.",
+            "twitterTitle": "TempEmail Hakkında - Ücretsiz Geçici E-posta Hizmeti",
+            "twitterDescription": "TempEmail'in kayıt olmadan anında geçici e-posta sağlayarak gizliliğinizi nasıl koruduğunu öğrenin.",
+            "locale": "tr_TR"
+        },
         "title": "TempEmail Hakkında",
         "subtitle": "Gizliliğinizi, bir geçici e-posta ile koruyoruz",
         "our_mission": {
@@ -246,6 +264,25 @@
     },
 
     "PrivacyPage": {
+        "Metadata": {
+            "title": "Gizlilik Politikası - TempEmail | Veri Koruma ve Gizliliğiniz",
+            "description": "TempEmail'in Gizlilik Politikası, verilerinizi nasıl koruduğumuzu açıklar. Kişisel bilgi toplamayız ve geçici e-postaları otomatik olarak sileriz. Tam şeffaflık.",
+            "keywords": [
+                "tempemail gizlilik",
+                "gizlilik politikası",
+                "geçici e-posta gizliliği",
+                "veri koruma",
+                "e-posta gizliliği",
+                "anonim e-posta politikası",
+                "veri toplanmaz",
+                "e-posta güvenliği"
+            ],
+            "ogTitle": "Gizlilik Politikası - TempEmail",
+            "ogDescription": "TempEmail'in gizliliğinizi nasıl koruduğunu öğrenin. Kişisel veri toplamayız ve tüm geçici e-postaları otomatik olarak sileriz. Gizliliğiniz önceliğimizdir.",
+            "twitterTitle": "Gizlilik Politikası - TempEmail",
+            "twitterDescription": "TempEmail'in gizliliğinize bağlılığı: veri toplanmaz, otomatik silme, tam anonimlik.",
+            "locale": "tr_TR"
+        },
         "title": "Gizlilik Politikası",
         "last_updated": "Son güncelleme",
         "sections": {

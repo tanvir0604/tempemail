@@ -161,6 +161,24 @@
     },
 
     "AboutPage": {
+        "Metadata": {
+            "title": "Sobre Nosotros - TempEmail | Servicio de Correo Temporal Gratuito",
+            "description": "Conoce la misión de TempEmail para proteger tu privacidad con direcciones de correo temporales gratuitas. Generación instantánea, sin registro y completamente anónimas.",
+            "keywords": [
+                "sobre tempemail",
+                "servicio de correo temporal",
+                "acerca de correo desechable",
+                "servicio de privacidad de correo",
+                "servicio de correo anónimo",
+                "correo temporal gratis",
+                "protección de correo"
+            ],
+            "ogTitle": "Sobre TempEmail - Protegiendo Tu Privacidad",
+            "ogDescription": "Descubre cómo TempEmail proporciona direcciones de correo temporales seguras e instantáneas para proteger tu privacidad en línea. Sin registro.",
+            "twitterTitle": "Sobre TempEmail - Servicio de Correo Temporal Gratuito",
+            "twitterDescription": "Aprende cómo TempEmail protege tu privacidad con correos temporales instantáneos y gratuitos, sin registro.",
+            "locale": "es_ES"
+        },
         "title": "Acerca de TempEmail",
         "subtitle": "Protegiendo su privacidad, un correo temporal a la vez",
         "our_mission": {
@@ -246,6 +264,25 @@
     },
 
     "PrivacyPage": {
+        "Metadata": {
+            "title": "Política de Privacidad - TempEmail | Protección y Privacidad de tus Datos",
+            "description": "La Política de Privacidad de TempEmail explica cómo protegemos tus datos. No recopilamos información personal y eliminamos automáticamente los correos temporales. Total transparencia.",
+            "keywords": [
+                "privacidad tempemail",
+                "política de privacidad",
+                "privacidad correo temporal",
+                "protección de datos",
+                "privacidad de email",
+                "política de correo anónimo",
+                "sin recolección de datos",
+                "seguridad de correo"
+            ],
+            "ogTitle": "Política de Privacidad - TempEmail",
+            "ogDescription": "Aprende cómo TempEmail protege tu privacidad. No recopilamos datos personales y eliminamos automáticamente todos los correos temporales. Tu privacidad es nuestra prioridad.",
+            "twitterTitle": "Política de Privacidad - TempEmail",
+            "twitterDescription": "Compromiso de TempEmail con tu privacidad: sin recolección de datos, eliminación automática, anonimato completo.",
+            "locale": "es_ES"
+        },
         "title": "Política de Privacidad",
         "last_updated": "Última actualización",
         "sections": {

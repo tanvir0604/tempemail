@@ -2,59 +2,76 @@ import { Scale } from 'lucide-react';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-    title: 'Terms of Service - TempEmail | Temporary Email Terms',
-    description:
-        "Read TempEmail's Terms of Service. Understand the acceptable use policies, service limitations, and legal terms for using our temporary email service.",
-    keywords: [
-        'tempemail terms',
-        'terms of service',
-        'temporary email terms',
-        'disposable email legal',
-        'email service agreement',
-        'tempEmail legal',
-    ],
-    authors: [{ name: 'TempEmail' }],
-    openGraph: {
-        title: 'Terms of Service - TempEmail',
-        description:
-            'TempEmail Terms of Service - Legal terms and conditions for using our free temporary email service.',
-        url: 'https://temp-email.dev/terms',
-        siteName: 'TempEmail',
-        images: [
-            {
-                url: '/og-terms.png',
-                width: 1200,
-                height: 630,
-                alt: 'TempEmail - Terms of Service',
-            },
-        ],
-        locale: 'en_US',
-        type: 'website',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Terms of Service - TempEmail',
-        description:
-            "Read the terms and conditions for using TempEmail's free temporary email service.",
-        images: ['/twitter-terms.png'],
-        creator: '@tempEmail',
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
+import { locales } from '@repo/validation';
+export function generateStaticParams() {
+    return locales.map((locale) => ({ locale }));
+}
+
+const baseUrl = process.env.BASE_URL ?? 'https://www.temp-email.dev';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'TermsPage' });
+
+    const canonical = `${baseUrl}/${locale}/terms`;
+
+    const languages: Record<string, string> = {};
+    locales.forEach((loc) => {
+        languages[loc] = `${baseUrl}/${loc}/terms`;
+    });
+
+    return {
+        title: t('Metadata.title'),
+        description: t('Metadata.description'),
+        keywords: t('Metadata.keywords'),
+        authors: [{ name: 'TempEmail' }],
+        openGraph: {
+            title: t('Metadata.ogTitle'),
+            description: t('Metadata.ogDescription'),
+            url: canonical,
+            siteName: 'TempEmail',
+            images: [
+                {
+                    url: '/og-terms.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'TempEmail - Terms of Service',
+                },
+            ],
+            locale: t('Metadata.locale'),
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: t('Metadata.twitterTitle'),
+            description: t('Metadata.twitterDescription'),
+            images: ['/twitter-terms.png'],
+            creator: '@tempEmail',
+        },
+        robots: {
             index: true,
             follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
         },
-    },
-    alternates: {
-        canonical: 'https://temp-email.dev/terms',
-    },
-};
+        alternates: {
+            canonical,
+            languages: {
+                ...languages,
+                'x-default': `${baseUrl}/en/terms`,
+            },
+        },
+    };
+}
 
 export default async function TermsPage() {
     const t = await getTranslations('TermsPage');

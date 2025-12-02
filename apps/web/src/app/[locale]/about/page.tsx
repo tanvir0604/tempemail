@@ -17,60 +17,71 @@ export function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-    title: 'About Us - TempEmail | Free Temporary Email Service',
-    description:
-        "Learn about TempEmail's mission to protect your privacy with free temporary email addresses. Instant generation, no registration, and complete anonymity.",
-    keywords: [
-        'about tempemail',
-        'temporary email service',
-        'disposable email about',
-        'email privacy service',
-        'anonymous email service',
-        'free temp mail',
-        'email protection',
-    ],
-    authors: [{ name: 'TempEmail' }],
-    openGraph: {
-        title: 'About TempEmail - Protecting Your Privacy',
-        description:
-            'Discover how TempEmail provides instant, secure temporary email addresses to protect your online privacy. No registration required.',
-        url: 'https://temp-email.dev/about',
-        siteName: 'TempEmail',
-        images: [
-            {
-                url: '/og-about.png',
-                width: 1200,
-                height: 630,
-                alt: 'TempEmail - About Us',
-            },
-        ],
-        locale: 'en_US',
-        type: 'website',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'About TempEmail - Free Temporary Email Service',
-        description:
-            'Learn how TempEmail protects your privacy with instant temporary email addresses. No registration, completely free.',
-        images: ['/twitter-about.png'],
-        creator: '@tempemail',
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
+const baseUrl = process.env.BASE_URL ?? 'https://www.temp-email.dev';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'AboutPage' });
+
+    const canonical = `${baseUrl}/${locale}`;
+
+    const languages: Record<string, string> = {};
+    locales.forEach((loc) => {
+        languages[loc] = `${baseUrl}/${loc}`;
+    });
+
+    return {
+        title: t('Metadata.title'),
+        description: t('Metadata.description'),
+        keywords: t('Metadata.keywords'),
+        authors: [{ name: 'TempEmail' }],
+        openGraph: {
+            title: t('Metadata.ogTitle'),
+            description: t('Metadata.ogDescription'),
+            url: `https://temp-email.dev/${locale}/about`,
+            siteName: 'TempEmail',
+            images: [
+                {
+                    url: '/og-about.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'TempEmail - About Us',
+                },
+            ],
+            locale: t('Metadata.locale'),
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: t('Metadata.twitterTitle'),
+            description: t('Metadata.twitterDescription'),
+            images: ['/twitter-about.png'],
+            creator: '@tempemail',
+        },
+        robots: {
             index: true,
             follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
         },
-    },
-    alternates: {
-        canonical: 'https://temp-email.dev/about',
-    },
-};
+        alternates: {
+            canonical,
+            languages: {
+                ...languages,
+                'x-default': `${baseUrl}/en`,
+            },
+        },
+    };
+}
 
 export default async function AboutPage() {
     const t = await getTranslations('AboutPage');

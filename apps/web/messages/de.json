@@ -161,6 +161,24 @@
     },
 
     "AboutPage": {
+        "Metadata": {
+            "title": "Über Uns - TempEmail | Kostenloser Temporärer E-Mail-Dienst",
+            "description": "Erfahren Sie mehr über die Mission von TempEmail: Ihre Privatsphäre mit kostenlosen temporären E-Mail-Adressen zu schützen. Sofortige Erstellung, keine Registrierung, vollständig anonym.",
+            "keywords": [
+                "über tempemail",
+                "temporärer e-mail dienst",
+                "über wegwerfemail",
+                "e-mail datenschutz dienst",
+                "anonymer e-mail dienst",
+                "kostenlos temp mail",
+                "e-mail schutz"
+            ],
+            "ogTitle": "Über TempEmail – Schutz Ihrer Privatsphäre",
+            "ogDescription": "Entdecken Sie, wie TempEmail sichere und sofortige temporäre E-Mail-Adressen bereitstellt, um Ihre Online-Privatsphäre zu schützen.",
+            "twitterTitle": "Über TempEmail – Kostenloser Temporärer E-Mail-Dienst",
+            "twitterDescription": "Erfahren Sie, wie TempEmail ohne Registrierung sofort temporäre E-Mails bereitstellt und Ihre Privatsphäre schützt.",
+            "locale": "de_DE"
+        },
         "title": "Über TempEmail",
         "subtitle": "Wir schützen Ihre Privatsphäre – eine temporäre E-Mail nach der anderen",
         "our_mission": {
@@ -246,6 +264,25 @@
     },
 
     "PrivacyPage": {
+        "Metadata": {
+            "title": "Datenschutzrichtlinie - TempEmail | Ihre Daten & Privatsphäre",
+            "description": "Die Datenschutzrichtlinie von TempEmail erklärt, wie wir Ihre Daten schützen. Wir erfassen keine persönlichen Informationen und löschen temporäre E-Mails automatisch. Vollständige Transparenz.",
+            "keywords": [
+                "tempemail datenschutz",
+                "datenschutzrichtlinie",
+                "temporäre email datenschutz",
+                "datensicherheit",
+                "email privatsphäre",
+                "anonyme email richtlinie",
+                "keine datenerhebung",
+                "email sicherheit"
+            ],
+            "ogTitle": "Datenschutzrichtlinie - TempEmail",
+            "ogDescription": "Erfahren Sie, wie TempEmail Ihre Privatsphäre schützt. Wir sammeln keine persönlichen Daten und löschen automatisch alle temporären E-Mails. Ihre Privatsphäre hat Priorität.",
+            "twitterTitle": "Datenschutzrichtlinie - TempEmail",
+            "twitterDescription": "TempEmails Engagement für Ihre Privatsphäre: keine Datenerhebung, automatische Löschung, vollständige Anonymität.",
+            "locale": "de_DE"
+        },
         "title": "Datenschutzrichtlinie",
         "last_updated": "Zuletzt aktualisiert",
         "sections": {
