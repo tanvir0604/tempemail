@@ -217,6 +217,23 @@
     },
 
     "TermsPage": {
+        "Metadata": {
+            "title": "Ketentuan Layanan – TempEmail | Email Sementara",
+            "description": "Baca Ketentuan Layanan TempEmail. Pahami kebijakan penggunaan yang dapat diterima, batasan layanan, dan ketentuan hukum untuk menggunakan layanan email sementara gratis kami.",
+            "keywords": [
+                "ketentuan tempemail",
+                "ketentuan layanan",
+                "email sementara",
+                "email sekali pakai legal",
+                "perjanjian layanan email",
+                "tempEmail legal"
+            ],
+            "ogTitle": "Ketentuan Layanan – TempEmail",
+            "ogDescription": "Ketentuan hukum untuk menggunakan layanan email sementara gratis dari TempEmail.",
+            "locale": "id_ID",
+            "twitterTitle": "Ketentuan Layanan – TempEmail",
+            "twitterDescription": "Baca syarat dan ketentuan untuk menggunakan layanan email sementara gratis dari TempEmail."
+        },
         "title": "Syarat Layanan",
         "last_updated": "Terakhir diperbarui",
         "sections": {

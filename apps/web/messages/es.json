@@ -217,6 +217,23 @@
     },
 
     "TermsPage": {
+        "Metadata": {
+            "title": "Términos de Servicio – TempEmail | Correo Temporal",
+            "description": "Lee los Términos de Servicio de TempEmail. Conoce las políticas de uso aceptable, limitaciones del servicio y condiciones legales para usar nuestro servicio de correo temporal gratuito.",
+            "keywords": [
+                "términos tempemail",
+                "términos de servicio",
+                "correo temporal",
+                "términos correo desechable",
+                "acuerdo legal correo",
+                "condiciones tempEmail"
+            ],
+            "ogTitle": "Términos de Servicio – TempEmail",
+            "ogDescription": "Condiciones legales para usar el servicio gratuito de correo temporal de TempEmail.",
+            "locale": "es_ES",
+            "twitterTitle": "Términos de Servicio – TempEmail",
+            "twitterDescription": "Lee los términos y condiciones para usar el correo temporal gratuito de TempEmail."
+        },
         "title": "Términos de Servicio",
         "last_updated": "Última actualización",
         "sections": {

@@ -217,6 +217,23 @@
     },
 
     "TermsPage": {
+        "Metadata": {
+            "title": "Conditions d’utilisation – TempEmail | E‑mail Temporaire",
+            "description": "Lisez les Conditions d’utilisation de TempEmail. Comprenez les politiques d’utilisation acceptable, les limites du service et les conditions légales pour utiliser notre service gratuit d’e‑mail temporaire.",
+            "keywords": [
+                "termes tempemail",
+                "conditions d'utilisation",
+                "e-mail temporaire",
+                "e-mail jetable légal",
+                "contrat service e-mail",
+                "tempEmail légal"
+            ],
+            "ogTitle": "Conditions d’utilisation – TempEmail",
+            "ogDescription": "Conditions légales pour utiliser le service gratuit d’e‑mail temporaire de TempEmail.",
+            "locale": "fr_FR",
+            "twitterTitle": "Conditions d’utilisation – TempEmail",
+            "twitterDescription": "Lisez les termes et conditions pour utiliser le service gratuit d’e‑mail temporaire de TempEmail."
+        },
         "title": "Conditions d’utilisation",
         "last_updated": "Dernière mise à jour",
         "sections": {

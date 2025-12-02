@@ -217,6 +217,23 @@
     },
 
     "TermsPage": {
+        "Metadata": {
+            "title": "서비스 약관 – TempEmail | 임시 이메일",
+            "description": "TempEmail의 서비스 약관을 읽어보세요. 당사의 무료 임시 이메일 서비스를 사용할 때 허용된 사용 정책, 서비스 제한 사항 및 법적 조건을 이해하십시오.",
+            "keywords": [
+                "tempemail 약관",
+                "서비스 약관",
+                "임시 이메일",
+                "일회용 이메일 법적",
+                "이메일 서비스 계약",
+                "tempEmail 법적"
+            ],
+            "ogTitle": "서비스 약관 – TempEmail",
+            "ogDescription": "TempEmail 무료 임시 이메일 서비스 사용을 위한 법적 조건입니다.",
+            "locale": "ko_KR",
+            "twitterTitle": "서비스 약관 – TempEmail",
+            "twitterDescription": "TempEmail 무료 임시 이메일 서비스 사용을 위한 약관을 읽어보세요."
+        },
         "title": "서비스 이용약관",
         "last_updated": "최종 업데이트",
         "sections": {

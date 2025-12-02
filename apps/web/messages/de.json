@@ -217,6 +217,23 @@
     },
 
     "TermsPage": {
+        "Metadata": {
+            "title": "Nutzungsbedingungen – TempEmail | Temporäre E‑Mail",
+            "description": "Lies die Nutzungsbedingungen von TempEmail. Verstehe die akzeptable Nutzungsrichtlinie, Dienstleistungsbeschränkungen und rechtlichen Bedingungen für die Nutzung unseres kostenlosen temporären E-Mail-Dienstes.",
+            "keywords": [
+                "tempemail bedingungen",
+                "nutzungsbedingungen",
+                "temporäre email",
+                "wegwerf‑email gesetzlich",
+                "email dienstleistungsvertrag",
+                "tempEmail rechtlich"
+            ],
+            "ogTitle": "Nutzungsbedingungen – TempEmail",
+            "ogDescription": "Rechtliche Bedingungen für die Nutzung des kostenlosen temporären E‑Mail-Dienstes von TempEmail.",
+            "locale": "de_DE",
+            "twitterTitle": "Nutzungsbedingungen – TempEmail",
+            "twitterDescription": "Lies die AGB zur Nutzung des kostenlosen temporären E‑Mails von TempEmail."
+        },
         "title": "Nutzungsbedingungen",
         "last_updated": "Zuletzt aktualisiert",
         "sections": {

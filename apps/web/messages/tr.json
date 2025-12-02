@@ -217,6 +217,23 @@
     },
 
     "TermsPage": {
+        "Metadata": {
+            "title": "Hizmet Şartları – TempEmail | Geçici E‑posta",
+            "description": "TempEmail Hizmet Şartlarını okuyun. Ücretsiz geçici e‑posta servisimizden yararlanırken kabul edilebilir kullanım politikaları, servis sınırları ve yasal koşulları anlayın.",
+            "keywords": [
+                "tempemail şartları",
+                "hizmet şartları",
+                "geçici e‑posta",
+                "tek kullanımlık e‑posta yasal",
+                "e‑posta hizmet sözleşmesi",
+                "tempEmail yasal"
+            ],
+            "ogTitle": "Hizmet Şartları – TempEmail",
+            "ogDescription": "TempEmail’in ücretsiz geçici e‑posta servisini kullanmak için yasal şartlar.",
+            "locale": "tr_TR",
+            "twitterTitle": "Hizmet Şartları – TempEmail",
+            "twitterDescription": "TempEmail’in ücretsiz geçici e‑posta servisini kullanmak için hüküm ve koşulları okuyun."
+        },
         "title": "Hizmet Şartları",
         "last_updated": "Son güncelleme",
         "sections": {

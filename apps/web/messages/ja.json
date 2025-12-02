@@ -217,6 +217,23 @@
     },
 
     "TermsPage": {
+        "Metadata": {
+            "title": "利用規約 – TempEmail | 一時メールサービス",
+            "description": "TempEmailの利用規約をお読みください。無料の一時メールサービスを利用する際の許容される使用ポリシー、サービスの制限、および法的条件を理解してください。",
+            "keywords": [
+                "tempemail 規約",
+                "利用規約",
+                "一時メール",
+                "使い捨てメール 法的",
+                "メールサービス契約",
+                "tempEmail 法的"
+            ],
+            "ogTitle": "利用規約 – TempEmail",
+            "ogDescription": "TempEmailの無料一時メールサービスを利用するための法的条件。",
+            "locale": "ja_JP",
+            "twitterTitle": "利用規約 – TempEmail",
+            "twitterDescription": "TempEmailの無料一時メールサービスを利用するための規約をお読みください。"
+        },
         "title": "利用規約",
         "last_updated": "最終更新日",
         "sections": {
