@@ -9,7 +9,7 @@
 
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -20,7 +20,7 @@ export default function middleware(request: NextRequest) {
 
     if (pathname.startsWith('/blog')) {
         console.log('blog : skipping intl middleware');
-        return;
+        return NextResponse.next();
     }
 
     // Apply i18n middleware to everything else
