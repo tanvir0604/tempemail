@@ -44,6 +44,12 @@ export default async function Footer({
                         >
                             {f('privacy')}
                         </Link>
+                        <Link
+                            href="/blog"
+                            className="dark:text-zinc-300 dark:hover:text-zinc-100 text-zinc-900 hover:text-zinc-950 transition-colors"
+                        >
+                            {f('blog')}
+                        </Link>
                         {showLanguageSwitcher && <LanguageSwitcher />}
                     </div>
                 </div>
