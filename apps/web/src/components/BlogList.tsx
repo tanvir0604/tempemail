@@ -11,7 +11,10 @@ export default async function BlogList({
     const items = await getBlogList(searchParams);
     if (!items || items.statusCode !== 200)
         return <div>Something went wrong</div>;
+
     const blogData: BlogDetailsType[] = items.data;
+
+    if (blogData.length === 0) return <div>No blog found</div>;
     return (
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
             {blogData.map((item: BlogDetailsType) => (
