@@ -1,11 +1,11 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
-import { ReplyEmailDto } from '@repo/validation';
+import { SendEmailDto } from '@repo/validation';
 
 @Injectable()
 export class AppService {
   private readonly transporter: nodemailer.Transporter;
-  async send(data: ReplyEmailDto) {
+  async send(data: SendEmailDto) {
     if (!data.to) {
       return {
         statusCode: HttpStatus.BAD_REQUEST,
@@ -18,16 +18,17 @@ export class AppService {
     const mailOptions: any = {
       from: data.from,
       to: data.to,
-      subject: `Re: ${data.subject}`,
-
-      inReplyTo: data.messageId,
-      references: data.references
-        ? `${data.references} ${data.messageId}`
-        : data.messageId,
-
+      subject: data.subject,
       text: data.text,
       html: data.html,
     };
+
+    if (data.messageId) {
+      mailOptions.inReplyT = data.messageId;
+      mailOptions.references = data.references
+        ? `${data.references} ${data.messageId}`
+        : data.messageId;
+    }
 
     try {
       const info = await this.transporter.sendMail(mailOptions);

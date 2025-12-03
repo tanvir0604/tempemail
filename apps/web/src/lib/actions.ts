@@ -5,6 +5,8 @@ import axios, { AxiosRequestConfig, HttpStatusCode, Method } from 'axios';
 import qs from 'qs';
 import {
     GetListDto,
+    SendEmailDto,
+    SendEmailSchema,
     SimpleResponseType,
     TempEmailType,
 } from '@repo/validation';
@@ -230,6 +232,33 @@ export async function getBlogDetails(
     const response: SimpleResponseType = await httpRequest({
         method: 'GET',
         url: '/blog/slug/' + slug,
+    });
+
+    if (!response || response.statusCode !== 200) {
+        return {
+            statusCode: 400,
+            message: 'Bad Request',
+        };
+    }
+
+    return response;
+}
+
+export async function sendEmail(
+    values: SendEmailDto,
+): Promise<SimpleResponseType> {
+    const validation = SendEmailSchema.safeParse(values);
+
+    if (!validation.success) {
+        return {
+            statusCode: 400,
+            message: validation.error.message,
+        };
+    }
+    const response: SimpleResponseType = await httpRequest({
+        method: 'POST',
+        url: '/email/send',
+        data: validation.data,
     });
 
     if (!response || response.statusCode !== 200) {

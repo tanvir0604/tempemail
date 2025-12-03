@@ -5,9 +5,11 @@ import {
     ChevronDown,
     FileIcon,
     FileText,
+    Forward,
     Mail,
     Paperclip,
     PaperclipIcon,
+    Reply,
 } from 'lucide-react';
 import { EmailContentType, sanitize } from '@repo/validation';
 import { cn } from '@/lib/utils';
@@ -21,6 +23,7 @@ import {
     File,
 } from 'lucide-react';
 import Image from 'next/image';
+import { Button } from './ui/button';
 
 const getFileIcon = (filename: string) => {
     const ext = filename.split('.').pop()?.toLowerCase();
@@ -260,23 +263,28 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                 </div>
             </div>
 
-            {/* {isExpanded && (
-        <div className="px-4 pb-4 pt-4 bg-zinc-900/50">
-          <div
-            className="text-sm text-zinc-300 whitespace-pre-wrap"
-            dangerouslySetInnerHTML={{ __html: email.html }}
-          ></div>
+            {isExpanded && (
+                <div className="px-4 pb-4 pt-4 bg-zinc-900/50">
+                    <div
+                        className="text-sm text-zinc-300 whitespace-pre-wrap"
+                        dangerouslySetInnerHTML={{ __html: email.html }}
+                    ></div>
 
-          <div className="mt-4 pt-4 border-t border-zinc-800 flex gap-2">
-            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors">
-              Reply
-            </button>
-            <button className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm rounded transition-colors">
-              Forward
-            </button>
-          </div>
-        </div>
-      )} */}
+                    <div className="mt-4 pt-4 border-t border-zinc-800 flex gap-2">
+                        <Button className="flex cursor-pointer bg-blue-600 text-white">
+                            <Reply className="w-4 h-4 mr-1" />
+                            Reply
+                        </Button>
+                        <Button
+                            className="flex cursor-pointer"
+                            variant={'outline'}
+                        >
+                            <Forward className="w-4 h-4 mr-1" />
+                            Forward
+                        </Button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
