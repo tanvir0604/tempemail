@@ -41,10 +41,10 @@ export class AppController {
       const response = await this.tempEmailService.getList({
         where: {
           userId: data.userId,
-          createdAt: { gt: new Date(Date.now() - 24 * 60 * 60 * 1000) },
+          createdAt: { gt: new Date(Date.now() - 2 * 60 * 60 * 1000) },
         },
         orderBy: { createdAt: 'desc' },
-        take: 5,
+        take: 20,
         skip: 0,
       });
       if (!response) {
@@ -53,14 +53,13 @@ export class AppController {
 
       if (response.length > 10) {
         waitTill = new Date(
-          new Date(response[response.length - 1].createdAt).getTime() +
-            24 * 60 * 60 * 1000,
+          new Date(response[0].createdAt).getTime() + 2 * 60 * 60 * 1000,
         );
       }
 
       if (response.length > 0) {
         waitTill = new Date(
-          new Date(response[response.length - 1].createdAt).getTime() +
+          new Date(response[0].createdAt).getTime() +
             (response.length / 10) * 60 * 60 * 1000,
         );
       }
@@ -108,6 +107,8 @@ export class AppController {
     }
 
     response.waitTill = waitTill;
+
+    console.log('return response', response);
 
     return {
       statusCode: HttpStatus.OK,

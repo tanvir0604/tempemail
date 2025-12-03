@@ -45,7 +45,7 @@ export default function TempEmail({
     const [email, setEmail] = useState<string | undefined>(undefined);
     const [expiredAt, setExpiredAt] = useState<Date>(new Date());
     const [waitTill, setWaitTill] = useState<Date>(
-        new Date(emailData?.waitTille ?? new Date()),
+        new Date(emailData?.waitTill ?? new Date()),
     );
     const [copied, setCopied] = useState(false);
 
@@ -57,6 +57,9 @@ export default function TempEmail({
                     ? new Date(emailData.expiredAt)
                     : new Date(),
             );
+            setWaitTill(
+                emailData.waitTill ? new Date(emailData.waitTill) : new Date(),
+            );
         }
     }, [emailData]);
 
@@ -66,7 +69,7 @@ export default function TempEmail({
         setTimeout(() => setCopied(false), 2000);
     };
 
-    console.log('emailData', emailData);
+    // console.log('emailData', emailData);
 
     return (
         <Card className="bg-zinc-900 border-zinc-800">
@@ -196,15 +199,19 @@ export default function TempEmail({
                                     ) : (
                                         <RefreshCw className="w-4 h-4 mr-2" />
                                     )}
-                                    {waitTill > new Date() ? (
-                                        <TimeLeft
-                                            expiredAt={waitTill}
-                                            onComplete={() => {
-                                                setWaitTill(new Date());
-                                            }}
-                                        />
-                                    ) : (
-                                        <>{t('new_email')}</>
+                                    <>{t('new_email')}</>
+                                    {waitTill > new Date() && (
+                                        <>
+                                            &nbsp; (
+                                            <TimeLeft
+                                                expiredAt={waitTill}
+                                                reversed={true}
+                                                onComplete={() => {
+                                                    setWaitTill(new Date());
+                                                }}
+                                            />
+                                            )
+                                        </>
                                     )}
                                 </Button>
                             </TooltipTrigger>

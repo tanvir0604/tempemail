@@ -3,5 +3,5 @@ export type TempEmailType = {
     emailId: string;
     email: string;
     expiredAt: Date;
-    waitTille: Date;
+    waitTill: Date;
 };

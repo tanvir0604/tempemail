@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { formatTime, getColor } from '@/lib/utils';
 
 export default function TimeLeft({
@@ -10,23 +10,36 @@ export default function TimeLeft({
     reversed?: boolean;
     onComplete?: () => void;
 }) {
-    const [timeLeft, setTimeLeft] = useState<number>(0);
+    const [timeLeft, setTimeLeft] = useState<number>(30);
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
+
     useEffect(() => {
+        // Set initial time immediately
         setTimeLeft(Math.floor((expiredAt.getTime() - Date.now()) / 1000));
-    }, [expiredAt]);
-    useEffect(() => {
-        if (timeLeft <= 0) {
-            onComplete && onComplete();
-            setTimeLeft(0);
-        }
-        const timer = setInterval(() => {
-            setTimeLeft((prev) => {
-                if (prev <= 1) return 0;
-                return prev - 1;
-            });
+
+        // Start interval
+        timerRef.current = setInterval(() => {
+            const left = Math.floor((expiredAt.getTime() - Date.now()) / 1000);
+
+            if (left <= 0) {
+                setTimeLeft(0);
+                if (timerRef.current) {
+                    clearInterval(timerRef.current);
+                }
+                onComplete?.();
+            } else {
+                setTimeLeft(left);
+            }
         }, 1000);
-        return () => clearInterval(timer);
-    }, []);
+
+        // Cleanup
+        return () => {
+            if (timerRef.current) {
+                clearInterval(timerRef.current);
+            }
+        };
+    }, [expiredAt]);
+
     return (
         <span className={getColor(timeLeft, reversed)}>
             {formatTime(timeLeft)}

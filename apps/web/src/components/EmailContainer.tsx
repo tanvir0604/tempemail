@@ -51,7 +51,7 @@ export default function EmailContainer({ id }: { id?: string }) {
                     setEmailData({
                         ...getEmailData,
                         expiredAt: new Date(getEmailData.expiredAt),
-                        waitTille: new Date(getEmailData.waitTill),
+                        waitTill: new Date(getEmailData.waitTill),
                     });
                     setGeneratingEmail(false);
                     return;
@@ -60,7 +60,7 @@ export default function EmailContainer({ id }: { id?: string }) {
                 setEmailData({
                     ...getEmailData,
                     expiredAt: new Date(getEmailData.expiredAt),
-                    waitTille: new Date(getEmailData.waitTill),
+                    waitTill: new Date(getEmailData.waitTill),
                 });
                 setGeneratingEmail(false);
                 return;
@@ -74,7 +74,7 @@ export default function EmailContainer({ id }: { id?: string }) {
             setEmailData({
                 ...response.data,
                 expiredAt: new Date(response.data.expiredAt),
-                waitTille: new Date(response.data.waitTill),
+                waitTill: new Date(response.data.waitTill),
             });
             localStorage.setItem('temp_email', JSON.stringify(response.data));
             setGeneratingEmail(false);
@@ -89,7 +89,7 @@ export default function EmailContainer({ id }: { id?: string }) {
             setEmailData({
                 ...response.data,
                 expiredAt: new Date(response.data.expiredAt),
-                waitTille: new Date(response.data.waitTill),
+                waitTill: new Date(response.data.waitTill),
             });
             return response.data;
         }
