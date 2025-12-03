@@ -17,11 +17,11 @@ model Post {
   id          String   @id @default(uuid())
   slug        String   @unique
   title       String   @unique
-  image       String
+  image       String?
   content     String   @db.Text
   status      Boolean  @default(true)
   readingTime Int
-  tag         String
+  tag         String?
   publishedAt DateTime
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

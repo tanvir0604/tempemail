@@ -16,9 +16,11 @@ const intlMiddleware = createMiddleware(routing);
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Exclude blog routes from i18n
+    console.log('pathname', pathname);
+
     if (pathname.startsWith('/blog')) {
-        return; // Skip i18n middleware for blog routes
+        console.log('blog : skipping intl middleware');
+        return;
     }
 
     // Apply i18n middleware to everything else

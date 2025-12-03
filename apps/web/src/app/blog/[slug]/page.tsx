@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getBlogDetails } from '@/lib/actions';
 import { limitWords } from '@/lib/utils';
 import { SimpleResponseType } from '@repo/validation';
+import { NotebookIcon } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
 type Props = {
@@ -178,7 +179,7 @@ export default async function BlogDetailsPage({ params }: Props) {
     };
 
     return (
-        <Card className="w-full my-10 mx-auto bg-transparent h-auto">
+        <div className="max-w-6xl mx-auto space-y-12">
             <section>
                 <script
                     type="application/ld+json"
@@ -187,29 +188,33 @@ export default async function BlogDetailsPage({ params }: Props) {
                     }}
                 />
             </section>
-            <CardHeader>
-                <CardTitle>
-                    <h1 className="mx-auto text-4xl text-center">
-                        {blogData.data.title}
-                    </h1>
-                    <p className="text-sm text-muted-foreground text-center mt-2 font-light">
-                        <time dateTime="2025-06-13">
-                            Published:{' '}
-                            {new Date(blogData.data.createdAt).toDateString()}
-                        </time>{' '}
-                        |
-                        <span>
-                            Reading time: {blogData.data.readingTime} minutes
-                        </span>{' '}
-                        |<span>{blogData.data.tag}</span>
-                    </p>
-                </CardTitle>
-            </CardHeader>
-            <CardContent>
+            <div className="text-center space-y-4">
+                <div className="flex justify-center">
+                    <div className="p-4 bg-zinc-800 rounded-2xl">
+                        <NotebookIcon className="w-12 h-12 text-blue-500" />
+                    </div>
+                </div>
+                <h1 className="text-4xl font-bold text-zinc-100">
+                    {blogData.data.title}
+                </h1>
+                <p className="text-xl text-zinc-400">
+                    <time dateTime="2025-06-13">
+                        Published:{' '}
+                        {new Date(blogData.data.createdAt).toDateString()}
+                    </time>{' '}
+                    |
+                    <span>
+                        Reading time: {blogData.data.readingTime} minutes
+                    </span>{' '}
+                    |<span>{blogData.data.tag}</span>
+                </p>
+            </div>
+
+            <div className="prose prose-invert max-w-none">
                 <span
                     dangerouslySetInnerHTML={{ __html: blogData.data.content }}
                 ></span>
-            </CardContent>
-        </Card>
+            </div>
+        </div>
     );
 }

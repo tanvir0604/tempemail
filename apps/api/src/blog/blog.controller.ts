@@ -45,7 +45,7 @@ export class BlogController {
         return {
           statusCode: HttpStatus.OK,
           data: cachedTopics,
-          message: 'Blog post found successfully',
+          message: 'Blog post found successfully from cache',
         };
       }
     }
@@ -60,7 +60,7 @@ export class BlogController {
       return {
         statusCode: HttpStatus.OK,
         data: response,
-        message: 'Blog post found successfully',
+        message: 'Blog post found successfully from database',
       };
     }
     return {

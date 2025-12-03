@@ -227,8 +227,17 @@ export async function getBlogList(
 export async function getBlogDetails(
     slug: string,
 ): Promise<SimpleResponseType> {
-    return {
-        statusCode: 200,
-        message: 'Blog post found successfully',
-    };
+    const response: SimpleResponseType = await httpRequest({
+        method: 'GET',
+        url: '/blog/slug/' + slug,
+    });
+
+    if (!response || response.statusCode !== 200) {
+        return {
+            statusCode: 400,
+            message: 'Bad Request',
+        };
+    }
+
+    return response;
 }

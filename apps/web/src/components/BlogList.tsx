@@ -7,7 +7,7 @@ export default async function BlogList({
 }: {
     searchParams: GetListDto;
 }) {
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+    // await new Promise((resolve) => setTimeout(resolve, 5000));
     const items = await getBlogList(searchParams);
     if (!items || items.statusCode !== 200)
         return <div>Something went wrong</div>;
