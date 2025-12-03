@@ -23,6 +23,12 @@ const geistMono = Geist_Mono({
     subsets: ['latin'],
 });
 
+export const metadata: Metadata = {
+    title: 'TempEmail - Free Temporary Email | Disposable Email Address',
+    description:
+        'Get a free temporary email address instantly. Receive emails anonymously without registration. Features QR code sync, time extension, and safe email viewing with content warnings.',
+};
+
 const baseUrl = process.env.BASE_URL ?? 'https://www.temp-email.dev';
 
 export async function generateJsonLd(locale: string) {
