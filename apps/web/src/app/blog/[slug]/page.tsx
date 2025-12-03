@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getBlogDetails } from '@/lib/actions';
 import { limitWords } from '@/lib/utils';
-import { BlogDetailsType, SimpleResponseType } from '@repo/validation';
+import { SimpleResponseType } from '@repo/validation';
 import { notFound } from 'next/navigation';
 
 type Props = {
@@ -11,31 +11,31 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
     const { slug } = await params;
     const blogData: SimpleResponseType = await getBlogDetails(slug);
-    console.log('blogData', blogData);
     if (!blogData || !blogData.data) {
         return;
     }
-    const title = 'TrustRoop Blog - ' + blogData.data.title + ' | Trustroop';
+    const title = 'TempEmail Blog - ' + blogData.data.title + ' | TempEmail';
     const description = limitWords(blogData.data.content, 50);
     return {
         title: title,
         description: description,
 
         keywords: [
-            'online safety blog',
-            'cybersecurity tips',
-            'scam prevention',
-            'fake reviews detection',
-            'web security',
-            'internet safety',
-            'online shopping safety',
-            'phishing protection',
-            'trust verification',
-            'digital security',
-            'browser security',
-            'online fraud prevention',
-            'website trust scores',
-            'chrome extension security',
+            'temporary email',
+            'disposable email',
+            'temp mail',
+            'fake email',
+            'throwaway email',
+            'anonymous email',
+            'burner email',
+            'temporary email address',
+            'disposable email address',
+            'temp email generator',
+            'email privacy',
+            'spam protection',
+            'email without registration',
+            'instant email',
+            'temporary inbox',
         ],
 
         publishedTime: blogData.data.publishedAt,
@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: Props) {
         openGraph: {
             title: title,
             description: description,
-            url: 'https://www.trustroop.com/blog/' + slug,
-            siteName: 'Trustroop',
+            url: 'https://www.temp-email.dev/blog/' + slug,
+            siteName: 'TempEmail',
             type: 'website',
             images: [
                 {
@@ -64,17 +64,17 @@ export async function generateMetadata({ params }: Props) {
             title: title,
             description: description,
             images: [blogData.data.image],
-            site: '@trustroop',
-            creator: '@trustroop',
+            site: '@tempemail',
+            creator: '@tempemail',
         },
 
         // alternates: {
-        //     canonical: 'https://www.trustroop.com/blog',
+        //     canonical: 'https://www.temp-email.dev/blog',
         //     types: {
         //         'application/rss+xml': [
         //             {
-        //                 title: 'TrustRoop Blog RSS Feed',
-        //                 url: 'https://www.trustroop.com/blog/rss.xml',
+        //                 title: 'Tempemail Blog RSS Feed',
+        //                 url: 'https://www.temp-email.dev/blog/rss.xml',
         //             },
         //         ],
         //     },
@@ -99,11 +99,11 @@ export async function generateMetadata({ params }: Props) {
 
         // Additional structured data hints
         other: {
-            'og:site_name': 'Trustroop',
+            'og:site_name': 'TempEmail',
             'theme-color': '#3B82F6',
             'msapplication-TileColor': '#3B82F6',
-            'application-name': 'TrustRoop Blog',
-            'apple-mobile-web-app-title': 'TrustRoop Blog',
+            'application-name': 'TempEmail Blog',
+            'apple-mobile-web-app-title': 'TempEmail Blog',
             'format-detection': 'telephone=no',
         },
 
@@ -122,14 +122,14 @@ export default async function BlogDetailsPage({ params }: Props) {
     if (!blogData || !blogData.data) {
         notFound();
     }
-    const title = 'TrustRoop Blog - ' + blogData.data.title + ' | Trustroop';
+    const title = 'TempEmail Blog - ' + blogData.data.title + ' | TempEmail';
     const description = limitWords(blogData.data.content, 50);
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
         headline: title,
         description: description,
-        url: 'https://www.trustroop.com/blog/' + slug,
+        url: 'https://www.temp-email.dev/blog/' + slug,
         image: {
             '@type': 'ImageObject',
             url: blogData.data.image,
@@ -139,35 +139,40 @@ export default async function BlogDetailsPage({ params }: Props) {
         },
         author: {
             '@type': 'Organization',
-            name: 'Trustroop Security Team',
+            name: 'Tempemail Security Team',
         },
         datePublished: blogData.data.publishedAt,
         dateModified: blogData.data.updatedAt,
         articleSection: 'Online Safety',
         keywords: [
-            'avoid online scams',
-            'prevent online fraud',
-            'phishing protection',
-            'fake website detection',
-            'online safety tips',
-            'internet security',
-            'cybersecurity 2025',
-            'scam prevention guide',
-            'online fraud protection',
-            'digital safety',
+            'temporary email',
+            'disposable email',
+            'temp mail',
+            'fake email',
+            'throwaway email',
+            'anonymous email',
+            'burner email',
+            'temporary email address',
+            'disposable email address',
+            'temp email generator',
+            'email privacy',
+            'spam protection',
+            'email without registration',
+            'instant email',
+            'temporary inbox',
         ],
         publisher: {
             '@type': 'Organization',
-            name: 'Trustroop',
-            url: 'https://www.trustroop.com',
+            name: 'Tempemail',
+            url: 'https://www.temp-email.dev',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.trustroop.com/images/logo.png',
+                url: 'https://www.temp-email.dev/images/logo.png',
             },
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': 'https://www.trustroop.com/blog/' + slug,
+            '@id': 'https://www.temp-email.dev/blog/' + slug,
         },
         inLanguage: 'en-US',
     };

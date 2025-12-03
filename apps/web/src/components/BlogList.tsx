@@ -14,7 +14,7 @@ export default async function BlogList({
     const blogData: BlogDetailsType[] = items.data;
     return (
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-            {items.data.map((item: BlogDetailsType) => (
+            {blogData.map((item: BlogDetailsType) => (
                 <BlogItem key={item.id} item={item} />
             ))}
         </div>
