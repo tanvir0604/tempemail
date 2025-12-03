@@ -108,7 +108,7 @@ export class AppController {
 
     response.waitTill = waitTill;
 
-    console.log('return response', response);
+    // console.log('return response', response);
 
     return {
       statusCode: HttpStatus.OK,
