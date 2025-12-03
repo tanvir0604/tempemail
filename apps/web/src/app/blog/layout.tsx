@@ -20,6 +20,12 @@ const geistMono = Geist_Mono({
 
 const baseUrl = process.env.BASE_URL ?? 'https://www.temp-email.dev';
 
+export const metadata: Metadata = {
+    title: 'Blog - Latest Updates & Guides | TempEmail',
+    description:
+        'Explore articles about temporary email services, privacy tips, and security guides. Learn how to protect your inbox from spam and maintain online anonymity.',
+};
+
 export default async function RootLayout({
     children,
 }: Readonly<{
