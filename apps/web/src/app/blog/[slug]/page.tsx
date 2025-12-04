@@ -213,7 +213,7 @@ export default async function BlogDetailsPage({ params }: Props) {
                     </p>
                 </div>
 
-                <div className="prose prose-invert max-w-none">
+                <div className="prose prose-invert max-w-none mt-6">
                     <div
                         dangerouslySetInnerHTML={{
                             __html: blogData.data.content,
