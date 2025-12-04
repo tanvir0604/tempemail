@@ -1,9 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getBlogDetails } from '@/lib/actions';
 import { limitWords } from '@/lib/utils';
 import { SimpleResponseType } from '@repo/validation';
 import { NotebookIcon } from 'lucide-react';
 import { notFound } from 'next/navigation';
+
+import { DynamicIcon } from 'lucide-react/dynamic';
+import Link from 'next/link';
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -212,11 +214,11 @@ export default async function BlogDetailsPage({ params }: Props) {
                 </div>
 
                 <div className="prose prose-invert max-w-none">
-                    <span
+                    <div
                         dangerouslySetInnerHTML={{
                             __html: blogData.data.content,
                         }}
-                    ></span>
+                    ></div>
                 </div>
             </article>
         </div>
