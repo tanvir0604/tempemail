@@ -5,7 +5,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { SendEmailDto, SendEmailSchema } from '@repo/validation';
 import { useTransition } from 'react';
-import { z } from 'zod';
 import {
     Form,
     FormControl,
@@ -23,10 +22,12 @@ import { Loader2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Textarea } from '../ui/textarea';
 
-export default function AddCategoryForm({
+export default function EmailForm({
+    data,
     className,
     onSuccess,
 }: {
+    data: SendEmailDto;
     className?: string;
     onSuccess?: () => void;
 }) {
@@ -36,13 +37,13 @@ export default function AddCategoryForm({
     const form = useForm<SendEmailDto>({
         resolver: zodResolver(SendEmailSchema),
         defaultValues: {
-            from: '',
-            to: '',
-            subject: '',
-            text: '',
-            html: '',
-            messageId: '',
-            references: '',
+            from: data.from,
+            to: data.to,
+            subject: data.subject,
+            text: data.text,
+            html: data.html,
+            messageId: data.messageId,
+            references: data.references,
         },
     });
 
@@ -75,6 +76,7 @@ export default function AddCategoryForm({
                                 <FormLabel>{t('Email.to')}</FormLabel>
                                 <FormControl>
                                     <Input
+                                        readOnly={data.type == 'reply'}
                                         type="email"
                                         placeholder={t('Email.toPlaceHolder')}
                                         {...field}
@@ -93,7 +95,30 @@ export default function AddCategoryForm({
                             <FormItem>
                                 <FormLabel>{t('Email.from')}</FormLabel>
                                 <FormControl>
-                                    <Textarea placeholder="Type your message here." />
+                                    <Input
+                                        readOnly
+                                        type="email"
+                                        placeholder={t('Email.fromPlaceHolder')}
+                                        {...field}
+                                    />
+                                </FormControl>
+                                <FormDescription></FormDescription>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+
+                    <FormField
+                        control={form.control}
+                        name="text"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>{t('Email.text')}</FormLabel>
+                                <FormControl>
+                                    <Textarea
+                                        placeholder={t('Email.textPlaceHolder')}
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormDescription></FormDescription>
                                 <FormMessage />
@@ -109,7 +134,11 @@ export default function AddCategoryForm({
                         {isPending && (
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                         )}
-                        Submit
+                        {data.type == 'send'
+                            ? t('Email.send')
+                            : data.type == 'forward'
+                              ? t('Email.forward')
+                              : t('Email.reply')}
                     </Button>
                 </form>
             </Form>

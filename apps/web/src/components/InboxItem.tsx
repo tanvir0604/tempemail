@@ -263,7 +263,7 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                 </div>
             </div>
 
-            {isExpanded && (
+            {/* {isExpanded && (
                 <div className="px-4 pb-4 pt-4 bg-zinc-900/50">
                     <div
                         className="text-sm text-zinc-300 whitespace-pre-wrap"
@@ -284,7 +284,7 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                         </Button>
                     </div>
                 </div>
-            )}
+            )} */}
         </div>
     );
 }
