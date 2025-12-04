@@ -42,7 +42,7 @@ export default function InboxEmails({
                             variant="secondary"
                             className="bg-zinc-800 text-zinc-300"
                         >
-                            {inbox.length} {t('emails_in_inbox')}
+                            {inbox.length} {t('email_in_inbox')}
                         </Badge>
                         {/* <Input
                             placeholder="search.."

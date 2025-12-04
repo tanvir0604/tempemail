@@ -10,5 +10,6 @@ export * from './schemas/domain.schema';
 export * from './schemas/domain-user.schema';
 export * from './schemas/mailcow.schema';
 export * from './data/names';
+export * from './data/country-wise-names';
 export * from './data/languages';
 export * from './libs/utils';

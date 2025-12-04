@@ -78,11 +78,11 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
     }
 }
 
-export async function generateTempEmail(userId?: string) {
+export async function generateTempEmail(locale = 'en', userId?: string) {
     const response: SimpleResponseType = await httpRequest({
         method: 'POST',
         url: '/create-alias',
-        data: { userId },
+        data: { userId, locale },
     });
     if (!response) {
         return {

@@ -8,11 +8,13 @@ import Inbox from './Inbox';
 import { usePersistentUniqueId } from '@/hooks/PersistentUniqueId';
 import { toast } from 'sonner';
 import { isIncognito } from '@/lib/utils';
+import { useLocale } from 'next-intl';
 
 export default function EmailContainer({ id }: { id?: string }) {
     const [emailData, setEmailData] = useState<TempEmailType>();
     const [generatingEmail, setGeneratingEmail] = useState(false);
     const userID = usePersistentUniqueId();
+    const locale = useLocale();
 
     const generateTempEmailAction = async () => {
         if (await isIncognito()) {
@@ -68,7 +70,7 @@ export default function EmailContainer({ id }: { id?: string }) {
         }
 
         console.log('generating temp email');
-        const response = await generateTempEmail(userID ?? undefined);
+        const response = await generateTempEmail(locale, userID ?? undefined);
         if (response && response.statusCode == 200) {
             console.log('response', response);
             setEmailData({

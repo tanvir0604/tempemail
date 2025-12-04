@@ -5,9 +5,11 @@ import {
   ExpiredAliasesGroupType,
   firstNames,
   lastNames,
+  AliasNames,
 } from '@repo/validation';
 import { firstValueFrom } from 'rxjs';
 import { TempEmailService } from 'src/settings/temp-email/temp-email.service';
+import { locales } from '@repo/validation';
 
 @Injectable()
 export class MailcowService {
@@ -16,7 +18,7 @@ export class MailcowService {
     private readonly tempEmailService: TempEmailService,
   ) {}
 
-  generateEmailUsername() {
+  generateEmailUsername(): string {
     const f = firstNames[Math.floor(Math.random() * firstNames.length)];
     const l = lastNames[Math.floor(Math.random() * lastNames.length)];
     const style = Math.random();
@@ -28,9 +30,21 @@ export class MailcowService {
     return `${f}${l}${n}`.toLowerCase();
   }
 
-  generateRealisticEmail(): string {
-    const f = firstNames[Math.floor(Math.random() * firstNames.length)];
-    const l = lastNames[Math.floor(Math.random() * lastNames.length)];
+  generateRealisticEmailUsername(locale: string): string {
+    let lang = 'en';
+    if (locales.includes(locale)) {
+      lang = locale;
+    }
+    let FirstNames = AliasNames[lang].firstNames;
+    let LastNames = AliasNames[lang].lastNames;
+    if (FirstNames.length === 0) {
+      FirstNames = firstNames;
+    }
+    if (LastNames.length === 0) {
+      LastNames = lastNames;
+    }
+    const f = FirstNames[Math.floor(Math.random() * FirstNames.length)];
+    const l = LastNames[Math.floor(Math.random() * LastNames.length)];
     const style = Math.random();
 
     const birthYear = Math.floor(Math.random() * 35) + 1970;
@@ -56,7 +70,7 @@ export class MailcowService {
     }
 
     if (!data.alias) {
-      data.alias = this.generateEmailUsername();
+      data.alias = this.generateRealisticEmailUsername(data.locale);
     }
 
     const email = data.alias + '@' + data.domain;
@@ -68,7 +82,7 @@ export class MailcowService {
     if (!res) {
       return email;
     }
-    data.alias = this.generateEmailUsername();
+    data.alias = this.generateRealisticEmailUsername(data.locale);
     return this.generateUniqueEmailUsername();
   }
   async createNewAlias(data: CreateMailCowAliasDto) {

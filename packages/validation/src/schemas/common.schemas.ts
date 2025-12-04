@@ -15,5 +15,6 @@ export const CreateMailCowAliasSchema = z.object({
     domain: z.string().optional(),
     alias: z.string().optional(),
     userId: z.string().optional(),
+    locale: z.string().optional().default('en'),
 });
 export type CreateMailCowAliasDto = z.infer<typeof CreateMailCowAliasSchema>;
