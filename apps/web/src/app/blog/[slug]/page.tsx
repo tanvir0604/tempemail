@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 
 import { DynamicIcon } from 'lucide-react/dynamic';
 import Link from 'next/link';
+import { getLocale, setRequestLocale } from 'next-intl/server';
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -119,7 +120,15 @@ export async function generateMetadata({ params }: Props) {
     };
 }
 
+export async function generateStaticParams() {
+    return [
+        { slug: '10-free-temporary-email-services-you-can-trust-in-2025' }
+    ];
+}
+
 export default async function BlogDetailsPage({ params }: Props) {
+    const locale = await getLocale();
+    setRequestLocale(locale);
     const { slug } = await params;
     const blogData: SimpleResponseType = await getBlogDetails(slug);
     if (!blogData || !blogData.data) {

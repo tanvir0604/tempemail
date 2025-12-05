@@ -7,6 +7,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import NotificationPermission from '@/components/NotoficationPermission';
 import Footer from '@/components/_templates/Footer';
 import Logo from '@/components/_templates/Logo';
+import { getLocale, setRequestLocale } from 'next-intl/server';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -31,6 +32,7 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    setRequestLocale('en');
     return (
         <html lang="en" suppressHydrationWarning>
             <body

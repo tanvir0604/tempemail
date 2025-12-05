@@ -1,6 +1,6 @@
 import { LockIcon } from 'lucide-react';
 import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { locales } from '@repo/validation';
 export function generateStaticParams() {
@@ -15,6 +15,7 @@ export async function generateMetadata({
     params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
     const { locale } = await params;
+    setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: 'PrivacyPage' });
 
     const canonical = `${baseUrl}/${locale}/privacy`;
@@ -73,7 +74,13 @@ export async function generateMetadata({
     };
 }
 
-export default async function PrivacyPage() {
+export default async function PrivacyPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
     const t = await getTranslations('PrivacyPage');
     return (
         <div className="max-w-6xl mx-auto space-y-8">

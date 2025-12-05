@@ -25,6 +25,7 @@ export async function generateMetadata({
     params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
     const { locale } = await params;
+    setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: 'AboutPage' });
 
     const canonical = `${baseUrl}/${locale}`;
@@ -83,7 +84,13 @@ export async function generateMetadata({
     };
 }
 
-export default async function AboutPage() {
+export default async function AboutPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
     const t = await getTranslations('AboutPage');
     return (
         <div className="max-w-6xl mx-auto space-y-12">

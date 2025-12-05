@@ -10,7 +10,7 @@ import Logo from '@/components/_templates/Logo';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { locales } from '@repo/validation';
 
 const geistSans = Geist({
@@ -72,6 +72,7 @@ export default async function RootLayout({
         locale: locale,
     });
     const jsonLd = await generateJsonLd(locale);
+    setRequestLocale(locale);
     return (
         <html
             lang={locale}

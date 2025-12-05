@@ -73,7 +73,7 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
         const response = await axios.request<TResponse>(config);
         return response.data;
     } catch (e) {
-        console.log(e);
+        // console.log(e);
         return null as unknown as TResponse;
     }
 }
