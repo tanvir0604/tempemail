@@ -241,6 +241,8 @@ export async function getBlogDetails(
         url: '/blog/slug/' + slug,
     });
 
+    console.log('response', response);
+
     if (!response || response.statusCode !== 200) {
         return {
             statusCode: 400,

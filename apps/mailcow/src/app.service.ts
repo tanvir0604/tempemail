@@ -61,7 +61,7 @@ export class AppService {
   }
 
   async createNewAlias(domainData: CreateMailCowNewAliasDto) {
-    console.log('domainData', domainData);
+    // console.log('domainData', domainData);
     const MAILCOW_USERNAME = domainData.username;
     const USER_EMAIL = domainData.email;
     const MAILCOW_API_URL = domainData.apiUrl;
@@ -85,7 +85,7 @@ export class AppService {
 
     const URL = MAILCOW_API_URL + '/add/alias';
 
-    console.log('URL', URL, 'DATA', data);
+    // console.log('URL', URL, 'DATA', data);
 
     try {
       const response = this.httpService.post(URL, data, {

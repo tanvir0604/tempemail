@@ -87,7 +87,7 @@ export class AppController {
     const mailCowResponse: CreateTempEmailDto =
       await this.mailcowService.createNewAlias(data);
 
-    console.log('mailCowResponse', mailCowResponse);
+    // console.log('mailCowResponse', mailCowResponse);
 
     if (!mailCowResponse) {
       throw new BadRequestException("Can't create alias");

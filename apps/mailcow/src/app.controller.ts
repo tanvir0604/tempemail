@@ -9,7 +9,7 @@ export class AppController {
 
   @MessagePattern('mailcow.createNewAlias')
   async createNewAlias(@Payload() email: string) {
-    console.log('email', email);
+    // console.log('email', email);
     const domainInfo = await this.appService.getDomainInfo(email.split('@')[1]);
     if (!domainInfo || domainInfo.domainUsers.length === 0) {
       console.log('No domain found');
