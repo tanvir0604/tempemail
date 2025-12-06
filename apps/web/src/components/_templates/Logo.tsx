@@ -1,13 +1,15 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { cn } from '@/lib/utils';
+import { getLocale } from 'next-intl/server';
+import Link from 'next/link';
 
-export default function Logo({ className }: { className?: string }) {
+export default async function Logo({ className }: { className?: string }) {
+    const locale = await getLocale();
     return (
         <Link
-            href="/"
+            href={'/' + locale}
             className={cn(
-                "flex items-center justify-center text-3xl",
-                className
+                'flex items-center justify-center text-3xl',
+                className,
             )}
         >
             <span className=" font-extrabold">TEMP</span>

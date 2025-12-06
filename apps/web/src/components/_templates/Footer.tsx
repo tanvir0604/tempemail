@@ -23,7 +23,7 @@ export default async function Footer({
                     </div>
                     <div className="flex gap-6 text-sm items-center">
                         <Link
-                            href="/"
+                            href={makeUrl('/')}
                             className="dark:text-zinc-300 dark:hover:text-zinc-100 text-zinc-900 hover:text-zinc-950 transition-colors"
                         >
                             {f('home')}
