@@ -25,6 +25,7 @@ import QRCode from './QRCode';
 import ExtendTime from './ExtendTime';
 import DeleteEmailButton from './DeleteEmailButton';
 import { useTranslations } from 'next-intl';
+import { sendGTMEvent } from '@next/third-parties/google'
 
 export default function TempEmail({
     emailData,
@@ -38,6 +39,7 @@ export default function TempEmail({
     const t = useTranslations('HomePage');
     const [pending, startTransition] = useTransition();
     const generateNewEmailAction = () => {
+        sendGTMEvent({ event: 'buttonClicked', value: 'generate_new_email' })
         localStorage.removeItem('temp_email');
         startTransition(() => generateNewEmail());
     };
@@ -65,6 +67,7 @@ export default function TempEmail({
 
     const copyEmail = () => {
         navigator.clipboard.writeText(email ?? '');
+        sendGTMEvent({ event: 'buttonClicked', value: 'copy_email' })
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };

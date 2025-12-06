@@ -5,6 +5,7 @@ import { QRCodeCanvas } from 'qrcode.react';
 import { Button } from './ui/button';
 import { QrCode } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function QRCode({
     url,
@@ -19,7 +20,7 @@ export default function QRCode({
     return (
         <div className="relative inline-block">
             <Button
-                onClick={() => setHover(!hover)}
+                onClick={() => { setHover(!hover); sendGTMEvent({ event: 'buttonClicked', value: 'qr_code' }) }}
                 variant="outline"
                 size="sm"
                 disabled={disabled}

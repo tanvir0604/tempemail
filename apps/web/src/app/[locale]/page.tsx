@@ -1,6 +1,7 @@
 import EmailContainer from '@/components/EmailContainer';
 
 import { Skeleton } from '@/components/ui/skeleton';
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import { Suspense } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -96,39 +97,44 @@ export default async function HomePage({
     setRequestLocale(locale);
     const t = await getTranslations('HomePage');
     return (
-        <div className="max-w-6xl mx-auto space-y-6">
-            <section className="text-center space-y-2 mb-8">
-                <h1 className="text-4xl font-bold text-zinc-50">
-                    {t('title')}
-                </h1>
-                <p className="text-zinc-400">{t('sub_title')}</p>
-            </section>
+        <>
+            {/* {process.env.NODE_ENV == 'production' && ( */}
+            <GoogleTagManager gtmId="GTM-MTW4N9KN" />
+            {/* )} */}
+            <div className="max-w-6xl mx-auto space-y-6">
+                <section className="text-center space-y-2 mb-8">
+                    <h1 className="text-4xl font-bold text-zinc-50">
+                        {t('title')}
+                    </h1>
+                    <p className="text-zinc-400">{t('sub_title')}</p>
+                </section>
 
-            <section className="py-8 md:py-16 space-y-6">
+                <section className="py-8 md:py-16 space-y-6">
+                    <Suspense
+                        fallback={
+                            <div>
+                                <Skeleton className="h-22 w-full" />
+                                <Skeleton className="h-22 w-full" />
+                                <Skeleton className="h-22 w-full" />
+                                <Skeleton className="h-22 w-full" />
+                                <Skeleton className="h-22 w-full" />
+                            </div>
+                        }
+                    >
+                        <EmailContainer />
+                    </Suspense>
+                </section>
+
                 <Suspense
                     fallback={
                         <div>
-                            <Skeleton className="h-22 w-full" />
-                            <Skeleton className="h-22 w-full" />
-                            <Skeleton className="h-22 w-full" />
-                            <Skeleton className="h-22 w-full" />
-                            <Skeleton className="h-22 w-full" />
+                            <Skeleton className="h-300 w-full" />
                         </div>
                     }
                 >
-                    <EmailContainer />
+                    <HomeContent />
                 </Suspense>
-            </section>
-
-            <Suspense
-                fallback={
-                    <div>
-                        <Skeleton className="h-300 w-full" />
-                    </div>
-                }
-            >
-                <HomeContent />
-            </Suspense>
-        </div>
+            </div>
+        </>
     );
 }

@@ -19,6 +19,7 @@ import { useTransition } from 'react';
 import { extendTime } from '@/lib/actions';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function ExtendTime({
     emailData,
@@ -33,6 +34,7 @@ export default function ExtendTime({
     const extendTimeAction = () => {
         if (!emailData) return;
         startTransition(async () => {
+            sendGTMEvent({ event: 'buttonClicked', value: 'extend_time' })
             const response = await extendTime(emailData.id);
             if (response && response.statusCode == 200) {
                 console.log('response', response);
