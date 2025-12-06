@@ -61,7 +61,7 @@ export class AppService {
   }
 
   async createNewAlias(domainData: CreateMailCowNewAliasDto) {
-    // console.log('domainData', domainData);
+    console.log('domainData', domainData);
     const MAILCOW_USERNAME = domainData.username;
     const USER_EMAIL = domainData.email;
     const MAILCOW_API_URL = domainData.apiUrl;
@@ -103,6 +103,7 @@ export class AppService {
         };
       }
     } catch (error) {
+      console.log(error.response.data);
       return null;
     }
 
