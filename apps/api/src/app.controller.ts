@@ -90,7 +90,7 @@ export class AppController {
     // console.log('mailCowResponse', mailCowResponse);
 
     if (!mailCowResponse) {
-      throw new BadRequestException();
+      throw new BadRequestException("Can't create alias");
     }
 
     const response = await this.tempEmailService.create({
@@ -103,7 +103,7 @@ export class AppController {
     // console.log('response', response);
 
     if (!response) {
-      throw new BadRequestException();
+      throw new BadRequestException("Can't save to database");
     }
 
     response.waitTill = waitTill;
