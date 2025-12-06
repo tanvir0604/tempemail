@@ -92,17 +92,18 @@ export class BlogController {
     @Param('slug') slug: string,
   ): Promise<SimpleResponseType> {
     const response = await this.blogService.findOneBySlug(slug);
+    console.log('response', response);
     if (response) {
       return {
         statusCode: HttpStatus.OK,
         data: response,
-        message: 'Category found successfully',
+        message: 'Blog found successfully',
       };
     }
     return {
       statusCode: HttpStatus.NOT_FOUND,
       data: null,
-      message: 'Category not found',
+      message: 'Blog not found',
     };
   }
 
