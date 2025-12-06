@@ -79,11 +79,13 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
 }
 
 export async function generateTempEmail(locale = 'en', userId?: string) {
+    console.log('generating temp email');
     const response: SimpleResponseType = await httpRequest({
         method: 'POST',
         url: '/create-alias',
         data: { userId, locale },
     });
+    console.log('response', response);
     if (!response) {
         return {
             statusCode: 400,
