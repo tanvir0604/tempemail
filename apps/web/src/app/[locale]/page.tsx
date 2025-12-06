@@ -98,9 +98,9 @@ export default async function HomePage({
     const t = await getTranslations('HomePage');
     return (
         <>
-            {/* {process.env.NODE_ENV == 'production' && ( */}
-            <GoogleTagManager gtmId="GTM-MTW4N9KN" />
-            {/* )} */}
+            {process.env.NODE_ENV == 'production' && (
+                <GoogleTagManager gtmId="GTM-MTW4N9KN" />
+            )}
             <div className="max-w-6xl mx-auto space-y-6">
                 <section className="text-center space-y-2 mb-8">
                     <h1 className="text-4xl font-bold text-zinc-50">
