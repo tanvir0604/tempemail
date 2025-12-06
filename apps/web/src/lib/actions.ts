@@ -1,7 +1,12 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import axios, { AxiosRequestConfig, HttpStatusCode, Method } from 'axios';
+import axios, {
+    AxiosError,
+    AxiosRequestConfig,
+    HttpStatusCode,
+    Method,
+} from 'axios';
 import qs from 'qs';
 import {
     GetListDto,
@@ -72,8 +77,8 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
     try {
         const response = await axios.request<TResponse>(config);
         return response.data;
-    } catch (e) {
-        console.log(e);
+    } catch (e: AxiosError | any) {
+        console.log(e.response);
         return null as unknown as TResponse;
     }
 }
