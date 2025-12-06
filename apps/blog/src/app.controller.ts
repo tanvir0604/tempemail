@@ -14,7 +14,7 @@ export class AppController {
 
   @MessagePattern('blog.findAll')
   async findAll(data: FindAllDto) {
-    console.log('fetching posts');
+    // console.log('fetching posts');
     const response = await this.appService.findAll({
       where: data.where,
       take: data.take,
@@ -34,7 +34,7 @@ export class AppController {
 
   @MessagePattern('blog.findOneById')
   async findOneById(id: number) {
-    console.log(id);
+    // console.log(id);
     const response = await this.appService.findOne({ where: { id } });
     return response;
   }

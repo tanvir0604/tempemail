@@ -92,7 +92,7 @@ export class BlogController {
     @Param('slug') slug: string,
   ): Promise<SimpleResponseType> {
     const response = await this.blogService.findOneBySlug(slug);
-    console.log('response', response);
+    // console.log('response', response);
     if (response) {
       return {
         statusCode: HttpStatus.OK,
