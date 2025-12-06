@@ -1,5 +1,5 @@
 import { Mail } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import LanguageSwitcher from '../LanguageSwitcher';
 
@@ -9,6 +9,8 @@ export default async function Footer({
     showLanguageSwitcher?: boolean;
 }) {
     const f = await getTranslations('Footer');
+    const locale = await getLocale();
+    const makeUrl = (path: string) => `/${locale}${path}`;
     return (
         <footer className="border-t border-zinc-800 md:mt-20 py-8 px-4 md:px-8">
             <div className="max-w-6xl mx-auto">
@@ -27,19 +29,19 @@ export default async function Footer({
                             {f('home')}
                         </Link>
                         <Link
-                            href="/about"
+                            href={makeUrl('/about')}
                             className="dark:text-zinc-300 dark:hover:text-zinc-100 text-zinc-900 hover:text-zinc-950 transition-colors"
                         >
                             {f('about')}
                         </Link>
                         <Link
-                            href="/terms"
+                            href={makeUrl('/terms')}
                             className="dark:text-zinc-300 dark:hover:text-zinc-100 text-zinc-900 hover:text-zinc-950 transition-colors"
                         >
                             {f('terms')}
                         </Link>
                         <Link
-                            href="/privacy"
+                            href={makeUrl('/privacy')}
                             className="dark:text-zinc-300 dark:hover:text-zinc-100 text-zinc-900 hover:text-zinc-950 transition-colors"
                         >
                             {f('privacy')}
