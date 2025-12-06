@@ -78,19 +78,19 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
         const response = await axios.request<TResponse>(config);
         return response.data;
     } catch (e: AxiosError | any) {
-        console.log(e.response);
+        console.log(e?.response?.data?.message);
         return null as unknown as TResponse;
     }
 }
 
 export async function generateTempEmail(locale = 'en', userId?: string) {
-    console.log('generating temp email');
+    // console.log('generating temp email');
     const response: SimpleResponseType = await httpRequest({
         method: 'POST',
         url: '/create-alias',
         data: { userId, locale },
     });
-    console.log('response', response);
+    // console.log('response', response);
     if (!response) {
         return {
             statusCode: 400,

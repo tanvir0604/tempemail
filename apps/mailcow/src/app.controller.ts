@@ -11,6 +11,7 @@ export class AppController {
   async createNewAlias(@Payload() email: string) {
     const domainInfo = await this.appService.getDomainInfo(email.split('@')[1]);
     if (!domainInfo || domainInfo.domainUsers.length === 0) {
+      console.log('No domain found');
       return null;
     }
     const randomIndex = Math.floor(
