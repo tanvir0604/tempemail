@@ -48,7 +48,7 @@ export class AppController {
         skip: 0,
       });
       if (!response) {
-        throw new BadRequestException();
+        throw new BadRequestException('Can not find alias list');
       }
 
       if (response.length > 10) {
@@ -70,7 +70,7 @@ export class AppController {
         where: { domain: data.domain },
       });
       if (!response) {
-        throw new BadRequestException();
+        throw new BadRequestException('Can not find domain');
       }
     } else {
       const response = await this.domainService.getList({
