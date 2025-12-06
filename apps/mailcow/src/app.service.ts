@@ -83,17 +83,17 @@ export class AppService {
       goto: MAILCOW_USERNAME,
     };
 
+    const URL = MAILCOW_API_URL + '/add/alias';
+
+    console.log('URL', URL, 'DATA', data);
+
     try {
-      const response = this.httpService.post(
-        MAILCOW_API_URL + '/add/alias',
-        data,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'X-API-Key': MAILCOW_API_KEY,
-          },
+      const response = this.httpService.post(URL, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': MAILCOW_API_KEY,
         },
-      );
+      });
 
       const res = await firstValueFrom(response);
       if (res.data[0] && res.data[0].msg[0] == 'alias_added') {
