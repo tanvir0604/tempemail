@@ -79,7 +79,7 @@ const isImage = (filename: string) => {
 export default function InboxItem({ email }: { email: EmailContentType }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
-    console.log('email', email);
+    // console.log('email', email);
 
     return (
         <div className="border-zinc-800 bg-zinc-900 rounded-lg border cursor-pointer transition-colors">
@@ -135,9 +135,8 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
 
                             <div className="flex items-center gap-2 shrink-0 md:hidden">
                                 <ChevronDown
-                                    className={`w-4 h-4 text-zinc-500 transition-transform ${
-                                        isExpanded ? 'rotate-180' : ''
-                                    }`}
+                                    className={`w-4 h-4 text-zinc-500 transition-transform ${isExpanded ? 'rotate-180' : ''
+                                        }`}
                                 />
                             </div>
                         </div>
@@ -154,9 +153,9 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                         __html:
                                             email.html && email.html !== ''
                                                 ? sanitize(email.html).replace(
-                                                      /unsafe-src=/g,
-                                                      'src=',
-                                                  )
+                                                    /unsafe-src=/g,
+                                                    'src=',
+                                                )
                                                 : sanitize(email.text),
                                     }}
                                 ></div>
@@ -170,7 +169,7 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                                     {email.attachments.length}{' '}
                                                     attachment
                                                     {email.attachments.length >
-                                                    1
+                                                        1
                                                         ? 's'
                                                         : ''}
                                                 </span>
@@ -255,9 +254,8 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
 
                     <div className="flex items-center gap-2 shrink-0 hidden md:block">
                         <ChevronDown
-                            className={`w-4 h-4 text-zinc-500 transition-transform ${
-                                isExpanded ? 'rotate-180' : ''
-                            }`}
+                            className={`w-4 h-4 text-zinc-500 transition-transform ${isExpanded ? 'rotate-180' : ''
+                                }`}
                         />
                     </div>
                 </div>
