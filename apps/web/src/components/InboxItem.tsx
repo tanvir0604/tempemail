@@ -24,6 +24,8 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from './ui/button';
+import { ReplyEmail } from './ReplyEmail';
+import { ForwardEmail } from './ForwardEmail';
 
 const getFileIcon = (filename: string) => {
     const ext = filename.split('.').pop()?.toLowerCase();
@@ -135,8 +137,9 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
 
                             <div className="flex items-center gap-2 shrink-0 md:hidden">
                                 <ChevronDown
-                                    className={`w-4 h-4 text-zinc-500 transition-transform ${isExpanded ? 'rotate-180' : ''
-                                        }`}
+                                    className={`w-4 h-4 text-zinc-500 transition-transform ${
+                                        isExpanded ? 'rotate-180' : ''
+                                    }`}
                                 />
                             </div>
                         </div>
@@ -153,9 +156,9 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                         __html:
                                             email.html && email.html !== ''
                                                 ? sanitize(email.html).replace(
-                                                    /unsafe-src=/g,
-                                                    'src=',
-                                                )
+                                                      /unsafe-src=/g,
+                                                      'src=',
+                                                  )
                                                 : sanitize(email.text),
                                     }}
                                 ></div>
@@ -169,7 +172,7 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                                     {email.attachments.length}{' '}
                                                     attachment
                                                     {email.attachments.length >
-                                                        1
+                                                    1
                                                         ? 's'
                                                         : ''}
                                                 </span>
@@ -254,14 +257,15 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
 
                     <div className="flex items-center gap-2 shrink-0 hidden md:block">
                         <ChevronDown
-                            className={`w-4 h-4 text-zinc-500 transition-transform ${isExpanded ? 'rotate-180' : ''
-                                }`}
+                            className={`w-4 h-4 text-zinc-500 transition-transform ${
+                                isExpanded ? 'rotate-180' : ''
+                            }`}
                         />
                     </div>
                 </div>
             </div>
 
-            {/* {isExpanded && (
+            {isExpanded && (
                 <div className="px-4 pb-4 pt-4 bg-zinc-900/50">
                     <div
                         className="text-sm text-zinc-300 whitespace-pre-wrap"
@@ -269,20 +273,11 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                     ></div>
 
                     <div className="mt-4 pt-4 border-t border-zinc-800 flex gap-2">
-                        <Button className="flex cursor-pointer bg-blue-600 text-white">
-                            <Reply className="w-4 h-4 mr-1" />
-                            Reply
-                        </Button>
-                        <Button
-                            className="flex cursor-pointer"
-                            variant={'outline'}
-                        >
-                            <Forward className="w-4 h-4 mr-1" />
-                            Forward
-                        </Button>
+                        <ReplyEmail emailData={email} />
+                        <ForwardEmail emailData={email} />
                     </div>
                 </div>
-            )} */}
+            )}
         </div>
     );
 }

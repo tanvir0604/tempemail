@@ -10,6 +10,7 @@ export const CreateTempEmailSchema = z.object({
     emailId: z.string(),
     expiredMinutes: z.number().optional(),
     userId: z.string().optional(),
+    domainUserId: z.string().optional(),
 });
 
 export type CreateTempEmailDto = z.infer<typeof CreateTempEmailSchema>;

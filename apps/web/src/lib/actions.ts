@@ -76,6 +76,7 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
     };
     try {
         const response = await axios.request<TResponse>(config);
+        // console.log('response', response);
         return response.data;
     } catch (e: AxiosError | any) {
         console.log(e?.response?.data?.message);
@@ -149,7 +150,7 @@ export async function extendTime(id: string) {
 
 export async function checkEmail(email: string) {
     const response: SimpleResponseType = await httpRequest({
-        method: 'PUT',
+        method: 'GET',
         url: '/temp-email/check-email/' + email,
     });
 
@@ -257,7 +258,7 @@ export async function sendEmail(
     values: SendEmailDto,
 ): Promise<SimpleResponseType> {
     const validation = SendEmailSchema.safeParse(values);
-
+    // console.log('validation', validation);
     if (!validation.success) {
         return {
             statusCode: 400,
@@ -269,6 +270,8 @@ export async function sendEmail(
         url: '/email/send',
         data: validation.data,
     });
+
+    // console.log('response', response);
 
     if (!response || response.statusCode !== 200) {
         return {

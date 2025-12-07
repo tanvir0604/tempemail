@@ -98,6 +98,7 @@ export class AppController {
       emailId: mailCowResponse.emailId,
       expiredMinutes: 30,
       userId: data.userId,
+      domainUserId: mailCowResponse.domainUserId,
     });
 
     // console.log('response', response);

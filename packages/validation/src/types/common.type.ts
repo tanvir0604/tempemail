@@ -34,3 +34,27 @@ export type BlogDetailsType = {
     createdAt: Date;
     updatedAt: Date;
 };
+
+export type EmailConfigType = {
+    host: string;
+    port: number;
+    secure: boolean;
+    user: string;
+    pass: string;
+};
+export type DomainUserType = {
+    id: string;
+    username: string;
+    password: string;
+};
+export type DomainType = {
+    domain: string;
+    apiUrl: string;
+    apiKey: string;
+    imapHost: string;
+    imapPort: number;
+    smtpHost: string;
+    smtpPort: number;
+    smtpSecure: boolean;
+    domainUsers: DomainUserType[];
+};

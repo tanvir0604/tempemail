@@ -19,19 +19,20 @@ import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 import { Button } from '../ui/button';
 import { Loader2 } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Textarea } from '../ui/textarea';
 
 export default function EmailForm({
     data,
     className,
-    onSuccess,
+    close,
 }: {
     data: SendEmailDto;
     className?: string;
-    onSuccess?: () => void;
+    close?: () => void;
 }) {
     const t = useTranslations('HomePage');
+    const locale = useLocale();
     const [isPending, startTransition] = useTransition();
 
     const form = useForm<SendEmailDto>({
@@ -44,6 +45,7 @@ export default function EmailForm({
             html: data.html,
             messageId: data.messageId,
             references: data.references,
+            type: data.type,
         },
     });
 
@@ -51,11 +53,11 @@ export default function EmailForm({
         startTransition(async () => {
             const response = await sendEmail(values);
             if (response.statusCode == 200) {
-                toast.success(response.message);
-                onSuccess && onSuccess();
-                revalidate('/categories');
+                toast.error(t('Email.emailSuccessMsg'));
+                close && close();
+                revalidate('/' + locale);
             } else {
-                toast.error(response.message);
+                toast.error(t('Email.emailFailedMsg'));
             }
             form.reset();
         });
@@ -108,27 +110,41 @@ export default function EmailForm({
                         )}
                     />
 
-                    <FormField
-                        control={form.control}
-                        name="text"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>{t('Email.text')}</FormLabel>
-                                <FormControl>
-                                    <Textarea
-                                        placeholder={t('Email.textPlaceHolder')}
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormDescription></FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+                    {data.type == 'forward' ? (
+                        <span
+                            className="mb-4 block border p-4 rounded-lg"
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    (data?.html != ''
+                                        ? data.html
+                                        : data.text) ?? '',
+                            }}
+                        ></span>
+                    ) : (
+                        <FormField
+                            control={form.control}
+                            name="text"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>{t('Email.message')}</FormLabel>
+                                    <FormControl>
+                                        <Textarea
+                                            placeholder={t(
+                                                'Email.messagePlaceHolder',
+                                            )}
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormDescription></FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    )}
 
                     <Button
                         disabled={isPending}
-                        className="mt-2 border bg-primary text-primary-foreground border-input hover:bg-primary hover:text-white w-full rounded-lg cursor-pointer transition-all duration-300 ease-in-out"
+                        className="w-full cursor-pointer"
                         variant={'outline'}
                     >
                         {isPending && (

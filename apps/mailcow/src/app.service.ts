@@ -7,6 +7,7 @@ import { ClientProxy } from '@nestjs/microservices';
 
 import {
   DeleteMailCowAliasDto,
+  DomainType,
   type CreateImapConnectionDto,
 } from '@repo/validation';
 
@@ -34,7 +35,7 @@ export class AppService {
   }
 
   async initializeImapForAll() {
-    const domainInfo = await lastValueFrom(
+    const domainInfo: DomainType[] = await lastValueFrom(
       this.settingsClient.send('domain.findAll', { status: true }),
     );
 
@@ -42,18 +43,11 @@ export class AppService {
       // console.log('domain', domain);
       if (domain.domainUsers && domain.domainUsers.length > 0) {
         for (const domainUser of domain.domainUsers) {
-          // this.initializeImap({
-          //   host: domain.imapHost,
-          //   port: domain.imapPort,
-          //   username: domainUser.imapUserName,
-          //   password: domainUser.imapPassword,
-          // });
-
           this.imapFlowService.createClient({
             host: domain.imapHost,
             port: domain.imapPort,
-            username: domainUser.imapUserName,
-            password: domainUser.imapPassword,
+            username: domainUser.username,
+            password: domainUser.password,
           });
         }
       }

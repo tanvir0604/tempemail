@@ -161,9 +161,25 @@
         "contact": {
             "title": "Contact Us",
             "description": "Have questions or feedback? We'd love to hear from you!"
+        },
+        "Email": {
+            "to": "To",
+            "toPlaceHolder": "Enter recipient email address",
+            "from": "From",
+            "fromPlaceHolder": "Enter sender email address",
+            "message": "Message",
+            "messagePlaceHolder": "Enter email message",
+            "send": "Send",
+            "reply": "Reply",
+            "replyTitle": "Reply to Email",
+            "replyDescription": "Reply to an email",
+            "forward": "Forward",
+            "forwardTitle": "Forward Email",
+            "forwardDescription": "Forward an email",
+            "emailSuccessMsg": "Email sent successfully",
+            "emailFailedMsg": "Failed to send email"
         }
     },
-
     "AboutPage": {
         "Metadata": {
             "title": "About Us - TempEmail | Free Temporary Email Service",
@@ -211,7 +227,6 @@
             "text": "We are committed to maintaining a free, reliable, and user-friendly service that respects your privacy. TempEmail will always remain accessible to everyone, with no hidden fees or premium tiers that limit basic functionality. Your trust is our most valuable asset, and we work every day to earn and maintain it."
         }
     },
-
     "TermsPage": {
         "Metadata": {
             "title": "Terms of Service - TempEmail | Temporary Email Terms",
@@ -268,7 +283,6 @@
             }
         }
     },
-
     "PrivacyPage": {
         "Metadata": {
             "title": "Privacy Policy - TempEmail | Your Data Protection & Privacy",

@@ -47,6 +47,7 @@ export class TempEmailController {
         emailId: data.emailId,
         expiredAt: new Date(Date.now() + expiredMinutes * 60 * 1000),
         userId: data.userId,
+        domainUserId: data.domainUserId,
       },
     );
   }

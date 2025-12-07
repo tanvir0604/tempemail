@@ -9,6 +9,7 @@ import {
     AlertDialogDescription,
     AlertDialogFooter,
     AlertDialogHeader,
+    AlertDialogOverlay,
     AlertDialogTitle,
     AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
@@ -34,16 +35,22 @@ export default function ExtendTime({
     const extendTimeAction = () => {
         if (!emailData) return;
         startTransition(async () => {
-            sendGTMEvent({ event: 'buttonClicked', value: 'extend_time' })
+            sendGTMEvent({ event: 'buttonClicked', value: 'extend_time' });
             const response = await extendTime(emailData.id);
             if (response && response.statusCode == 200) {
                 // console.log('response', response);
-                const emailData = JSON.parse(localStorage.getItem('temp_email') ?? '{}');
+                const emailData = JSON.parse(
+                    localStorage.getItem('temp_email') ?? '{}',
+                );
                 localStorage.removeItem('temp_email');
                 const responseData = response.data[0];
                 localStorage.setItem(
                     'temp_email',
-                    JSON.stringify({ ...emailData, ...responseData, expiredAt: new Date(responseData.expiredAt) }),
+                    JSON.stringify({
+                        ...emailData,
+                        ...responseData,
+                        expiredAt: new Date(responseData.expiredAt),
+                    }),
                 );
                 toast.success('Time Extended');
                 setTimeout(() => window.location.reload(), 0);
@@ -73,7 +80,7 @@ export default function ExtendTime({
                     )}
                 </Button>
             </AlertDialogTrigger>
-            <AlertDialogContent>
+            <AlertDialogContent className="bg-zinc-900">
                 <AlertDialogHeader>
                     <AlertDialogTitle>{t('extend_time')}?</AlertDialogTitle>
                     <AlertDialogDescription>
@@ -92,6 +99,7 @@ export default function ExtendTime({
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
+            <AlertDialogOverlay className="fixed inset-0 bg-black/50 backdrop-blur-lg" />
         </AlertDialog>
     );
 }

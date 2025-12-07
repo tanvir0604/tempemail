@@ -6,7 +6,7 @@ export const SendEmailSchema = z.object({
     subject: z.string(),
     messageId: z.string().optional(),
     references: z.string().optional(),
-    text: z.string().optional(),
+    text: z.string().nonempty(),
     html: z.string().optional(),
     type: z.enum(['send', 'reply', 'forward']).default('send').optional(),
 });

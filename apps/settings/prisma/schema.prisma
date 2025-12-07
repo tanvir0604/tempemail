@@ -23,6 +23,8 @@ model TempEmail {
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   emailContents EmailContent[]
+  domainUser    DomainUser?    @relation(fields: [domainUserId], references: [id])
+  domainUserId  String?
 }
 
 model EmailContent {
@@ -55,6 +57,10 @@ model Domain {
   imapHost String
   imapPort String
 
+  smtpHost   String
+  smtpPort   String
+  smtpSecure Boolean @default(false)
+
   status      Boolean      @default(true)
   createdAt   DateTime     @default(now())
   updateAt    DateTime     @updatedAt
@@ -62,15 +68,15 @@ model Domain {
 }
 
 model DomainUser {
-  id           String   @id @default(uuid())
-  apiUserName  String
-  apiPassword  String
-  imapUserName String
-  imapPassword String
-  status       Boolean  @default(true)
-  createdAt    DateTime @default(now())
-  updateAt     DateTime @updatedAt
+  id        String   @id @default(uuid())
+  username  String
+  password  String
+  status    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
 
   domain   Domain @relation(fields: [domainId], references: [id], onDelete: Cascade)
   domainId String
+
+  TempEmails TempEmail[]
 }

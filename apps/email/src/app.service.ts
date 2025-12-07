@@ -1,10 +1,43 @@
-import { HttpStatus, Injectable } from '@nestjs/common';
+import { HttpStatus, Inject, Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
-import { SendEmailDto } from '@repo/validation';
+import { EmailConfigType, SendEmailDto } from '@repo/validation';
+import { ClientProxy } from '@nestjs/microservices';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable()
 export class AppService {
-  private readonly transporter: nodemailer.Transporter;
+  private transporter: nodemailer.Transporter;
+
+  constructor(
+    @Inject('SETTINGS_SERVICE') private settingsClient: ClientProxy,
+  ) {}
+
+  async getDomainInfo(domain: string) {
+    return await lastValueFrom(
+      this.settingsClient.send('domain.findOne', { domain: domain }),
+    );
+  }
+
+  async getTempEmailInfo(email: string) {
+    return await lastValueFrom(
+      this.settingsClient.send('tempEmail.findOne', { email: email }),
+    );
+  }
+
+  init(data: EmailConfigType) {
+    const transporter = nodemailer.createTransport({
+      host: data.host,
+      port: data.port,
+      secure: data.secure,
+      auth: {
+        user: data.user,
+        pass: data.pass,
+      },
+    });
+    this.transporter = transporter;
+    return this;
+  }
+
   async send(data: SendEmailDto) {
     if (!data.to) {
       return {
@@ -24,7 +57,7 @@ export class AppService {
     };
 
     if (data.messageId) {
-      mailOptions.inReplyT = data.messageId;
+      mailOptions.inReplyTo = data.messageId;
       mailOptions.references = data.references
         ? `${data.references} ${data.messageId}`
         : data.messageId;

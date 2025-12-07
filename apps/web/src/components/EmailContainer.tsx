@@ -27,6 +27,7 @@ export default function EmailContainer({ id }: { id?: string }) {
             return;
         }
         setGeneratingEmail(true);
+
         const getEmail = localStorage.getItem('temp_email');
         if (getEmail) {
             console.log('getting temp email from localstorage');
@@ -34,7 +35,7 @@ export default function EmailContainer({ id }: { id?: string }) {
 
             if (
                 new Date().getTime() -
-                new Date(getEmailData.expiredAt).getTime() >
+                    new Date(getEmailData.expiredAt).getTime() >
                 24 * 60 * 60 * 1000
             ) {
                 localStorage.removeItem('temp_email');
@@ -42,31 +43,19 @@ export default function EmailContainer({ id }: { id?: string }) {
                 return generateTempEmailAction();
             }
 
-            if (id) {
-                if (getEmailData.id && id === getEmailData.id) {
-                    const isValid = await checkEmail(getEmailData.email);
-                    if (!isValid || isValid.statusCode !== 200) {
-                        localStorage.removeItem('temp_email');
-                        setGeneratingEmail(false);
-                        return generateTempEmailAction();
-                    }
-                    setEmailData({
-                        ...getEmailData,
-                        expiredAt: new Date(getEmailData.expiredAt),
-                        waitTill: new Date(getEmailData.waitTill),
-                    });
-                    setGeneratingEmail(false);
-                    return;
-                }
-            } else {
-                setEmailData({
-                    ...getEmailData,
-                    expiredAt: new Date(getEmailData.expiredAt),
-                    waitTill: new Date(getEmailData.waitTill),
-                });
+            const isValid = await checkEmail(getEmailData.email);
+            if (!isValid || isValid.statusCode !== 200) {
+                localStorage.removeItem('temp_email');
                 setGeneratingEmail(false);
-                return;
+                return generateTempEmailAction();
             }
+            setEmailData({
+                ...getEmailData,
+                expiredAt: new Date(getEmailData.expiredAt),
+                waitTill: new Date(getEmailData.waitTill),
+            });
+            setGeneratingEmail(false);
+            return;
         }
 
         console.log('generating temp email');
@@ -95,6 +84,7 @@ export default function EmailContainer({ id }: { id?: string }) {
             });
             return response.data;
         }
+        toast.error('Invalid Email');
     };
 
     useEffect(() => {
