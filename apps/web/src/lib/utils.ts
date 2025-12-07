@@ -36,26 +36,40 @@ export function getColor(timeLeft: number, reversed: boolean = false) {
     return reversed ? match!.reverse : match!.normal;
 }
 
-export const notifyWithSound = (title: string, body: string) => {
-    if (typeof window === 'undefined') return;
+export const notifyWithSound = async (title: string, body: string) => {
+    // SSR guard
+    if (typeof window === "undefined") return;
 
-    if (!('Notification' in window)) {
-        console.warn("Browser doesn't support notifications.");
+    if (!("Notification" in window)) {
         return;
     }
 
-    // console.log("Notification permission:", Notification.permission);
-    // Request permission if not granted
-    if (Notification.permission !== 'granted') {
-        Notification.requestPermission();
+    const permission = await Notification.requestPermission();
+    if (permission !== "granted") {
+        console.warn("Notification permission not granted");
+        return;
     }
 
-    if (Notification.permission === 'granted') {
-        new Notification(title, { body });
+    const reg = await navigator.serviceWorker.getRegistration();
 
-        // Play sound
-        // const audio = new Audio("/notification.mp3");
-        // audio.play().catch((err) => console.log("Audio play error:", err));
+    if (reg?.active) {
+        reg.active.postMessage({ title, body });
+    } else {
+        // Fallback (desktop only)
+        try {
+            new Notification(title, { body });
+        } catch {
+            // Mobile Chrome / iOS Safari prevents this
+            alert(`${title}\n${body}`);
+        }
+    }
+
+    // Sound
+    try {
+        const audio = new Audio("/notification.mp3");
+        await audio.play();
+    } catch (err) {
+        console.warn("Failed to play sound:", err);
     }
 };
 

@@ -12,6 +12,7 @@ import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { locales } from '@repo/validation';
+import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -109,6 +110,7 @@ export default async function RootLayout({
                         <GoogleAnalytics gaId="G-C408WG5T3N" />
                     )}
                     <NotificationPermission />
+                    <ServiceWorkerRegister />
                 </NextIntlClientProvider>
             </body>
         </html>

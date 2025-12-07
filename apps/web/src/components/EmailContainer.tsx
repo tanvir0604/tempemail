@@ -34,7 +34,7 @@ export default function EmailContainer({ id }: { id?: string }) {
 
             if (
                 new Date().getTime() -
-                    new Date(getEmailData.expiredAt).getTime() >
+                new Date(getEmailData.expiredAt).getTime() >
                 24 * 60 * 60 * 1000
             ) {
                 localStorage.removeItem('temp_email');
@@ -72,7 +72,7 @@ export default function EmailContainer({ id }: { id?: string }) {
         console.log('generating temp email');
         const response = await generateTempEmail(locale, userID ?? undefined);
         if (response && response.statusCode == 200) {
-            console.log('response', response);
+            // console.log('response', response);
             setEmailData({
                 ...response.data,
                 expiredAt: new Date(response.data.expiredAt),

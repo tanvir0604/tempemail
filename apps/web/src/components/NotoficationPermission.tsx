@@ -4,23 +4,26 @@ import { useEffect } from "react";
 
 export default function NotificationPermission() {
   useEffect(() => {
-    // Only run in browser
+    // SSR safety
     if (typeof window === "undefined") return;
 
-    if (!("Notification" in window)) {
-      console.warn("Browser doesn't support notifications.");
-      return;
-    }
+    // Browser does not support Notifications
+    if (!("Notification" in window)) return;
 
-    // Check if permission is not already granted
+    // Never request permission automatically on page load
+    // This is blocked or discouraged in many mobile browsers
     if (Notification.permission === "default") {
-      Notification.requestPermission()
-        .then((permission) => {
-          console.log("Notification permission:", permission);
-        })
-        .catch((err) => console.error("Notification permission error:", err));
+      // Only request permission after first user interaction
+      const request = () => {
+        Notification.requestPermission().catch(() => { });
+        window.removeEventListener("click", request);
+        window.removeEventListener("touchstart", request);
+      };
+
+      window.addEventListener("click", request);
+      window.addEventListener("touchstart", request);
     }
   }, []);
 
-  return null; // no UI needed
+  return null;
 }
