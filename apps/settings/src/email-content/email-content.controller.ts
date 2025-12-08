@@ -72,6 +72,8 @@ export class EmailContentController {
     if (data.attachments && data.attachments.length > 0) {
       this.logger.log(data.attachments.length + ' attachments');
       attachments = data.attachments.map((item: any) => {
+        if (!item.filename) return;
+        this.logger.log('saving file', item.filename);
         if (!fs.existsSync('./uploads')) {
           fs.mkdirSync('./uploads');
         }
