@@ -267,11 +267,6 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
 
             {isExpanded && (
                 <div className="px-4 pb-4 pt-4 bg-zinc-900/50">
-                    <div
-                        className="text-sm text-zinc-300 whitespace-pre-wrap"
-                        dangerouslySetInnerHTML={{ __html: email.html }}
-                    ></div>
-
                     <div className="mt-4 pt-4 border-t border-zinc-800 flex gap-2">
                         <ReplyEmail emailData={email} />
                         <ForwardEmail emailData={email} />
