@@ -47,5 +47,14 @@ module.exports = {
                 NODE_ENV: 'production',
             },
         },
+        {
+            name: 'temp-email-email',
+            script: 'pnpm',
+            args: '--filter=email start',
+            cwd: path.resolve(__dirname, './apps/email'),
+            env: {
+                NODE_ENV: 'production',
+            },
+        },
     ],
 };
