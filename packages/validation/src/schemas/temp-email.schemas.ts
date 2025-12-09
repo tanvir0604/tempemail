@@ -20,6 +20,8 @@ export const UpdateTempEmailSchema = z.object({
     email: z.email().optional(),
     emailId: z.string().optional(),
     expiredMinutes: z.number().optional(),
+    replyData: z.string().optional(),
+    forwardEmail: z.string().optional(),
 });
 
 export type UpdateTempEmailDto = z.infer<typeof UpdateTempEmailSchema>;

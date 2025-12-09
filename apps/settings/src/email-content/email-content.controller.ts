@@ -122,6 +122,10 @@ export class EmailContentController {
         content: data.content ?? undefined,
         messageId: data.messageId ?? undefined,
         references: data.references ?? undefined,
+        replyContent: data.replyContent ?? undefined,
+        repliedAt: data.repliedAt ?? undefined,
+        forwardEmail: data.forwardEmail ?? undefined,
+        forwardedAt: data.forwardedAt ?? undefined,
       },
     );
   }

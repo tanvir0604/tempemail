@@ -161,6 +161,23 @@
         "contact": {
             "title": "문의하기",
             "description": "질문이나 의견이 있으신가요? 여러분의 메시지를 기다리고 있습니다!"
+        },
+        "Email": {
+            "to": "받는 사람",
+            "toPlaceHolder": "받는 사람의 이메일 주소를 입력하세요",
+            "from": "보낸 사람",
+            "fromPlaceHolder": "보낸 사람의 이메일 주소를 입력하세요",
+            "message": "메시지",
+            "messagePlaceHolder": "이메일 메시지를 입력하세요",
+            "send": "보내기",
+            "reply": "답장",
+            "replyTitle": "이메일에 답장",
+            "replyDescription": "이메일에 답장하기",
+            "forward": "전달",
+            "forwardTitle": "이메일 전달",
+            "forwardDescription": "이메일을 전달하기",
+            "emailSuccessMsg": "이메일이 성공적으로 전송되었습니다",
+            "emailFailedMsg": "이메일 전송 실패"
         }
     },
 

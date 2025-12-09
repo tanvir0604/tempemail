@@ -7,12 +7,20 @@ import {
 } from '@nestjs/common';
 import { EmailService } from './email.service';
 import { Payload } from '@nestjs/microservices';
-import { SendEmailDto, SendEmailSchema, SimpleResponseType } from '@repo/validation';
+import {
+  SendEmailDto,
+  SendEmailSchema,
+  SimpleResponseType,
+} from '@repo/validation';
 import { ZodValidationPipe } from 'src/pipes/jod.validation.pipe';
+import { EmailContentService } from 'src/settings/email-content/email-content.service';
 
 @Controller('email')
 export class EmailController {
-  constructor(private readonly emailService: EmailService) { }
+  constructor(
+    private readonly emailService: EmailService,
+    private readonly emailContentService: EmailContentService,
+  ) {}
 
   @Post('/send')
   @UsePipes(new ZodValidationPipe(SendEmailSchema))
@@ -23,6 +31,20 @@ export class EmailController {
     if (!result) {
       throw new BadRequestException();
     }
+    if (data.type == 'reply') {
+      this.emailContentService.update({
+        id: data.id,
+        replyContent: data.html == '' ? data.text : data.html,
+        repliedAt: new Date().toISOString(),
+      });
+    } else if (data.type == 'forward') {
+      this.emailContentService.update({
+        id: data.id,
+        forwardEmail: data.to,
+        forwardedAt: new Date().toISOString(),
+      });
+    }
+
     return {
       statusCode: HttpStatus.OK,
       message: 'success',

@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { EmailController } from './email.controller';
 import { EmailService } from './email.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { SettingsModule } from 'src/settings/settings.module';
 
 @Module({
   imports: [
+    SettingsModule,
     ClientsModule.register([
       {
         name: 'EMAIL_SERVICE',

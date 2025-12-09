@@ -38,6 +38,7 @@ export default function EmailForm({
     const form = useForm<SendEmailDto>({
         resolver: zodResolver(SendEmailSchema),
         defaultValues: {
+            id: data.id,
             from: data.from,
             to: data.to,
             subject: data.subject,

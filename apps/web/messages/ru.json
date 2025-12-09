@@ -161,6 +161,23 @@
         "contact": {
             "title": "Свяжитесь с нами",
             "description": "Есть вопросы или отзывы? Мы будем рады вам помочь!"
+        },
+        "Email": {
+            "to": "Кому",
+            "toPlaceHolder": "Введите email получателя",
+            "from": "От",
+            "fromPlaceHolder": "Введите email отправителя",
+            "message": "Сообщение",
+            "messagePlaceHolder": "Введите текст сообщения",
+            "send": "Отправить",
+            "reply": "Ответить",
+            "replyTitle": "Ответ на письмо",
+            "replyDescription": "Ответить на электронное письмо",
+            "forward": "Переслать",
+            "forwardTitle": "Пересылка письма",
+            "forwardDescription": "Переслать электронное письмо",
+            "emailSuccessMsg": "Письмо успешно отправлено",
+            "emailFailedMsg": "Не удалось отправить письмо"
         }
     },
 

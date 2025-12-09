@@ -41,6 +41,6 @@ import { SettingsService } from './settings.service';
     DomainUserService,
     SettingsService,
   ],
-  exports: [TempEmailService, DomainService],
+  exports: [TempEmailService, DomainService, EmailContentService],
 })
 export class SettingsModule {}

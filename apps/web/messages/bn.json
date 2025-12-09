@@ -161,6 +161,23 @@
         "contact": {
             "title": "যোগাযোগ করুন",
             "description": "প্রশ্ন বা মতামত আছে? আমরা আপনার বার্তার অপেক্ষায় আছি!"
+        },
+        "Email": {
+            "to": "প্রাপক",
+            "toPlaceHolder": "প্রাপকের ইমেইল ঠিকানা লিখুন",
+            "from": "প্রেরক",
+            "fromPlaceHolder": "প্রেরকের ইমেইল ঠিকানা লিখুন",
+            "message": "বার্তা",
+            "messagePlaceHolder": "ইমেইল বার্তা লিখুন",
+            "send": "পাঠান",
+            "reply": "জবাব দিন",
+            "replyTitle": "ইমেইলে জবাব দিন",
+            "replyDescription": "একটি ইমেইলের জবাব দিন",
+            "forward": "ফরোয়ার্ড",
+            "forwardTitle": "ইমেইল ফরোয়ার্ড করুন",
+            "forwardDescription": "একটি ইমেইল ফরোয়ার্ড করুন",
+            "emailSuccessMsg": "ইমেইল সফলভাবে পাঠানো হয়েছে",
+            "emailFailedMsg": "ইমেইল পাঠাতে ব্যর্থ হয়েছে"
         }
     },
 

@@ -161,6 +161,23 @@
         "contact": {
             "title": "संपर्क करें",
             "description": "कोई प्रश्न या सुझाव है? हमें आपसे सुनकर खुशी होगी!"
+        },
+        "Email": {
+            "to": "प्राप्तकर्ता",
+            "toPlaceHolder": "प्राप्तकर्ता का ईमेल पता दर्ज करें",
+            "from": "प्रेषक",
+            "fromPlaceHolder": "प्रेषक का ईमेल पता दर्ज करें",
+            "message": "संदेश",
+            "messagePlaceHolder": "ईमेल संदेश दर्ज करें",
+            "send": "भेजें",
+            "reply": "उत्तर दें",
+            "replyTitle": "ईमेल का उत्तर दें",
+            "replyDescription": "किसी ईमेल का उत्तर दें",
+            "forward": "फॉरवर्ड",
+            "forwardTitle": "ईमेल फॉरवर्ड करें",
+            "forwardDescription": "किसी ईमेल को फॉरवर्ड करें",
+            "emailSuccessMsg": "ईमेल सफलतापूर्वक भेजा गया",
+            "emailFailedMsg": "ईमेल भेजने में विफल"
         }
     },
 

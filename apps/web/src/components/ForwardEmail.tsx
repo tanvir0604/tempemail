@@ -43,6 +43,7 @@ export function ForwardEmail({ emailData }: { emailData: EmailContentType }) {
                     <div className="grid gap-4">
                         <EmailForm
                             data={{
+                                id: emailData.id,
                                 to: '',
                                 from: emailData.to,
                                 subject: 'Fwd: ' + emailData.subject,

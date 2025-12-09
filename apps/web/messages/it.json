@@ -161,6 +161,23 @@
         "contact": {
             "title": "Contattaci",
             "description": "Hai domande o suggerimenti? Ci farebbe piacere sentirti!"
+        },
+        "Email": {
+            "to": "A",
+            "toPlaceHolder": "Inserisci l'indirizzo email del destinatario",
+            "from": "Da",
+            "fromPlaceHolder": "Inserisci l'indirizzo email del mittente",
+            "message": "Messaggio",
+            "messagePlaceHolder": "Inserisci il messaggio dell'email",
+            "send": "Invia",
+            "reply": "Rispondi",
+            "replyTitle": "Rispondi all'email",
+            "replyDescription": "Rispondi a un'email",
+            "forward": "Inoltra",
+            "forwardTitle": "Inoltra email",
+            "forwardDescription": "Inoltra un'email",
+            "emailSuccessMsg": "Email inviata con successo",
+            "emailFailedMsg": "Invio email fallito"
         }
     },
 

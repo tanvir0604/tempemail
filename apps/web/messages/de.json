@@ -161,6 +161,23 @@
         "contact": {
             "title": "Kontaktieren Sie uns",
             "description": "Haben Sie Fragen oder Feedback? Wir freuen uns, von Ihnen zu hören!"
+        },
+        "Email": {
+            "to": "An",
+            "toPlaceHolder": "E-Mail-Adresse des Empfängers eingeben",
+            "from": "Von",
+            "fromPlaceHolder": "E-Mail-Adresse des Absenders eingeben",
+            "message": "Nachricht",
+            "messagePlaceHolder": "E-Mail-Nachricht eingeben",
+            "send": "Senden",
+            "reply": "Antworten",
+            "replyTitle": "E-Mail beantworten",
+            "replyDescription": "Eine E-Mail beantworten",
+            "forward": "Weiterleiten",
+            "forwardTitle": "E-Mail weiterleiten",
+            "forwardDescription": "Eine E-Mail weiterleiten",
+            "emailSuccessMsg": "E-Mail erfolgreich gesendet",
+            "emailFailedMsg": "Senden der E-Mail fehlgeschlagen"
         }
     },
 

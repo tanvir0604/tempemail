@@ -11,4 +11,8 @@ export type EmailContentType = {
     uid: number;
     createdAt: Date;
     attachments: any;
+    forwardEmail: string;
+    forwardedAt: Date;
+    replyContent: string;
+    repliedAt: Date;
 };

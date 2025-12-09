@@ -161,6 +161,23 @@
         "contact": {
             "title": "Hubungi Kami",
             "description": "Punya pertanyaan atau masukan? Kami senang mendengarnya!"
+        },
+        "Email": {
+            "to": "Kepada",
+            "toPlaceHolder": "Masukkan alamat email penerima",
+            "from": "Dari",
+            "fromPlaceHolder": "Masukkan alamat email pengirim",
+            "message": "Pesan",
+            "messagePlaceHolder": "Masukkan pesan email",
+            "send": "Kirim",
+            "reply": "Balas",
+            "replyTitle": "Balas Email",
+            "replyDescription": "Balas sebuah email",
+            "forward": "Teruskan",
+            "forwardTitle": "Teruskan Email",
+            "forwardDescription": "Teruskan sebuah email",
+            "emailSuccessMsg": "Email berhasil dikirim",
+            "emailFailedMsg": "Gagal mengirim email"
         }
     },
 

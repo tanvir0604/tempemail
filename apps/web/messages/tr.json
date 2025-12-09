@@ -161,6 +161,23 @@
         "contact": {
             "title": "Bize Ulaşın",
             "description": "Sorularınız veya geri bildiriminiz mi var? Sizden haber almayı çok isteriz!"
+        },
+        "Email": {
+            "to": "Alıcı",
+            "toPlaceHolder": "Alıcının e-posta adresini girin",
+            "from": "Gönderen",
+            "fromPlaceHolder": "Gönderenin e-posta adresini girin",
+            "message": "Mesaj",
+            "messagePlaceHolder": "E-posta mesajını girin",
+            "send": "Gönder",
+            "reply": "Yanıtla",
+            "replyTitle": "E-postayı yanıtla",
+            "replyDescription": "Bir e-postayı yanıtla",
+            "forward": "İlet",
+            "forwardTitle": "E-postayı ilet",
+            "forwardDescription": "Bir e-postayı ilet",
+            "emailSuccessMsg": "E-posta başarıyla gönderildi",
+            "emailFailedMsg": "E-posta gönderilemedi"
         }
     },
 

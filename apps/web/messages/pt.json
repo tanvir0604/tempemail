@@ -161,6 +161,23 @@
         "contact": {
             "title": "Fale Conosco",
             "description": "Tem perguntas ou feedback? Adoraríamos ouvir você!"
+        },
+        "Email": {
+            "to": "Para",
+            "toPlaceHolder": "Digite o e-mail do destinatário",
+            "from": "De",
+            "fromPlaceHolder": "Digite o e-mail do remetente",
+            "message": "Mensagem",
+            "messagePlaceHolder": "Digite a mensagem do e-mail",
+            "send": "Enviar",
+            "reply": "Responder",
+            "replyTitle": "Responder e-mail",
+            "replyDescription": "Responder a um e-mail",
+            "forward": "Encaminhar",
+            "forwardTitle": "Encaminhar e-mail",
+            "forwardDescription": "Encaminhar um e-mail",
+            "emailSuccessMsg": "E-mail enviado com sucesso",
+            "emailFailedMsg": "Falha ao enviar e-mail"
         }
     },
 

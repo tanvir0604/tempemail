@@ -90,7 +90,7 @@ export class AppService {
       });
 
       const res = await firstValueFrom(response);
-      if (res.data[0] && res.data[0].msg[0] == 'alias_added') {
+      if (res && res.data[0] && res.data[0].msg[0] == 'alias_added') {
         return {
           email: res.data[0].msg[1],
           emailId: res.data[0].msg[2],

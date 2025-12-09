@@ -251,6 +251,27 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
                                             </div>
                                         </div>
                                     )}
+
+                                {email.replyContent && (
+                                    <div className="border-t my-6 py-6">
+                                        <h2>
+                                            Replied at:{' '}
+                                            {new Date(
+                                                email.repliedAt,
+                                            ).toLocaleString()}
+                                        </h2>
+                                        <p>{email.replyContent}</p>
+                                    </div>
+                                )}
+
+                                {email.forwardEmail && (
+                                    <div className="border-t my-6 py-6">
+                                        Forwarded To: {email.forwardEmail} at:{' '}
+                                        {new Date(
+                                            email.forwardedAt,
+                                        ).toLocaleString()}
+                                    </div>
+                                )}
                             </>
                         )}
                     </div>
@@ -268,8 +289,12 @@ export default function InboxItem({ email }: { email: EmailContentType }) {
             {isExpanded && (
                 <div className="px-4 pb-4 pt-4 bg-zinc-900/50">
                     <div className="mt-4 pt-4 border-t border-zinc-800 flex gap-2">
-                        <ReplyEmail emailData={email} />
-                        <ForwardEmail emailData={email} />
+                        {!email.replyContent && (
+                            <ReplyEmail emailData={email} />
+                        )}
+                        {!email.forwardEmail && (
+                            <ForwardEmail emailData={email} />
+                        )}
                     </div>
                 </div>
             )}

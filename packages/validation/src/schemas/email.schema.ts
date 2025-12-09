@@ -1,6 +1,7 @@
 import z from 'zod';
 
 export const SendEmailSchema = z.object({
+    id: z.string().optional(),
     to: z.email(),
     from: z.email(),
     subject: z.string(),

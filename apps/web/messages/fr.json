@@ -161,6 +161,23 @@
         "contact": {
             "title": "Contactez-nous",
             "description": "Des questions ou des remarques ? Nous serions ravis de vous répondre !"
+        },
+        "Email": {
+            "to": "À",
+            "toPlaceHolder": "Entrez l'adresse e-mail du destinataire",
+            "from": "De",
+            "fromPlaceHolder": "Entrez l'adresse e-mail de l'expéditeur",
+            "message": "Message",
+            "messagePlaceHolder": "Entrez le message de l'e-mail",
+            "send": "Envoyer",
+            "reply": "Répondre",
+            "replyTitle": "Répondre à l'e-mail",
+            "replyDescription": "Répondre à un e-mail",
+            "forward": "Transférer",
+            "forwardTitle": "Transférer l'e-mail",
+            "forwardDescription": "Transférer un e-mail",
+            "emailSuccessMsg": "E-mail envoyé avec succès",
+            "emailFailedMsg": "Échec de l'envoi de l'e-mail"
         }
     },
 

@@ -161,6 +161,23 @@
         "contact": {
             "title": "お問い合わせ",
             "description": "ご質問やご意見がありますか？ぜひお気軽にご連絡ください！"
+        },
+        "Email": {
+            "to": "宛先",
+            "toPlaceHolder": "受信者のメールアドレスを入力してください",
+            "from": "送信者",
+            "fromPlaceHolder": "送信者のメールアドレスを入力してください",
+            "message": "メッセージ",
+            "messagePlaceHolder": "メールメッセージを入力してください",
+            "send": "送信",
+            "reply": "返信",
+            "replyTitle": "メールに返信",
+            "replyDescription": "メールに返信する",
+            "forward": "転送",
+            "forwardTitle": "メールを転送",
+            "forwardDescription": "メールを転送する",
+            "emailSuccessMsg": "メールが正常に送信されました",
+            "emailFailedMsg": "メールの送信に失敗しました"
         }
     },
 

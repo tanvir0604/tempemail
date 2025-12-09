@@ -161,6 +161,23 @@
         "contact": {
             "title": "Contáctanos",
             "description": "¿Tienes preguntas o comentarios? ¡Nos encantaría saber de ti!"
+        },
+        "Email": {
+            "to": "Para",
+            "toPlaceHolder": "Ingrese la dirección de correo del destinatario",
+            "from": "De",
+            "fromPlaceHolder": "Ingrese la dirección de correo del remitente",
+            "message": "Mensaje",
+            "messagePlaceHolder": "Ingrese el mensaje del correo",
+            "send": "Enviar",
+            "reply": "Responder",
+            "replyTitle": "Responder al correo",
+            "replyDescription": "Responder a un correo electrónico",
+            "forward": "Reenviar",
+            "forwardTitle": "Reenviar correo",
+            "forwardDescription": "Reenviar un correo electrónico",
+            "emailSuccessMsg": "Correo enviado exitosamente",
+            "emailFailedMsg": "No se pudo enviar el correo"
         }
     },
 

@@ -42,6 +42,7 @@ export function ReplyEmail({ emailData }: { emailData: EmailContentType }) {
                     <div className="grid gap-4">
                         <EmailForm
                             data={{
+                                id: emailData.id,
                                 to: emailData.from,
                                 from: emailData.to,
                                 subject: 'Re: ' + emailData.subject,
