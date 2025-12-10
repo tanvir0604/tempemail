@@ -121,7 +121,10 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-    return [{ slug: '10-free-temporary-email-services-you-can-trust-in-2026' }];
+    return [
+        { slug: '10-free-temporary-email-services-you-can-trust-in-2026' },
+        { slug: 'the-smart-way-to-stay-anonymous-online-using-temp-email-dev' },
+    ];
 }
 
 export default async function BlogDetailsPage({ params }: Props) {
