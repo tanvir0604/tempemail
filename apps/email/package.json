@@ -41,7 +41,7 @@
     "@swc/core": "^1.15.3",
     "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.0.0",
     "@types/nodemailer": "^7.0.4",
     "@types/supertest": "^6.0.3",
     "eslint": "^9.39.1",
@@ -57,7 +57,7 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.1"
+    "typescript-eslint": "^8.49.0"
   },
   "jest": {
     "moduleFileExtensions": [
