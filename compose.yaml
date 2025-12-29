@@ -86,6 +86,10 @@ services:
     environment:
       - JWT_SECRET=${JWT_SECRET}
       - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
+      - RABBITMQ_HOST=${RABBITMQ_HOST}
+      - RABBITMQ_PORT=${RABBITMQ_PORT}
+      - RABBITMQ_USER=${RABBITMQ_USER}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
     depends_on:
       - rabbitmq
       - email
@@ -115,6 +119,10 @@ services:
       - backend
     environment:
       - DATABASE_URL=${BLOG_DATABASE_URL}
+      - RABBITMQ_HOST=${RABBITMQ_HOST}
+      - RABBITMQ_PORT=${RABBITMQ_PORT}
+      - RABBITMQ_USER=${RABBITMQ_USER}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
     depends_on:
       - postgres
       - rabbitmq
@@ -132,6 +140,10 @@ services:
       - backend
     environment:
       - DATABASE_URL=${SETTINGS_DATABASE_URL}
+      - RABBITMQ_HOST=${RABBITMQ_HOST}
+      - RABBITMQ_PORT=${RABBITMQ_PORT}
+      - RABBITMQ_USER=${RABBITMQ_USER}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
     depends_on:
       - postgres
       - rabbitmq
@@ -147,6 +159,11 @@ services:
         - .env
       networks:
         - backend
+      environment:
+        - RABBITMQ_HOST=${RABBITMQ_HOST}
+        - RABBITMQ_PORT=${RABBITMQ_PORT}
+        - RABBITMQ_USER=${RABBITMQ_USER}
+        - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
       depends_on:
         - postgres
         - rabbitmq
@@ -162,9 +179,15 @@ services:
         - .env
       networks:
         - backend
+      environment:
+        - RABBITMQ_HOST=${RABBITMQ_HOST}
+        - RABBITMQ_PORT=${RABBITMQ_PORT}
+        - RABBITMQ_USER=${RABBITMQ_USER}
+        - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
       depends_on:
         - postgres
         - rabbitmq
+        - settings
       restart: always
 
  
