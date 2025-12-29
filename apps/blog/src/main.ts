@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
+import { getRabbitMqUrl } from '@repo/validation';
 
 async function bootstrap() {
   // const app = await NestFactory.create(AppModule);
@@ -11,7 +12,7 @@ async function bootstrap() {
     {
       transport: Transport.RMQ,
       options: {
-        urls: ['amqp://localhost:5672'],
+        url: getRabbitMqUrl(),
         queue: 'temp-email-blog-queue',
         queueOptions: {
           durable: false,

@@ -10,6 +10,7 @@ import { DomainService } from './domain/domain.service';
 import { DomainUserService } from './domain-user/domain-user.service';
 import { DomainUserController } from './domain-user/domain-user.controller';
 import { SettingsService } from './settings.service';
+import { getRabbitMqUrl } from '@repo/validation';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { SettingsService } from './settings.service';
         name: 'SETTINGS_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          url: getRabbitMqUrl(),
           queue: 'temp-email-settings-queue',
           queueOptions: {
             durable: false,

@@ -3,6 +3,7 @@ import { BlogController } from './blog.controller';
 import { BlogService } from './blog.service';
 import { CacheModule } from '@nestjs/cache-manager';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { getRabbitMqUrl } from '@repo/validation';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'BLOG_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          url: getRabbitMqUrl(),
           queue: 'temp-email-blog-queue',
           queueOptions: {
             durable: false,

@@ -1,0 +1,178 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - backend
+    volumes:
+      - temp-email-pgdata:/var/lib/postgresql/data
+    # ports:
+    #   - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:4.2.1-management-alpine
+    container_name: rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_COOKIE}
+    networks:
+      - backend
+    # ports:
+    #   - "${RABBITMQ_PORT:-5672}:5672"
+    #   - "15672:15672"
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8081:8080"
+    depends_on:
+      - postgres
+    networks:
+      - backend
+      - frontend
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        NEXT_PUBLIC_URL: ${NEXT_PUBLIC_URL}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+        NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+    image: tanvir0604/temp-email-web:1.0
+    container_name: temp-email-web
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+      - NEXT_PUBLIC_URL=${NEXT_PUBLIC_URL}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+    ports:
+      - "127.0.0.1:4000:3000"
+    networks:
+      - frontend
+    depends_on:
+      - api
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:4000/_next/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    image: tanvir0604/temp-email-api:1.0
+    container_name: temp-email-api
+    env_file:
+      - .env
+    environment:
+      - JWT_SECRET=${JWT_SECRET}
+      - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
+    depends_on:
+      - rabbitmq
+      - email
+      - mailcow
+      - settings
+      - blog
+    networks:
+      - backend
+    # ports:
+    #   - "127.0.0.1:4001:3001"
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3001/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  blog:
+    build:
+      context: .
+      dockerfile: apps/blog/Dockerfile
+    image: tanvir0604/temp-email-blog:1.0
+    container_name: temp-email-blog
+    env_file:
+      - .env
+    networks:
+      - backend
+    environment:
+      - DATABASE_URL=${BLOG_DATABASE_URL}
+    depends_on:
+      - postgres
+      - rabbitmq
+    restart: always
+
+  settings:
+    build:
+      context: .
+      dockerfile: apps/settings/Dockerfile
+    image: tanvir0604/temp-email-settings:1.0
+    container_name: temp-email-settings
+    env_file:
+      - .env
+    networks:
+      - backend
+    environment:
+      - DATABASE_URL=${SETTINGS_DATABASE_URL}
+    depends_on:
+      - postgres
+      - rabbitmq
+    restart: always
+
+  email:
+      build:
+        context: .
+        dockerfile: apps/email/Dockerfile
+      image: tanvir0604/temp-email-email:1.0
+      container_name: temp-email-email
+      env_file:
+        - .env
+      networks:
+        - backend
+      depends_on:
+        - postgres
+        - rabbitmq
+      restart: always
+
+  mailcow:
+      build:
+        context: .
+        dockerfile: apps/mailcow/Dockerfile
+      image: tanvir0604/temp-email-mailcow:1.0
+      container_name: temp-email-mailcow
+      env_file:
+        - .env
+      networks:
+        - backend
+      depends_on:
+        - postgres
+        - rabbitmq
+      restart: always
+
+ 
+networks:
+  backend:
+    internal: true
+  frontend:
+    driver: bridge
+
+volumes:
+  temp-email-pgdata:

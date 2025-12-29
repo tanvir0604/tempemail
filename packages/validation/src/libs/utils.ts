@@ -139,3 +139,12 @@ export function dateString(daysAgo = 1) {
         })
         .replace(',', '');
 }
+
+export function getRabbitMqUrl(): string {
+    const user = process.env.RABBITMQ_USER ?? 'guest';
+    const pass = encodeURIComponent(process.env.RABBITMQ_PASSWORD ?? 'guest');
+    const host = process.env.RABBITMQ_HOST ?? 'localhost';
+    const port = process.env.RABBITMQ_PORT ?? '5672';
+    const rabbitUrl = `amqp://${user}:${pass}@${host}:${port}`;
+    return rabbitUrl;
+}

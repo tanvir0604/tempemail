@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { getRabbitMqUrl } from '@repo/validation';
 
 @Module({
   imports: [
@@ -10,7 +11,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'SETTINGS_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          url: getRabbitMqUrl(),
           queue: 'temp-email-settings-queue',
           queueOptions: {
             durable: false,
@@ -22,4 +23,4 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

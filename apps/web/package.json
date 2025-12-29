@@ -9,6 +9,7 @@
         "lint": "eslint"
     },
     "dependencies": {
+        "@repo/validation": "workspace:*",
         "@hookform/resolvers": "^5.2.2",
         "@next/third-parties": "^16.1.1",
         "@radix-ui/react-alert-dialog": "^1.1.15",
@@ -41,7 +42,6 @@
         "zod": "^4.2.1"
     },
     "devDependencies": {
-        "@repo/validation": "workspace:*",
         "@tailwindcss/postcss": "^4.1.18",
         "@types/node": "^25.0.3",
         "@types/qs": "^6.14.0",

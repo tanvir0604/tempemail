@@ -3,6 +3,7 @@ import { MailcowController } from './mailcow.controller';
 import { MailcowService } from './mailcow.service';
 import { SettingsModule } from 'src/settings/settings.module';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { getRabbitMqUrl } from '@repo/validation';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'MAILCOW_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          url: getRabbitMqUrl(),
           queue: 'temp-email-mailcow-queue',
           queueOptions: {
             durable: false,

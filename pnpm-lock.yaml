@@ -41,6 +41,9 @@ importers:
       '@nestjs/platform-fastify':
         specifier: ^11.1.10
         version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10)(@nestjs/platform-express@11.1.10)(reflect-metadata@0.2.2)(rxjs@7.8.2))
+      '@repo/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       amqp-connection-manager:
         specifier: ^5.0.0
         version: 5.0.0(amqplib@0.10.9)
@@ -75,9 +78,6 @@ importers:
       '@nestjs/testing':
         specifier: ^11.1.10
         version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10)(@nestjs/platform-express@11.1.10)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10)(amqp-connection-manager@5.0.0(amqplib@0.10.9))(amqplib@0.10.9)(cache-manager@7.2.7)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10))
-      '@repo/validation':
-        specifier: workspace:*
-        version: link:../../packages/validation
       '@swc/cli':
         specifier: ^0.7.9
         version: 0.7.9(@swc/core@1.15.7(@swc/helpers@0.5.17))(chokidar@4.0.3)
@@ -162,6 +162,12 @@ importers:
       '@prisma/client':
         specifier: ^7.2.0
         version: 7.2.0(prisma@7.2.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)
+      '@repo/nest':
+        specifier: workspace:*
+        version: link:../../packages/nest
+      '@repo/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       amqp-connection-manager:
         specifier: ^5.0.0
         version: 5.0.0(amqplib@0.10.9)
@@ -190,12 +196,6 @@ importers:
       '@nestjs/testing':
         specifier: ^11.1.10
         version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10)(@nestjs/platform-express@11.1.10)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10)(amqp-connection-manager@5.0.0(amqplib@0.10.9))(amqplib@0.10.9)(cache-manager@7.2.7)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10))
-      '@repo/nest':
-        specifier: workspace:*
-        version: link:../../packages/nest
-      '@repo/validation':
-        specifier: workspace:*
-        version: link:../../packages/validation
       '@types/express':
         specifier: ^5.0.6
         version: 5.0.6
@@ -271,6 +271,9 @@ importers:
       '@nestjs/platform-express':
         specifier: ^11.1.10
         version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10)
+      '@repo/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       amqp-connection-manager:
         specifier: ^5.0.0
         version: 5.0.0(amqplib@0.10.9)
@@ -302,9 +305,6 @@ importers:
       '@nestjs/testing':
         specifier: ^11.1.10
         version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10)(@nestjs/platform-express@11.1.10)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10)(amqp-connection-manager@5.0.0(amqplib@0.10.9))(amqplib@0.10.9)(cache-manager@7.2.7)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10))
-      '@repo/validation':
-        specifier: workspace:*
-        version: link:../../packages/validation
       '@swc/cli':
         specifier: ^0.7.9
         version: 0.7.9(@swc/core@1.15.7(@swc/helpers@0.5.17))(chokidar@4.0.3)
@@ -389,9 +389,15 @@ importers:
       '@nestjs/platform-express':
         specifier: ^11.1.10
         version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10)
+      '@repo/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       amqp-connection:
         specifier: ^1.1.19
         version: 1.1.19
+      amqp-connection-manager:
+        specifier: ^5.0.0
+        version: 5.0.0(amqplib@0.10.9)
       amqplib:
         specifier: ^0.10.9
         version: 0.10.9
@@ -429,9 +435,6 @@ importers:
       '@nestjs/testing':
         specifier: ^11.1.10
         version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10)(@nestjs/platform-express@11.1.10)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10)(amqp-connection-manager@5.0.0(amqplib@0.10.9))(amqplib@0.10.9)(cache-manager@7.2.7)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10))
-      '@repo/validation':
-        specifier: workspace:*
-        version: link:../../packages/validation
       '@swc/cli':
         specifier: ^0.7.9
         version: 0.7.9(@swc/core@1.15.7(@swc/helpers@0.5.17))(chokidar@4.0.3)
@@ -522,6 +525,12 @@ importers:
       '@prisma/client':
         specifier: ^7.2.0
         version: 7.2.0(prisma@7.2.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)
+      '@repo/nest':
+        specifier: workspace:*
+        version: link:../../packages/nest
+      '@repo/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       amqp-connection-manager:
         specifier: ^5.0.0
         version: 5.0.0(amqplib@0.10.9)
@@ -553,12 +562,6 @@ importers:
       '@nestjs/testing':
         specifier: ^11.1.10
         version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10)(@nestjs/platform-express@11.1.10)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10)(amqp-connection-manager@5.0.0(amqplib@0.10.9))(amqplib@0.10.9)(cache-manager@7.2.7)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.10))
-      '@repo/nest':
-        specifier: workspace:*
-        version: link:../../packages/nest
-      '@repo/validation':
-        specifier: workspace:*
-        version: link:../../packages/validation
       '@swc/cli':
         specifier: ^0.7.9
         version: 0.7.9(@swc/core@1.15.7(@swc/helpers@0.5.17))(chokidar@4.0.3)
@@ -658,6 +661,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@repo/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       axios:
         specifier: ^1.13.2
         version: 1.13.2
@@ -722,9 +728,6 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1
     devDependencies:
-      '@repo/validation':
-        specifier: workspace:*
-        version: link:../../packages/validation
       '@tailwindcss/postcss':
         specifier: ^4.1.18
         version: 4.1.18

@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ImapFlowModule } from '@app/imap-flow';
+import { getRabbitMqUrl } from '@repo/validation';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { ImapFlowModule } from '@app/imap-flow';
         name: 'SETTINGS_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          url: getRabbitMqUrl(),
           queue: 'temp-email-settings-queue',
           queueOptions: {
             durable: false,

@@ -3,6 +3,7 @@ import { EmailController } from './email.controller';
 import { EmailService } from './email.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { SettingsModule } from 'src/settings/settings.module';
+import { getRabbitMqUrl } from '@repo/validation';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { SettingsModule } from 'src/settings/settings.module';
         name: 'EMAIL_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          url: getRabbitMqUrl(),
           queue: 'temp-email-email-queue',
           queueOptions: {
             durable: false,
