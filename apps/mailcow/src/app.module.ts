@@ -17,7 +17,7 @@ import { getRabbitMqUrl } from '@repo/validation';
         name: 'SETTINGS_SERVICE',
         transport: Transport.RMQ,
         options: {
-          url: getRabbitMqUrl(),
+          urls: [getRabbitMqUrl()],
           queue: 'temp-email-settings-queue',
           queueOptions: {
             durable: false,

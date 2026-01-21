@@ -64,6 +64,8 @@ export class ImapFlowService {
         this.logger.log('IMAP connected!');
         return true;
       } catch (err) {
+        const errorMessage =
+          err instanceof Error ? err.message : JSON.stringify(err, null, 2);
         this.logger.error(
           `IMAP connection failed (${i + 1}/${retries}):`,
           err.message,

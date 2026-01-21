@@ -146,5 +146,6 @@ export function getRabbitMqUrl(): string {
     const host = process.env.RABBITMQ_HOST ?? 'localhost';
     const port = process.env.RABBITMQ_PORT ?? '5672';
     const rabbitUrl = `amqp://${user}:${pass}@${host}:${port}`;
+    console.log('rabbitUrl', rabbitUrl);
     return rabbitUrl;
 }

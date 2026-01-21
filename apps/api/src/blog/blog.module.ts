@@ -13,7 +13,7 @@ import { getRabbitMqUrl } from '@repo/validation';
         name: 'BLOG_SERVICE',
         transport: Transport.RMQ,
         options: {
-          url: getRabbitMqUrl(),
+          urls: [getRabbitMqUrl()],
           queue: 'temp-email-blog-queue',
           queueOptions: {
             durable: false,

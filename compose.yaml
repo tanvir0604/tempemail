@@ -2,14 +2,14 @@ version: '3.8'
 services:
   postgres:
     image: postgres:18-alpine
-    container_name: postgres
+    container_name: temp-email-postgres
     restart: always
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     networks:
-      - backend
+      - temp-email-backend
     volumes:
       - temp-email-pgdata:/var/lib/postgresql/data
     # ports:
@@ -22,28 +22,35 @@ services:
 
   rabbitmq:
     image: rabbitmq:4.2.1-management-alpine
-    container_name: rabbitmq
+    container_name: temp-email-rabbitmq
     restart: always
     environment:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
-      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_COOKIE}
     networks:
-      - backend
+      - temp-email-backend
     # ports:
     #   - "${RABBITMQ_PORT:-5672}:5672"
     #   - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
 
   adminer:
     image: adminer
+    container_name: temp-email-adminer
     restart: unless-stopped
     ports:
       - "127.0.0.1:8081:8080"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     networks:
-      - backend
-      - frontend
+      - temp-email-backend
+      - temp-email-frontend
 
   web:
     build:
@@ -65,9 +72,10 @@ services:
     ports:
       - "127.0.0.1:4000:3000"
     networks:
-      - frontend
+      - temp-email-frontend
     depends_on:
-      - api
+      api:
+        condition: service_started
     restart: always
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:4000/_next/ || exit 1"]
@@ -91,13 +99,19 @@ services:
       - RABBITMQ_USER=${RABBITMQ_USER}
       - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
     depends_on:
-      - rabbitmq
-      - email
-      - mailcow
-      - settings
-      - blog
+      rabbitmq:
+        condition: service_healthy
+      email:
+        condition: service_started
+      mailcow:
+        condition: service_started
+      settings:
+        condition: service_started
+      blog:
+        condition: service_started
     networks:
-      - backend
+      - temp-email-backend
+      - temp-email-frontend
     # ports:
     #   - "127.0.0.1:4001:3001"
     restart: always
@@ -116,7 +130,7 @@ services:
     env_file:
       - .env
     networks:
-      - backend
+      - temp-email-backend
     environment:
       - DATABASE_URL=${BLOG_DATABASE_URL}
       - RABBITMQ_HOST=${RABBITMQ_HOST}
@@ -124,8 +138,10 @@ services:
       - RABBITMQ_USER=${RABBITMQ_USER}
       - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
     depends_on:
-      - postgres
-      - rabbitmq
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
     restart: always
 
   settings:
@@ -137,7 +153,7 @@ services:
     env_file:
       - .env
     networks:
-      - backend
+      - temp-email-backend
     environment:
       - DATABASE_URL=${SETTINGS_DATABASE_URL}
       - RABBITMQ_HOST=${RABBITMQ_HOST}
@@ -145,8 +161,10 @@ services:
       - RABBITMQ_USER=${RABBITMQ_USER}
       - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
     depends_on:
-      - postgres
-      - rabbitmq
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
     restart: always
 
   email:
@@ -158,15 +176,17 @@ services:
       env_file:
         - .env
       networks:
-        - backend
+        - temp-email-backend
       environment:
         - RABBITMQ_HOST=${RABBITMQ_HOST}
         - RABBITMQ_PORT=${RABBITMQ_PORT}
         - RABBITMQ_USER=${RABBITMQ_USER}
         - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
       depends_on:
-        - postgres
-        - rabbitmq
+        postgres:
+          condition: service_healthy
+        rabbitmq:
+          condition: service_healthy
       restart: always
 
   mailcow:
@@ -178,23 +198,27 @@ services:
       env_file:
         - .env
       networks:
-        - backend
+        - temp-email-backend
+        - temp-email-frontend
       environment:
         - RABBITMQ_HOST=${RABBITMQ_HOST}
         - RABBITMQ_PORT=${RABBITMQ_PORT}
         - RABBITMQ_USER=${RABBITMQ_USER}
         - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
       depends_on:
-        - postgres
-        - rabbitmq
-        - settings
+        postgres:
+          condition: service_healthy
+        rabbitmq:
+          condition: service_healthy
+        settings:
+          condition: service_started
       restart: always
 
  
 networks:
-  backend:
+  temp-email-backend:
     internal: true
-  frontend:
+  temp-email-frontend:
     driver: bridge
 
 volumes:

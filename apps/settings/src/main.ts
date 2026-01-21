@@ -11,7 +11,7 @@ async function bootstrap() {
     {
       transport: Transport.RMQ,
       options: {
-        url: getRabbitMqUrl(),
+        urls: [getRabbitMqUrl()],
         queue: 'temp-email-settings-queue',
         queueOptions: {
           durable: false,

@@ -29,7 +29,7 @@ export class AppService {
     @Inject('SETTINGS_SERVICE') readonly settingsClient: ClientProxy,
   ) {}
 
-  onModuleInit() {
+  onApplicationBootstrap() {
     this.logger.log('-------------------Initializing IMAP-------------------');
     this.initializeImapForAll();
   }

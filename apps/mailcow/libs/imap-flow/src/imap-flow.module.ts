@@ -10,7 +10,7 @@ import { getRabbitMqUrl } from '@repo/validation';
         name: 'MAILCOW_SERVICE',
         transport: Transport.RMQ,
         options: {
-          url: getRabbitMqUrl(),
+          urls: [getRabbitMqUrl()],
           queue: 'temp-email-mailcow-queue',
           queueOptions: {
             durable: false,

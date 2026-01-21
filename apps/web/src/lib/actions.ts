@@ -15,7 +15,7 @@ import {
     SimpleResponseType,
     TempEmailType,
 } from '@repo/validation';
-const API_URL = process.env.API_BASE_URL ?? 'http://localhost:3001';
+const API_URL = process.env.API_URL ?? 'http://localhost:3001';
 
 interface RequestOptions<T = unknown> {
     method: Method;
@@ -79,7 +79,7 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
         // console.log('response', response);
         return response.data;
     } catch (e: AxiosError | any) {
-        console.log(e?.response?.data?.message);
+        console.log(e?.response?.data?.message ?? e);
         return null as unknown as TResponse;
     }
 }
