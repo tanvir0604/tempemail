@@ -1,4 +1,4 @@
-import z from 'zod';
+import z, { ZodType } from 'zod';
 
 export const CreateBlogSchema = z.object({
     title: z.string().min(1, 'Title is required'),

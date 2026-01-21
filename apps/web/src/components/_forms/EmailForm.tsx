@@ -36,7 +36,7 @@ export default function EmailForm({
     const [isPending, startTransition] = useTransition();
 
     const form = useForm<SendEmailDto>({
-        resolver: zodResolver(SendEmailSchema),
+        resolver: zodResolver(SendEmailSchema as any),
         defaultValues: {
             id: data.id,
             from: data.from,

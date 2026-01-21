@@ -60,6 +60,8 @@ services:
         NEXT_PUBLIC_URL: ${NEXT_PUBLIC_URL}
         NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
         NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        NEXT_PUBLIC_SERVER_API_URL: ${NEXT_PUBLIC_SERVER_API_URL}
+        
     image: tanvir0604/temp-email-web:1.0
     container_name: temp-email-web
     env_file:
@@ -69,6 +71,7 @@ services:
       - NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
       - NEXT_PUBLIC_URL=${NEXT_PUBLIC_URL}
       - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+      - NEXT_PUBLIC_SERVER_API_URL=${NEXT_PUBLIC_SERVER_API_URL}
     ports:
       - "127.0.0.1:4000:3000"
     networks:

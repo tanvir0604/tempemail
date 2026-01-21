@@ -5,10 +5,10 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { ZodError, ZodType } from 'zod';
+import { ZodError, ZodObject, ZodRawShape, ZodType } from 'zod';
 
 export class ZodValidationPipe implements PipeTransform {
-  constructor(private schema: ZodType<unknown, any>) {}
+  constructor(private schema: any) {}
 
   transform(value: unknown, metadata: ArgumentMetadata) {
     try {

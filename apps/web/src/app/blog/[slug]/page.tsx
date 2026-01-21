@@ -132,7 +132,9 @@ export default async function BlogDetailsPage({ params }: Props) {
     setRequestLocale(locale);
     const { slug } = await params;
     const blogData: SimpleResponseType = await getBlogDetails(slug);
+
     if (!blogData || !blogData.data) {
+        console.log('not found post');
         notFound();
     }
     const title = 'TempEmail Blog - ' + blogData.data.title + ' | TempEmail';

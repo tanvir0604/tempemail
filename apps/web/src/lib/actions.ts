@@ -1,12 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import axios, {
-    AxiosError,
-    AxiosRequestConfig,
-    HttpStatusCode,
-    Method,
-} from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, Method } from 'axios';
 import qs from 'qs';
 import {
     GetListDto,
@@ -15,7 +10,10 @@ import {
     SimpleResponseType,
     TempEmailType,
 } from '@repo/validation';
-const API_URL = process.env.API_URL ?? 'http://localhost:3001';
+const API_URL =
+    process.env.NEXT_PUBLIC_SERVER_API_URL ?? 'http://localhost:3001';
+
+// console.log('API_URL', API_URL);
 
 interface RequestOptions<T = unknown> {
     method: Method;
@@ -74,6 +72,7 @@ export async function httpRequest<TResponse = unknown, TBody = unknown>(
         paramsSerializer: (params) =>
             qs.stringify(params, { arrayFormat: 'repeat' }),
     };
+    // console.log('config', config);
     try {
         const response = await axios.request<TResponse>(config);
         // console.log('response', response);
