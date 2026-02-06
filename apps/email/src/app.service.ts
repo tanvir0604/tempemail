@@ -63,6 +63,8 @@ export class AppService {
         : data.messageId;
     }
 
+    console.log('mailOptions', mailOptions);
+
     try {
       const info = await this.transporter.sendMail(mailOptions);
       if (info.errors) {

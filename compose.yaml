@@ -1,3 +1,4 @@
+name: temp-email
 version: '3.8'
 services:
   postgres:
@@ -11,7 +12,7 @@ services:
     networks:
       - temp-email-backend
     volumes:
-      - temp-email-pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     # ports:
     #   - "${POSTGRES_PORT:-5432}:5432"
     healthcheck:
@@ -180,6 +181,9 @@ services:
         - .env
       networks:
         - temp-email-backend
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
       environment:
         - RABBITMQ_HOST=${RABBITMQ_HOST}
         - RABBITMQ_PORT=${RABBITMQ_PORT}
@@ -220,9 +224,9 @@ services:
  
 networks:
   temp-email-backend:
-    internal: true
+    driver: bridge
   temp-email-frontend:
     driver: bridge
 
 volumes:
-  temp-email-pgdata:
+  pgdata:
