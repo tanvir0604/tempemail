@@ -371,6 +371,134 @@
         "about": "About",
         "terms": "Terms",
         "privacy": "Privacy",
-        "blog": "Blog"
+        "blog": "Blog",
+        "forOtp": "Temp Mail for OTP"
+    },
+
+    "OTPContent": {
+        "Metadata": {
+            "title": "Temp Mail for OTP – Receive One-Time Passwords Securely | TempEmail",
+            "description": "Learn how to use temporary email for OTP verification. Receive one-time passwords instantly, anonymously, and safely — no registration required.",
+            "keywords": "temp mail for OTP, temporary email, disposable email, anonymous email, OTP verification, one-time password, throwaway email, fake email OTP",
+            "og": {
+                "title": "Temp Mail for OTP – Receive One-Time Passwords Anonymously",
+                "description": "Everything you need to know about using disposable email for OTP verification. Private, instant, no sign-up."
+            },
+            "twitter": {
+                "title": "Temp Mail for OTP – Anonymous & Secure",
+                "description": "Use a temporary email to receive OTPs safely without exposing your real address."
+            }
+        },
+        "hero": {
+            "title": "Temp Mail for OTP",
+            "subtitle": "Receive one-time passwords on a disposable email — privately, instantly, with no registration."
+        },
+        "whatIs": {
+            "title": "What Is Temp Mail for OTP?",
+            "boldOpener": "A temporary email for OTP is a disposable, anonymous inbox",
+            "p1": "used to receive one-time passwords from websites, apps, and online services — without handing over your real email address.",
+            "p2": "When a service needs to verify your identity, it sends a short-lived code to your email. That code is the OTP. Normally you'd provide your permanent inbox, creating a permanent link between your identity and that service. With a temp mail, you give a throwaway address instead. The OTP arrives all the same, you enter it, and the address disappears afterward.",
+            "p3": "No registration, no commitment, no residue. Temporary email services generate a fresh, fully functional inbox in seconds — and when you're done, so is the address."
+        },
+        "howItWorks": {
+            "title": "How It Works",
+            "intro": "Using a disposable email for OTP verification takes under a minute. Here's the full process:",
+            "outro": "The entire flow leaves no digital footprint. Once the inbox expires, there is no record that it ever existed."
+        },
+        "steps": {
+            "0": "Open TempEmail — a disposable inbox is generated automatically. No sign-up, no captcha, no personal information required.",
+            "1": "Copy the address with one click, or scan the QR code to send it directly to your phone.",
+            "2": "Paste the address into the signup form or verification field of whichever service is requesting your OTP.",
+            "3": "The one-time password arrives in real time. Copy it, complete the verification, and walk away — the inbox auto-expires and all messages are permanently deleted."
+        },
+        "callouts": {
+            "qrLabel": "QR Code Sync",
+            "qrText": "Started on desktop but need to verify on your phone? Scan the built-in QR code to send your temp mail address directly to your mobile device — same inbox, no typing, no errors."
+        },
+        "benefits": {
+            "title": "Benefits of Using Temp Mail for OTP",
+            "intro": "A disposable email address does one thing better than any other tool: it separates your real identity from the services asking for it. Here's why that matters for OTP verification specifically.",
+            "privacyTitle": "Privacy",
+            "privacyText": "Every service you hand your real email to knows who you are. Over time, that list grows — and so does the exposure. A temporary email breaks that chain entirely. The service gets a valid address for OTP delivery and nothing else. Your actual inbox, your name, and your online history remain untouched.",
+            "spamTitle": "Spam Prevention",
+            "spamText": "Services that require OTP verification often treat your email address as a marketing asset afterward. A disposable inbox cuts off that pipeline at the source. When the inbox expires, the mailing list entry expires with it.",
+            "accessTitle": "No Registration Required",
+            "accessText": "Unlike every other email provider, temp mail requires nothing from you. No username, no password, no recovery phone number. The inbox is live the moment you open the page — which is exactly what you need when you're mid-signup on another service and just need a code.",
+            "speedTitle": "Real-Time Delivery",
+            "speedText": "Temporary inboxes receive email at the same speed as any permanent address. OTPs typically arrive within seconds of being sent. The inbox refreshes live, so there's no need to reload while waiting for a time-sensitive code."
+        },
+        "benefitItems": {
+            "0": "No account or personal data required to create an inbox",
+            "1": "Inbox expires automatically, deleting all messages permanently",
+            "2": "Compatible with virtually any service that supports email-based OTP",
+            "3": "Time extension keeps your inbox alive if verification takes longer than expected",
+            "4": "Safe content warnings flag suspicious emails before you open them"
+        },
+        "useCases": {
+            "title": "When to Use a Disposable Email for OTP",
+            "intro": "Any time a service wants your email for a one-time or low-commitment interaction, a temporary address is the right call. Here are the most common situations.",
+            "onlineTitle": "Online Signups",
+            "onlineText": "Many sites gate content, downloads, or features behind a verified account. If you only need access once — or you're not sure you'll return — there's no reason to commit your real address.",
+            "onlineTitle2": "Online Signups",
+            "appTitle": "App and Platform Verification",
+            "appText": "Mobile apps and web platforms increasingly require OTP verification before granting access. A temp mail handles that step without tying your permanent email to the account.",
+            "otpTitle": "OTP and Two-Factor Authentication",
+            "otpText": "One-time passwords are used for account activation, password resets, and guest access. In all of these cases the email only needs to receive a single message — making a disposable inbox a natural fit."
+        },
+        "useCaseOnline": {
+            "0": "Free trial accounts for software or SaaS tools you're evaluating",
+            "1": "Forums and communities requiring email confirmation to post",
+            "2": "News or content sites gating articles behind a registered account",
+            "3": "E-commerce platforms requiring registration before you can browse"
+        },
+        "useCaseApp": {
+            "0": "Secondary or test accounts on social media platforms",
+            "1": "Gaming services and launchers that use email-based login",
+            "2": "Streaming or media platforms with email-verified free tiers",
+            "3": "Beta programs and early access invites requiring sign-in"
+        },
+        "useCaseOtp": {
+            "0": "Account activation codes sent immediately after registration",
+            "1": "Email-based two-factor authentication for temporary sessions",
+            "2": "Password reset links for services you no longer actively use",
+            "3": "One-time login codes for guest checkouts or limited access portals"
+        },
+        "safety": {
+            "title": "Safety Tips",
+            "intro": "Temp mail is a practical privacy tool, but it works best when you understand what it is and isn't suited for.",
+            "warn1Label": "Safe Content Warnings",
+            "warn1Text": "TempEmail scans incoming messages for suspicious content. If an email contains potentially harmful links, scripts, or attachments, a warning is shown before you open the message. This protects you from phishing attempts that may arrive through the OTP process.",
+            "warn2Label": "Inbox Expiration",
+            "warn2Text": "Every inbox has a built-in countdown. Once it runs out, all messages are permanently deleted with no recovery option. If you need more time, use the time extension feature before the timer hits zero.",
+            "warn3Label": "Not for Important Accounts",
+            "warn3Text": "Never use a disposable address for accounts you intend to keep — banking, primary social media, or anything where losing access to the email means losing access to the account permanently. Temp mail is for throwaway or one-time interactions only.",
+            "warn4Label": "No Archiving",
+            "warn4Text": "Messages are not stored after inbox expiration. If you need to reference something from an OTP email later — a confirmation number, a link, a reference code — save it before the inbox expires.",
+            "outro": "Within those boundaries, disposable email is one of the lowest-effort, highest-impact privacy tools available for everyday online activity."
+        },
+        "faq": {
+            "0": {
+                "q": "Is it safe to use temp mail for OTP verification?",
+                "a": "Yes, for the vast majority of OTP use cases it is completely safe. Temporary inboxes receive email identically to any permanent address. TempEmail also adds safe content warnings on flagged messages. The main risk is inbox expiration — avoid using temp mail for accounts where you'll need long-term access."
+            },
+            "1": {
+                "q": "How long does a temporary email inbox last?",
+                "a": "By default, inboxes stay active for 10 minutes after the last activity. The time extension feature lets you keep the inbox alive longer without losing existing messages. Once the timer runs out, all emails are permanently and irrecoverably deleted."
+            },
+            "2": {
+                "q": "Will every service accept a temporary email address?",
+                "a": "Most services accept any syntactically valid email, including disposable ones. Some larger platforms maintain blocklists of known temp mail domains. TempEmail rotates across multiple domains to maximize compatibility with services that filter disposable addresses."
+            },
+            "3": {
+                "q": "Can I use temp mail for two-factor authentication?",
+                "a": "For email-based 2FA, yes — the temporary inbox receives authentication codes just like a permanent address. However, if you're setting up long-term 2FA on an account you plan to keep, use your real email or an authenticator app. Losing the temp inbox means losing access to that 2FA method."
+            },
+            "4": {
+                "q": "Does TempEmail store my messages or track my usage?",
+                "a": "No personal information is required to use TempEmail, and all messages are permanently deleted when the inbox expires. No email address, name, or persistent identifier is collected or retained after a session ends."
+            },
+            "title": "Frequently Asked Questions",
+            "intro": "Common questions about using temporary email for OTP verification."
+        }
     }
 }

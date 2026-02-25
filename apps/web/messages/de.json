@@ -374,6 +374,134 @@
         "about": "Über uns",
         "terms": "Bedingungen",
         "privacy": "Datenschutz",
-        "blog": "Blog"
+        "blog": "Blog",
+        "forOtp": "Temporäre Mail für OTP"
+    },
+
+    "OTPContent": {
+        "Metadata": {
+            "title": "Temporäre E‑Mail für OTP – Einmalpasswörter sicher empfangen | TempEmail",
+            "description": "Erfahren Sie, wie Sie eine temporäre E‑Mail für die OTP‑Verifizierung verwenden. Empfangen Sie Einmalpasswörter sofort, anonym und sicher — keine Registrierung erforderlich.",
+            "keywords": "temporäre E-Mail für OTP, Wegwerf-E-Mail, anonyme E-Mail, OTP-Verifizierung, Einmalpasswort, Throwaway-E-Mail, Fake-E-Mail OTP",
+            "og": {
+                "title": "Temporäre E‑Mail für OTP – Einmalpasswörter anonym empfangen",
+                "description": "Alles, was Sie über die Verwendung von Wegwerf‑E-Mails für die OTP‑Verifizierung wissen müssen. Privat, sofort, ohne Anmeldung."
+            },
+            "twitter": {
+                "title": "Temporäre E‑Mail für OTP – Anonym & Sicher",
+                "description": "Verwenden Sie eine temporäre E‑Mail, um OTPs sicher zu empfangen, ohne Ihre echte Adresse preiszugeben."
+            }
+        },
+        "hero": {
+            "title": "Temporäre E‑Mail für OTP",
+            "subtitle": "Empfangen Sie Einmalpasswörter über eine Wegwerf‑E‑Mail — privat, sofort und ohne Registrierung."
+        },
+        "whatIs": {
+            "title": "Was ist eine temporäre E‑Mail für OTP?",
+            "boldOpener": "Eine temporäre E‑Mail für OTP ist ein wegwerfbarer, anonymer Posteingang",
+            "p1": "der verwendet wird, um Einmalpasswörter von Websites, Apps und Online‑Diensten zu empfangen — ohne Ihre echte E‑Mail-Adresse anzugeben.",
+            "p2": "Wenn ein Dienst Ihre Identität überprüfen muss, sendet er einen kurzlebigen Code an Ihre E‑Mail-Adresse. Dieser Code ist das OTP. Normalerweise würden Sie Ihren dauerhaften Posteingang angeben und damit eine dauerhafte Verbindung zwischen Ihrer Identität und dem Dienst schaffen. Mit einer temporären E‑Mail geben Sie stattdessen eine Wegwerfadresse an. Das OTP kommt trotzdem an, Sie geben es ein, und die Adresse verschwindet anschließend.",
+            "p3": "Keine Registrierung, keine Verpflichtung, keine Spuren. Temporäre E‑Mail‑Dienste erzeugen in Sekunden einen neuen, vollständig funktionsfähigen Posteingang — und wenn Sie fertig sind, ist auch die Adresse verschwunden."
+        },
+        "howItWorks": {
+            "title": "So funktioniert es",
+            "intro": "Die Nutzung einer Wegwerf‑E‑Mail für die OTP‑Verifizierung dauert weniger als eine Minute. Hier ist der vollständige Ablauf:",
+            "outro": "Der gesamte Vorgang hinterlässt keine digitalen Spuren. Sobald der Posteingang abläuft, gibt es keinen Nachweis mehr, dass er jemals existiert hat."
+        },
+        "steps": {
+            "0": "Öffnen Sie TempEmail — ein Wegwerf‑Posteingang wird automatisch generiert. Keine Anmeldung, kein CAPTCHA, keine persönlichen Informationen erforderlich.",
+            "1": "Kopieren Sie die Adresse mit einem Klick oder scannen Sie den QR‑Code, um sie direkt an Ihr Smartphone zu senden.",
+            "2": "Fügen Sie die Adresse in das Registrierungsformular oder das Verifizierungsfeld des Dienstes ein, der Ihr OTP anfordert.",
+            "3": "Das Einmalpasswort trifft in Echtzeit ein. Kopieren Sie es, schließen Sie die Verifizierung ab und verlassen Sie die Seite — der Posteingang läuft automatisch ab und alle Nachrichten werden dauerhaft gelöscht."
+        },
+        "callouts": {
+            "qrLabel": "QR‑Code‑Synchronisierung",
+            "qrText": "Auf dem Desktop gestartet, aber auf dem Smartphone verifizieren? Scannen Sie den integrierten QR‑Code, um Ihre temporäre E‑Mail-Adresse direkt an Ihr mobiles Gerät zu senden — derselbe Posteingang, kein Tippen, keine Fehler."
+        },
+        "benefits": {
+            "title": "Vorteile der Nutzung einer temporären E‑Mail für OTP",
+            "intro": "Eine Wegwerf‑E‑Mail-Adresse erfüllt eine Aufgabe besser als jedes andere Tool: Sie trennt Ihre echte Identität von den Diensten, die danach fragen. Genau das ist bei der OTP‑Verifizierung entscheidend.",
+            "privacyTitle": "Datenschutz",
+            "privacyText": "Jeder Dienst, dem Sie Ihre echte E‑Mail geben, weiß, wer Sie sind. Mit der Zeit wächst diese Liste — und damit auch das Risiko. Eine temporäre E‑Mail durchbricht diese Verbindung vollständig. Der Dienst erhält eine gültige Adresse für die OTP‑Zustellung und nichts weiter. Ihr echter Posteingang, Ihr Name und Ihre Online‑Historie bleiben unberührt.",
+            "spamTitle": "Spam‑Schutz",
+            "spamText": "Dienste, die eine OTP‑Verifizierung verlangen, behandeln Ihre E‑Mail-Adresse oft später als Marketingressource. Ein Wegwerf‑Posteingang stoppt diese Pipeline an der Quelle. Wenn der Posteingang abläuft, verschwindet auch der Eintrag in der Mailingliste.",
+            "accessTitle": "Keine Registrierung erforderlich",
+            "accessText": "Im Gegensatz zu anderen E‑Mail‑Anbietern verlangt eine temporäre E‑Mail nichts von Ihnen. Kein Benutzername, kein Passwort, keine Wiederherstellungsnummer. Der Posteingang ist sofort aktiv, sobald Sie die Seite öffnen — genau das, was Sie brauchen, wenn Sie sich gerade bei einem anderen Dienst anmelden und nur einen Code benötigen.",
+            "speedTitle": "Echtzeit‑Zustellung",
+            "speedText": "Temporäre Posteingänge empfangen E‑Mails genauso schnell wie dauerhafte Adressen. OTPs treffen in der Regel innerhalb weniger Sekunden ein. Der Posteingang aktualisiert sich automatisch, sodass kein Neuladen erforderlich ist, während Sie auf einen zeitkritischen Code warten."
+        },
+        "benefitItems": {
+            "0": "Kein Konto oder persönliche Daten zur Erstellung eines Posteingangs erforderlich",
+            "1": "Posteingang läuft automatisch ab und löscht alle Nachrichten dauerhaft",
+            "2": "Kompatibel mit nahezu jedem Dienst, der E‑Mail‑basierte OTP unterstützt",
+            "3": "Zeitverlängerung hält den Posteingang aktiv, wenn die Verifizierung länger dauert als erwartet",
+            "4": "Sicherheitswarnungen markieren verdächtige E‑Mails, bevor Sie sie öffnen"
+        },
+        "useCases": {
+            "title": "Wann Sie eine Wegwerf‑E‑Mail für OTP verwenden sollten",
+            "intro": "Immer wenn ein Dienst Ihre E‑Mail für eine einmalige oder gering verpflichtende Interaktion verlangt, ist eine temporäre Adresse die richtige Wahl. Hier sind die häufigsten Situationen.",
+            "onlineTitle": "Online‑Registrierungen",
+            "onlineText": "Viele Websites stellen Inhalte, Downloads oder Funktionen nur nach einer verifizierten Registrierung bereit. Wenn Sie nur einmaligen Zugriff benötigen — oder nicht sicher sind, ob Sie zurückkehren — gibt es keinen Grund, Ihre echte Adresse anzugeben.",
+            "onlineTitle2": "Online‑Registrierungen",
+            "appTitle": "App‑ und Plattform‑Verifizierung",
+            "appText": "Mobile Apps und Web‑Plattformen verlangen zunehmend eine OTP‑Verifizierung vor dem Zugriff. Eine temporäre E‑Mail übernimmt diesen Schritt, ohne Ihre dauerhafte Adresse mit dem Konto zu verknüpfen.",
+            "otpTitle": "OTP und Zwei‑Faktor‑Authentifizierung",
+            "otpText": "Einmalpasswörter werden zur Kontoaktivierung, Passwortzurücksetzung und für Gastzugänge verwendet. In all diesen Fällen muss die E‑Mail nur eine einzige Nachricht empfangen — ideal für einen Wegwerf‑Posteingang."
+        },
+        "useCaseOnline": {
+            "0": "Kostenlose Testkonten für Software oder SaaS‑Tools, die Sie evaluieren",
+            "1": "Foren und Communities, die eine E‑Mail‑Bestätigung zum Posten verlangen",
+            "2": "Nachrichten‑ oder Content‑Websites mit Registrierungspflicht für Artikel",
+            "3": "E‑Commerce‑Plattformen, die eine Registrierung vor dem Browsen verlangen"
+        },
+        "useCaseApp": {
+            "0": "Sekundäre oder Testkonten auf Social‑Media‑Plattformen",
+            "1": "Gaming‑Dienste und Launcher mit E‑Mail‑basiertem Login",
+            "2": "Streaming‑ oder Medienplattformen mit E‑Mail‑verifizierten Gratis‑Stufen",
+            "3": "Beta‑Programme und Early‑Access‑Einladungen mit Anmeldepflicht"
+        },
+        "useCaseOtp": {
+            "0": "Aktivierungscodes direkt nach der Registrierung",
+            "1": "E‑Mail‑basierte Zwei‑Faktor‑Authentifizierung für temporäre Sitzungen",
+            "2": "Passwort‑Reset‑Links für Dienste, die Sie nicht mehr aktiv nutzen",
+            "3": "Einmalige Login‑Codes für Gast‑Checkouts oder eingeschränkte Zugänge"
+        },
+        "safety": {
+            "title": "Sicherheitshinweise",
+            "intro": "Temporäre E‑Mail ist ein praktisches Datenschutz‑Tool, funktioniert aber am besten, wenn Sie wissen, wofür sie geeignet ist — und wofür nicht.",
+            "warn1Label": "Sicherheitswarnungen für Inhalte",
+            "warn1Text": "TempEmail scannt eingehende Nachrichten auf verdächtige Inhalte. Enthält eine E‑Mail potenziell schädliche Links, Skripte oder Anhänge, wird vor dem Öffnen eine Warnung angezeigt. Das schützt Sie vor Phishing‑Versuchen im Rahmen der OTP‑Verifizierung.",
+            "warn2Label": "Ablauf des Posteingangs",
+            "warn2Text": "Jeder Posteingang hat einen integrierten Countdown. Nach Ablauf werden alle Nachrichten dauerhaft und ohne Wiederherstellungsmöglichkeit gelöscht. Wenn Sie mehr Zeit benötigen, nutzen Sie die Zeitverlängerungsfunktion vor Ablauf.",
+            "warn3Label": "Nicht für wichtige Konten",
+            "warn3Text": "Verwenden Sie keine Wegwerf‑Adresse für Konten, die Sie dauerhaft behalten möchten — z. B. Banking, primäre Social‑Media‑Konten oder andere wichtige Dienste. Temporäre E‑Mail ist nur für einmalige oder kurzfristige Interaktionen gedacht.",
+            "warn4Label": "Keine Archivierung",
+            "warn4Text": "Nach Ablauf des Posteingangs werden Nachrichten nicht gespeichert. Wenn Sie Informationen aus einer OTP‑E‑Mail später benötigen — z. B. eine Bestätigungsnummer oder einen Link — speichern Sie diese vor Ablauf.",
+            "outro": "Innerhalb dieser Grenzen ist eine Wegwerf‑E‑Mail eines der effektivsten und gleichzeitig einfachsten Datenschutz‑Tools für alltägliche Online‑Aktivitäten."
+        },
+        "faq": {
+            "0": {
+                "q": "Ist es sicher, eine temporäre E‑Mail für OTP‑Verifizierung zu verwenden?",
+                "a": "Ja, für die meisten OTP‑Anwendungsfälle ist es vollkommen sicher. Temporäre Posteingänge empfangen E‑Mails genauso wie dauerhafte Adressen. TempEmail ergänzt dies durch Sicherheitswarnungen bei verdächtigen Nachrichten. Das größte Risiko ist der Ablauf des Posteingangs — vermeiden Sie daher die Nutzung für langfristige Konten."
+            },
+            "1": {
+                "q": "Wie lange bleibt ein temporärer Posteingang aktiv?",
+                "a": "Standardmäßig bleibt ein Posteingang 10 Minuten nach der letzten Aktivität aktiv. Mit der Zeitverlängerungsfunktion können Sie ihn länger aktiv halten, ohne bestehende Nachrichten zu verlieren. Nach Ablauf werden alle E‑Mails dauerhaft und unwiderruflich gelöscht."
+            },
+            "2": {
+                "q": "Akzeptiert jeder Dienst eine temporäre E‑Mail-Adresse?",
+                "a": "Die meisten Dienste akzeptieren jede syntaktisch gültige E‑Mail-Adresse, einschließlich Wegwerf‑Adressen. Einige größere Plattformen führen jedoch Sperrlisten bekannter temporärer Domains. TempEmail rotiert über mehrere Domains, um maximale Kompatibilität zu gewährleisten."
+            },
+            "3": {
+                "q": "Kann ich eine temporäre E‑Mail für Zwei‑Faktor‑Authentifizierung verwenden?",
+                "a": "Für E‑Mail‑basierte 2FA ja — der temporäre Posteingang empfängt Authentifizierungscodes wie eine permanente Adresse. Wenn Sie jedoch eine langfristige 2FA für ein wichtiges Konto einrichten, sollten Sie Ihre echte E‑Mail oder eine Authenticator‑App verwenden. Der Verlust des temporären Posteingangs bedeutet den Verlust dieser 2FA‑Methode."
+            },
+            "4": {
+                "q": "Speichert TempEmail meine Nachrichten oder verfolgt meine Nutzung?",
+                "a": "Es sind keine persönlichen Informationen erforderlich, um TempEmail zu nutzen. Alle Nachrichten werden nach Ablauf des Posteingangs dauerhaft gelöscht. Es werden keine E‑Mail-Adressen, Namen oder dauerhaften Identifikatoren gespeichert."
+            },
+            "title": "Häufig gestellte Fragen",
+            "intro": "Häufige Fragen zur Nutzung einer temporären E‑Mail für OTP‑Verifizierung."
+        }
     }
 }

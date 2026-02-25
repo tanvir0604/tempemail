@@ -25,6 +25,12 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.temp-email.dev/en/temp-mail-for-otp</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ========== ES ========== -->
   <url>
@@ -47,6 +53,12 @@
   </url>
   <url>
     <loc>https://www.temp-email.dev/es/terms</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.temp-email.dev/es/temp-mail-for-otp</loc>
     <lastmod>2025-11-27T12:01:09.702Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -77,6 +89,12 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.temp-email.dev/hi/temp-mail-for-otp</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ========== BN ========== -->
   <url>
@@ -99,6 +117,12 @@
   </url>
   <url>
     <loc>https://www.temp-email.dev/bn/terms</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.temp-email.dev/bn/temp-mail-for-otp</loc>
     <lastmod>2025-11-27T12:01:09.702Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -129,6 +153,12 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.temp-email.dev/ar/temp-mail-for-otp</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ========== PT ========== -->
   <url>
@@ -151,6 +181,12 @@
   </url>
   <url>
     <loc>https://www.temp-email.dev/pt/terms</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.temp-email.dev/pt/temp-mail-for-otp</loc>
     <lastmod>2025-11-27T12:01:09.702Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -181,6 +217,12 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.temp-email.dev/id/temp-mail-for-otp</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ========== RU ========== -->
   <url>
@@ -203,6 +245,12 @@
   </url>
   <url>
     <loc>https://www.temp-email.dev/ru/terms</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.temp-email.dev/ru/temp-mail-for-otp</loc>
     <lastmod>2025-11-27T12:01:09.702Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -233,6 +281,12 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.temp-email.dev/fr/temp-mail-for-otp</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ========== TR ========== -->
   <url>
@@ -255,6 +309,12 @@
   </url>
   <url>
     <loc>https://www.temp-email.dev/tr/terms</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.temp-email.dev/tr/temp-mail-for-otp</loc>
     <lastmod>2025-11-27T12:01:09.702Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -285,6 +345,12 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.temp-email.dev/ja/temp-mail-for-otp</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ========== KO ========== -->
   <url>
@@ -311,6 +377,12 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.temp-email.dev/ko/temp-mail-for-otp</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ========== IT ========== -->
   <url>
@@ -333,6 +405,12 @@
   </url>
   <url>
     <loc>https://www.temp-email.dev/it/terms</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.temp-email.dev/it/temp-mail-for-otp</loc>
     <lastmod>2025-11-27T12:01:09.702Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -364,6 +442,13 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.temp-email.dev/de/temp-mail-for-otp</loc>
+    <lastmod>2025-11-27T12:01:09.702Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
     <loc>https://www.temp-email.dev/blog/10-free-temporary-email-services-you-can-trust-in-2026</loc>
     <lastmod>2025-12-04T12:01:09.702Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -375,4 +460,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <url>
+    <loc>https://www.temp-email.dev/blog/top-10-reasons-never-use-personal-email-everywhere</loc>
+    <lastmod>2026-01-10T12:01:09.702Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  
 </urlset>

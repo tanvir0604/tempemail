@@ -375,6 +375,134 @@
         "about": "Informazioni",
         "terms": "Termini",
         "privacy": "Privacy",
-        "blog": "Blog"
+        "blog": "Blog",
+        "forOtp": "Email temporaneo per OTP"
+    },
+
+    "OTPContent": {
+        "Metadata": {
+            "title": "Email Temporanea per OTP – Ricevi Codici One-Time Password in Sicurezza | TempEmail",
+            "description": "Scopri come usare un'email temporanea per la verifica OTP. Ricevi codici one-time password in modo istantaneo, anonimo e sicuro — senza registrazione.",
+            "keywords": "email temporanea per OTP, email usa e getta, email anonima, verifica OTP, one-time password, codice OTP, email finta OTP",
+            "og": {
+                "title": "Email Temporanea per OTP – Ricevi Codici in Modo Anonimo",
+                "description": "Tutto quello che devi sapere sull'uso di un'email usa e getta per la verifica OTP. Privata, istantanea, senza registrazione."
+            },
+            "twitter": {
+                "title": "Email Temporanea per OTP – Anonima e Sicura",
+                "description": "Usa un'email temporanea per ricevere OTP in sicurezza senza esporre il tuo indirizzo reale."
+            }
+        },
+        "hero": {
+            "title": "Email Temporanea per OTP",
+            "subtitle": "Ricevi codici one-time password su un'email usa e getta — in modo privato, istantaneo e senza registrazione."
+        },
+        "whatIs": {
+            "title": "Cos'è un'Email Temporanea per OTP?",
+            "boldOpener": "Un'email temporanea per OTP è una casella di posta anonima e usa e getta",
+            "p1": "utilizzata per ricevere codici one-time password da siti web, app e servizi online — senza fornire il tuo indirizzo email reale.",
+            "p2": "Quando un servizio deve verificare la tua identità, invia un codice a breve durata al tuo indirizzo email. Quel codice è l'OTP. Normalmente forniresti la tua casella permanente, creando un collegamento duraturo tra la tua identità e quel servizio. Con un'email temporanea, invece, fornisci un indirizzo usa e getta. L'OTP arriva comunque, lo inserisci e poi l'indirizzo scompare.",
+            "p3": "Nessuna registrazione, nessun impegno, nessuna traccia. I servizi di email temporanea generano una nuova casella di posta completamente funzionante in pochi secondi — e quando hai finito, anche l'indirizzo scompare."
+        },
+        "howItWorks": {
+            "title": "Come Funziona",
+            "intro": "Usare un'email usa e getta per la verifica OTP richiede meno di un minuto. Ecco il processo completo:",
+            "outro": "L'intero processo non lascia tracce digitali. Una volta scaduta la casella, non esiste alcuna registrazione della sua esistenza."
+        },
+        "steps": {
+            "0": "Apri TempEmail — viene generata automaticamente una casella di posta usa e getta. Nessuna registrazione, nessun captcha, nessuna informazione personale richiesta.",
+            "1": "Copia l'indirizzo con un clic oppure scansiona il codice QR per inviarlo direttamente al tuo telefono.",
+            "2": "Incolla l'indirizzo nel modulo di registrazione o nel campo di verifica del servizio che richiede l'OTP.",
+            "3": "Il codice one-time password arriva in tempo reale. Copialo, completa la verifica e termina — la casella scade automaticamente e tutti i messaggi vengono eliminati definitivamente."
+        },
+        "callouts": {
+            "qrLabel": "Sincronizzazione tramite QR Code",
+            "qrText": "Hai iniziato dal desktop ma devi verificare dal telefono? Scansiona il QR code integrato per inviare il tuo indirizzo temporaneo direttamente al dispositivo mobile — stessa casella, nessuna digitazione, nessun errore."
+        },
+        "benefits": {
+            "title": "Vantaggi dell'Uso di un'Email Temporanea per OTP",
+            "intro": "Un indirizzo email usa e getta fa una cosa meglio di qualsiasi altro strumento: separa la tua vera identità dai servizi che la richiedono. Ecco perché è importante per la verifica OTP.",
+            "privacyTitle": "Privacy",
+            "privacyText": "Ogni servizio a cui fornisci la tua email reale sa chi sei. Con il tempo, quell'elenco cresce — e cresce anche l'esposizione. Un'email temporanea interrompe completamente questo collegamento. Il servizio riceve un indirizzo valido per la consegna dell'OTP e nulla di più. La tua vera casella, il tuo nome e la tua cronologia online restano intatti.",
+            "spamTitle": "Protezione dallo Spam",
+            "spamText": "I servizi che richiedono la verifica OTP spesso utilizzano il tuo indirizzo email per fini di marketing. Una casella usa e getta blocca questo meccanismo alla radice. Quando la casella scade, scade anche l'iscrizione alle mailing list.",
+            "accessTitle": "Nessuna Registrazione Richiesta",
+            "accessText": "A differenza di qualsiasi altro provider email, l'email temporanea non richiede nulla da parte tua. Nessun nome utente, nessuna password, nessun numero di recupero. La casella è attiva nel momento in cui apri la pagina — esattamente ciò di cui hai bisogno quando stai completando una registrazione e ti serve solo un codice.",
+            "speedTitle": "Consegna in Tempo Reale",
+            "speedText": "Le caselle temporanee ricevono email alla stessa velocità di qualsiasi indirizzo permanente. Gli OTP arrivano generalmente in pochi secondi. La casella si aggiorna in tempo reale, quindi non è necessario ricaricare la pagina mentre aspetti un codice sensibile al tempo."
+        },
+        "benefitItems": {
+            "0": "Nessun account o dato personale richiesto per creare una casella",
+            "1": "La casella scade automaticamente, eliminando definitivamente tutti i messaggi",
+            "2": "Compatibile con quasi tutti i servizi che supportano OTP via email",
+            "3": "Estensione del tempo per mantenere attiva la casella se la verifica richiede più tempo",
+            "4": "Avvisi di contenuto sicuro che segnalano email sospette prima dell'apertura"
+        },
+        "useCases": {
+            "title": "Quando Usare un'Email Temporanea per OTP",
+            "intro": "Ogni volta che un servizio richiede la tua email per un'interazione una tantum o a basso impegno, un indirizzo temporaneo è la scelta giusta. Ecco le situazioni più comuni.",
+            "onlineTitle": "Registrazioni Online",
+            "onlineText": "Molti siti limitano contenuti, download o funzionalità dietro un account verificato. Se ti serve accesso solo una volta — o non sei sicuro di tornare — non c'è motivo di impegnare la tua email reale.",
+            "onlineTitle2": "Registrazioni Online",
+            "appTitle": "Verifica di App e Piattaforme",
+            "appText": "Le app mobili e le piattaforme web richiedono sempre più spesso la verifica OTP prima di concedere l'accesso. Un'email temporanea gestisce questo passaggio senza collegare la tua email permanente all'account.",
+            "otpTitle": "OTP e Autenticazione a Due Fattori",
+            "otpText": "I codici one-time password vengono usati per attivazione account, reimpostazione password e accessi ospite. In tutti questi casi, l'email deve ricevere un solo messaggio — rendendo una casella usa e getta la soluzione ideale."
+        },
+        "useCaseOnline": {
+            "0": "Account di prova gratuiti per software o strumenti SaaS che stai valutando",
+            "1": "Forum e community che richiedono conferma email per pubblicare",
+            "2": "Siti di notizie o contenuti che richiedono registrazione per leggere articoli",
+            "3": "Piattaforme e-commerce che richiedono registrazione prima della navigazione"
+        },
+        "useCaseApp": {
+            "0": "Account secondari o di test sui social media",
+            "1": "Servizi di gaming e launcher con accesso tramite email",
+            "2": "Piattaforme streaming o media con piani gratuiti verificati via email",
+            "3": "Programmi beta e accessi anticipati che richiedono registrazione"
+        },
+        "useCaseOtp": {
+            "0": "Codici di attivazione inviati subito dopo la registrazione",
+            "1": "Autenticazione a due fattori via email per sessioni temporanee",
+            "2": "Link di reimpostazione password per servizi che non utilizzi più attivamente",
+            "3": "Codici di accesso una tantum per checkout ospite o portali ad accesso limitato"
+        },
+        "safety": {
+            "title": "Consigli di Sicurezza",
+            "intro": "L'email temporanea è uno strumento pratico per la privacy, ma funziona al meglio quando sai per cosa è adatta e per cosa no.",
+            "warn1Label": "Avvisi di Contenuto Sicuro",
+            "warn1Text": "TempEmail analizza i messaggi in arrivo alla ricerca di contenuti sospetti. Se un'email contiene link, script o allegati potenzialmente dannosi, viene mostrato un avviso prima dell'apertura. Questo ti protegge da tentativi di phishing che possono arrivare durante il processo OTP.",
+            "warn2Label": "Scadenza della Casella",
+            "warn2Text": "Ogni casella ha un conto alla rovescia integrato. Una volta scaduto, tutti i messaggi vengono eliminati definitivamente senza possibilità di recupero. Se hai bisogno di più tempo, utilizza la funzione di estensione prima che il timer arrivi a zero.",
+            "warn3Label": "Non per Account Importanti",
+            "warn3Text": "Non utilizzare mai un indirizzo usa e getta per account che intendi mantenere — come banking, social media principali o qualsiasi servizio dove perdere l'accesso all'email significa perdere l'account. L'email temporanea è solo per interazioni occasionali o usa e getta.",
+            "warn4Label": "Nessuna Archiviazione",
+            "warn4Text": "I messaggi non vengono conservati dopo la scadenza della casella. Se devi consultare in seguito qualcosa da un'email OTP — come un numero di conferma o un codice — salvalo prima che la casella scada.",
+            "outro": "Entro questi limiti, l'email usa e getta è uno degli strumenti per la privacy più semplici ed efficaci per le attività online quotidiane."
+        },
+        "faq": {
+            "0": {
+                "q": "È sicuro usare un'email temporanea per la verifica OTP?",
+                "a": "Sì, nella maggior parte dei casi è completamente sicuro. Le caselle temporanee ricevono email come qualsiasi indirizzo permanente. TempEmail aggiunge anche avvisi di sicurezza sui messaggi segnalati. Il rischio principale è la scadenza della casella — evita di usarla per account che richiedono accesso a lungo termine."
+            },
+            "1": {
+                "q": "Quanto dura una casella email temporanea?",
+                "a": "Di default, le caselle restano attive per 10 minuti dopo l'ultima attività. La funzione di estensione del tempo permette di mantenerla attiva più a lungo senza perdere i messaggi esistenti. Una volta scaduto il tempo, tutte le email vengono eliminate definitivamente e senza possibilità di recupero."
+            },
+            "2": {
+                "q": "Tutti i servizi accettano un indirizzo email temporaneo?",
+                "a": "La maggior parte dei servizi accetta qualsiasi email sintatticamente valida, incluse quelle temporanee. Alcune grandi piattaforme mantengono liste di blocco per domini usa e getta. TempEmail utilizza più domini a rotazione per massimizzare la compatibilità con i servizi che filtrano questo tipo di indirizzi."
+            },
+            "3": {
+                "q": "Posso usare un'email temporanea per l'autenticazione a due fattori?",
+                "a": "Per l'autenticazione a due fattori basata su email, sì — la casella temporanea riceve i codici come un indirizzo permanente. Tuttavia, se stai configurando una 2FA a lungo termine per un account che intendi mantenere, usa la tua email reale o un'app di autenticazione. Perdere la casella temporanea significa perdere l'accesso a quel metodo 2FA."
+            },
+            "4": {
+                "q": "TempEmail conserva i miei messaggi o traccia il mio utilizzo?",
+                "a": "Non è richiesta alcuna informazione personale per utilizzare TempEmail e tutti i messaggi vengono eliminati definitivamente quando la casella scade. Nessun indirizzo email, nome o identificatore persistente viene raccolto o conservato dopo la fine della sessione."
+            },
+            "title": "Domande Frequenti",
+            "intro": "Domande comuni sull'uso dell'email temporanea per la verifica OTP."
+        }
     }
 }

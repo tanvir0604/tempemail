@@ -374,6 +374,134 @@
         "about": "Sobre",
         "terms": "Termos",
         "privacy": "Privacidade",
-        "blog": "Diário"
+        "blog": "Diário",
+        "forOtp": "Email temporário para OTP"
+    },
+
+    "OTPContent": {
+        "Metadata": {
+            "title": "Email Temporário para OTP – Receba Senhas de Uso Único com Segurança | TempEmail",
+            "description": "Aprenda como usar email temporário para verificação por OTP. Receba senhas de uso único instantaneamente, de forma anônima e segura — sem necessidade de cadastro.",
+            "keywords": "email temporário para OTP, email descartável, email anônimo, verificação OTP, senha de uso único, one-time password, email falso OTP",
+            "og": {
+                "title": "Email Temporário para OTP – Receba Senhas de Uso Único Anonimamente",
+                "description": "Tudo o que você precisa saber sobre como usar email descartável para verificação por OTP. Privado, instantâneo e sem cadastro."
+            },
+            "twitter": {
+                "title": "Email Temporário para OTP – Anônimo e Seguro",
+                "description": "Use um email temporário para receber OTPs com segurança sem expor seu endereço real."
+            }
+        },
+        "hero": {
+            "title": "Email Temporário para OTP",
+            "subtitle": "Receba senhas de uso único em um email descartável — de forma privada, instantânea e sem cadastro."
+        },
+        "whatIs": {
+            "title": "O que é Email Temporário para OTP?",
+            "boldOpener": "Um email temporário para OTP é uma caixa de entrada descartável e anônima",
+            "p1": "usada para receber senhas de uso único de sites, aplicativos e serviços online — sem fornecer seu email real.",
+            "p2": "Quando um serviço precisa verificar sua identidade, ele envia um código de curta duração para seu email. Esse código é o OTP. Normalmente você forneceria sua caixa de entrada permanente, criando um vínculo permanente entre sua identidade e o serviço. Com um email temporário, você usa um endereço descartável. O OTP chega normalmente, você o insere, e o endereço desaparece depois.",
+            "p3": "Sem cadastro, sem compromisso, sem rastros. Serviços de email temporário geram uma nova caixa de entrada totalmente funcional em segundos — e quando você termina, o endereço também termina."
+        },
+        "howItWorks": {
+            "title": "Como Funciona",
+            "intro": "Usar um email descartável para verificação por OTP leva menos de um minuto. Veja o processo completo:",
+            "outro": "Todo o fluxo não deixa nenhum rastro digital. Quando a caixa de entrada expira, não há registro de que ela tenha existido."
+        },
+        "steps": {
+            "0": "Abra o TempEmail — uma caixa de entrada descartável é gerada automaticamente. Sem cadastro, sem captcha, sem necessidade de informações pessoais.",
+            "1": "Copie o endereço com um clique ou escaneie o QR code para enviá-lo diretamente ao seu celular.",
+            "2": "Cole o endereço no formulário de cadastro ou no campo de verificação do serviço que está solicitando o OTP.",
+            "3": "A senha de uso único chega em tempo real. Copie, conclua a verificação e pronto — a caixa de entrada expira automaticamente e todas as mensagens são permanentemente excluídas."
+        },
+        "callouts": {
+            "qrLabel": "Sincronização por QR Code",
+            "qrText": "Começou no desktop, mas precisa verificar no celular? Escaneie o QR code integrado para enviar seu email temporário diretamente para o dispositivo móvel — mesma caixa de entrada, sem digitação, sem erros."
+        },
+        "benefits": {
+            "title": "Benefícios de Usar Email Temporário para OTP",
+            "intro": "Um endereço de email descartável faz melhor do que qualquer outra ferramenta: separa sua identidade real dos serviços que a solicitam. Veja por que isso é importante especificamente para verificação por OTP.",
+            "privacyTitle": "Privacidade",
+            "privacyText": "Cada serviço ao qual você fornece seu email real passa a ter um vínculo com sua identidade. Com o tempo, essa lista cresce — e a exposição também. Um email temporário quebra completamente essa conexão. O serviço recebe um endereço válido para entrega do OTP e nada mais. Sua caixa de entrada real, seu nome e seu histórico online permanecem intactos.",
+            "spamTitle": "Prevenção de Spam",
+            "spamText": "Serviços que exigem verificação por OTP frequentemente tratam seu email como um ativo de marketing depois. Uma caixa descartável corta essa prática na origem. Quando a caixa expira, sua inscrição em listas de email expira junto.",
+            "accessTitle": "Sem Necessidade de Cadastro",
+            "accessText": "Diferente de qualquer outro provedor de email, o email temporário não exige nada de você. Sem usuário, sem senha, sem telefone de recuperação. A caixa está ativa no momento em que você abre a página — exatamente o que você precisa quando está no meio de um cadastro e só precisa de um código.",
+            "speedTitle": "Entrega em Tempo Real",
+            "speedText": "Caixas de entrada temporárias recebem emails na mesma velocidade que qualquer endereço permanente. Os OTPs normalmente chegam em segundos. A caixa atualiza automaticamente, então não é necessário recarregar enquanto espera por um código sensível ao tempo."
+        },
+        "benefitItems": {
+            "0": "Nenhuma conta ou dado pessoal é necessário para criar uma caixa de entrada",
+            "1": "A caixa expira automaticamente, excluindo permanentemente todas as mensagens",
+            "2": "Compatível com praticamente qualquer serviço que suporte OTP por email",
+            "3": "Extensão de tempo mantém sua caixa ativa se a verificação demorar mais do que o esperado",
+            "4": "Alertas de conteúdo seguro sinalizam emails suspeitos antes que você os abra"
+        },
+        "useCases": {
+            "title": "Quando Usar Email Descartável para OTP",
+            "intro": "Sempre que um serviço solicitar seu email para uma interação pontual ou de baixo compromisso, um endereço temporário é a escolha certa. Veja as situações mais comuns.",
+            "onlineTitle": "Cadastros Online",
+            "onlineText": "Muitos sites bloqueiam conteúdo, downloads ou recursos atrás de uma conta verificada. Se você só precisa de acesso uma vez — ou não tem certeza se vai voltar — não há motivo para comprometer seu email real.",
+            "onlineTitle2": "Cadastros Online",
+            "appTitle": "Verificação de Aplicativos e Plataformas",
+            "appText": "Aplicativos móveis e plataformas web exigem cada vez mais verificação por OTP antes de conceder acesso. Um email temporário resolve essa etapa sem vincular seu email permanente à conta.",
+            "otpTitle": "OTP e Autenticação em Dois Fatores",
+            "otpText": "Senhas de uso único são usadas para ativação de conta, redefinição de senha e acesso como visitante. Em todos esses casos, o email só precisa receber uma única mensagem — tornando a caixa descartável a escolha ideal."
+        },
+        "useCaseOnline": {
+            "0": "Contas de teste gratuito para softwares ou ferramentas SaaS que você está avaliando",
+            "1": "Fóruns e comunidades que exigem confirmação por email para publicar",
+            "2": "Sites de notícias ou conteúdo que exigem cadastro para liberar artigos",
+            "3": "Plataformas de e-commerce que exigem registro antes de navegar"
+        },
+        "useCaseApp": {
+            "0": "Contas secundárias ou de teste em plataformas de redes sociais",
+            "1": "Serviços e launchers de jogos que utilizam login por email",
+            "2": "Plataformas de streaming ou mídia com planos gratuitos verificados por email",
+            "3": "Programas beta e convites de acesso antecipado que exigem login"
+        },
+        "useCaseOtp": {
+            "0": "Códigos de ativação enviados imediatamente após o cadastro",
+            "1": "Autenticação em dois fatores baseada em email para sessões temporárias",
+            "2": "Links de redefinição de senha para serviços que você não usa mais ativamente",
+            "3": "Códigos de login únicos para checkout como visitante ou portais de acesso limitado"
+        },
+        "safety": {
+            "title": "Dicas de Segurança",
+            "intro": "O email temporário é uma ferramenta prática de privacidade, mas funciona melhor quando você entende para o que ele é — e para o que não é indicado.",
+            "warn1Label": "Alertas de Conteúdo Seguro",
+            "warn1Text": "O TempEmail analisa mensagens recebidas em busca de conteúdo suspeito. Se um email contiver links, scripts ou anexos potencialmente perigosos, um aviso é exibido antes que você abra a mensagem. Isso ajuda a proteger contra tentativas de phishing que podem ocorrer durante o processo de OTP.",
+            "warn2Label": "Expiração da Caixa de Entrada",
+            "warn2Text": "Cada caixa possui um contador integrado. Quando o tempo termina, todas as mensagens são permanentemente excluídas sem possibilidade de recuperação. Se precisar de mais tempo, use o recurso de extensão antes que o contador chegue a zero.",
+            "warn3Label": "Não Use para Contas Importantes",
+            "warn3Text": "Nunca use um endereço descartável para contas que você pretende manter — banco, redes sociais principais ou qualquer serviço em que perder o email signifique perder o acesso permanentemente. Email temporário é apenas para interações pontuais.",
+            "warn4Label": "Sem Arquivamento",
+            "warn4Text": "As mensagens não são armazenadas após a expiração da caixa. Se precisar consultar algo depois — número de confirmação, link ou código de referência — salve antes que a caixa expire.",
+            "outro": "Dentro desses limites, o email descartável é uma das ferramentas de privacidade mais simples e eficazes para o uso diário na internet."
+        },
+        "faq": {
+            "0": {
+                "q": "É seguro usar email temporário para verificação por OTP?",
+                "a": "Sim, para a grande maioria dos casos de uso de OTP é totalmente seguro. Caixas temporárias recebem emails da mesma forma que qualquer endereço permanente. O TempEmail também adiciona alertas de conteúdo seguro em mensagens sinalizadas. O principal risco é a expiração da caixa — evite usar email temporário para contas que exigem acesso de longo prazo."
+            },
+            "1": {
+                "q": "Quanto tempo dura uma caixa de email temporário?",
+                "a": "Por padrão, as caixas permanecem ativas por 10 minutos após a última atividade. O recurso de extensão permite mantê-la ativa por mais tempo sem perder as mensagens existentes. Quando o tempo termina, todos os emails são excluídos permanentemente e sem possibilidade de recuperação."
+            },
+            "2": {
+                "q": "Todos os serviços aceitam email temporário?",
+                "a": "A maioria dos serviços aceita qualquer email sintaticamente válido, incluindo descartáveis. Algumas plataformas maiores mantêm listas de bloqueio de domínios conhecidos de email temporário. O TempEmail alterna entre múltiplos domínios para maximizar a compatibilidade com serviços que filtram esses endereços."
+            },
+            "3": {
+                "q": "Posso usar email temporário para autenticação em dois fatores?",
+                "a": "Para 2FA baseada em email, sim — a caixa temporária recebe códigos de autenticação como qualquer endereço permanente. No entanto, se estiver configurando 2FA de longo prazo em uma conta que pretende manter, use seu email real ou um aplicativo autenticador. Perder a caixa temporária significa perder esse método de 2FA."
+            },
+            "4": {
+                "q": "O TempEmail armazena minhas mensagens ou rastreia meu uso?",
+                "a": "Nenhuma informação pessoal é necessária para usar o TempEmail, e todas as mensagens são excluídas permanentemente quando a caixa expira. Nenhum endereço de email, nome ou identificador persistente é coletado ou armazenado após o término da sessão."
+            },
+            "title": "Perguntas Frequentes",
+            "intro": "Perguntas comuns sobre o uso de email temporário para verificação por OTP."
+        }
     }
 }

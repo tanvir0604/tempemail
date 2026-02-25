@@ -375,6 +375,134 @@
         "about": "À propos",
         "terms": "Conditions",
         "privacy": "Confidentialité",
-        "blog": "Blog"
+        "blog": "Blog",
+        "forOtp": "Email temporaire pour OTP"
+    },
+
+    "OTPContent": {
+        "Metadata": {
+            "title": "Email Temporaire pour OTP – Recevez des mots de passe à usage unique en toute sécurité | TempEmail",
+            "description": "Apprenez à utiliser un email temporaire pour la vérification OTP. Recevez des mots de passe à usage unique instantanément, anonymement et en toute sécurité — sans inscription.",
+            "keywords": "email temporaire pour OTP, email jetable, email anonyme, vérification OTP, mot de passe à usage unique, email éphémère, email factice OTP",
+            "og": {
+                "title": "Email Temporaire pour OTP – Recevez des OTP anonymement",
+                "description": "Tout ce que vous devez savoir sur l'utilisation d'un email jetable pour la vérification OTP. Privé, instantané, sans inscription."
+            },
+            "twitter": {
+                "title": "Email Temporaire pour OTP – Anonyme & Sécurisé",
+                "description": "Utilisez un email temporaire pour recevoir vos OTP en toute sécurité sans exposer votre vraie adresse."
+            }
+        },
+        "hero": {
+            "title": "Email Temporaire pour OTP",
+            "subtitle": "Recevez des mots de passe à usage unique sur un email jetable — privé, instantané, sans inscription."
+        },
+        "whatIs": {
+            "title": "Qu'est-ce qu'un Email Temporaire pour OTP ?",
+            "boldOpener": "Un email temporaire pour OTP est une boîte de réception jetable et anonyme",
+            "p1": "utilisée pour recevoir des mots de passe à usage unique depuis des sites web, applications et services en ligne — sans fournir votre véritable adresse email.",
+            "p2": "Lorsqu'un service doit vérifier votre identité, il envoie un code éphémère à votre email. Ce code est l’OTP. Normalement, vous utiliseriez votre boîte email permanente, créant un lien permanent entre votre identité et ce service. Avec un email temporaire, vous donnez une adresse jetable à la place. L’OTP arrive de la même manière, vous le saisissez, et l’adresse disparaît ensuite.",
+            "p3": "Pas d'inscription, pas d'engagement, pas de traces. Les services d’email temporaire génèrent une boîte fonctionnelle en quelques secondes — et lorsque vous avez terminé, l’adresse disparaît."
+        },
+        "howItWorks": {
+            "title": "Comment ça fonctionne",
+            "intro": "Utiliser un email jetable pour la vérification OTP prend moins d'une minute. Voici le processus complet :",
+            "outro": "Le processus complet ne laisse aucune trace numérique. Une fois la boîte expirée, aucune preuve qu’elle ait existé n’est conservée."
+        },
+        "steps": {
+            "0": "Ouvrez TempEmail — une boîte jetable est générée automatiquement. Pas d'inscription, pas de captcha, aucune information personnelle requise.",
+            "1": "Copiez l'adresse en un clic, ou scannez le code QR pour l’envoyer directement sur votre téléphone.",
+            "2": "Collez l'adresse dans le formulaire d'inscription ou le champ de vérification du service demandant l’OTP.",
+            "3": "Le mot de passe à usage unique arrive en temps réel. Copiez-le, terminez la vérification et partez — la boîte expire automatiquement et tous les messages sont définitivement supprimés."
+        },
+        "callouts": {
+            "qrLabel": "Synchronisation QR Code",
+            "qrText": "Commencé sur le bureau mais besoin de vérifier sur votre téléphone ? Scannez le QR code intégré pour envoyer votre adresse temporaire directement sur votre mobile — même boîte, pas de saisie, pas d’erreurs."
+        },
+        "benefits": {
+            "title": "Avantages d'utiliser un Email Temporaire pour OTP",
+            "intro": "Une adresse email jetable fait une chose mieux que tout autre outil : elle sépare votre vraie identité des services qui la demandent. Voici pourquoi cela compte pour la vérification OTP.",
+            "privacyTitle": "Confidentialité",
+            "privacyText": "Chaque service à qui vous donnez votre vrai email sait qui vous êtes. Avec le temps, cette liste s'allonge — et votre exposition aussi. Un email temporaire rompt complètement cette chaîne. Le service reçoit une adresse valide pour la livraison de l’OTP et rien d’autre. Votre boîte réelle, votre nom et votre historique en ligne restent intacts.",
+            "spamTitle": "Prévention du spam",
+            "spamText": "Les services nécessitant une vérification OTP considèrent souvent votre email comme un atout marketing. Une boîte jetable coupe ce pipeline à la source. Lorsque la boîte expire, l’inscription à la liste expire aussi.",
+            "accessTitle": "Pas d'inscription requise",
+            "accessText": "Contrairement à tout autre fournisseur d'email, TempEmail ne demande rien. Aucun nom d’utilisateur, mot de passe ou numéro de téléphone de récupération. La boîte est active dès que vous ouvrez la page — exactement ce dont vous avez besoin lorsque vous êtes en pleine inscription et n’avez besoin que d’un code.",
+            "speedTitle": "Livraison en temps réel",
+            "speedText": "Les boîtes temporaires reçoivent les emails aussi rapidement que toute adresse permanente. Les OTP arrivent généralement en quelques secondes. La boîte se rafraîchit en direct, donc pas besoin de recharger en attendant un code sensible au temps."
+        },
+        "benefitItems": {
+            "0": "Aucun compte ou donnée personnelle requise pour créer une boîte",
+            "1": "La boîte expire automatiquement, supprimant tous les messages définitivement",
+            "2": "Compatible avec presque tous les services acceptant l’OTP par email",
+            "3": "L’extension de temps garde votre boîte active si la vérification prend plus longtemps que prévu",
+            "4": "Les alertes de contenu sécurisé signalent les emails suspects avant ouverture"
+        },
+        "useCases": {
+            "title": "Quand utiliser un email jetable pour OTP",
+            "intro": "Chaque fois qu’un service veut votre email pour une interaction ponctuelle ou à faible engagement, une adresse temporaire est le bon choix. Voici les situations les plus courantes.",
+            "onlineTitle": "Inscription en ligne",
+            "onlineText": "De nombreux sites bloquent du contenu, des téléchargements ou des fonctionnalités derrière un compte vérifié. Si vous avez seulement besoin d’un accès unique — ou si vous n’êtes pas sûr de revenir — pas besoin de fournir votre vraie adresse.",
+            "onlineTitle2": "Inscription en ligne",
+            "appTitle": "Vérification d'applications et plateformes",
+            "appText": "Les applications mobiles et plateformes web exigent de plus en plus souvent une vérification OTP avant d’accorder l’accès. Un email temporaire gère cette étape sans lier votre email permanent au compte.",
+            "otpTitle": "OTP et authentification à deux facteurs",
+            "otpText": "Les mots de passe à usage unique sont utilisés pour l’activation de compte, la réinitialisation de mot de passe et l’accès invité. Dans tous ces cas, l’email n’a besoin de recevoir qu’un seul message — ce qui rend une boîte jetable parfaite."
+        },
+        "useCaseOnline": {
+            "0": "Comptes d’essai gratuit pour logiciels ou outils SaaS que vous évaluez",
+            "1": "Forums et communautés nécessitant une confirmation email pour poster",
+            "2": "Sites d’actualités ou de contenu bloquant les articles derrière un compte",
+            "3": "Plateformes e-commerce demandant une inscription avant de naviguer"
+        },
+        "useCaseApp": {
+            "0": "Comptes secondaires ou test sur les réseaux sociaux",
+            "1": "Services de jeux et lanceurs utilisant la connexion par email",
+            "2": "Plateformes de streaming ou médias avec versions gratuites vérifiées par email",
+            "3": "Programmes beta et invitations à un accès anticipé nécessitant une connexion"
+        },
+        "useCaseOtp": {
+            "0": "Codes d’activation envoyés immédiatement après l’inscription",
+            "1": "Authentification à deux facteurs par email pour des sessions temporaires",
+            "2": "Liens de réinitialisation de mot de passe pour des services que vous n’utilisez plus activement",
+            "3": "Codes de connexion à usage unique pour achats invités ou portails à accès limité"
+        },
+        "safety": {
+            "title": "Conseils de sécurité",
+            "intro": "Temp mail est un outil pratique pour la confidentialité, mais il fonctionne mieux si vous comprenez ses limites.",
+            "warn1Label": "Alertes de contenu sécurisé",
+            "warn1Text": "TempEmail scanne les messages entrants pour du contenu suspect. Si un email contient des liens, scripts ou pièces jointes potentiellement dangereux, une alerte apparaît avant ouverture. Cela vous protège contre le phishing via OTP.",
+            "warn2Label": "Expiration de la boîte",
+            "warn2Text": "Chaque boîte a un compte à rebours intégré. Une fois terminé, tous les messages sont définitivement supprimés. Si vous avez besoin de plus de temps, utilisez l’extension de temps avant l’expiration.",
+            "warn3Label": "Pas pour les comptes importants",
+            "warn3Text": "N’utilisez jamais une adresse jetable pour les comptes que vous souhaitez conserver — banque, réseaux sociaux principaux, ou tout compte dont l’accès perdu est définitif. Temp mail est destiné aux interactions ponctuelles uniquement.",
+            "warn4Label": "Pas d’archivage",
+            "warn4Text": "Les messages ne sont pas conservés après expiration de la boîte. Si vous devez garder une information d’un OTP plus tard — numéro de confirmation, lien, code — sauvegardez-le avant expiration.",
+            "outro": "Dans ces limites, un email jetable est l’un des outils de confidentialité les plus simples et efficaces pour votre activité en ligne quotidienne."
+        },
+        "faq": {
+            "0": {
+                "q": "Est-il sûr d’utiliser un email temporaire pour la vérification OTP ?",
+                "a": "Oui, pour la grande majorité des cas d’utilisation OTP, c’est totalement sûr. Les boîtes temporaires reçoivent les emails comme n’importe quelle adresse permanente. TempEmail ajoute aussi des alertes sur les messages suspects. Le principal risque est l’expiration de la boîte — évitez les comptes nécessitant un accès à long terme."
+            },
+            "1": {
+                "q": "Combien de temps dure une boîte email temporaire ?",
+                "a": "Par défaut, les boîtes restent actives 10 minutes après la dernière activité. La fonction d’extension permet de prolonger la durée sans perdre les messages existants. Une fois le compte à rebours terminé, tous les emails sont supprimés définitivement et irréversiblement."
+            },
+            "2": {
+                "q": "Tous les services accepteront-ils une adresse email temporaire ?",
+                "a": "La plupart des services acceptent tout email syntaxiquement valide, y compris jetable. Certaines grandes plateformes maintiennent des listes de blocage de domaines temporaires. TempEmail utilise plusieurs domaines pour maximiser la compatibilité."
+            },
+            "3": {
+                "q": "Puis-je utiliser Temp mail pour l’authentification à deux facteurs ?",
+                "a": "Pour la 2FA par email, oui — la boîte temporaire reçoit les codes d’authentification comme une adresse permanente. Cependant, si vous configurez la 2FA pour un compte à conserver, utilisez votre vrai email ou une application d’authentification. Perdre la boîte temporaire signifie perdre l’accès à ce mode de 2FA."
+            },
+            "4": {
+                "q": "TempEmail stocke-t-il mes messages ou suit-il mon usage ?",
+                "a": "Non, aucune information personnelle n’est requise pour utiliser TempEmail, et tous les messages sont supprimés lorsque la boîte expire. Aucun email, nom ou identifiant persistant n’est collecté ou conservé après la session."
+            },
+            "title": "Questions Fréquemment Posées",
+            "intro": "Questions courantes sur l’utilisation d’un email temporaire pour la vérification OTP."
+        }
     }
 }

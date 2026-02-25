@@ -374,6 +374,134 @@
         "about": "Hakkında",
         "terms": "Şartlar",
         "privacy": "Gizlilik",
-        "blog": "Blog"
+        "blog": "Blog",
+        "forOtp": "OTP için Geçici Mail"
+    },
+
+    "OTPContent": {
+        "Metadata": {
+            "title": "OTP için Geçici Mail – Tek Kullanımlık Şifreleri Güvenle Alın | TempEmail",
+            "description": "OTP doğrulaması için geçici e-posta kullanmayı öğrenin. Tek kullanımlık şifreleri anında, anonim ve güvenli şekilde alın — kayıt gerekmez.",
+            "keywords": "otp için geçici mail, geçici e-posta, disposable email, anonim e-posta, otp doğrulama, tek kullanımlık şifre, throwaway email, sahte e-posta otp",
+            "og": {
+                "title": "OTP için Geçici Mail – Tek Kullanımlık Şifreleri Anonim Alın",
+                "description": "OTP doğrulaması için disposable e-posta kullanımı hakkında bilmeniz gereken her şey. Gizli, anında, kayıt olmadan."
+            },
+            "twitter": {
+                "title": "OTP için Geçici Mail – Anonim ve Güvenli",
+                "description": "Gerçek adresinizi paylaşmadan OTP’leri güvenle almak için geçici e-posta kullanın."
+            }
+        },
+        "hero": {
+            "title": "OTP için Geçici Mail",
+            "subtitle": "Tek kullanımlık şifreleri disposable bir e-posta adresinde alın — gizli, anında ve kayıt olmadan."
+        },
+        "whatIs": {
+            "title": "OTP için Geçici Mail Nedir?",
+            "boldOpener": "OTP için geçici e-posta, disposable ve anonim bir gelen kutusudur",
+            "p1": "web siteleri, uygulamalar ve çevrim içi hizmetlerden tek kullanımlık şifreleri almak için kullanılır — gerçek e-posta adresinizi paylaşmadan.",
+            "p2": "Bir hizmet kimliğinizi doğrulamak istediğinde, e-posta adresinize kısa süreli bir kod gönderir. Bu kod OTP’dir. Normalde kalıcı gelen kutunuzu verirsiniz ve kimliğiniz ile o hizmet arasında kalıcı bir bağlantı oluşur. Geçici mail ile bunun yerine tek kullanımlık bir adres verirsiniz. OTP yine gelir, kodu girersiniz ve ardından adres ortadan kaybolur.",
+            "p3": "Kayıt yok, taahhüt yok, iz yok. Geçici e-posta hizmetleri saniyeler içinde yeni ve tamamen işlevsel bir gelen kutusu oluşturur — işiniz bittiğinde adres de silinir."
+        },
+        "howItWorks": {
+            "title": "Nasıl Çalışır?",
+            "intro": "OTP doğrulaması için disposable e-posta kullanmak bir dakikadan kısa sürer. İşte tüm süreç:",
+            "outro": "Tüm bu akış dijital bir iz bırakmaz. Gelen kutusu süresi dolduğunda, var olduğuna dair hiçbir kayıt kalmaz."
+        },
+        "steps": {
+            "0": "TempEmail’i açın — disposable gelen kutusu otomatik olarak oluşturulur. Kayıt yok, captcha yok, kişisel bilgi gerekmez.",
+            "1": "Adresi tek tıkla kopyalayın veya QR kodunu tarayarak doğrudan telefonunuza gönderin.",
+            "2": "OTP isteyen hizmetin kayıt ya da doğrulama alanına bu adresi yapıştırın.",
+            "3": "Tek kullanımlık şifre gerçek zamanlı olarak gelir. Kodu kopyalayın, doğrulamayı tamamlayın ve çıkın — gelen kutusu otomatik olarak süresi dolarak tüm mesajları kalıcı şekilde siler."
+        },
+        "callouts": {
+            "qrLabel": "QR Kod Senkronizasyonu",
+            "qrText": "Masaüstünde başladınız ama telefonda doğrulama yapmanız mı gerekiyor? Dahili QR kodunu tarayarak geçici mail adresinizi doğrudan mobil cihazınıza gönderin — aynı gelen kutusu, yazma yok, hata yok."
+        },
+        "benefits": {
+            "title": "OTP için Geçici Mail Kullanmanın Avantajları",
+            "intro": "Disposable bir e-posta adresi tek bir şeyi herkesten daha iyi yapar: gerçek kimliğinizi sizden isteyen hizmetlerden ayırır. OTP doğrulaması için bunun neden önemli olduğuna bakalım.",
+            "privacyTitle": "Gizlilik",
+            "privacyText": "Gerçek e-postanızı verdiğiniz her hizmet kim olduğunuzu bilir. Zamanla bu liste büyür — ve risk de artar. Geçici e-posta bu zinciri tamamen kırar. Hizmet OTP teslimi için geçerli bir adres alır ve başka hiçbir şey alamaz. Gerçek gelen kutunuz, adınız ve çevrim içi geçmişiniz korunur.",
+            "spamTitle": "Spam Önleme",
+            "spamText": "OTP doğrulaması isteyen hizmetler genellikle e-posta adresinizi daha sonra pazarlama amacıyla kullanır. Disposable gelen kutusu bu akışı en baştan keser. Gelen kutusu süresi dolduğunda, e-posta listesi kaydı da ortadan kalkar.",
+            "accessTitle": "Kayıt Gerekmez",
+            "accessText": "Diğer tüm e-posta sağlayıcılarının aksine, geçici mail sizden hiçbir bilgi istemez. Kullanıcı adı yok, şifre yok, kurtarma telefonu yok. Sayfayı açtığınız anda gelen kutusu aktiftir — başka bir hizmete kayıt olurken sadece bir koda ihtiyacınız olduğunda tam da gereken şey budur.",
+            "speedTitle": "Gerçek Zamanlı Teslimat",
+            "speedText": "Geçici gelen kutuları, kalıcı adresler kadar hızlı e-posta alır. OTP’ler genellikle gönderildikten saniyeler içinde ulaşır. Gelen kutusu canlı olarak yenilenir, bu nedenle süreye duyarlı kodu beklerken sayfayı yenilemenize gerek yoktur."
+        },
+        "benefitItems": {
+            "0": "Gelen kutusu oluşturmak için hesap veya kişisel veri gerekmez",
+            "1": "Gelen kutusu otomatik olarak süresi dolarak tüm mesajları kalıcı şekilde siler",
+            "2": "E-posta tabanlı OTP destekleyen neredeyse tüm hizmetlerle uyumludur",
+            "3": "Doğrulama uzarsa zaman uzatma özelliğiyle gelen kutusunu aktif tutabilirsiniz",
+            "4": "Güvenli içerik uyarıları şüpheli e-postaları açmadan önce işaretler"
+        },
+        "useCases": {
+            "title": "OTP için Disposable E-posta Ne Zaman Kullanılır?",
+            "intro": "Bir hizmet e-postanızı tek seferlik ya da düşük taahhütlü bir işlem için istiyorsa, geçici adres doğru tercihtir. İşte en yaygın durumlar.",
+            "onlineTitle": "Çevrim İçi Kayıtlar",
+            "onlineText": "Birçok site içerik, indirme veya özellikleri doğrulanmış hesap arkasına koyar. Sadece bir kez erişim gerekiyorsa ya da tekrar dönüp dönmeyeceğinizden emin değilseniz, gerçek adresinizi vermenize gerek yoktur.",
+            "onlineTitle2": "Çevrim İçi Kayıtlar",
+            "appTitle": "Uygulama ve Platform Doğrulaması",
+            "appText": "Mobil uygulamalar ve web platformları erişim vermeden önce giderek daha fazla OTP doğrulaması ister. Geçici mail bu adımı, kalıcı e-postanızı hesaba bağlamadan tamamlamanızı sağlar.",
+            "otpTitle": "OTP ve İki Faktörlü Kimlik Doğrulama",
+            "otpText": "Tek kullanımlık şifreler hesap aktivasyonu, şifre sıfırlama ve misafir erişimi için kullanılır. Bu durumların hepsinde e-posta yalnızca tek bir mesaj almalıdır — bu da disposable gelen kutusunu ideal yapar."
+        },
+        "useCaseOnline": {
+            "0": "Denemek istediğiniz yazılım veya SaaS araçları için ücretsiz deneme hesapları",
+            "1": "Paylaşım yapabilmek için e-posta onayı isteyen forum ve topluluklar",
+            "2": "Makaleleri kayıtlı hesap arkasına koyan haber veya içerik siteleri",
+            "3": "Gezinmeden önce kayıt gerektiren e-ticaret platformları"
+        },
+        "useCaseApp": {
+            "0": "Sosyal medya platformlarında ikinci veya test hesapları",
+            "1": "E-posta tabanlı giriş kullanan oyun hizmetleri ve başlatıcılar",
+            "2": "E-posta doğrulamalı ücretsiz katman sunan yayın veya medya platformları",
+            "3": "Giriş gerektiren beta programları ve erken erişim davetleri"
+        },
+        "useCaseOtp": {
+            "0": "Kayıttan hemen sonra gönderilen hesap aktivasyon kodları",
+            "1": "Geçici oturumlar için e-posta tabanlı iki faktörlü doğrulama",
+            "2": "Artık aktif kullanmadığınız hizmetler için şifre sıfırlama bağlantıları",
+            "3": "Misafir ödeme veya sınırlı erişim portalları için tek kullanımlık giriş kodları"
+        },
+        "safety": {
+            "title": "Güvenlik İpuçları",
+            "intro": "Geçici mail pratik bir gizlilik aracıdır, ancak ne için uygun olduğunu ve ne için olmadığını bilerek kullanıldığında en iyi sonucu verir.",
+            "warn1Label": "Güvenli İçerik Uyarıları",
+            "warn1Text": "TempEmail gelen mesajları şüpheli içerik açısından tarar. Bir e-posta potansiyel olarak zararlı bağlantılar, komut dosyaları veya ekler içeriyorsa, mesajı açmadan önce bir uyarı gösterilir. Bu, OTP sürecinde gelebilecek kimlik avı girişimlerine karşı sizi korur.",
+            "warn2Label": "Gelen Kutusu Süresi",
+            "warn2Text": "Her gelen kutusunun yerleşik bir geri sayımı vardır. Süre dolduğunda tüm mesajlar kalıcı olarak silinir ve geri getirilemez. Daha fazla zamana ihtiyacınız varsa sayaç sıfırlanmadan önce zaman uzatma özelliğini kullanın.",
+            "warn3Label": "Önemli Hesaplar İçin Uygun Değildir",
+            "warn3Text": "Kalıcı olarak kullanmayı planladığınız hesaplar için disposable adres kullanmayın — bankacılık, ana sosyal medya hesapları veya e-postayı kaybetmenin hesabı kaybetmek anlamına geldiği herhangi bir yer için. Geçici mail yalnızca tek seferlik veya geçici işlemler içindir.",
+            "warn4Label": "Arşivleme Yok",
+            "warn4Text": "Gelen kutusu süresi dolduktan sonra mesajlar saklanmaz. OTP e-postasındaki bir bilgiyi — onay numarası, bağlantı veya referans kodu — daha sonra kullanmanız gerekiyorsa, süre dolmadan önce kaydedin.",
+            "outro": "Bu sınırlar içinde disposable e-posta, günlük çevrim içi aktiviteler için en düşük çabayla en yüksek gizlilik sağlayan araçlardan biridir."
+        },
+        "faq": {
+            "0": {
+                "q": "OTP doğrulaması için geçici mail kullanmak güvenli mi?",
+                "a": "Evet, OTP kullanım senaryolarının büyük çoğunluğu için tamamen güvenlidir. Geçici gelen kutuları e-postaları kalıcı adreslerle aynı şekilde alır. TempEmail ayrıca işaretlenen mesajlar için güvenli içerik uyarıları ekler. Ana risk gelen kutusunun süresinin dolmasıdır — uzun vadeli erişim gerektiren hesaplar için geçici mail kullanmayın."
+            },
+            "1": {
+                "q": "Geçici e-posta gelen kutusu ne kadar süre aktif kalır?",
+                "a": "Varsayılan olarak, gelen kutuları son etkinlikten sonra 10 dakika aktif kalır. Zaman uzatma özelliği mevcut mesajları kaybetmeden süreyi artırmanıza olanak tanır. Sayaç sıfırlandığında tüm e-postalar kalıcı ve geri alınamaz şekilde silinir."
+            },
+            "2": {
+                "q": "Her hizmet geçici e-posta adresini kabul eder mi?",
+                "a": "Çoğu hizmet, disposable olanlar dahil, sözdizimi geçerli olan her e-postayı kabul eder. Bazı büyük platformlar bilinen geçici mail alan adlarını engelleyebilir. TempEmail, filtre uygulayan hizmetlerle uyumluluğu artırmak için birden fazla alan adı arasında dönüşüm yapar."
+            },
+            "3": {
+                "q": "Geçici mail’i iki faktörlü kimlik doğrulama için kullanabilir miyim?",
+                "a": "E-posta tabanlı 2FA için evet — geçici gelen kutusu kimlik doğrulama kodlarını kalıcı adres gibi alır. Ancak uzun vadeli 2FA kuruyorsanız, gerçek e-postanızı veya bir doğrulama uygulamasını kullanın. Geçici gelen kutusunu kaybetmek, o 2FA yöntemine erişimi kaybetmek anlamına gelir."
+            },
+            "4": {
+                "q": "TempEmail mesajlarımı saklıyor mu veya kullanımımı takip ediyor mu?",
+                "a": "TempEmail’i kullanmak için kişisel bilgi gerekmez ve gelen kutusu süresi dolduğunda tüm mesajlar kalıcı olarak silinir. Oturum sona erdiğinde hiçbir e-posta adresi, isim veya kalıcı tanımlayıcı toplanmaz ya da saklanmaz."
+            },
+            "title": "Sıkça Sorulan Sorular",
+            "intro": "OTP doğrulaması için geçici e-posta kullanımı hakkında yaygın sorular."
+        }
     }
 }

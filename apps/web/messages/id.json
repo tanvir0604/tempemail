@@ -375,6 +375,134 @@
         "about": "Tentang",
         "terms": "Syarat",
         "privacy": "Privasi",
-        "blog": "Blog"
+        "blog": "Blog",
+        "forOtp": "Email Sementara untuk OTP"
+    },
+
+    "OTPContent": {
+        "Metadata": {
+            "title": "Temp Mail untuk OTP – Terima Kode Verifikasi dengan Aman | TempEmail",
+            "description": "Pelajari cara menggunakan email sementara untuk verifikasi OTP. Terima kode satu kali secara instan, anonim, dan aman — tanpa perlu registrasi.",
+            "keywords": "temp mail untuk OTP, email sementara, email sekali pakai, email anonim, verifikasi OTP, kode satu kali, throwaway email, fake email OTP",
+            "og": {
+                "title": "Temp Mail untuk OTP – Terima Kode Verifikasi Secara Anonim",
+                "description": "Semua yang perlu Anda ketahui tentang menggunakan email sekali pakai untuk verifikasi OTP. Privat, instan, tanpa daftar."
+            },
+            "twitter": {
+                "title": "Temp Mail untuk OTP – Anonim & Aman",
+                "description": "Gunakan email sementara untuk menerima OTP dengan aman tanpa mengekspos alamat email asli Anda."
+            }
+        },
+        "hero": {
+            "title": "Temp Mail untuk OTP",
+            "subtitle": "Terima kode satu kali di email sekali pakai — privat, instan, tanpa registrasi."
+        },
+        "whatIs": {
+            "title": "Apa Itu Temp Mail untuk OTP?",
+            "boldOpener": "Email sementara untuk OTP adalah kotak masuk anonim dan sekali pakai",
+            "p1": "yang digunakan untuk menerima kode satu kali dari situs web, aplikasi, dan layanan online — tanpa memberikan alamat email asli Anda.",
+            "p2": "Ketika sebuah layanan perlu memverifikasi identitas Anda, mereka mengirimkan kode singkat ke email Anda. Kode itu disebut OTP. Biasanya Anda akan memberikan email permanen Anda, sehingga tercipta hubungan permanen antara identitas Anda dan layanan tersebut. Dengan temp mail, Anda memberikan alamat sekali pakai. OTP tetap diterima, Anda memasukkannya, lalu alamat tersebut akan hilang setelahnya.",
+            "p3": "Tanpa registrasi, tanpa komitmen, tanpa jejak. Layanan email sementara menghasilkan kotak masuk baru yang sepenuhnya berfungsi dalam hitungan detik — dan ketika selesai, alamat tersebut juga ikut hilang."
+        },
+        "howItWorks": {
+            "title": "Cara Kerjanya",
+            "intro": "Menggunakan email sekali pakai untuk verifikasi OTP hanya membutuhkan waktu kurang dari satu menit. Berikut proses lengkapnya:",
+            "outro": "Seluruh proses ini tidak meninggalkan jejak digital. Setelah kotak masuk kedaluwarsa, tidak ada catatan bahwa alamat tersebut pernah ada."
+        },
+        "steps": {
+            "0": "Buka TempEmail — kotak masuk sekali pakai akan dibuat secara otomatis. Tanpa daftar, tanpa captcha, tanpa informasi pribadi.",
+            "1": "Salin alamat dengan satu klik, atau pindai kode QR untuk mengirimkannya langsung ke ponsel Anda.",
+            "2": "Tempelkan alamat tersebut ke formulir pendaftaran atau kolom verifikasi dari layanan yang meminta OTP.",
+            "3": "Kode satu kali akan tiba secara real-time. Salin kodenya, selesaikan verifikasi, lalu selesai — kotak masuk akan kedaluwarsa otomatis dan semua pesan dihapus permanen."
+        },
+        "callouts": {
+            "qrLabel": "Sinkronisasi Kode QR",
+            "qrText": "Memulai di desktop tetapi perlu verifikasi di ponsel? Pindai kode QR bawaan untuk mengirim alamat temp mail langsung ke perangkat seluler Anda — kotak masuk yang sama, tanpa mengetik, tanpa kesalahan."
+        },
+        "benefits": {
+            "title": "Keuntungan Menggunakan Temp Mail untuk OTP",
+            "intro": "Alamat email sekali pakai melakukan satu hal lebih baik dari alat lainnya: memisahkan identitas asli Anda dari layanan yang memintanya. Inilah mengapa itu penting khususnya untuk verifikasi OTP.",
+            "privacyTitle": "Privasi",
+            "privacyText": "Setiap layanan yang Anda beri email asli akan mengetahui siapa Anda. Seiring waktu, daftar itu bertambah — begitu juga risikonya. Email sementara memutus rantai tersebut sepenuhnya. Layanan mendapatkan alamat valid untuk pengiriman OTP dan tidak lebih. Kotak masuk asli, nama, dan riwayat online Anda tetap terlindungi.",
+            "spamTitle": "Mencegah Spam",
+            "spamText": "Layanan yang memerlukan verifikasi OTP sering kali menggunakan email Anda untuk pemasaran setelahnya. Kotak masuk sekali pakai menghentikan hal itu sejak awal. Ketika kotak masuk kedaluwarsa, entri daftar email tersebut ikut hilang.",
+            "accessTitle": "Tanpa Registrasi",
+            "accessText": "Berbeda dari penyedia email lainnya, temp mail tidak meminta apa pun dari Anda. Tidak ada username, password, atau nomor pemulihan. Kotak masuk langsung aktif saat Anda membuka halaman — tepat ketika Anda sedang mendaftar di layanan lain dan hanya membutuhkan kode.",
+            "speedTitle": "Pengiriman Real-Time",
+            "speedText": "Kotak masuk sementara menerima email dengan kecepatan yang sama seperti alamat permanen. OTP biasanya tiba dalam hitungan detik setelah dikirim. Kotak masuk diperbarui secara langsung, jadi tidak perlu menyegarkan halaman saat menunggu kode sensitif waktu."
+        },
+        "benefitItems": {
+            "0": "Tidak perlu akun atau data pribadi untuk membuat kotak masuk",
+            "1": "Kotak masuk kedaluwarsa otomatis, menghapus semua pesan secara permanen",
+            "2": "Kompatibel dengan hampir semua layanan yang mendukung OTP berbasis email",
+            "3": "Perpanjangan waktu menjaga kotak masuk tetap aktif jika verifikasi memakan waktu lebih lama",
+            "4": "Peringatan konten aman menandai email mencurigakan sebelum Anda membukanya"
+        },
+        "useCases": {
+            "title": "Kapan Menggunakan Email Sekali Pakai untuk OTP",
+            "intro": "Setiap kali sebuah layanan meminta email Anda untuk interaksi satu kali atau berkomitmen rendah, alamat sementara adalah pilihan yang tepat. Berikut situasi yang paling umum.",
+            "onlineTitle": "Pendaftaran Online",
+            "onlineText": "Banyak situs membatasi konten, unduhan, atau fitur di balik akun terverifikasi. Jika Anda hanya perlu akses sekali — atau tidak yakin akan kembali — tidak perlu memberikan alamat asli Anda.",
+            "onlineTitle2": "Pendaftaran Online",
+            "appTitle": "Verifikasi Aplikasi dan Platform",
+            "appText": "Aplikasi seluler dan platform web semakin sering mewajibkan verifikasi OTP sebelum memberikan akses. Temp mail menangani langkah ini tanpa menghubungkan email permanen Anda ke akun tersebut.",
+            "otpTitle": "OTP dan Autentikasi Dua Faktor",
+            "otpText": "Kode satu kali digunakan untuk aktivasi akun, reset kata sandi, dan akses tamu. Dalam semua kasus ini, email hanya perlu menerima satu pesan — menjadikan kotak masuk sekali pakai sebagai pilihan alami."
+        },
+        "useCaseOnline": {
+            "0": "Akun uji coba gratis untuk software atau alat SaaS yang sedang Anda evaluasi",
+            "1": "Forum dan komunitas yang memerlukan konfirmasi email untuk memposting",
+            "2": "Situs berita atau konten yang membatasi artikel di balik akun terdaftar",
+            "3": "Platform e-commerce yang mewajibkan registrasi sebelum Anda bisa menjelajah"
+        },
+        "useCaseApp": {
+            "0": "Akun sekunder atau akun uji di platform media sosial",
+            "1": "Layanan game dan launcher yang menggunakan login berbasis email",
+            "2": "Platform streaming atau media dengan tingkat gratis yang diverifikasi email",
+            "3": "Program beta dan undangan akses awal yang memerlukan login"
+        },
+        "useCaseOtp": {
+            "0": "Kode aktivasi akun yang dikirim segera setelah pendaftaran",
+            "1": "Autentikasi dua faktor berbasis email untuk sesi sementara",
+            "2": "Tautan reset kata sandi untuk layanan yang tidak lagi Anda gunakan secara aktif",
+            "3": "Kode login satu kali untuk checkout tamu atau portal akses terbatas"
+        },
+        "safety": {
+            "title": "Tips Keamanan",
+            "intro": "Temp mail adalah alat privasi yang praktis, tetapi paling efektif jika Anda memahami batas penggunaannya.",
+            "warn1Label": "Peringatan Konten Aman",
+            "warn1Text": "TempEmail memindai pesan masuk untuk konten mencurigakan. Jika email berisi tautan, skrip, atau lampiran berbahaya, peringatan akan ditampilkan sebelum Anda membukanya. Ini melindungi Anda dari upaya phishing yang mungkin datang melalui proses OTP.",
+            "warn2Label": "Kedaluwarsa Kotak Masuk",
+            "warn2Text": "Setiap kotak masuk memiliki hitung mundur bawaan. Setelah waktunya habis, semua pesan dihapus permanen tanpa opsi pemulihan. Jika Anda membutuhkan waktu tambahan, gunakan fitur perpanjangan waktu sebelum timer mencapai nol.",
+            "warn3Label": "Bukan untuk Akun Penting",
+            "warn3Text": "Jangan pernah menggunakan alamat sekali pakai untuk akun yang ingin Anda simpan — perbankan, media sosial utama, atau apa pun di mana kehilangan akses email berarti kehilangan akun secara permanen. Temp mail hanya untuk interaksi sekali pakai atau sementara.",
+            "warn4Label": "Tanpa Arsip",
+            "warn4Text": "Pesan tidak disimpan setelah kotak masuk kedaluwarsa. Jika Anda perlu menyimpan sesuatu dari email OTP — seperti nomor konfirmasi, tautan, atau kode referensi — simpan sebelum kotak masuk berakhir.",
+            "outro": "Dalam batas tersebut, email sekali pakai adalah salah satu alat privasi dengan usaha rendah dan dampak tinggi untuk aktivitas online sehari-hari."
+        },
+        "faq": {
+            "0": {
+                "q": "Apakah aman menggunakan temp mail untuk verifikasi OTP?",
+                "a": "Ya, untuk sebagian besar penggunaan OTP itu sepenuhnya aman. Kotak masuk sementara menerima email sama seperti alamat permanen. TempEmail juga menambahkan peringatan konten aman pada pesan yang ditandai. Risiko utama adalah kedaluwarsa kotak masuk — hindari menggunakan temp mail untuk akun yang memerlukan akses jangka panjang."
+            },
+            "1": {
+                "q": "Berapa lama kotak masuk email sementara bertahan?",
+                "a": "Secara default, kotak masuk tetap aktif selama 10 menit setelah aktivitas terakhir. Fitur perpanjangan waktu memungkinkan Anda mempertahankan kotak masuk lebih lama tanpa kehilangan pesan yang ada. Setelah waktu habis, semua email dihapus secara permanen dan tidak dapat dipulihkan."
+            },
+            "2": {
+                "q": "Apakah semua layanan menerima alamat email sementara?",
+                "a": "Sebagian besar layanan menerima email yang valid secara format, termasuk email sekali pakai. Beberapa platform besar memiliki daftar blokir domain temp mail yang dikenal. TempEmail menggunakan rotasi beberapa domain untuk memaksimalkan kompatibilitas dengan layanan yang memfilter alamat sekali pakai."
+            },
+            "3": {
+                "q": "Bisakah saya menggunakan temp mail untuk autentikasi dua faktor?",
+                "a": "Untuk 2FA berbasis email, ya — kotak masuk sementara menerima kode autentikasi seperti alamat permanen. Namun, jika Anda menyiapkan 2FA jangka panjang pada akun yang ingin dipertahankan, gunakan email asli atau aplikasi autentikator. Kehilangan kotak masuk sementara berarti kehilangan metode 2FA tersebut."
+            },
+            "4": {
+                "q": "Apakah TempEmail menyimpan pesan saya atau melacak penggunaan saya?",
+                "a": "Tidak diperlukan informasi pribadi untuk menggunakan TempEmail, dan semua pesan dihapus permanen saat kotak masuk kedaluwarsa. Tidak ada alamat email, nama, atau pengenal tetap yang dikumpulkan atau disimpan setelah sesi berakhir."
+            },
+            "title": "Pertanyaan yang Sering Diajukan",
+            "intro": "Pertanyaan umum tentang penggunaan email sementara untuk verifikasi OTP."
+        }
     }
 }

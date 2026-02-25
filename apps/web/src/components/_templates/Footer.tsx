@@ -52,6 +52,12 @@ export default async function Footer({
                         >
                             {f('blog')}
                         </Link>
+                        <Link
+                            href="/temp-mail-for-otp"
+                            className="dark:text-zinc-300 dark:hover:text-zinc-100 text-zinc-900 hover:text-zinc-950 transition-colors"
+                        >
+                            {f('forOtp')}
+                        </Link>
                         {showLanguageSwitcher && <LanguageSwitcher />}
                     </div>
                 </div>

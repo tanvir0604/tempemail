@@ -374,6 +374,134 @@
         "about": "Acerca de",
         "terms": "Términos",
         "privacy": "Privacidad",
-        "blog": "Bitácora"
+        "blog": "Bitácora",
+        "forOtp": "Correo temporal para OTP"
+    },
+
+    "OTPContent": {
+        "Metadata": {
+            "title": "Correo Temporal para OTP – Recibe Contraseñas de Un Solo Uso de Forma Segura | TempEmail",
+            "description": "Aprende cómo usar un correo temporal para verificación OTP. Recibe contraseñas de un solo uso al instante, de forma anónima y segura — sin registro.",
+            "keywords": "correo temporal para OTP, email temporal, correo desechable, email anónimo, verificación OTP, contraseña de un solo uso, correo descartable, email falso OTP",
+            "og": {
+                "title": "Correo Temporal para OTP – Recibe Contraseñas de Un Solo Uso Anónimamente",
+                "description": "Todo lo que necesitas saber sobre el uso de correo desechable para verificación OTP. Privado, instantáneo y sin registro."
+            },
+            "twitter": {
+                "title": "Correo Temporal para OTP – Anónimo y Seguro",
+                "description": "Usa un correo temporal para recibir OTP de forma segura sin exponer tu dirección real."
+            }
+        },
+        "hero": {
+            "title": "Correo Temporal para OTP",
+            "subtitle": "Recibe contraseñas de un solo uso en un correo desechable — de forma privada, instantánea y sin registro."
+        },
+        "whatIs": {
+            "title": "¿Qué es un Correo Temporal para OTP?",
+            "boldOpener": "Un correo temporal para OTP es una bandeja de entrada desechable y anónima",
+            "p1": "utilizada para recibir contraseñas de un solo uso de sitios web, aplicaciones y servicios en línea — sin entregar tu dirección de correo real.",
+            "p2": "Cuando un servicio necesita verificar tu identidad, envía un código de corta duración a tu correo. Ese código es el OTP. Normalmente proporcionarías tu bandeja permanente, creando un vínculo permanente entre tu identidad y ese servicio. Con un correo temporal, das una dirección descartable en su lugar. El OTP llega igual, lo introduces y luego la dirección desaparece.",
+            "p3": "Sin registro, sin compromiso, sin rastros. Los servicios de correo temporal generan una bandeja nueva y totalmente funcional en segundos — y cuando terminas, la dirección también desaparece."
+        },
+        "howItWorks": {
+            "title": "Cómo Funciona",
+            "intro": "Usar un correo desechable para verificación OTP toma menos de un minuto. Este es el proceso completo:",
+            "outro": "Todo el flujo no deja huella digital. Una vez que la bandeja expira, no queda registro de que haya existido."
+        },
+        "steps": {
+            "0": "Abre TempEmail — se genera automáticamente una bandeja desechable. Sin registro, sin captcha, sin información personal.",
+            "1": "Copia la dirección con un clic o escanea el código QR para enviarla directamente a tu teléfono.",
+            "2": "Pega la dirección en el formulario de registro o en el campo de verificación del servicio que solicita tu OTP.",
+            "3": "La contraseña de un solo uso llega en tiempo real. Cópiala, completa la verificación y listo — la bandeja expira automáticamente y todos los mensajes se eliminan permanentemente."
+        },
+        "callouts": {
+            "qrLabel": "Sincronización con Código QR",
+            "qrText": "¿Empezaste en escritorio pero necesitas verificar desde tu teléfono? Escanea el código QR integrado para enviar tu correo temporal directamente a tu móvil — misma bandeja, sin escribir, sin errores."
+        },
+        "benefits": {
+            "title": "Beneficios de Usar Correo Temporal para OTP",
+            "intro": "Una dirección de correo desechable hace algo mejor que cualquier otra herramienta: separa tu identidad real de los servicios que la solicitan. Esto es lo que significa para la verificación OTP.",
+            "privacyTitle": "Privacidad",
+            "privacyText": "Cada servicio al que entregas tu correo real sabe quién eres. Con el tiempo, esa lista crece — y también la exposición. Un correo temporal rompe esa cadena por completo. El servicio recibe una dirección válida para enviar el OTP y nada más. Tu bandeja real, tu nombre y tu historial en línea permanecen intactos.",
+            "spamTitle": "Prevención de Spam",
+            "spamText": "Los servicios que requieren verificación OTP a menudo tratan tu correo como un activo de marketing después. Una bandeja desechable corta ese canal desde el origen. Cuando la bandeja expira, la suscripción también desaparece.",
+            "accessTitle": "Sin Registro",
+            "accessText": "A diferencia de cualquier otro proveedor de correo, el correo temporal no requiere nada de ti. Sin usuario, sin contraseña, sin teléfono de recuperación. La bandeja está activa en el momento en que abres la página — exactamente lo que necesitas cuando estás registrándote en otro servicio y solo necesitas un código.",
+            "speedTitle": "Entrega en Tiempo Real",
+            "speedText": "Las bandejas temporales reciben correos a la misma velocidad que cualquier dirección permanente. Los OTP suelen llegar en segundos. La bandeja se actualiza en vivo, sin necesidad de recargar mientras esperas un código urgente."
+        },
+        "benefitItems": {
+            "0": "No se requiere cuenta ni datos personales para crear una bandeja",
+            "1": "La bandeja expira automáticamente y elimina todos los mensajes de forma permanente",
+            "2": "Compatible con casi cualquier servicio que admita OTP por correo electrónico",
+            "3": "La extensión de tiempo mantiene tu bandeja activa si la verificación tarda más de lo esperado",
+            "4": "Advertencias de contenido seguro señalan correos sospechosos antes de abrirlos"
+        },
+        "useCases": {
+            "title": "Cuándo Usar un Correo Desechable para OTP",
+            "intro": "Cada vez que un servicio solicita tu correo para una interacción puntual o de bajo compromiso, una dirección temporal es la mejor opción. Estos son los casos más comunes.",
+            "onlineTitle": "Registros en Línea",
+            "onlineText": "Muchos sitios bloquean contenido, descargas o funciones detrás de una cuenta verificada. Si solo necesitas acceso una vez — o no sabes si volverás — no hay razón para comprometer tu correo real.",
+            "onlineTitle2": "Registros en Línea",
+            "appTitle": "Verificación en Apps y Plataformas",
+            "appText": "Las aplicaciones móviles y plataformas web requieren cada vez más verificación OTP antes de conceder acceso. Un correo temporal cumple ese paso sin vincular tu email permanente a la cuenta.",
+            "otpTitle": "OTP y Autenticación en Dos Factores",
+            "otpText": "Las contraseñas de un solo uso se utilizan para activación de cuentas, restablecimiento de contraseñas y acceso de invitados. En todos estos casos, el correo solo necesita recibir un mensaje — lo que hace que una bandeja desechable sea ideal."
+        },
+        "useCaseOnline": {
+            "0": "Cuentas de prueba gratuita para software o herramientas SaaS que estás evaluando",
+            "1": "Foros y comunidades que requieren confirmación por correo para publicar",
+            "2": "Sitios de noticias o contenido que bloquean artículos detrás de un registro",
+            "3": "Plataformas de comercio electrónico que exigen registro antes de navegar"
+        },
+        "useCaseApp": {
+            "0": "Cuentas secundarias o de prueba en redes sociales",
+            "1": "Servicios de juegos y lanzadores que usan inicio de sesión por correo",
+            "2": "Plataformas de streaming o medios con niveles gratuitos verificados por email",
+            "3": "Programas beta e invitaciones de acceso anticipado que requieren registro"
+        },
+        "useCaseOtp": {
+            "0": "Códigos de activación enviados inmediatamente después del registro",
+            "1": "Autenticación en dos factores basada en correo para sesiones temporales",
+            "2": "Enlaces de restablecimiento de contraseña para servicios que ya no usas activamente",
+            "3": "Códigos de inicio de sesión único para compras como invitado o accesos limitados"
+        },
+        "safety": {
+            "title": "Consejos de Seguridad",
+            "intro": "El correo temporal es una herramienta práctica de privacidad, pero funciona mejor cuando entiendes para qué sirve y para qué no.",
+            "warn1Label": "Advertencias de Contenido Seguro",
+            "warn1Text": "TempEmail analiza los mensajes entrantes en busca de contenido sospechoso. Si un correo contiene enlaces, scripts o archivos adjuntos potencialmente dañinos, se mostrará una advertencia antes de abrirlo. Esto te protege contra intentos de phishing que puedan llegar durante el proceso de OTP.",
+            "warn2Label": "Expiración de la Bandeja",
+            "warn2Text": "Cada bandeja tiene un temporizador integrado. Cuando se agota, todos los mensajes se eliminan permanentemente y no pueden recuperarse. Si necesitas más tiempo, usa la función de extensión antes de que el temporizador llegue a cero.",
+            "warn3Label": "No Para Cuentas Importantes",
+            "warn3Text": "Nunca uses una dirección desechable para cuentas que planeas conservar — banca, redes sociales principales o cualquier servicio donde perder el correo signifique perder el acceso permanentemente. El correo temporal es solo para interacciones puntuales.",
+            "warn4Label": "Sin Archivo",
+            "warn4Text": "Los mensajes no se almacenan después de que la bandeja expira. Si necesitas guardar algo de un correo OTP — un número de confirmación, enlace o código de referencia — hazlo antes de que la bandeja desaparezca.",
+            "outro": "Dentro de estos límites, el correo desechable es una de las herramientas de privacidad más simples y efectivas para la actividad diaria en línea."
+        },
+        "faq": {
+            "0": {
+                "q": "¿Es seguro usar correo temporal para verificación OTP?",
+                "a": "Sí, para la gran mayoría de los casos es completamente seguro. Las bandejas temporales reciben correos igual que cualquier dirección permanente. TempEmail también añade advertencias de contenido seguro en mensajes marcados. El principal riesgo es la expiración — evita usarlo para cuentas que requieran acceso a largo plazo."
+            },
+            "1": {
+                "q": "¿Cuánto tiempo dura una bandeja de correo temporal?",
+                "a": "Por defecto, las bandejas permanecen activas durante 10 minutos después de la última actividad. La función de extensión de tiempo te permite mantenerla activa más tiempo sin perder mensajes existentes. Una vez que el temporizador se agota, todos los correos se eliminan de forma permanente e irreversible."
+            },
+            "2": {
+                "q": "¿Todos los servicios aceptan correos temporales?",
+                "a": "La mayoría de los servicios aceptan cualquier correo con formato válido, incluidos los desechables. Algunas plataformas grandes mantienen listas de bloqueo de dominios temporales conocidos. TempEmail rota entre múltiples dominios para maximizar la compatibilidad."
+            },
+            "3": {
+                "q": "¿Puedo usar correo temporal para autenticación en dos factores?",
+                "a": "Para 2FA basado en correo, sí — la bandeja temporal recibe códigos igual que una dirección permanente. Sin embargo, si configuras 2FA a largo plazo en una cuenta que planeas conservar, usa tu correo real o una app autenticadora. Perder la bandeja temporal significa perder ese método de acceso."
+            },
+            "4": {
+                "q": "¿TempEmail almacena mis mensajes o rastrea mi uso?",
+                "a": "No se requiere información personal para usar TempEmail y todos los mensajes se eliminan permanentemente cuando la bandeja expira. No se recopila ni retiene ninguna dirección, nombre o identificador persistente después de que la sesión termina."
+            },
+            "title": "Preguntas Frecuentes",
+            "intro": "Preguntas comunes sobre el uso de correo temporal para verificación OTP."
+        }
     }
 }
