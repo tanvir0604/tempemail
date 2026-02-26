@@ -90,10 +90,40 @@ export class BlogController {
   @Get('/slug/:slug')
   async findOneBySlug(
     @Param('slug') slug: string,
+    @Query() query: { views: string; admin: string },
   ): Promise<SimpleResponseType> {
+    const cacheKey = `blogDetails:slug=${slug}`;
+    const isAdmin = query.admin == 'true' ? true : false;
+    const views = query.views == 'true' ? true : false;
+    if (!isAdmin) {
+      const cachedResponse: any = await this.cacheManager.get(cacheKey);
+
+      if (cachedResponse) {
+        if (views) {
+          this.blogService.update({
+            id: cachedResponse.id,
+            views: 1,
+          });
+        }
+
+        return {
+          statusCode: HttpStatus.OK,
+          data: cachedResponse,
+          message: 'Blog post found successfully from cache',
+        };
+      }
+    }
+
     const response = await this.blogService.findOneBySlug(slug);
-    // console.log('response', response);
     if (response) {
+      this.cacheManager.set(cacheKey, response, 86400000);
+      if (views) {
+        this.blogService.update({
+          id: response.id,
+          views: 1,
+        });
+      }
+
       return {
         statusCode: HttpStatus.OK,
         data: response,

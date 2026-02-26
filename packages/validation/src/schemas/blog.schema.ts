@@ -18,6 +18,7 @@ export const UpdateBlogSchema = z.object({
     image: z.string().min(1, 'Image is required').url('Invalid URL').optional(),
     content: z.string().min(1, 'Content is required').optional(),
     tag: z.string().min(1, 'Tag is required').optional(),
+    views: z.number().optional(),
     readingTime: z.number().min(1, 'Reading time is required').optional(),
     publishedAt: z.date().optional().optional(),
     status: z.boolean().default(true).optional(),

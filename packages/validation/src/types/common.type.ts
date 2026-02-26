@@ -27,6 +27,7 @@ export type BlogDetailsType = {
     image: string;
     slug: string;
     content: string;
+    views: number;
     status: boolean;
     readingTime: number;
     tag: string;

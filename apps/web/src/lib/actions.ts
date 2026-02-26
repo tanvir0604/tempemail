@@ -235,10 +235,11 @@ export async function getBlogList(
 
 export async function getBlogDetails(
     slug: string,
+    views?: boolean,
 ): Promise<SimpleResponseType> {
     const response: SimpleResponseType = await httpRequest({
         method: 'GET',
-        url: '/blog/slug/' + slug,
+        url: '/blog/slug/' + slug + '?views=' + views,
     });
 
     // console.log('response', response);

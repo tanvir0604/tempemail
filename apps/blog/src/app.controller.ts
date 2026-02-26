@@ -66,6 +66,7 @@ export class AppController {
         slug: data.title ? generateUniqueSlug(data.title, true) : undefined,
         content: data.content ? data.content.trim() : undefined,
         readingTime: data.readingTime ? data.readingTime : undefined,
+        views: data.views ? { increment: data.views } : undefined,
         tag: data.tag ? data.tag.trim() : undefined,
         publishedAt: data.publishedAt ? data.publishedAt : undefined,
       },

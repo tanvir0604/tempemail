@@ -1,4 +1,4 @@
-import { BlogDetailsType } from '@repo/validation';
+import { BlogDetailsType, formatNumber } from '@repo/validation';
 import {
     Card,
     CardContent,
@@ -7,7 +7,7 @@ import {
     CardTitle,
 } from './ui/card';
 import Link from 'next/link';
-import { Clock, User } from 'lucide-react';
+import { Clock, Eye, User } from 'lucide-react';
 import { Button } from './ui/button';
 import { limitWords } from '@/lib/utils';
 
@@ -26,9 +26,13 @@ export default async function BlogItem({ item }: { item: BlogDetailsType }) {
                 </CardDescription>
 
                 <div className="flex items-center justify-between text-sm  mb-4">
-                    <div className="flex items-center gap-1">
+                    {/* <div className="flex items-center gap-1">
                         <User className="w-3 h-3" />
                         <span>{'TEMPEMAIL'}</span>
+                    </div> */}
+                    <div className="flex items-center gap-1">
+                        <Eye className="w-3 h-3" />
+                        <span>{formatNumber(item.views)}</span>
                     </div>
                     <div className="flex items-center gap-1">
                         <Clock className="w-3 h-3" />

@@ -21,6 +21,7 @@ model Post {
   content     String   @db.Text
   status      Boolean  @default(true)
   readingTime Int
+  views       Int      @default(0)
   tag         String?
   publishedAt DateTime
   createdAt   DateTime @default(now())

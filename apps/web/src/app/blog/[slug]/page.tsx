@@ -1,12 +1,13 @@
 import { getBlogDetails } from '@/lib/actions';
 import { limitWords } from '@/lib/utils';
-import { SimpleResponseType } from '@repo/validation';
+import { formatNumber, SimpleResponseType } from '@repo/validation';
 import { NotebookIcon } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
 import { DynamicIcon } from 'lucide-react/dynamic';
 import Link from 'next/link';
 import { getLocale, setRequestLocale } from 'next-intl/server';
+import { Badge } from '@/components/ui/badge';
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -131,7 +132,7 @@ export default async function BlogDetailsPage({ params }: Props) {
     const locale = await getLocale();
     setRequestLocale(locale);
     const { slug } = await params;
-    const blogData: SimpleResponseType = await getBlogDetails(slug);
+    const blogData: SimpleResponseType = await getBlogDetails(slug, true);
 
     if (!blogData || !blogData.data) {
         console.log('not found post');
@@ -212,17 +213,29 @@ export default async function BlogDetailsPage({ params }: Props) {
                     <h1 className="text-4xl font-bold text-zinc-100">
                         {blogData.data.title}
                     </h1>
-                    <p className="text-xl text-zinc-400">
+                    <div className="flex flex-wrap gap-2 justify-center">
+                        {blogData?.data?.tag
+                            ?.split(',')
+                            .map((tag: string, index: number) => (
+                                <Badge
+                                    key={index}
+                                    variant={'outline'}
+                                    className=""
+                                >
+                                    {tag.trim()}
+                                </Badge>
+                            ))}
+                    </div>
+                    <div className="w-full flex items-center justify-center gap-3 text-sm text-zinc-400 border-b pb-6">
                         <time dateTime="2025-06-13">
-                            Published:{' '}
+                            Published:
                             {new Date(blogData.data.createdAt).toDateString()}
-                        </time>{' '}
-                        |
+                        </time>
                         <span>
                             Reading time: {blogData.data.readingTime} minutes
-                        </span>{' '}
-                        |<span>{blogData.data.tag}</span>
-                    </p>
+                        </span>
+                        <span>Views: {formatNumber(blogData.data.views)}</span>
+                    </div>
                 </div>
 
                 <div className="prose prose-invert max-w-none mt-6">
