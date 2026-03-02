@@ -1,6 +1,11 @@
 export default async function TestBlogPage() {
     return (
         <div className="max-w-6xl mx-auto">
+            <img
+                className="w-full max-w-5xl mx-auto mb-12"
+                src={'https://i.imgur.com/5uILzFY.png'}
+            />
+
             <section className="mb-12">
                 <p className="text-lg text-zinc-300 leading-relaxed mb-6">
                     Your email address is more valuable than you think. It's the

@@ -228,8 +228,8 @@ export default async function BlogDetailsPage({ params }: Props) {
                     </div>
                     <div className="w-full flex items-center justify-center gap-3 text-sm text-zinc-400 border-b pb-6">
                         <time dateTime="2025-06-13">
-                            Published:
-                            {new Date(blogData.data.createdAt).toDateString()}
+                            Last updated:
+                            {new Date(blogData.data.updatedAt).toDateString()}
                         </time>
                         <span>
                             Reading time: {blogData.data.readingTime} minutes
@@ -237,6 +237,15 @@ export default async function BlogDetailsPage({ params }: Props) {
                         <span>Views: {formatNumber(blogData.data.views)}</span>
                     </div>
                 </div>
+
+                {blogData.data.image && (
+                    <section>
+                        <img
+                            className="w-full max-w-5xl mx-auto mb-12"
+                            src={blogData.data.image}
+                        />
+                    </section>
+                )}
 
                 <div className="prose prose-invert max-w-none mt-6">
                     <div
