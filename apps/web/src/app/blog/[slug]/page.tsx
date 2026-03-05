@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props) {
     if (!blogData || !blogData.data) {
         return;
     }
-    const title = 'TempEmail Blog - ' + blogData.data.title + ' | TempEmail';
+    const title = blogData.data.title + ' | TempEmail';
     const description = limitWords(blogData.data.content, 50);
     return {
         title: title,
