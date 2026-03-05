@@ -8,6 +8,18 @@ import { DynamicIcon } from 'lucide-react/dynamic';
 import Link from 'next/link';
 import { getLocale, setRequestLocale } from 'next-intl/server';
 import { Badge } from '@/components/ui/badge';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import {
+    Card,
+    CardAction,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card';
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -228,7 +240,7 @@ export default async function BlogDetailsPage({ params }: Props) {
                     </div>
                     <div className="w-full flex items-center justify-center gap-3 text-sm text-zinc-400 border-b pb-6">
                         <time dateTime="2025-06-13">
-                            Last updated:
+                            Last updated:{' '}
                             {new Date(blogData.data.updatedAt).toDateString()}
                         </time>
                         <span>
