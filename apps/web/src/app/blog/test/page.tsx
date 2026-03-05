@@ -33,7 +33,7 @@ export const metadata = {
 export default function TempMailGuidePage() {
     return (
         <div className="min-h-screen bg-zinc-950 text-zinc-200">
-            <header className="relative overflow-hidden border-b border-zinc-800">
+            <div className="relative overflow-hidden border-b border-zinc-800">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-zinc-950 to-violet-950/20 pointer-events-none" />
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
                     <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -44,13 +44,7 @@ export default function TempMailGuidePage() {
                             Privacy & Security
                         </Badge>
                     </div>
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5 tracking-tight">
-                        Temp Mail (2026 Guide):{' '}
-                        <span className="text-blue-400">
-                            Free Disposable Temporary Email
-                        </span>{' '}
-                        for OTP &amp; Sign-Ups
-                    </h1>
+
                     <p className="text-zinc-400 text-lg sm:text-xl leading-relaxed max-w-2xl mb-8">
                         Learn how temporary email services help protect your
                         privacy, avoid spam, and safely sign up for websites
@@ -71,9 +65,9 @@ export default function TempMailGuidePage() {
                         </span>
                     </div>
                 </div>
-            </header>
+            </div>
 
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-16">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-16">
                 <section>
                     <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 sm:p-8">
                         <h2 className="flex items-center gap-2 text-zinc-100 text-lg font-semibold mb-5">
@@ -663,28 +657,7 @@ export default function TempMailGuidePage() {
                         </a>
                     </div>
                 </section>
-            </main>
-
-            <footer className="border-t border-zinc-800 mt-16">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
-                    <p>
-                        © 2026{' '}
-                        <a
-                            href="https://www.temp-email.dev"
-                            className="text-zinc-400 hover:text-blue-400 transition-colors"
-                        >
-                            temp-email.dev
-                        </a>
-                        . Free disposable temporary email.
-                    </p>
-                    <a
-                        href="https://www.temp-email.dev"
-                        className="hover:text-zinc-300 transition-colors flex items-center gap-1"
-                    >
-                        <Mail className="w-3 h-3" /> Get Temp Mail
-                    </a>
-                </div>
-            </footer>
+            </div>
         </div>
     );
 }
