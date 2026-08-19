@@ -1,141 +1,692 @@
-# Start RabbitMQ
+# Temp Email
 
-sudo docker run -d --restart always --name rabbitmq \
- -p 127.0.0.1:5672:5672 \
- rabbitmq:4.0-management
+**Temp Email is a privacy-focused disposable email platform for creating temporary email addresses, receiving, replying to, and forwarding emails without registration.**
 
-# Turborepo starter
+The platform provides users with instantly generated temporary email addresses and inboxes that can be used for online registrations, testing, privacy protection, avoiding unwanted email, and other situations where users do not want to expose their primary email address.
 
-This Turborepo starter is maintained by the Turborepo core team.
+Unlike a basic temporary inbox, Temp Email also supports **replying to and forwarding received emails**, making the temporary mailbox useful for more complete email workflows.
 
-## Using this example
+The system is built using a **microservice and event-driven architecture** with NestJS, Next.js, PostgreSQL, RabbitMQ, Docker, and Mailcow.
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
+## ✨ Features
+
+- 📧 **Instant Temporary Email** — Generate disposable email addresses without registration.
+- 📥 **Temporary Inbox** — Receive incoming emails in a temporary mailbox.
+- ↩️ **Reply to Emails** — Reply directly to received emails from the temporary mailbox.
+- ➡️ **Forward Emails** — Forward received emails to another email address.
+- ⏳ **Temporary Mailboxes** — Temporary addresses and their associated data can expire automatically.
+- 🔐 **Privacy Focused** — Use a temporary email address without exposing your primary mailbox.
+- 🐳 **Dockerized Infrastructure** — Containerized development and production environments.
+- ⚡ **Event-Driven Architecture** — RabbitMQ enables asynchronous communication between services.
+- 🧩 **Microservice Architecture** — Application functionality is separated into independently manageable services.
+- 📱 **Web Application** — Modern responsive interface built with Next.js.
+- 📬 **Mail Infrastructure Integration** — Mailcow manages the underlying email infrastructure and mailbox communication.
+- 📝 **Blog** — Dedicated content platform for educational and SEO-focused content.
+
+---
+
+# 🏗️ Architecture
+
+Temp Email follows a **microservice-oriented, event-driven architecture**.
+
+The platform consists of a Next.js web application, multiple NestJS services, RabbitMQ for asynchronous communication, PostgreSQL for persistent data, and Mailcow for email infrastructure.
+
+### High-Level Architecture
+
+```text
+                         ┌─────────────────────┐
+                         │      Next.js        │
+                         │        Web          │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │     NestJS API      │
+                         │   API / Gateway     │
+                         └──────────┬──────────┘
+                                    │
+                                    │ Events / Messages
+                                    ▼
+                         ┌─────────────────────┐
+                         │      RabbitMQ       │
+                         │   Message Broker    │
+                         └──────────┬──────────┘
+                                    │
+             ┌──────────────────────┼──────────────────────┐
+             │                      │                      │
+             ▼                      ▼                      ▼
+      ┌─────────────┐       ┌─────────────┐        ┌─────────────┐
+      │   Email     │       │  Settings   │        │   Blog      │
+      │   NestJS    │       │   NestJS    │        │   NestJS    │
+      └──────┬──────┘       └──────┬──────┘        └─────────────┘
+             │                     │
+             │                     │
+             ▼                     ▼
+      ┌─────────────────────────────────────┐
+      │             PostgreSQL              │
+      └─────────────────────────────────────┘
+
+                         ┌─────────────────────┐
+                         │       Mailcow       │
+                         │ Email Infrastructure│
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         Temporary Mailboxes
+                                    │
+                                    ▼
+                         Incoming / Outgoing
+                              Email Flow
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+# 🧩 Services
 
-### Apps and Packages
+## Web
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+The **Web** application is built with **Next.js** and provides the primary user interface.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Users can:
 
-### Utilities
+- Generate temporary email addresses
+- View incoming messages
+- Read email content
+- Reply to messages
+- Forward messages
+- Manage temporary email settings
+- Interact with the platform without creating an account
 
-This Turborepo has some additional tools already setup for you:
+The web application communicates with the backend API rather than directly accessing internal services.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+---
 
-### Build
+## API
 
-To build all apps and packages, run the following command:
+The **API** is built with **NestJS** and acts as the main application entry point.
 
-```
-cd my-turborepo
+It handles communication between the web application and the backend service layer.
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
+Responsibilities include:
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
-```
+- API endpoints
+- Request processing
+- Authentication/session-related operations where required
+- Email operations
+- Temporary mailbox operations
+- Service orchestration
+- Communication with RabbitMQ
+- Validation and application-level business logic
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+## Email Service
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+The **Email** microservice is responsible for application-level email functionality.
 
-### Develop
+It works with the email infrastructure and handles operations such as:
 
-To develop all apps and packages, run the following command:
+- Incoming email processing
+- Email retrieval
+- Reply workflows
+- Forwarding workflows
+- Email-related business logic
+- Communication with other services through RabbitMQ
 
-```
-cd my-turborepo
+The separation of email functionality into its own service keeps email-specific business logic isolated from the main API.
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+---
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
+## Mailcow Service
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+The **Mailcow** service is responsible for communicating with and managing the **Mailcow email infrastructure**.
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+It acts as the integration layer between the Temp Email application and Mailcow.
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+Its responsibilities include:
 
-### Remote Caching
+- Creating temporary email accounts/mailboxes
+- Managing mailbox lifecycle
+- Communicating with Mailcow
+- Reading incoming emails
+- Handling email infrastructure operations
+- Supporting email delivery workflows
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+This separation prevents the application layer from being tightly coupled to the underlying mail server infrastructure.
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+```text
+Temp Email Application
+        │
+        ▼
+   Mailcow Service
+        │
+        ▼
+      Mailcow
+        │
+        ▼
+Mail Infrastructure
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+---
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## Settings Service
 
+The **Settings** microservice manages application-level configuration and settings-related functionality.
+
+Keeping settings in a dedicated service allows configuration-related responsibilities to remain isolated from the main API and email processing services.
+
+---
+
+## Blog Service
+
+The **Blog** application is built with **NestJS** and provides the backend functionality for the Temp Email content platform.
+
+The blog can be used for:
+
+- Educational content
+- Privacy-related articles
+- Temporary email guides
+- SEO content
+- Product documentation
+- Email-related resources
+
+---
+
+# 📨 Email Architecture
+
+Email infrastructure is one of the most important parts of Temp Email.
+
+Instead of implementing the mail server itself, the platform uses **Mailcow** as the underlying email infrastructure.
+
+The application communicates with Mailcow through a dedicated NestJS microservice.
+
+### Temporary Email Creation
+
+```text
+User
+ │
+ ▼
+Next.js Web
+ │
+ ▼
+NestJS API
+ │
+ ▼
+RabbitMQ
+ │
+ ▼
+Mailcow Service
+ │
+ ▼
+Mailcow
+ │
+ ▼
+Temporary Email Address
 ```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+### Receiving Email
+
+```text
+External Sender
+       │
+       ▼
+    Mailcow
+       │
+       ▼
+ Mailcow Service
+       │
+       ▼
+   RabbitMQ
+       │
+       ▼
+ Email Service
+       │
+       ▼
+ PostgreSQL
+       │
+       ▼
+    NestJS API
+       │
+       ▼
+   Next.js Web
+       │
+       ▼
+   User Inbox
 ```
 
-## Useful Links
+### Replying to Email
 
-Learn more about the power of Turborepo:
+Users can reply to received messages directly from the temporary mailbox.
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+```text
+User
+ │
+ ▼
+Next.js Web
+ │
+ ▼
+NestJS API
+ │
+ ▼
+Email Service
+ │
+ ▼
+RabbitMQ
+ │
+ ▼
+Mailcow Service
+ │
+ ▼
+Mailcow
+ │
+ ▼
+External Recipient
+```
+
+### Forwarding Email
+
+Temp Email also supports forwarding received messages to another email address.
+
+```text
+Temporary Inbox
+      │
+      ▼
+   User Action
+      │
+      ▼
+  NestJS API
+      │
+      ▼
+ Email Service
+      │
+      ▼
+   RabbitMQ
+      │
+      ▼
+ Mailcow Service
+      │
+      ▼
+    Mailcow
+      │
+      ▼
+External Email Address
+```
+
+---
+
+# 📨 RabbitMQ & Event-Driven Architecture
+
+**RabbitMQ** acts as the messaging backbone between the API and backend microservices.
+
+Instead of tightly coupling every service through synchronous communication, services can publish and consume messages asynchronously.
+
+```text
+                       RabbitMQ
+                          │
+          ┌───────────────┼───────────────┐
+          │               │               │
+          ▼               ▼               ▼
+       Email          Mailcow         Settings
+       Service        Service         Service
+```
+
+This architecture provides several benefits:
+
+- Loose coupling between services
+- Asynchronous processing
+- Better fault isolation
+- Independent service scaling
+- Easier background processing
+- Clear separation of responsibilities
+- Ability to introduce new consumers without tightly coupling them to producers
+
+---
+
+# 🗄️ Data Layer
+
+Temp Email uses **PostgreSQL** as its primary relational database.
+
+**Prisma** can be used where applicable for type-safe database access and schema management.
+
+The database layer stores application data required by the platform while Mailcow remains responsible for the underlying mailbox infrastructure.
+
+---
+
+# 🧰 Technology Stack
+
+| Technology         | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| **TypeScript**     | Primary programming language                          |
+| **NestJS**         | API and backend microservices                         |
+| **Next.js**        | Web application                                       |
+| **Turborepo**      | Monorepo and build orchestration                      |
+| **RabbitMQ**       | Asynchronous messaging and event-driven communication |
+| **PostgreSQL**     | Relational database                                   |
+| **Prisma**         | Type-safe database access                             |
+| **Mailcow**        | Email infrastructure and mailbox management           |
+| **Docker**         | Application containerization                          |
+| **Docker Compose** | Development and production orchestration              |
+
+---
+
+# 📁 Monorepo Architecture
+
+Temp Email uses **Turborepo** to manage multiple applications and services within a single repository.
+
+A simplified project structure:
+
+```text
+tempemail/
+├── apps/
+│   ├── api/
+│   ├── blog/
+│   ├── email/
+│   ├── mailcow/
+│   ├── settings/
+│   └── web/
+│
+├── packages/
+│   └── ...
+│
+├── compose.development.yaml
+├── package.json
+├── pnpm-workspace.yaml
+└── turbo.json
+```
+
+The exact structure may evolve as the platform grows.
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+Make sure the following are installed:
+
+- **Node.js `<NODE_VERSION>`**
+- **pnpm**
+- **Docker**
+- **Docker Compose**
+- **Git**
+
+Check your Node.js version:
+
+```bash
+node -v
+```
+
+Check pnpm:
+
+```bash
+pnpm -v
+```
+
+---
+
+## 📥 Clone the Repository
+
+```bash
+git clone git@github.com:tanvir0604/tempemail.git
+cd tempemail
+```
+
+---
+
+## 📦 Install Dependencies
+
+```bash
+pnpm install
+```
+
+---
+
+## 🔐 Environment Variables
+
+Each application/service may require its own environment configuration.
+
+Create the required `.env` files inside the relevant applications.
+
+For example:
+
+```text
+apps/
+├── api/
+│   └── .env
+├── blog/
+│   └── .env
+├── email/
+│   └── .env
+├── mailcow/
+│   └── .env
+├── settings/
+│   └── .env
+└── web/
+    └── .env
+```
+
+Never commit real credentials, database passwords, API keys, Mailcow credentials, JWT secrets, or other sensitive configuration to the repository.
+
+---
+
+# 🛠️ Development
+
+Start the development infrastructure:
+
+```bash
+sudo docker compose -f compose.development.yaml up -d
+```
+
+Then start the development applications:
+
+```bash
+pnpm dev
+```
+
+The complete development flow:
+
+```bash
+git clone git@github.com:tanvir0604/tempemail.git
+cd tempemail
+
+pnpm install
+
+# Configure .env files
+
+sudo docker compose -f compose.development.yaml up -d
+
+pnpm dev
+```
+
+---
+
+# 🐳 Production Deployment
+
+Temp Email is containerized to simplify production deployment and provide consistency between development and production environments.
+
+## Build Production Images
+
+```bash
+sudo docker compose build
+```
+
+## Push Images to Docker Hub
+
+Tag the generated images with your Docker Hub repository names and push them:
+
+```bash
+docker tag <local-image> <dockerhub-username>/<image>:latest
+docker push <dockerhub-username>/<image>:latest
+```
+
+Repeat for the required services.
+
+## Deploy to Production
+
+On the production server:
+
+```bash
+sudo docker compose up -d
+```
+
+Docker Compose will start the required Temp Email services and infrastructure.
+
+---
+
+# 🔄 Development vs Production
+
+### Development
+
+```text
+Source Code
+     │
+     ▼
+   pnpm
+     │
+     ▼
+ Turborepo
+     │
+     ├── Next.js Web
+     ├── NestJS API
+     ├── NestJS Email
+     ├── NestJS Mailcow
+     ├── NestJS Settings
+     └── NestJS Blog
+
+Docker Compose
+     │
+     ├── PostgreSQL
+     ├── RabbitMQ
+     └── Mailcow
+```
+
+### Production
+
+```text
+Source Code
+     │
+     ▼
+Docker Build
+     │
+     ▼
+Docker Images
+     │
+     ▼
+Docker Hub
+     │
+     ▼
+Production Server
+     │
+     ▼
+Docker Compose
+     │
+     ├── Web
+     ├── API
+     ├── Email
+     ├── Mailcow Service
+     ├── Settings
+     ├── Blog
+     ├── PostgreSQL
+     ├── RabbitMQ
+     └── Mailcow
+```
+
+---
+
+# 🎯 Engineering Highlights
+
+Temp Email demonstrates practical experience in designing and implementing a distributed email platform using modern backend technologies.
+
+### Architecture
+
+- Microservice-oriented backend architecture
+- Event-driven communication
+- Asynchronous messaging with RabbitMQ
+- Independent service boundaries
+- Dedicated email infrastructure integration
+- Monorepo development using Turborepo
+
+### Backend
+
+- NestJS-based backend services
+- TypeScript
+- REST API architecture
+- Service-to-service communication
+- Email workflow orchestration
+- Mail infrastructure integration
+
+### Infrastructure
+
+- Dockerized services
+- Docker Compose orchestration
+- PostgreSQL
+- RabbitMQ
+- Mailcow
+- Production container deployment
+
+### Product Engineering
+
+- Temporary email generation
+- Real-time inbox experience
+- Incoming email processing
+- Email replies
+- Email forwarding
+- Automatic mailbox lifecycle management
+- Privacy-oriented user experience
+
+---
+
+# 🔮 Future Development
+
+Potential areas for further development include:
+
+- Advanced spam filtering
+- Improved email threat detection
+- Email attachment handling
+- Advanced mailbox lifecycle controls
+- Email search
+- Additional privacy controls
+- Public API
+- Usage analytics
+- Additional email providers/infrastructure integrations
+- More advanced automated email processing
+
+---
+
+# 🤝 Contributing
+
+Contributions, bug reports, feature requests, and architectural discussions are welcome.
+
+If you find an issue or have an idea for improving the project, open an issue or submit a pull request.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+# 👨‍💻 About
+
+Temp Email is a real-world engineering project demonstrating the design and development of a **privacy-focused disposable email platform** using microservices, event-driven architecture, modern TypeScript technologies, containerized infrastructure, and dedicated email infrastructure.
+
+The project demonstrates experience in:
+
+- Microservices
+- Distributed systems
+- Event-driven architecture
+- RabbitMQ
+- NestJS
+- Next.js
+- PostgreSQL
+- Docker
+- Mailcow integration
+- Browser/server email workflows
+- Scalable backend architecture
+
+**Built with TypeScript, NestJS, Next.js, RabbitMQ, PostgreSQL, Docker, Turborepo, and Mailcow.**
